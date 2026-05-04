@@ -23,6 +23,10 @@
     "withings": {
       "command": "npx",
       "args": ["-y", "withings-mcp-unofficial"]
+    },
+    "apple_health": {
+      "command": "npx",
+      "args": ["-y", "apple-health-mcp-unofficial"]
     }
   }
 }

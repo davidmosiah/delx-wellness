@@ -154,15 +154,26 @@
     {
       "id": "apple-health",
       "name": "Apple Health",
-      "status": "planned",
-      "repository": null,
-      "package": null,
-      "transport": [],
-      "auth_model": "Local device export or native app bridge planned",
-      "local_storage": null,
-      "signals": ["activity", "sleep", "heart_rate", "workouts"],
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/apple-health-mcp",
+      "package": "apple-health-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "Local Apple Health export file path; native HealthKit bridge planned separately",
+      "local_storage": "~/.apple-health-mcp/",
+      "signals": ["activity", "sleep", "heart_rate", "hrv", "workouts", "daily_summary", "weekly_summary"],
       "privacy_default": "summary",
-      "notes": "Requires careful local-device privacy design."
+      "quality": {
+        "tier": "agent_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Local package reads Apple Health export.xml/export.zip, includes summaries, agent manifest, CLI setup and Hermes setup checks."
+      },
+      "notes": "Reads user-provided Apple Health exports only. Does not provide live HealthKit or iCloud Health access."
     }
   ]
 }

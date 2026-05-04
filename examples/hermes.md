@@ -9,6 +9,7 @@ npx -y fitbit-mcp-unofficial setup --client hermes --no-auth
 npx -y garmin-mcp-unofficial setup --client hermes
 npx -y oura-mcp-unofficial setup --client hermes --no-auth
 npx -y withings-mcp-unofficial setup --client hermes --no-auth
+npx -y apple-health-mcp-unofficial setup --client hermes --export-path /path/to/export.zip
 ```
 
 Then connect providers locally:
@@ -33,6 +34,7 @@ npx -y fitbit-mcp-unofficial  doctor --client hermes
 npx -y garmin-mcp-unofficial  doctor --client hermes
 npx -y oura-mcp-unofficial    doctor --client hermes
 npx -y withings-mcp-unofficial doctor --client hermes
+npx -y apple-health-mcp-unofficial doctor --client hermes
 ```
 
 Then in Hermes:
@@ -44,6 +46,7 @@ hermes mcp test fitbit
 hermes mcp test garmin
 hermes mcp test oura
 hermes mcp test withings
+hermes mcp test apple_health
 ```
 
 After config changes use `/reload-mcp` or the `hermes mcp test <name>` command. Don't restart the gateway for normal data access.
@@ -57,9 +60,10 @@ fitbit_connection_status
 garmin_connection_status
 oura_connection_status
 withings_connection_status
+apple_health_connection_status
 ```
 
-Then drill into the workflow tools (`*_daily_summary`, `*_weekly_summary`) and the prefixed prompts (`whoop_daily_performance_coach`, `strava_daily_training_director`, `garmin_daily_checkin`, `fitbit_daily_checkin`, `oura_daily_checkin`, `withings_daily_checkin`).
+Then drill into the workflow tools (`*_daily_summary`, `*_weekly_summary`) and the prefixed prompts (`whoop_daily_performance_coach`, `strava_daily_training_director`, `garmin_daily_checkin`, `fitbit_daily_checkin`, `oura_daily_checkin`, `withings_daily_checkin`, `apple_health_daily_review`).
 
 ## Safety reminders
 

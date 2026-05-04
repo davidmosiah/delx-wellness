@@ -18,7 +18,7 @@ This repository is documentation and metadata. It does **not** contain the hoste
 | Garmin Connect | Active | `agent_ready` | [`garminmcp`](https://github.com/davidmosiah/garminmcp) | `garmin-mcp-unofficial` |
 | Oura Ring | Active | `agent_ready` | [`ouramcp`](https://github.com/davidmosiah/ouramcp) | `oura-mcp-unofficial` |
 | Withings | Active | `agent_ready` | [`withingsmcp`](https://github.com/davidmosiah/withingsmcp) | `withings-mcp-unofficial` |
-| Apple Health | Planned | — | TBD | TBD |
+| Apple Health | Active | `agent_ready` | [`apple-health-mcp`](https://github.com/davidmosiah/apple-health-mcp) | `apple-health-mcp-unofficial` |
 | Eight Sleep | Planned | — | TBD | TBD |
 
 Tiers are defined in [`docs/connector-quality-standard.md`](docs/connector-quality-standard.md). Machine-readable catalog: [`registry.json`](registry.json).
@@ -30,6 +30,7 @@ Have a WHOOP?           → start with whoop-mcp        (recovery, HRV, sleep, s
 Have a Garmin?          → start with garminmcp        (Body Battery, training readiness, HRV)
 Have an Oura?           → start with ouramcp          (readiness, sleep, activity, HRV)
 Have Withings devices?  → start with withingsmcp      (body measures, sleep, activity, heart)
+Have Apple Health export? → add apple-health-mcp      (local export activity, sleep, HRV, workouts)
 Run/ride/swim a lot?    → add strava-mcp              (activities, streams, routes)
 Just bought a Fitbit?   → add fitbitmcp               (activity, sleep, heart, HRV)
 Multiple devices?       → install several. Each is independent and read-only.
@@ -48,6 +49,7 @@ npx -y fitbit-mcp-unofficial  setup && npx -y fitbit-mcp-unofficial  auth
 npx -y garmin-mcp-unofficial  setup && npx -y garmin-mcp-unofficial  auth --install-helper
 npx -y oura-mcp-unofficial    setup && npx -y oura-mcp-unofficial    auth
 npx -y withings-mcp-unofficial setup && npx -y withings-mcp-unofficial auth
+npx -y apple-health-mcp-unofficial setup --export-path /path/to/export.zip
 ```
 
 Then drop one of the [client config examples](examples/) into your AI client.
@@ -68,7 +70,7 @@ The local connector layer can be open source. The hosted commercial layer may st
 
 | Layer | Public now | Notes |
 |---|:---:|---|
-| Local provider connectors | ✓ | Individual MCP servers (WHOOP, Strava, Fitbit, Garmin, Oura, Withings) |
+| Local provider connectors | ✓ | Individual MCP servers (WHOOP, Strava, Fitbit, Garmin, Oura, Withings, Apple Health export) |
 | Connector registry and docs | ✓ | This repository |
 | Normalized schemas | ✓ | Stable shared shapes for cross-provider tools |
 | Hosted hub API | — | May remain private during product-market fit |
