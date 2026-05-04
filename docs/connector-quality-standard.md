@@ -43,7 +43,7 @@ Use for connectors designed for delegated installation and agent operations.
 
 | Connector | Tier | Notes |
 | --- | --- | --- |
-| WHOOP | `registry_ready` | Strong local OAuth and privacy model. Agent manifest can be added later. |
+| WHOOP | `agent_ready` | Includes agent manifest, local OAuth/privacy model and Hermes setup checks. |
 | Strava | `agent_ready` | Includes agent manifest and GPS privacy posture. |
 | Fitbit | `agent_ready` | Includes agent manifest and scope diagnostics. |
 | Garmin | `agent_ready` | Includes agent manifest and local credential boundary for unofficial Garmin Connect mode. |
