@@ -34,6 +34,21 @@
             "items": { "type": "string" }
           },
           "privacy_default": { "type": "string" },
+          "quality": {
+            "type": "object",
+            "properties": {
+              "tier": { "type": "string" },
+              "full_ci": { "type": "boolean" },
+              "security_policy": { "type": "boolean" },
+              "privacy_audit_tool": { "type": "boolean" },
+              "connection_status_tool": { "type": "boolean" },
+              "agent_manifest": { "type": "boolean" },
+              "http_smoke_test": { "type": "boolean" },
+              "registry_backlink": { "type": "boolean" },
+              "notes": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
           "notes": { "type": "string" }
         },
         "additionalProperties": false

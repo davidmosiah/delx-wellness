@@ -52,6 +52,7 @@ See [`registry.json`](registry.json) for the machine-readable connector catalog.
 - [`docs/provider-status.md`](docs/provider-status.md) - current provider matrix and risks.
 - [`docs/privacy-model.md`](docs/privacy-model.md) - local-first privacy boundary and hosted-hub considerations.
 - [`docs/normalized-schema.md`](docs/normalized-schema.md) - common wellness snapshot model for cross-provider tools.
+- [`docs/connector-quality-standard.md`](docs/connector-quality-standard.md) - release and trust checklist for public connectors.
 
 ## Example Client Configs
 

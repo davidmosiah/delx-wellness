@@ -18,6 +18,16 @@
       "local_storage": "~/.whoop-mcp/",
       "signals": ["profile", "body", "recovery", "cycles", "sleep", "workouts", "daily_summary", "weekly_summary"],
       "privacy_default": "structured",
+      "quality": {
+        "tier": "registry_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Runtime, package, and registry metadata aligned at version 0.1.4."
+      },
       "notes": "Uses official WHOOP OAuth API. Raw means upstream API JSON, not continuous sensor streams."
     },
     {
@@ -31,6 +41,17 @@
       "local_storage": "~/.strava-mcp/",
       "signals": ["athlete", "activities", "activity_details", "activity_streams", "routes", "clubs", "gear", "daily_summary", "weekly_summary"],
       "privacy_default": "structured",
+      "quality": {
+        "tier": "registry_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "CI runs the full npm test suite including agent readiness and Hermes manifest checks."
+      },
       "notes": "GPS/map data is privacy-sensitive and should require explicit user intent."
     },
     {
@@ -44,6 +65,17 @@
       "local_storage": "~/.fitbit-mcp/",
       "signals": ["profile", "devices", "activity", "sleep", "heart_rate", "hrv", "spo2", "breathing_rate", "weight", "nutrition", "daily_summary", "weekly_summary"],
       "privacy_default": "structured",
+      "quality": {
+        "tier": "registry_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "CI runs the full npm test suite including agent readiness and Hermes manifest checks."
+      },
       "notes": "Fitbit platform migration risk should be tracked before hosted production launch."
     },
     {
@@ -57,6 +89,17 @@
       "local_storage": "~/.garmin-mcp/",
       "signals": ["profile", "devices", "daily_movement", "sleep", "heart_rate", "hrv", "stress", "body_battery", "training_readiness", "activities", "body_logs", "daily_summary", "weekly_summary"],
       "privacy_default": "structured",
+      "quality": {
+        "tier": "registry_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Registry metadata aligned with package/runtime version 0.1.4."
+      },
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible."
     },
     {
