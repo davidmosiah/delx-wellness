@@ -106,15 +106,50 @@
     {
       "id": "oura",
       "name": "Oura Ring",
-      "status": "planned",
-      "repository": null,
-      "package": null,
-      "transport": [],
-      "auth_model": "OAuth 2.0 planned",
-      "local_storage": null,
-      "signals": ["sleep", "readiness", "activity"],
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/ouramcp",
+      "package": "oura-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "OAuth 2.0, user-provided Oura app credentials for local connector",
+      "local_storage": "~/.oura-mcp/",
+      "signals": ["personal_info", "readiness", "sleep", "activity", "heart_rate", "spo2", "workouts", "daily_summary", "weekly_summary"],
       "privacy_default": "structured",
-      "notes": "Planned connector. Production approval and scopes need validation."
+      "quality": {
+        "tier": "agent_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Local package includes Oura OAuth, v2 usercollection tools, summaries, agent manifest and Hermes setup checks."
+      },
+      "notes": "Uses official Oura Cloud API v2. Heart-rate and SpO2 availability depends on ring generation, membership and granted scopes."
+    },
+    {
+      "id": "withings",
+      "name": "Withings",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/withingsmcp",
+      "package": "withings-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "OAuth 2.0 with Withings signed token requests, user-provided app credentials for local connector",
+      "local_storage": "~/.withings-mcp/",
+      "signals": ["body_measures", "daily_activity", "workouts", "sleep", "heart_records", "daily_summary", "weekly_summary"],
+      "privacy_default": "structured",
+      "quality": {
+        "tier": "agent_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Local package includes signed Withings OAuth token flow, Public API tools, summaries, agent manifest and Hermes setup checks."
+      },
+      "notes": "Uses Withings Public API. Device coverage and available fields vary by user devices, scopes and API-plan access."
     },
     {
       "id": "apple-health",

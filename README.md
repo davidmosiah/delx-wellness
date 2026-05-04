@@ -40,10 +40,10 @@ The local connector repositories can be open source. Hosted infrastructure may s
 | Strava | Active local connector | `agent_ready` | [`strava-mcp`](https://github.com/davidmosiah/strava-mcp) | `strava-mcp-unofficial` |
 | Fitbit | Active local connector | `agent_ready` | [`fitbitmcp`](https://github.com/davidmosiah/fitbitmcp) | `fitbit-mcp-unofficial` |
 | Garmin Connect | Active local connector | `agent_ready` | [`garminmcp`](https://github.com/davidmosiah/garminmcp) | `garmin-mcp-unofficial` |
-| Oura Ring | Planned | `experimental` | TBD | TBD |
+| Oura Ring | Active local connector | `agent_ready` | [`ouramcp`](https://github.com/davidmosiah/ouramcp) | `oura-mcp-unofficial` |
+| Withings | Active local connector | `agent_ready` | [`withingsmcp`](https://github.com/davidmosiah/withingsmcp) | `withings-mcp-unofficial` |
 | Apple Health | Planned | `experimental` | TBD | TBD |
 | Eight Sleep | Planned | `experimental` | TBD | TBD |
-| Withings | Planned | `experimental` | TBD | TBD |
 
 See [`registry.json`](registry.json) for the machine-readable connector catalog.
 

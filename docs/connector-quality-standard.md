@@ -47,6 +47,8 @@ Use for connectors designed for delegated installation and agent operations.
 | Strava | `agent_ready` | Includes agent manifest and GPS privacy posture. |
 | Fitbit | `agent_ready` | Includes agent manifest and scope diagnostics. |
 | Garmin | `agent_ready` | Includes agent manifest and local credential boundary for unofficial Garmin Connect mode. |
+| Oura | `agent_ready` | Includes Oura OAuth, v2 usercollection tools, summaries and Hermes manifest checks. |
+| Withings | `agent_ready` | Includes signed Withings token flow, Public API tools, summaries and Hermes manifest checks. |
 
 ## Release Checklist
 

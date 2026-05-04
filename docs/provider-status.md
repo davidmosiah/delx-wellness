@@ -8,10 +8,10 @@ This matrix tracks public connector readiness. It is intentionally conservative:
 | Strava | Active | `agent_ready` | Activities, streams, routes, training context | App-level rate limits and GPS privacy. |
 | Fitbit | Active | `agent_ready` | Activity, sleep, heart rate, HRV, nutrition | Google/Fitbit platform migration and scope changes. |
 | Garmin Connect | Active | `agent_ready` | Sleep, HRV, Body Battery, stress, activities | Unofficial personal auth can drift; official Garmin Health is partner-gated. |
-| Oura Ring | Planned | `experimental` | Sleep, readiness, activity | Production OAuth review and scope validation. |
+| Oura Ring | Active | `agent_ready` | Sleep, readiness, activity, heart context | Membership/device/scopes affect data availability. |
+| Withings | Active | `agent_ready` | Weight, activity, workouts, cardiovascular and sleep signals | OAuth signed-token flow, API-plan and device coverage variance. |
 | Apple Health | Planned | `experimental` | Local device health aggregate | Native bridge and local consent design. |
 | Eight Sleep | Planned | `experimental` | Sleep environment and recovery context | API availability and account access model. |
-| Withings | Planned | `experimental` | Weight, cardiovascular and sleep signals | OAuth scope and device coverage variance. |
 
 ## Release Principle
 
