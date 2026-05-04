@@ -174,6 +174,30 @@
         "notes": "Local package reads Apple Health export.xml/export.zip, includes summaries, agent manifest, CLI setup and Hermes setup checks."
       },
       "notes": "Reads user-provided Apple Health exports only. Does not provide live HealthKit or iCloud Health access."
+    },
+    {
+      "id": "polar",
+      "name": "Polar",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/polarmcp",
+      "package": "polar-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "OAuth 2.0, user-provided Polar AccessLink client credentials for local connector",
+      "local_storage": "~/.polar-mcp/",
+      "signals": ["account", "devices", "activity", "calendar", "sleep", "sleep_wake_vectors", "nightly_recharge", "continuous_samples", "ppi_samples", "temperature_measurements", "skin_contacts", "training_sessions", "training_targets", "tests", "sports", "sport_profiles", "subscriptions", "routes", "daily_summary", "weekly_summary"],
+      "privacy_default": "structured",
+      "quality": {
+        "tier": "agent_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Local package includes Polar AccessLink Dynamic API v4 OAuth, summaries, agent manifest, GPS-aware route handling and Hermes setup checks."
+      },
+      "notes": "Uses official Polar AccessLink Dynamic API v4. Data availability depends on user device, granted scopes (16 fine-grained read scopes), and Polar account features."
     }
   ]
 }

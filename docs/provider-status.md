@@ -11,6 +11,7 @@ This matrix tracks public connector readiness. It is intentionally conservative:
 | Oura Ring | Active | `agent_ready` | Sleep, readiness, activity, heart context | Membership/device/scopes affect data availability. |
 | Withings | Active | `agent_ready` | Weight, activity, workouts, cardiovascular and sleep signals | OAuth signed-token flow, API-plan and device coverage variance. |
 | Apple Health | Active | `agent_ready` | Local export activity, sleep, heart, HRV and workouts | Export-file workflow is manual; live HealthKit bridge remains separate native work. |
+| Polar | Active | `agent_ready` | Nightly Recharge, activity, sleep, training sessions, PPI/HRV and routes | Fine-grained AccessLink scopes and device/account feature variance. |
 | Eight Sleep | Planned | `experimental` | Sleep environment and recovery context | API availability and account access model. |
 
 ## Release Principle

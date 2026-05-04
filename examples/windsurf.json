@@ -27,6 +27,10 @@
     "apple_health": {
       "command": "npx",
       "args": ["-y", "apple-health-mcp-unofficial"]
+    },
+    "polar": {
+      "command": "npx",
+      "args": ["-y", "polar-mcp-unofficial"]
     }
   }
 }
