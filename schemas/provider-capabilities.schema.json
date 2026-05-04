@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/davidmosiah/delx-wellness/schemas/provider-capabilities.schema.json",
+  "title": "Delx Wellness Connector Registry",
+  "type": "object",
+  "required": ["project", "description", "connectors"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "project": { "type": "string" },
+    "description": { "type": "string" },
+    "hosted_hub_boundary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "connectors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "status", "signals", "privacy_default"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "status": { "enum": ["active", "planned", "paused", "deprecated"] },
+          "repository": { "type": ["string", "null"], "format": "uri" },
+          "package": { "type": ["string", "null"] },
+          "transport": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "auth_model": { "type": ["string", "null"] },
+          "local_storage": { "type": ["string", "null"] },
+          "signals": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "privacy_default": { "type": "string" },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

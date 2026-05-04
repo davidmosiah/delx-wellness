@@ -1,0 +1,89 @@
+{
+  "$schema": "./schemas/provider-capabilities.schema.json",
+  "project": "delx-wellness",
+  "description": "Public registry for Delx wellness MCP connectors.",
+  "hosted_hub_boundary": {
+    "included_here": false,
+    "note": "This repository catalogs local-first connectors and shared schemas. Hosted token vault, billing, API keys, rate limiting, and private user data are intentionally out of scope."
+  },
+  "connectors": [
+    {
+      "id": "whoop",
+      "name": "WHOOP",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/whoop-mcp",
+      "package": "whoop-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "OAuth 2.0, user-provided WHOOP app credentials for local connector",
+      "local_storage": "~/.whoop-mcp/",
+      "signals": ["profile", "body", "recovery", "cycles", "sleep", "workouts", "daily_summary", "weekly_summary"],
+      "privacy_default": "structured",
+      "notes": "Uses official WHOOP OAuth API. Raw means upstream API JSON, not continuous sensor streams."
+    },
+    {
+      "id": "strava",
+      "name": "Strava",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/strava-mcp",
+      "package": "strava-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "OAuth 2.0, user-provided Strava app credentials for local connector",
+      "local_storage": "~/.strava-mcp/",
+      "signals": ["athlete", "activities", "activity_details", "activity_streams", "routes", "clubs", "gear", "daily_summary", "weekly_summary"],
+      "privacy_default": "structured",
+      "notes": "GPS/map data is privacy-sensitive and should require explicit user intent."
+    },
+    {
+      "id": "fitbit",
+      "name": "Fitbit",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/fitbitmcp",
+      "package": "fitbit-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "OAuth 2.0, user-provided Fitbit app credentials for local connector",
+      "local_storage": "~/.fitbit-mcp/",
+      "signals": ["profile", "devices", "activity", "sleep", "heart_rate", "hrv", "spo2", "breathing_rate", "weight", "nutrition", "daily_summary", "weekly_summary"],
+      "privacy_default": "structured",
+      "notes": "Fitbit platform migration risk should be tracked before hosted production launch."
+    },
+    {
+      "id": "garmin",
+      "name": "Garmin Connect",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/garminmcp",
+      "package": "garmin-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "Unofficial local Garmin Connect personal token mode",
+      "local_storage": "~/.garmin-mcp/",
+      "signals": ["profile", "devices", "daily_movement", "sleep", "heart_rate", "hrv", "stress", "body_battery", "training_readiness", "activities", "body_logs", "daily_summary", "weekly_summary"],
+      "privacy_default": "structured",
+      "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible."
+    },
+    {
+      "id": "oura",
+      "name": "Oura Ring",
+      "status": "planned",
+      "repository": null,
+      "package": null,
+      "transport": [],
+      "auth_model": "OAuth 2.0 planned",
+      "local_storage": null,
+      "signals": ["sleep", "readiness", "activity"],
+      "privacy_default": "structured",
+      "notes": "Planned connector. Production approval and scopes need validation."
+    },
+    {
+      "id": "apple-health",
+      "name": "Apple Health",
+      "status": "planned",
+      "repository": null,
+      "package": null,
+      "transport": [],
+      "auth_model": "Local device export or native app bridge planned",
+      "local_storage": null,
+      "signals": ["activity", "sleep", "heart_rate", "workouts"],
+      "privacy_default": "summary",
+      "notes": "Requires careful local-device privacy design."
+    }
+  ]
+}

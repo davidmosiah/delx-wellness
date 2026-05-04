@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/davidmosiah/delx-wellness/schemas/wellness-snapshot.schema.json",
+  "title": "WellnessSnapshot",
+  "type": "object",
+  "required": ["date", "providers"],
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "providers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "recovery": { "$ref": "#/$defs/metricGroup" },
+    "sleep": { "$ref": "#/$defs/metricGroup" },
+    "strain": { "$ref": "#/$defs/metricGroup" },
+    "activity": { "$ref": "#/$defs/metricGroup" },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "metricGroup": {
+      "type": "object",
+      "properties": {
+        "score": { "type": ["number", "null"] },
+        "band": { "type": ["string", "null"] },
+        "source": { "type": ["string", "null"] },
+        "confidence": { "enum": ["low", "medium", "high", null] }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

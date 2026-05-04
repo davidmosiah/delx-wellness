@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "whoop": {
+      "command": "npx",
+      "args": ["-y", "whoop-mcp-unofficial"]
+    },
+    "strava": {
+      "command": "npx",
+      "args": ["-y", "strava-mcp-unofficial"]
+    },
+    "fitbit": {
+      "command": "npx",
+      "args": ["-y", "fitbit-mcp-unofficial"]
+    },
+    "garmin": {
+      "command": "npx",
+      "args": ["-y", "garmin-mcp-unofficial"]
+    }
+  }
+}
