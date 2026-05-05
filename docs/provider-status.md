@@ -21,4 +21,4 @@ Keep each provider connector independently useful. The registry should help user
 
 ## Future Backlog Notes
 
-- The old `nutrition-catalog-mcp` research thread is now represented by Nourish MCP. It is public at `davidmosiah/wellness-nourish`, published as `wellness-nourish@0.1.0`, uses USDA FoodData Central and Open Food Facts data directly, and no GPL OpenNutriTracker app code was copied.
+- The old `nutrition-catalog-mcp` research thread is now represented by Nourish MCP. It is public at `davidmosiah/wellness-nourish`, published as `wellness-nourish@0.1.1`, uses USDA FoodData Central and Open Food Facts data directly, includes Hermes Telegram personal setup, and no GPL OpenNutriTracker app code was copied.

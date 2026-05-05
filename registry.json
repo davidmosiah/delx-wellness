@@ -219,7 +219,7 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.1.0 with USDA-first data, optional Open Food Facts barcode lookup, local-first intake/hydration/goals, CSV export, usage guide resource and multi-client examples."
+        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.1.1 with USDA-first data, optional Open Food Facts barcode lookup, local-first intake/hydration/goals, CSV export, usage guide resource, multi-client examples, and Hermes Telegram personal setup."
       },
       "notes": "Not medical advice. Open Food Facts data carries ODbL attribution/share-alike metadata; no GPL app code is copied."
     }
