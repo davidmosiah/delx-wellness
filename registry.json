@@ -208,7 +208,7 @@
       "transport": ["stdio", "streamable_http"],
       "auth_model": "Optional USDA FoodData Central API key; Open Food Facts read-only public data; local intake logs stored under ~/.wellness-nourish/",
       "local_storage": "~/.wellness-nourish/",
-      "signals": ["food_search", "barcode_lookup", "barcode_image_decode", "barcode_photo_lookup", "meal_estimate", "meal_photo_estimate", "intake_log", "hydration", "nutrition_goals", "daily_summary", "weekly_summary", "csv_export", "calories", "macros"],
+      "signals": ["food_search", "pt_br_meal_estimate", "barcode_lookup", "barcode_image_decode", "barcode_photo_lookup", "meal_estimate", "meal_photo_estimate", "intake_log", "hydration", "nutrition_goals", "daily_summary", "weekly_summary", "csv_export", "calories", "macros"],
       "privacy_default": "local_summary",
       "quality": {
         "tier": "agent_ready",
@@ -219,7 +219,7 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.1.2 with USDA-first data, optional Open Food Facts barcode lookup, local barcode image decoding, vision-assisted meal photo estimates, local-first intake/hydration/goals, CSV export, usage guide resource, multi-client examples, and Hermes Telegram personal setup."
+        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.1.4 with USDA-first data, optional Open Food Facts barcode lookup, local barcode image decoding, pt-BR Brazilian meal aliases, vision-assisted meal photo estimates, USER_ACTION_REQUIRED guards, Open Food Facts cached fallback, local-first intake/hydration/goals, CSV export, usage guide resource, multi-client examples, and Hermes Telegram personal setup with a secrets-sourcing wrapper."
       },
       "notes": "Not medical advice. Open Food Facts data carries ODbL attribution/share-alike metadata. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied."
     }
