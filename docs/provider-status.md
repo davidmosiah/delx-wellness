@@ -13,7 +13,7 @@ This matrix tracks public connector readiness. It is intentionally conservative:
 | Apple Health | Active | `agent_ready` | Local export activity, sleep, heart, HRV and workouts | Export-file workflow is manual; live HealthKit bridge remains separate native work. |
 | Polar | Active | `agent_ready` | Nightly Recharge, activity, sleep, training sessions, PPI/HRV and routes | Fine-grained AccessLink scopes and device/account feature variance. |
 | Eight Sleep | Planned | `experimental` | Sleep environment and recovery context | API availability and account access model. |
-| Nourish MCP | Active | `agent_ready` | Food lookup, barcode lookup, calories, macros, meal estimates, local intake, hydration, goals, CSV export and summaries | USDA FoodData Central is primary; Open Food Facts barcode results carry ODbL attribution and share-alike metadata. |
+| Nourish MCP | Active | `agent_ready` | Food lookup, barcode lookup, barcode photo lookup, meal photo estimates, calories, macros, local intake, hydration, goals, CSV export and summaries | USDA FoodData Central is primary; Open Food Facts barcode results carry ODbL attribution/share-alike metadata; meal photos require agent vision context and confirmation before logging. |
 
 ## Release Principle
 
@@ -21,4 +21,4 @@ Keep each provider connector independently useful. The registry should help user
 
 ## Future Backlog Notes
 
-- The old `nutrition-catalog-mcp` research thread is now represented by Nourish MCP. It is public at `davidmosiah/wellness-nourish`, published as `wellness-nourish@0.1.1`, uses USDA FoodData Central and Open Food Facts data directly, includes Hermes Telegram personal setup, and no GPL OpenNutriTracker app code was copied.
+- The old `nutrition-catalog-mcp` research thread is now represented by Nourish MCP. It is public at `davidmosiah/wellness-nourish`, published as `wellness-nourish@0.1.2`, uses USDA FoodData Central and Open Food Facts data directly, includes local barcode image decoding, vision-assisted meal photo estimates, Hermes Telegram personal setup, and no GPL OpenNutriTracker app code was copied.
