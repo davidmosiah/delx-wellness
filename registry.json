@@ -208,7 +208,7 @@
       "transport": ["stdio", "streamable_http"],
       "auth_model": "Optional USDA FoodData Central API key; Open Food Facts read-only public data; local intake logs stored under ~/.wellness-nourish/",
       "local_storage": "~/.wellness-nourish/",
-      "signals": ["food_search", "barcode_lookup", "meal_estimate", "intake_log", "daily_summary", "weekly_summary", "calories", "macros"],
+      "signals": ["food_search", "barcode_lookup", "meal_estimate", "intake_log", "hydration", "nutrition_goals", "daily_summary", "weekly_summary", "csv_export", "calories", "macros"],
       "privacy_default": "local_summary",
       "quality": {
         "tier": "agent_ready",
@@ -219,7 +219,7 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "Agent-ready nutrition MCP with USDA-first data, optional Open Food Facts barcode lookup, local-first intake store and attribution-aware outputs."
+        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.1.0 with USDA-first data, optional Open Food Facts barcode lookup, local-first intake/hydration/goals, CSV export, usage guide resource and multi-client examples."
       },
       "notes": "Not medical advice. Open Food Facts data carries ODbL attribution/share-alike metadata; no GPL app code is copied."
     }
