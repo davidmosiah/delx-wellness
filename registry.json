@@ -198,6 +198,30 @@
         "notes": "Local package includes Polar AccessLink Dynamic API v4 OAuth, summaries, agent manifest, GPS-aware route handling and Hermes setup checks."
       },
       "notes": "Uses official Polar AccessLink Dynamic API v4. Data availability depends on user device, granted scopes (16 fine-grained read scopes), and Polar account features."
+    },
+    {
+      "id": "nourish",
+      "name": "Nourish MCP",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/wellness-nourish",
+      "package": "wellness-nourish",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "Optional USDA FoodData Central API key; Open Food Facts read-only public data; local intake logs stored under ~/.wellness-nourish/",
+      "local_storage": "~/.wellness-nourish/",
+      "signals": ["food_search", "barcode_lookup", "meal_estimate", "intake_log", "daily_summary", "weekly_summary", "calories", "macros"],
+      "privacy_default": "local_summary",
+      "quality": {
+        "tier": "agent_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Agent-ready nutrition MCP with USDA-first data, optional Open Food Facts barcode lookup, local-first intake store and attribution-aware outputs."
+      },
+      "notes": "Not medical advice. Open Food Facts data carries ODbL attribution/share-alike metadata; no GPL app code is copied."
     }
   ]
 }
