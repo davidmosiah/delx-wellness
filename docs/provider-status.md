@@ -10,7 +10,7 @@ This matrix tracks public connector readiness. It is intentionally conservative:
 | Garmin Connect | Active | `agent_ready` | Sleep, HRV, Body Battery, stress, activities | Unofficial personal auth can drift; official Garmin Health is partner-gated. |
 | Oura Ring | Active | `agent_ready` | Sleep, readiness, activity, heart context | Membership/device/scopes affect data availability. |
 | Withings | Active | `agent_ready` | Weight, activity, workouts, cardiovascular and sleep signals | OAuth signed-token flow, API-plan and device coverage variance. |
-| Apple Health | Active | `agent_ready` | Local export activity, sleep, heart, HRV and workouts | Export-file workflow is manual; live HealthKit bridge remains separate native work. |
+| Apple Health | Active | `agent_ready` | Local export activity, sleep, heart, HRV, respiratory rate, oxygen saturation, body mass, workouts and data inventory | Managed auto-import can find/copy transferred exports locally; live HealthKit bridge remains separate native work. |
 | Polar | Active | `agent_ready` | Nightly Recharge, activity, sleep, training sessions, PPI/HRV and routes | Fine-grained AccessLink scopes and device/account feature variance. |
 | Eight Sleep | Planned | `experimental` | Sleep environment and recovery context | API availability and account access model. |
 | Nourish MCP | Active | `agent_ready` | Food lookup, pt-BR meal estimates, barcode lookup, barcode photo lookup, meal photo estimates, calories, macros, local intake, hydration, goals, CSV export and summaries | USDA FoodData Central is primary; Open Food Facts barcode results carry ODbL attribution/share-alike metadata; missing confirmation returns `USER_ACTION_REQUIRED`, not a server failure. |

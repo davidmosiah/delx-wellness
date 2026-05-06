@@ -1,0 +1,14 @@
+# Delx Wellness
+Agent-first open-source project by David Mosiah.
+Repository: https://github.com/davidmosiah/delx-wellness
+Homepage: https://github.com/davidmosiah/delx-wellness
+Primary command: https://github.com/davidmosiah/delx-wellness
+MCP command: see README
+Agent surfaces:
+- See README for install and runtime surfaces.
+- Start with the connection/status or agent-manifest surface when available.
+- Prefer JSON responses for automation and markdown responses for human summaries.
+Safety:
+- Do not paste credentials, OAuth tokens, refresh tokens, API keys or raw private exports into chat.
+- Keep local config and generated data out of git.
+- Treat outputs as operational context, not medical, legal or financial advice unless the repo explicitly supports that domain.

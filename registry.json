@@ -174,7 +174,7 @@
       "transport": ["stdio", "streamable_http"],
       "auth_model": "Local Apple Health export file path; native HealthKit bridge planned separately",
       "local_storage": "~/.apple-health-mcp/",
-      "signals": ["activity", "sleep", "heart_rate", "hrv", "workouts", "daily_summary", "weekly_summary"],
+      "signals": ["activity", "sleep", "heart_rate", "hrv", "respiratory_rate", "oxygen_saturation", "body_mass", "workouts", "data_inventory", "daily_summary", "weekly_summary"],
       "privacy_default": "summary",
       "quality": {
         "tier": "agent_ready",
@@ -185,9 +185,9 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "Local package reads Apple Health export.xml/export.zip, includes summaries, agent manifest, CLI setup and Hermes setup checks."
+        "notes": "Local package reads Apple Health export.xml/export.zip, includes data inventory, summary-mode privacy enforcement, timezone-aware summaries, managed auto-import, agent manifest, CLI setup and Hermes setup checks."
       },
-      "notes": "Reads user-provided Apple Health exports only. Does not provide live HealthKit or iCloud Health access."
+      "notes": "Reads user-provided Apple Health exports only. Managed auto-import can find/copy local exports after transfer, but this does not provide live HealthKit or iCloud Health access."
     },
     {
       "id": "polar",

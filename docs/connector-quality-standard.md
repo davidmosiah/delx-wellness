@@ -49,7 +49,7 @@ Use for connectors designed for delegated installation and agent operations.
 | Garmin | `agent_ready` | Includes agent manifest and local credential boundary for unofficial Garmin Connect mode. |
 | Oura | `agent_ready` | Includes Oura OAuth, v2 usercollection tools, summaries and Hermes manifest checks. |
 | Withings | `agent_ready` | Includes signed Withings token flow, Public API tools, summaries and Hermes manifest checks. |
-| Apple Health | `agent_ready` | Includes local export parser, summaries, privacy audit, agent manifest and Hermes setup checks. |
+| Apple Health | `agent_ready` | Includes local export parser, data inventory, summary-mode privacy enforcement, managed auto-import, summaries, privacy audit, agent manifest and Hermes setup checks. |
 
 ## Release Checklist
 
