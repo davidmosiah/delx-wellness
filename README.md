@@ -12,6 +12,18 @@ This repository is documentation and metadata. It does **not** contain the hoste
 
 > If this registry helps you build an agent workflow, please star it. Stars make the connector map easier for other AI builders to discover and help Delx keep shipping local-first wellness infrastructure.
 
+## Agent profiles
+
+| Runtime | Profile | Repository | Package | Page |
+|---|---|---|---|---|
+| Hermes | Delx Wellness for Hermes | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | `delx-wellness-hermes` | [wellness.delx.ai/hermes](https://wellness.delx.ai/hermes) |
+
+Start with dry-run:
+
+```bash
+npx -y delx-wellness-hermes install --profile delx-wellness --dry-run
+```
+
 ## Connectors
 
 | Provider | Connector | Tier | Repository | Package |

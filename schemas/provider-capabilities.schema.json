@@ -12,6 +12,29 @@
       "type": "object",
       "additionalProperties": true
     },
+    "agent_profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "status", "repository", "package", "signals", "privacy_default"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "status": { "enum": ["active", "planned", "paused", "deprecated"] },
+          "repository": { "type": "string", "format": "uri" },
+          "package": { "type": "string" },
+          "page": { "type": "string", "format": "uri" },
+          "runtime": { "type": "string" },
+          "signals": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "privacy_default": { "type": "string" },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
     "connectors": {
       "type": "array",
       "items": {
