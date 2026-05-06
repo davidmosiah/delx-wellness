@@ -219,7 +219,7 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.1.6 with USDA-first data, optional Open Food Facts barcode lookup, local barcode image decoding, honest pt-BR unresolved/confidence handling, Brazilian meal aliases, vision-assisted meal photo estimates, USER_ACTION_REQUIRED guards, Open Food Facts cached fallback, local-first intake/hydration/goals, CSV export, usage guide resource, multi-client examples, and Hermes Telegram personal setup with a secrets-sourcing wrapper."
+        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.1.7 with USDA-first data, optional Open Food Facts barcode lookup, local barcode image decoding, honest pt-BR unresolved/confidence handling, Brazilian meal aliases and kitchen units, provider food_ref auto-resolution, quantity update rescaling, vision-assisted meal photo estimates, USER_ACTION_REQUIRED guards, Open Food Facts cached fallback, local-first intake/hydration/goals, CSV export, usage guide resource, multi-client examples, and Hermes Telegram personal setup with a secrets-sourcing wrapper."
       },
       "notes": "Not medical advice. Open Food Facts data carries ODbL attribution/share-alike metadata. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied."
     }
