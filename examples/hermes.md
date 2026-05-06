@@ -1,5 +1,23 @@
 # Hermes Example
 
+## Recommended profile setup
+
+If you want the full wellness agent experience, use the Delx Wellness Hermes profile pack. It creates a dedicated `delx-wellness` profile with onboarding, SOUL.md, wellness skills, MCP presets and setup checks.
+
+```bash
+npx -y delx-wellness-hermes setup
+hermes -p delx-wellness
+```
+
+If the profile does not have a model/provider yet:
+
+```bash
+hermes -p delx-wellness model
+npx -y delx-wellness-hermes doctor --profile delx-wellness --run-hermes --test-chat
+```
+
+## Manual connector setup
+
 Install each connector independently, then reload or test MCP from Hermes.
 
 ```bash

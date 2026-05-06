@@ -18,11 +18,14 @@ This repository is documentation and metadata. It does **not** contain the hoste
 |---|---|---|---|---|
 | Hermes | Delx Wellness for Hermes | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | `delx-wellness-hermes` | [wellness.delx.ai/hermes](https://wellness.delx.ai/hermes) |
 
-Start with dry-run:
+The fastest path is the Hermes profile pack. It creates one local-first wellness profile with onboarding, skills, MCP presets and setup checks:
 
 ```bash
-npx -y delx-wellness-hermes install --profile delx-wellness --dry-run
+npx -y delx-wellness-hermes setup
+hermes -p delx-wellness
 ```
+
+Use the individual connector setup commands below only when you want to wire providers one by one into another MCP client.
 
 ## Connectors
 

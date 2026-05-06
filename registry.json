@@ -15,9 +15,9 @@
       "package": "delx-wellness-hermes",
       "page": "https://wellness.delx.ai/hermes",
       "runtime": "Hermes",
-      "signals": ["onboarding", "SOUL.md", "AGENTS.md", "Hermes skills", "mcp_servers presets", "doctor checks", "Telegram-first wellness UX"],
+      "signals": ["guided setup", "onboarding", "SOUL.md", "AGENTS.md", "Hermes skills", "mcp_servers presets", "doctor checks", "chat readiness checks", "Telegram-first wellness UX"],
       "privacy_default": "public_safe_profile_pack",
-      "notes": "Installs a delx-wellness Hermes profile with onboarding, wellness skills, MCP connector presets and doctor checks. Contains no user tokens, OAuth credentials, hosted hub API keys, Telegram secrets or private Exercise Catalog data."
+      "notes": "Installs a delx-wellness Hermes profile with one setup command, onboarding, wellness skills, MCP connector presets, Nourish smoke testing, MCP readiness checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, Telegram secrets or private Exercise Catalog data."
     }
   ],
   "connectors": [
