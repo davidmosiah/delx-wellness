@@ -1,0 +1,71 @@
+# Delx Open Source Growth Playbook
+
+This playbook keeps the open-source work aligned with the larger Delx brand: local-first, agent-first infrastructure that real users can install today and that AI teams can trust tomorrow.
+
+## Positioning
+
+Delx is the agent-first protocol layer for real-world context. The public repos should make three ideas obvious within five seconds:
+
+- Agents can connect to real user data through clean MCP contracts.
+- The user stays in control: tokens and private data stay local unless the chosen client is explicitly asked to use context.
+- The work is reusable infrastructure, not a one-off demo.
+
+## Metrics That Matter
+
+- GitHub stars: public proof and discovery signal.
+- GitHub forks: serious builder intent.
+- GitHub unique cloners: install intent, even before stars show up.
+- npm downloads: usage and repeat install signal.
+- Site visits and connector page engagement: top-of-funnel interest for future consulting and Delx product work.
+
+Run the local collector:
+
+```bash
+node scripts/collect-growth-metrics.mjs
+```
+
+Outputs are local only:
+
+- `.growth-metrics/snapshots/YYYY-MM-DD.json`
+- `.growth-metrics/latest.md`
+
+## Daily Loop
+
+1. Run the growth collector.
+2. Check the highest-cloned repos with low stars.
+3. Improve one friction point: install command, quickstart, screenshot, example prompt, or troubleshooting note.
+4. Post one useful update on X, Reddit, or a targeted builder community.
+5. Ask clearly for stars only after showing practical value.
+
+## Weekly Loop
+
+1. Compare `.growth-metrics/latest.md` with the previous snapshot.
+2. Promote the top two repos by install intent.
+3. Submit or refresh packages in MCP directories.
+4. Add one real-world agent example per vertical: Body, Reach, Coordination.
+5. Review profile README, pinned repos, repo descriptions, topics and homepage URLs.
+
+## Repo Conversion Checklist
+
+- Strong one-line value proposition above the fold.
+- npm version, npm downloads, GitHub stars, license and agent-ready badges.
+- Clear install command that works with `npm exec`, `npx`, `pipx`, or direct MCP client config.
+- `agent_manifest`, `connection_status` and `privacy_audit` surfaces documented.
+- `mcpName` in package metadata where the package is published to npm.
+- `server.json` in the package when the repo exposes an MCP server.
+- Canonical website or repo URL in GitHub About metadata.
+- A direct star ask that explains why stars help other builders discover the project.
+
+## Content Angles
+
+- "Your AI agent should understand your recovery before recommending training."
+- "Local-first MCP connectors for wearables: no hosted token vault, no hidden data copy."
+- "Agent-first is not a landing page. It is installable metadata, readiness tools, privacy audits and dry-run defaults."
+- "Downloads are usage. Stars are distribution. We need both."
+
+## Boundaries
+
+- Do not submit private repos or private APIs to public directories.
+- Do not expose credentials, local snapshots or user health data in public docs.
+- Do not scrape partner data or private services for growth content.
+- Do not overclaim medical, health, financial or advertising outcomes.

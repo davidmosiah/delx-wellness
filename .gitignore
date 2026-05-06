@@ -20,3 +20,5 @@ strava_tokens.json
 health_exports/
 private/
 secrets/
+
+.growth-metrics/

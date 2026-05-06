@@ -3,10 +3,14 @@
 [![Status](https://img.shields.io/badge/status-active-0ea5a3?style=flat-square)](https://github.com/davidmosiah/delx-wellness)
 [![MCP Compatible](https://img.shields.io/badge/MCP-compatible-7C3AED?style=flat-square)](https://modelcontextprotocol.io)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
+[![GitHub stars](https://img.shields.io/github/stars/davidmosiah/delx-wellness?style=flat-square&logo=github)](https://github.com/davidmosiah/delx-wellness/stargazers)
+[![Website](https://img.shields.io/badge/site-wellness.delx.ai-0ea5a3?style=flat-square)](https://wellness.delx.ai)
 
-**The public registry of local-first wellness MCP connectors.** One stable map for agents and developers to discover, install and combine wearable connectors that bring user-authorized health data into AI agents.
+**The public registry of local-first wellness MCP connectors.** One stable map for agents and developers to discover, install and combine wearable, activity and nutrition connectors that bring user-authorized health context into AI agents.
 
 This repository is documentation and metadata. It does **not** contain the hosted hub, token vault, billing system, private user data or provider approval workflows. Each connector lives in its own repo and stays installable on its own.
+
+> If this registry helps you build an agent workflow, please star it. Stars make the connector map easier for other AI builders to discover and help Delx keep shipping local-first wellness infrastructure.
 
 ## Connectors
 
@@ -20,9 +24,11 @@ This repository is documentation and metadata. It does **not** contain the hoste
 | Withings | Active | `agent_ready` | [`withingsmcp`](https://github.com/davidmosiah/withingsmcp) | `withings-mcp-unofficial` |
 | Apple Health | Active | `agent_ready` | [`apple-health-mcp`](https://github.com/davidmosiah/apple-health-mcp) | `apple-health-mcp-unofficial` |
 | Polar | Active | `agent_ready` | [`polarmcp`](https://github.com/davidmosiah/polarmcp) | `polar-mcp-unofficial` |
-| Eight Sleep | Planned | — | TBD | TBD |
+| Nourish | Active | `agent_ready` | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | `wellness-nourish` |
 
 Tiers are defined in [`docs/connector-quality-standard.md`](docs/connector-quality-standard.md). Machine-readable catalog: [`registry.json`](registry.json).
+
+Growth and discovery ops live in [`docs/growth-playbook.md`](docs/growth-playbook.md) and [`docs/mcp-directory-submissions.md`](docs/mcp-directory-submissions.md).
 
 ## Which connector should I install first?
 
@@ -35,6 +41,7 @@ Have Apple Health export? → add apple-health-mcp      (local export activity, 
 Have a Polar device?    → start with polarmcp         (Nightly Recharge, training load, PPI/HRV)
 Run/ride/swim a lot?    → add strava-mcp              (activities, streams, routes)
 Just bought a Fitbit?   → add fitbitmcp               (activity, sleep, heart, HRV)
+Tracking food?          → add wellness-nourish        (food search, barcode lookup, intake, hydration)
 Multiple devices?       → install several. Each is independent and read-only.
 ```
 
@@ -53,6 +60,7 @@ npx -y oura-mcp-unofficial    setup && npx -y oura-mcp-unofficial    auth
 npx -y withings-mcp-unofficial setup && npx -y withings-mcp-unofficial auth
 npx -y apple-health-mcp-unofficial setup --export-path /path/to/export.zip
 npx -y polar-mcp-unofficial setup && npx -y polar-mcp-unofficial auth
+npx -y wellness-nourish manifest
 ```
 
 Then drop one of the [client config examples](examples/) into your AI client.
@@ -73,7 +81,7 @@ The local connector layer can be open source. The hosted commercial layer may st
 
 | Layer | Public now | Notes |
 |---|:---:|---|
-| Local provider connectors | ✓ | Individual MCP servers (WHOOP, Strava, Fitbit, Garmin, Oura, Withings, Apple Health export, Polar) |
+| Local provider connectors | ✓ | Individual MCP servers (WHOOP, Strava, Fitbit, Garmin, Oura, Withings, Apple Health export, Polar, Nourish) |
 | Connector registry and docs | ✓ | This repository |
 | Normalized schemas | ✓ | Stable shared shapes for cross-provider tools |
 | Hosted hub API | — | May remain private during product-market fit |
