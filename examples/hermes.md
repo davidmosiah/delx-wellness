@@ -28,6 +28,7 @@ npx -y garmin-mcp-unofficial setup --client hermes
 npx -y oura-mcp-unofficial setup --client hermes --no-auth
 npx -y withings-mcp-unofficial setup --client hermes --no-auth
 npx -y apple-health-mcp-unofficial setup --client hermes --export-path /path/to/export.zip
+npx -y samsung-health-mcp-unofficial setup --client hermes --export-path /path/to/SamsungHealth
 npx -y polar-mcp-unofficial setup --client hermes --no-auth
 ```
 
@@ -55,6 +56,7 @@ npx -y garmin-mcp-unofficial  doctor --client hermes
 npx -y oura-mcp-unofficial    doctor --client hermes
 npx -y withings-mcp-unofficial doctor --client hermes
 npx -y apple-health-mcp-unofficial doctor --client hermes
+npx -y samsung-health-mcp-unofficial doctor --client hermes
 npx -y polar-mcp-unofficial doctor --client hermes
 ```
 
@@ -68,6 +70,7 @@ hermes mcp test garmin
 hermes mcp test oura
 hermes mcp test withings
 hermes mcp test apple_health
+hermes mcp test samsung_health
 hermes mcp test polar
 ```
 
@@ -83,10 +86,11 @@ garmin_connection_status
 oura_connection_status
 withings_connection_status
 apple_health_connection_status
+samsung_health_connection_status
 polar_connection_status
 ```
 
-Then drill into the workflow tools (`*_daily_summary`, `*_weekly_summary`) and the prefixed prompts (`whoop_daily_performance_coach`, `strava_daily_training_director`, `garmin_daily_checkin`, `fitbit_daily_checkin`, `oura_daily_checkin`, `withings_daily_checkin`, `apple_health_daily_review`, `polar_daily_checkin`).
+Then drill into the workflow tools (`*_daily_summary`, `*_weekly_summary`) and the prefixed prompts (`whoop_daily_performance_coach`, `strava_daily_training_director`, `garmin_daily_checkin`, `fitbit_daily_checkin`, `oura_daily_checkin`, `withings_daily_checkin`, `apple_health_daily_review`, `samsung_health_daily_review`, `polar_daily_checkin`).
 
 ## Safety reminders
 

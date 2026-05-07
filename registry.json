@@ -190,6 +190,30 @@
       "notes": "Reads user-provided Apple Health exports only. Managed auto-import can find/copy local exports after transfer, but this does not provide live HealthKit or iCloud Health access."
     },
     {
+      "id": "samsung-health",
+      "name": "Samsung Health",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/samsung-health-mcp",
+      "package": "samsung-health-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "Local Samsung Health personal-data CSV/ZIP export path; Android Health Connect or Samsung Health Data SDK bridge planned separately",
+      "local_storage": "~/.samsung-health-mcp/",
+      "signals": ["activity", "steps", "sleep", "heart_rate", "resting_heart_rate", "hrv", "respiratory_rate", "oxygen_saturation", "body_weight", "body_fat", "workouts", "data_inventory", "daily_summary", "weekly_summary"],
+      "privacy_default": "summary",
+      "quality": {
+        "tier": "agent_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Local package reads Samsung Health personal-data CSV folders, single CSV files, or ZIP files; includes data inventory, summary-mode privacy enforcement, timezone-aware summaries, managed auto-import, agent manifest, CLI setup and Hermes setup checks."
+      },
+      "notes": "Reads user-provided Samsung Health exports only. Samsung Health Data SDK and Health Connect are Android/app bridge paths, not live OAuth access for this Node connector."
+    },
+    {
       "id": "polar",
       "name": "Polar",
       "status": "active",

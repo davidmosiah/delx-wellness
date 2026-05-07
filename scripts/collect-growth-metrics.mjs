@@ -19,6 +19,7 @@ const repos = [
   { name: "ouramcp", vertical: "body", role: "connector", npm: "oura-mcp-unofficial" },
   { name: "withingsmcp", vertical: "body", role: "connector", npm: "withings-mcp-unofficial" },
   { name: "apple-health-mcp", vertical: "body", role: "connector", npm: "apple-health-mcp-unofficial" },
+  { name: "samsung-health-mcp", vertical: "body", role: "connector", npm: "samsung-health-mcp-unofficial" },
   { name: "polarmcp", vertical: "body", role: "connector", npm: "polar-mcp-unofficial" },
   { name: "wellness-nourish", vertical: "body", role: "nutrition", npm: "wellness-nourish" },
   { name: "openclaw-delx-plugin", vertical: "coordination", role: "plugin" },

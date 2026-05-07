@@ -28,6 +28,10 @@
       "command": "npx",
       "args": ["-y", "apple-health-mcp-unofficial"]
     },
+    "samsung_health": {
+      "command": "npx",
+      "args": ["-y", "samsung-health-mcp-unofficial"]
+    },
     "polar": {
       "command": "npx",
       "args": ["-y", "polar-mcp-unofficial"]

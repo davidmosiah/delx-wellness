@@ -10,6 +10,7 @@ Use this checklist to keep public MCP discovery consistent across directories, p
 | Garmin MCP | `garmin-mcp-unofficial` | `https://wellness.delx.ai/connectors/garmin` | `io.github.davidmosiah/garminmcp` |
 | Strava MCP | `strava-mcp-unofficial` | `https://wellness.delx.ai/connectors/strava` | `io.github.davidmosiah/strava-mcp` |
 | Apple Health MCP | `apple-health-mcp-unofficial` | `https://wellness.delx.ai/connectors/apple-health` | `io.github.davidmosiah/apple-health-mcp` |
+| Samsung Health MCP | `samsung-health-mcp-unofficial` | `https://wellness.delx.ai/connectors/samsung-health` | `io.github.davidmosiah/samsung-health-mcp` |
 | Wellness Nourish MCP | `wellness-nourish` | `https://wellness.delx.ai/nutrition` | `io.github.davidmosiah/wellness-nourish` |
 
 ## Submit Next

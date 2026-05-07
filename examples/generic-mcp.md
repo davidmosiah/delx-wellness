@@ -33,6 +33,10 @@ Most MCP clients (ChatGPT Desktop with MCP enabled, OpenClaw, custom MCP hosts, 
       "command": "npx",
       "args": ["-y", "apple-health-mcp-unofficial"]
     },
+    "samsung_health": {
+      "command": "npx",
+      "args": ["-y", "samsung-health-mcp-unofficial"]
+    },
     "polar": {
       "command": "npx",
       "args": ["-y", "polar-mcp-unofficial"]
@@ -53,6 +57,7 @@ npx -y garmin-mcp-unofficial  setup && npx -y garmin-mcp-unofficial  auth --inst
 npx -y oura-mcp-unofficial    setup && npx -y oura-mcp-unofficial    auth
 npx -y withings-mcp-unofficial setup && npx -y withings-mcp-unofficial auth
 npx -y apple-health-mcp-unofficial setup --export-path /path/to/export.zip
+npx -y samsung-health-mcp-unofficial setup --export-path /path/to/SamsungHealth
 npx -y polar-mcp-unofficial setup && npx -y polar-mcp-unofficial auth
 ```
 
@@ -70,13 +75,14 @@ garmin_connection_status
 oura_connection_status
 withings_connection_status
 apple_health_connection_status
+samsung_health_connection_status
 polar_connection_status
 ```
 
 Then use the workflow tools:
 
 ```text
-whoop_daily_summary, strava_daily_summary, fitbit_daily_summary, garmin_daily_summary, oura_daily_summary, withings_daily_summary, apple_health_daily_summary, polar_daily_summary
+whoop_daily_summary, strava_daily_summary, fitbit_daily_summary, garmin_daily_summary, oura_daily_summary, withings_daily_summary, apple_health_daily_summary, samsung_health_daily_summary, polar_daily_summary
 ```
 
 ## Safety reminders

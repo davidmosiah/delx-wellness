@@ -50,6 +50,7 @@ Use for connectors designed for delegated installation and agent operations.
 | Oura | `agent_ready` | Includes Oura OAuth, v2 usercollection tools, summaries and Hermes manifest checks. |
 | Withings | `agent_ready` | Includes signed Withings token flow, Public API tools, summaries and Hermes manifest checks. |
 | Apple Health | `agent_ready` | Includes local export parser, data inventory, summary-mode privacy enforcement, managed auto-import, summaries, privacy audit, agent manifest and Hermes setup checks. |
+| Samsung Health | `agent_ready` | Includes local CSV/ZIP export parser, data inventory, summary-mode privacy enforcement, managed auto-import, summaries, privacy audit, agent manifest and Hermes setup checks. |
 
 ## Release Checklist
 
