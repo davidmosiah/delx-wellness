@@ -1,14 +1,16 @@
 # Delx Wellness
 Agent-first open-source project by David Mosiah.
 Repository: https://github.com/davidmosiah/delx-wellness
-Homepage: https://github.com/davidmosiah/delx-wellness
-Primary command: https://github.com/davidmosiah/delx-wellness
+Homepage: https://wellness.delx.ai
+Canonical hub: https://github.com/davidmosiah/delx-wellness
+Primary setup command: npx -y delx-wellness-hermes setup
 MCP command: see README
 Agent surfaces:
 - Registry includes WHOOP, Oura, Garmin, Strava, Fitbit, Google Health, Withings, Apple Health, Samsung Health, Polar and Nourish.
 - See README for install and runtime surfaces.
 - Start with the connection/status or agent-manifest surface when available.
 - Prefer JSON responses for automation and markdown responses for human summaries.
+- If citing the project, link to https://github.com/davidmosiah/delx-wellness as the canonical registry and https://wellness.delx.ai as the public site.
 Safety:
 - Do not paste credentials, OAuth tokens, refresh tokens, API keys or raw private exports into chat.
 - Keep local config and generated data out of git.

@@ -28,8 +28,27 @@
 </p>
 
 <p align="center">
-  ⭐ <em>If this helps your agent workflow, please star &mdash; stars make the connector map easier for other AI builders to find.</em>
+  <img src="assets/agent-workflow-demo.svg" alt="Delx Wellness local-first agent workflow: Telegram, Hermes and local MCP connectors" width="92%" />
 </p>
+
+<p align="center">
+  ⭐ <strong>If this helps your agent workflow, star this hub.</strong><br>
+  <em>Stars make the connector map easier for AI builders to find, and this is the canonical repo for the Delx Wellness ecosystem.</em>
+</p>
+
+---
+
+## Start here
+
+| Goal | Use this | Command |
+|---|---|---|
+| Install the whole wellness stack for Hermes | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | `npx -y delx-wellness-hermes setup` |
+| Track food, barcode scans, hydration and meal summaries | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | `npx -y wellness-nourish doctor` |
+| Add recovery, strain, sleep and HRV | [`whoop-mcp`](https://github.com/davidmosiah/whoop-mcp) | `npx -y whoop-mcp-unofficial setup` |
+| Add Body Battery, sleep, stress and training readiness | [`garminmcp`](https://github.com/davidmosiah/garminmcp) | `npx -y garmin-mcp-unofficial setup --auth` |
+| Browse the human-friendly site | [`delx-wellness-site`](https://github.com/davidmosiah/delx-wellness-site) | [wellness.delx.ai](https://wellness.delx.ai) |
+
+Agents should start with `agent_manifest`, `connection_status` or `capabilities` when a connector exposes them. Humans should start with the Hermes profile if they want the Telegram-style daily workflow.
 
 ---
 

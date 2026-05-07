@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Delx Wellness agent workflow demo</title>
+  <desc id="desc">A local AI agent reads wearable and nutrition MCP connectors, keeps tokens local, and returns a useful Telegram wellness answer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.52" stop-color="#10253a"/>
+      <stop offset="1" stop-color="#063a36"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#020617" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" rx="0" fill="url(#bg)"/>
+  <circle cx="1070" cy="95" r="160" fill="#10b981" opacity="0.12"/>
+  <circle cx="140" cy="530" r="190" fill="#7c3aed" opacity="0.10"/>
+
+  <text x="72" y="92" fill="#e2e8f0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="44" font-weight="800">Delx Wellness</text>
+  <text x="72" y="132" fill="#99f6e4" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" font-weight="600">Local-first MCP connectors for AI wellness agents</text>
+
+  <g filter="url(#shadow)">
+    <rect x="72" y="185" width="300" height="305" rx="22" fill="#111827" stroke="#1f2937"/>
+    <text x="102" y="230" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">Telegram user</text>
+    <rect x="102" y="260" width="220" height="58" rx="16" fill="#0f766e"/>
+    <text x="124" y="295" fill="#ecfeff" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">What should I eat now?</text>
+    <rect x="102" y="342" width="235" height="86" rx="16" fill="#0b1220" stroke="#334155"/>
+    <text x="124" y="376" fill="#e2e8f0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">Recovering, training later,</text>
+    <text x="124" y="404" fill="#e2e8f0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">already ate breakfast.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="450" y="160" width="300" height="355" rx="22" fill="#0b1220" stroke="#14b8a6"/>
+    <text x="490" y="208" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800">Hermes agent</text>
+    <text x="490" y="242" fill="#99f6e4" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">chooses tools, asks consent</text>
+    <rect x="490" y="282" width="220" height="48" rx="14" fill="#134e4a"/>
+    <text x="514" y="313" fill="#f0fdfa" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">daily wellness context</text>
+    <rect x="490" y="348" width="220" height="48" rx="14" fill="#134e4a"/>
+    <text x="514" y="379" fill="#f0fdfa" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">nutrition coach</text>
+    <rect x="490" y="414" width="220" height="48" rx="14" fill="#134e4a"/>
+    <text x="514" y="445" fill="#f0fdfa" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17">local confirmation</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="830" y="185" width="300" height="305" rx="22" fill="#111827" stroke="#1f2937"/>
+    <text x="860" y="230" fill="#f8fafc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">Local MCPs</text>
+    <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">
+      <rect x="860" y="264" width="100" height="38" rx="12" fill="#dc2626"/><text x="883" y="289" fill="#fff">WHOOP</text>
+      <rect x="975" y="264" width="112" height="38" rx="12" fill="#0284c7"/><text x="996" y="289" fill="#fff">Garmin</text>
+      <rect x="860" y="318" width="100" height="38" rx="12" fill="#059669"/><text x="879" y="343" fill="#fff">Nourish</text>
+      <rect x="975" y="318" width="112" height="38" rx="12" fill="#475569"/><text x="1009" y="343" fill="#fff">Oura</text>
+      <rect x="860" y="372" width="100" height="38" rx="12" fill="#f97316"/><text x="881" y="397" fill="#fff">Strava</text>
+      <rect x="975" y="372" width="112" height="38" rx="12" fill="#0ea5e9"/><text x="1004" y="397" fill="#fff">Fitbit</text>
+    </g>
+    <text x="860" y="452" fill="#99f6e4" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">Tokens and logs stay local.</text>
+  </g>
+
+  <path d="M380 336 C420 336 420 336 450 336" stroke="#5eead4" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M750 336 C790 336 790 336 820 336" stroke="#5eead4" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M820 356 L842 336 L820 316" stroke="#5eead4" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M440 356 L462 336 L440 316" stroke="#5eead4" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="72" y="542" width="1056" height="54" rx="18" fill="#020617" opacity="0.72" stroke="#164e63"/>
+  <text x="102" y="576" fill="#e2e8f0" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Ask in chat. Hermes reads local context. You get a useful answer without uploading private health data to Delx.</text>
+</svg>
