@@ -18,13 +18,13 @@
 
 <p align="center">
   <a href="https://github.com/davidmosiah/delx-wellness/stargazers"><img src="https://img.shields.io/github/stars/davidmosiah/delx-wellness?style=for-the-badge&labelColor=0F172A&logo=github&color=FBBF24" alt="GitHub stars" /></a>
-  <a href="https://www.npmjs.com/~davidmosiah"><img src="https://img.shields.io/badge/NPM-10_packages-CB3837?style=for-the-badge&labelColor=0F172A&logo=npm&logoColor=white" alt="npm packages" /></a>
+  <a href="https://www.npmjs.com/~davidmosiah"><img src="https://img.shields.io/badge/NPM-11_packages-CB3837?style=for-the-badge&labelColor=0F172A&logo=npm&logoColor=white" alt="npm packages" /></a>
   <a href="https://github.com/davidmosiah/delx-wellness/discussions"><img src="https://img.shields.io/badge/DISCUSS-GitHub_Discussions-181717?style=for-the-badge&labelColor=0F172A&logo=github&logoColor=white" alt="Discussions" /></a>
   <a href="https://x.com/delx369"><img src="https://img.shields.io/badge/X-@delx369-000000?style=for-the-badge&labelColor=0F172A&logo=x&logoColor=white" alt="X / Twitter" /></a>
 </p>
 
 <p align="center">
-  <strong>What is this?</strong> A registry of <strong>10 open-source MCP servers</strong> that turn your wearables and nutrition logs into context any AI agent can read &mdash; with zero data ever leaving your machine.
+  <strong>What is this?</strong> A registry of <strong>11 open-source MCP servers</strong> that turn your wearables and nutrition logs into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@
 
 ---
 
-## ✨ The 10 connectors
+## ✨ The 11 connectors
 
 <table>
   <tr>
@@ -125,6 +125,15 @@
   </tr>
   <tr>
     <td width="33%" align="center" valign="top">
+      <a href="https://github.com/davidmosiah/google-health-mcp">
+        <img src="https://img.shields.io/badge/Google_Health-4285F4?style=for-the-badge&labelColor=0F172A&logo=google&logoColor=white" alt="Google Health" /><br>
+      </a>
+      <code>google-health-mcp-unofficial</code><br>
+      <sub>Google Health API v4 · Fitbit migration · Rollups</sub><br><br>
+      <a href="https://github.com/davidmosiah/google-health-mcp"><img src="https://img.shields.io/github/stars/davidmosiah/google-health-mcp?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
+      <a href="https://www.npmjs.com/package/google-health-mcp-unofficial"><img src="https://img.shields.io/npm/dm/google-health-mcp-unofficial?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
+    </td>
+    <td width="33%" align="center" valign="top">
       <a href="https://github.com/davidmosiah/wellness-nourish">
         <img src="https://img.shields.io/badge/Nourish-10B981?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="Nourish" /><br>
       </a>
@@ -134,17 +143,16 @@
       <a href="https://www.npmjs.com/package/wellness-nourish"><img src="https://img.shields.io/npm/dm/wellness-nourish?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
     </td>
     <td width="33%" align="center" valign="top"></td>
-    <td width="33%" align="center" valign="top"></td>
   </tr>
 </table>
 
-> Each connector is a standalone npm package. Install one or all ten &mdash; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health and Samsung Health all reporting sleep, etc.).
+> Each connector is a standalone npm package. Install one or all eleven &mdash; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health, Samsung Health and Google Health all reporting sleep, etc.).
 
 ---
 
 ## 🚀 Quick Start &mdash; one command for the whole stack
 
-The fastest path is the **Hermes profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 10 connectors:
+The fastest path is the **Hermes profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 11 connectors:
 
 ```bash
 npx -y delx-wellness-hermes setup
@@ -153,7 +161,7 @@ hermes -p delx-wellness
 
 That's it. The setup wizard walks you through choosing which providers to wire up, runs a smoke test against the local Nourish connector (no OAuth required), and prints the next commands for model setup and per-provider auth.
 
-> 📦 [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) is the agent profile pack &mdash; it preconfigures everything below in a dedicated Hermes profile so you don't have to glue 10 MCP configs by hand.
+> 📦 [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) is the agent profile pack &mdash; it preconfigures everything below in a dedicated Hermes profile so you don't have to glue 11 MCP configs by hand.
 
 | Runtime | Profile pack | Repository | Page |
 |---|---|---|---|
@@ -171,6 +179,7 @@ npx -y oura-mcp-unofficial          setup && npx -y oura-mcp-unofficial         
 npx -y garmin-mcp-unofficial        setup && npx -y garmin-mcp-unofficial        auth --install-helper
 npx -y strava-mcp-unofficial        setup && npx -y strava-mcp-unofficial        auth
 npx -y fitbit-mcp-unofficial        setup && npx -y fitbit-mcp-unofficial        auth
+npx -y google-health-mcp-unofficial setup && npx -y google-health-mcp-unofficial auth
 npx -y withings-mcp-unofficial      setup && npx -y withings-mcp-unofficial      auth
 npx -y apple-health-mcp-unofficial  setup --export-path /path/to/export.zip
 npx -y samsung-health-mcp-unofficial setup --export-path /path/to/SamsungHealth
@@ -210,6 +219,7 @@ flowchart LR
       G[garmin-mcp]
       S[strava-mcp]
       F[fitbit-mcp]
+      GH[google-health-mcp]
       Wi[withings-mcp]
       AH[apple-health-mcp]
       SH[samsung-health-mcp]
@@ -224,6 +234,7 @@ flowchart LR
       GARMIN[Garmin Connect]
       STRAVA[Strava API]
       FITBIT[Fitbit API]
+      GOOGLE[Google Health API]
       WITHINGS[Withings API]
       AHE[Apple Health export.zip]
       SHE[Samsung Health CSV export]
@@ -232,12 +243,13 @@ flowchart LR
     end
 
     A --> MCP
-    MCP --> W & O & G & S & F & Wi & AH & SH & P & N
+    MCP --> W & O & G & S & F & GH & Wi & AH & SH & P & N
     W --> WHOOP
     O --> OURA
     G --> GARMIN
     S --> STRAVA
     F --> FITBIT
+    GH --> GOOGLE
     Wi --> WITHINGS
     AH --> AHE
     SH --> SHE
@@ -249,7 +261,7 @@ flowchart LR
     style P2 fill:#0F172A,stroke:#7C3AED,color:#fff
 ```
 
-<p align="center"><em>One agent &rarr; one local profile &rarr; ten connectors &rarr; your provider data. <strong>Tokens never leave your machine.</strong></em></p>
+<p align="center"><em>One agent &rarr; one local profile &rarr; eleven connectors &rarr; your provider data. <strong>Tokens never leave your machine.</strong></em></p>
 
 ---
 
@@ -265,6 +277,7 @@ Have a Galaxy Watch export? → add samsung-health-mcp     (local CSV activity, 
 Have a Polar device?       → start with polarmcp         (Nightly Recharge, training load, PPI/HRV)
 Run/ride/swim a lot?       → add strava-mcp              (activities, streams, routes)
 Just bought a Fitbit?      → add fitbitmcp               (activity, sleep, heart, HRV)
+Migrating Fitbit to Google?→ add google-health-mcp       (Google Health API v4, rollups, reconciled streams)
 Tracking food?             → add wellness-nourish        (food search, barcode lookup, intake, hydration)
 Multiple devices?          → install several. Each is independent and read-only.
 ```
@@ -293,7 +306,7 @@ The hosted commercial layer (token vault, billing, rate limits) **may stay priva
 
 | Layer | Public | Notes |
 |---|:---:|---|
-| Local provider connectors | ✅ | 10 individual MCP servers (WHOOP · Strava · Fitbit · Garmin · Oura · Withings · Apple Health · Samsung Health · Polar · Nourish) |
+| Local provider connectors | ✅ | 11 individual MCP servers (WHOOP · Strava · Fitbit · Google Health · Garmin · Oura · Withings · Apple Health · Samsung Health · Polar · Nourish) |
 | Hermes profile pack | ✅ | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) &mdash; one-command setup |
 | Connector registry & docs | ✅ | This repository |
 | Normalized schemas | ✅ | Stable shared shapes for cross-provider tools &mdash; [`schemas/`](schemas/) |
@@ -347,4 +360,4 @@ Follow on X: [@delx369](https://x.com/delx369) · Site: [wellness.delx.ai](https
 
 MIT &mdash; see [LICENSE](LICENSE).
 
-<sub>Delx Wellness is an open-source project. WHOOP, Oura, Garmin, Strava, Fitbit, Withings, Apple Health, Samsung Health and Polar are trademarks of their respective owners. None of the connectors in this registry are affiliated with, endorsed by, or supported by those companies.</sub>
+<sub>Delx Wellness is an open-source project. WHOOP, Oura, Garmin, Strava, Fitbit, Google Health, Withings, Apple Health, Samsung Health and Polar are trademarks of their respective owners. None of the connectors in this registry are affiliated with, endorsed by, or supported by those companies.</sub>

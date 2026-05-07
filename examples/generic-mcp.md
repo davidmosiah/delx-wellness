@@ -17,6 +17,10 @@ Most MCP clients (ChatGPT Desktop with MCP enabled, OpenClaw, custom MCP hosts, 
       "command": "npx",
       "args": ["-y", "fitbit-mcp-unofficial"]
     },
+    "google_health": {
+      "command": "npx",
+      "args": ["-y", "google-health-mcp-unofficial"]
+    },
     "garmin": {
       "command": "npx",
       "args": ["-y", "garmin-mcp-unofficial"]
@@ -53,6 +57,7 @@ Each connector wraps its own OAuth (or, for Garmin, a local helper) and stores t
 npx -y whoop-mcp-unofficial   setup && npx -y whoop-mcp-unofficial   auth
 npx -y strava-mcp-unofficial  setup && npx -y strava-mcp-unofficial  auth
 npx -y fitbit-mcp-unofficial  setup && npx -y fitbit-mcp-unofficial  auth
+npx -y google-health-mcp-unofficial setup && npx -y google-health-mcp-unofficial auth
 npx -y garmin-mcp-unofficial  setup && npx -y garmin-mcp-unofficial  auth --install-helper
 npx -y oura-mcp-unofficial    setup && npx -y oura-mcp-unofficial    auth
 npx -y withings-mcp-unofficial setup && npx -y withings-mcp-unofficial auth
@@ -71,6 +76,7 @@ After installing, ask your agent to verify each connector:
 whoop_connection_status
 strava_connection_status
 fitbit_connection_status
+google_health_connection_status
 garmin_connection_status
 oura_connection_status
 withings_connection_status
@@ -82,7 +88,7 @@ polar_connection_status
 Then use the workflow tools:
 
 ```text
-whoop_daily_summary, strava_daily_summary, fitbit_daily_summary, garmin_daily_summary, oura_daily_summary, withings_daily_summary, apple_health_daily_summary, samsung_health_daily_summary, polar_daily_summary
+whoop_daily_summary, strava_daily_summary, fitbit_daily_summary, google_health_daily_summary, garmin_daily_summary, oura_daily_summary, withings_daily_summary, apple_health_daily_summary, samsung_health_daily_summary, polar_daily_summary
 ```
 
 ## Safety reminders

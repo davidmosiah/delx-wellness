@@ -24,6 +24,7 @@ Install each connector independently, then reload or test MCP from Hermes.
 npx -y whoop-mcp-unofficial  setup --client hermes
 npx -y strava-mcp-unofficial setup --client hermes --no-auth
 npx -y fitbit-mcp-unofficial setup --client hermes --no-auth
+npx -y google-health-mcp-unofficial setup --client hermes --no-auth
 npx -y garmin-mcp-unofficial setup --client hermes
 npx -y oura-mcp-unofficial setup --client hermes --no-auth
 npx -y withings-mcp-unofficial setup --client hermes --no-auth
@@ -38,6 +39,7 @@ Then connect providers locally:
 npx -y whoop-mcp-unofficial   auth
 npx -y strava-mcp-unofficial  auth
 npx -y fitbit-mcp-unofficial  auth
+npx -y google-health-mcp-unofficial auth
 npx -y garmin-mcp-unofficial  auth --install-helper
 npx -y oura-mcp-unofficial    auth
 npx -y withings-mcp-unofficial auth
@@ -52,6 +54,7 @@ Each `setup --client hermes` writes `~/.hermes/config.yaml` (with a backup), pin
 npx -y whoop-mcp-unofficial   doctor --client hermes
 npx -y strava-mcp-unofficial  doctor --client hermes
 npx -y fitbit-mcp-unofficial  doctor --client hermes
+npx -y google-health-mcp-unofficial doctor --client hermes
 npx -y garmin-mcp-unofficial  doctor --client hermes
 npx -y oura-mcp-unofficial    doctor --client hermes
 npx -y withings-mcp-unofficial doctor --client hermes
@@ -66,6 +69,7 @@ Then in Hermes:
 hermes mcp test whoop
 hermes mcp test strava
 hermes mcp test fitbit
+hermes mcp test google_health
 hermes mcp test garmin
 hermes mcp test oura
 hermes mcp test withings
@@ -82,6 +86,7 @@ After config changes use `/reload-mcp` or the `hermes mcp test <name>` command. 
 whoop_connection_status
 strava_connection_status
 fitbit_connection_status
+google_health_connection_status
 garmin_connection_status
 oura_connection_status
 withings_connection_status
@@ -90,7 +95,7 @@ samsung_health_connection_status
 polar_connection_status
 ```
 
-Then drill into the workflow tools (`*_daily_summary`, `*_weekly_summary`) and the prefixed prompts (`whoop_daily_performance_coach`, `strava_daily_training_director`, `garmin_daily_checkin`, `fitbit_daily_checkin`, `oura_daily_checkin`, `withings_daily_checkin`, `apple_health_daily_review`, `samsung_health_daily_review`, `polar_daily_checkin`).
+Then drill into the workflow tools (`*_daily_summary`, `*_weekly_summary`) and the prefixed prompts (`whoop_daily_performance_coach`, `strava_daily_training_director`, `google_health_daily_checkin`, `garmin_daily_checkin`, `fitbit_daily_checkin`, `oura_daily_checkin`, `withings_daily_checkin`, `apple_health_daily_review`, `samsung_health_daily_review`, `polar_daily_checkin`).
 
 ## Safety reminders
 

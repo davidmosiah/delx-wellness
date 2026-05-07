@@ -12,6 +12,10 @@
       "command": "npx",
       "args": ["-y", "fitbit-mcp-unofficial"]
     },
+    "google_health": {
+      "command": "npx",
+      "args": ["-y", "google-health-mcp-unofficial"]
+    },
     "garmin": {
       "command": "npx",
       "args": ["-y", "garmin-mcp-unofficial"]

@@ -94,6 +94,30 @@
       "notes": "Fitbit platform migration risk should be tracked before hosted production launch."
     },
     {
+      "id": "google-health",
+      "name": "Google Health",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/google-health-mcp",
+      "package": "google-health-mcp-unofficial",
+      "transport": ["stdio", "streamable_http"],
+      "auth_model": "Google OAuth 2.0, user-provided Google Cloud OAuth client for local connector",
+      "local_storage": "~/.google-health-mcp/",
+      "signals": ["identity", "profile", "settings", "steps", "heart_rate", "sleep", "activity", "weight", "nutrition", "data_points", "reconcile", "rollup", "daily_summary", "weekly_summary"],
+      "privacy_default": "structured",
+      "quality": {
+        "tier": "agent_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Local package targets Google Health API v4 beta with Google OAuth, identity/profile/settings, data point list/reconcile/rollup tools, summaries, agent manifest and Hermes setup checks."
+      },
+      "notes": "Uses Google Health API v4. Google recommends waiting until the end of May 2026 for official stable launches because breaking changes may occur during the launch window."
+    },
+    {
       "id": "garmin",
       "name": "Garmin Connect",
       "status": "active",

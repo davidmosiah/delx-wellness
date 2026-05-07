@@ -5,6 +5,7 @@ Homepage: https://github.com/davidmosiah/delx-wellness
 Primary command: https://github.com/davidmosiah/delx-wellness
 MCP command: see README
 Agent surfaces:
+- Registry includes WHOOP, Oura, Garmin, Strava, Fitbit, Google Health, Withings, Apple Health, Samsung Health, Polar and Nourish.
 - See README for install and runtime surfaces.
 - Start with the connection/status or agent-manifest surface when available.
 - Prefer JSON responses for automation and markdown responses for human summaries.
