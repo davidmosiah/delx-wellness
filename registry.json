@@ -282,7 +282,7 @@
       "transport": ["stdio", "streamable_http"],
       "auth_model": "Optional USDA FoodData Central API key; Open Food Facts read-only public data; local intake logs stored under ~/.wellness-nourish/",
       "local_storage": "~/.wellness-nourish/",
-      "signals": ["food_search", "br_local_food_search", "open_food_facts_name_search", "pt_br_meal_estimate", "barcode_lookup", "barcode_image_decode", "barcode_photo_lookup", "meal_estimate", "meal_photo_estimate", "mixed_food_image_routing", "nutrition_label_ocr", "personal_meal_memory", "coach_loop", "next_meal_suggestion", "pre_workout_nutrition", "evening_checkin", "intake_log", "hydration", "nutrition_goals", "daily_summary", "weekly_summary", "csv_export", "calories", "macros"],
+      "signals": ["food_search", "br_local_food_search", "taco_food_search", "open_food_facts_name_search", "pt_br_meal_estimate", "barcode_lookup", "barcode_image_decode", "barcode_photo_lookup", "meal_estimate", "meal_photo_estimate", "mixed_food_image_routing", "nutrition_label_ocr", "personal_meal_memory", "coach_loop", "next_meal_suggestion", "pre_workout_nutrition", "evening_checkin", "intake_log", "bulk_intake_log", "undo_last", "compare_days", "hydration", "nutrition_goals", "daily_summary", "weekly_summary", "carbon_summary", "csv_export", "calories", "macros", "kg_co2e"],
       "privacy_default": "local_summary",
       "quality": {
         "tier": "agent_ready",
@@ -293,9 +293,9 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.2.2 with USDA-first data, optional Open Food Facts barcode and product-name lookup, local Brazilian food search, local barcode image decoding, mixed food-image routing, nutrition label OCR parsing, honest pt-BR unresolved/confidence handling, Brazilian meal aliases and kitchen units, provider food_ref auto-resolution, quantity update rescaling, coach-loop tools with mode-specific focus defaults, personal meal memory, USER_ACTION_REQUIRED guards, Open Food Facts cached fallback, local-first intake/hydration/goals, CSV export, usage guide resource, multi-client examples, and Hermes Telegram personal setup with a secrets-sourcing wrapper."
+        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.2.10 with 38 tools: USDA-first data, TACO/BR local search, carbon-aware summaries, Open Food Facts barcode and product-name lookup, local barcode image decoding, mixed food-image routing, nutrition label OCR parsing, meal-photo estimates, honest pt-BR unresolved/confidence handling, Brazilian meal aliases and kitchen units, provider food_ref auto-resolution, bulk logging, undo_last, compare_days, summary trends, quantity update rescaling, coach-loop tools with mode-specific focus defaults, personal meal memory, USER_ACTION_REQUIRED guards, Open Food Facts cached fallback, local-first intake/hydration/goals, CSV export, usage guide resource, multi-client examples, and Hermes Telegram personal setup."
       },
-      "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied."
+      "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. TACO/UNICAMP values ship as an attributed curated subset while redistribution-license confirmation remains a 1.0 gate. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied."
     }
   ]
 }
