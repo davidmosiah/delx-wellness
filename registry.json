@@ -15,7 +15,17 @@
       "package": "delx-wellness-hermes",
       "page": "https://wellness.delx.ai/hermes",
       "runtime": "Hermes",
-      "signals": ["guided setup", "onboarding", "SOUL.md", "AGENTS.md", "Hermes skills", "mcp_servers presets", "doctor checks", "chat readiness checks", "Telegram-first wellness UX"],
+      "signals": [
+        "guided setup",
+        "onboarding",
+        "SOUL.md",
+        "AGENTS.md",
+        "Hermes skills",
+        "mcp_servers presets",
+        "doctor checks",
+        "chat readiness checks",
+        "Telegram-first wellness UX"
+      ],
       "privacy_default": "public_safe_profile_pack",
       "notes": "Installs a delx-wellness Hermes profile with one setup command, onboarding, wellness skills, MCP connector presets, Nourish smoke testing, MCP readiness checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, Telegram secrets or private Exercise Catalog data."
     },
@@ -27,7 +37,17 @@
       "package": "delx-wellness-openclaw",
       "page": "https://wellness.delx.ai/openclaw",
       "runtime": "OpenClaw",
-      "signals": ["guided setup", "onboarding", "SOUL.md", "AGENTS.md", "OpenClaw skills", "mcp.servers presets", "doctor checks", "chat readiness checks", "local agent workflow"],
+      "signals": [
+        "guided setup",
+        "onboarding",
+        "SOUL.md",
+        "AGENTS.md",
+        "OpenClaw skills",
+        "mcp.servers presets",
+        "doctor checks",
+        "chat readiness checks",
+        "local agent workflow"
+      ],
       "privacy_default": "public_safe_profile_pack",
       "notes": "Installs a delx-wellness OpenClaw profile under ~/.openclaw-delx-wellness with one setup command, onboarding, wellness skills, OpenClaw-native MCP connector presets, config validation, Nourish preset checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, chat-channel secrets or private Exercise Catalog data."
     }
@@ -39,13 +59,26 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/whoop-mcp",
       "package": "whoop-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "OAuth 2.0, user-provided WHOOP app credentials for local connector",
       "local_storage": "~/.whoop-mcp/",
-      "signals": ["profile", "body", "recovery", "cycles", "sleep", "workouts", "daily_summary", "weekly_summary"],
+      "signals": [
+        "profile",
+        "body",
+        "recovery",
+        "cycles",
+        "sleep",
+        "workouts",
+        "daily_summary",
+        "weekly_summary",
+        "wellness_context"
+      ],
       "privacy_default": "structured",
       "quality": {
-        "tier": "agent_ready",
+        "tier": "context_ready",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -53,7 +86,7 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "Runtime, package, registry metadata, agent manifest and Hermes setup flow aligned at version 0.1.4."
+        "notes": "Runtime, package, registry metadata, agent manifest, Hermes setup flow and normalized wellness_context handoff are aligned."
       },
       "notes": "Uses official WHOOP OAuth API. Raw means upstream API JSON, not continuous sensor streams."
     },
@@ -63,13 +96,27 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/strava-mcp",
       "package": "strava-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "OAuth 2.0, user-provided Strava app credentials for local connector",
       "local_storage": "~/.strava-mcp/",
-      "signals": ["athlete", "activities", "activity_details", "activity_streams", "routes", "clubs", "gear", "daily_summary", "weekly_summary"],
+      "signals": [
+        "athlete",
+        "activities",
+        "activity_details",
+        "activity_streams",
+        "routes",
+        "clubs",
+        "gear",
+        "daily_summary",
+        "weekly_summary",
+        "training_context"
+      ],
       "privacy_default": "structured",
       "quality": {
-        "tier": "agent_ready",
+        "tier": "context_ready",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -77,7 +124,7 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "CI runs the full npm test suite including agent readiness and Hermes manifest checks."
+        "notes": "CI runs the full npm test suite including agent readiness, Hermes manifest checks and normalized training_context handoff coverage."
       },
       "notes": "GPS/map data is privacy-sensitive and should require explicit user intent."
     },
@@ -87,10 +134,26 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/fitbitmcp",
       "package": "fitbit-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "OAuth 2.0, user-provided Fitbit app credentials for local connector",
       "local_storage": "~/.fitbit-mcp/",
-      "signals": ["profile", "devices", "activity", "sleep", "heart_rate", "hrv", "spo2", "breathing_rate", "weight", "nutrition", "daily_summary", "weekly_summary"],
+      "signals": [
+        "profile",
+        "devices",
+        "activity",
+        "sleep",
+        "heart_rate",
+        "hrv",
+        "spo2",
+        "breathing_rate",
+        "weight",
+        "nutrition",
+        "daily_summary",
+        "weekly_summary"
+      ],
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
@@ -111,10 +174,28 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/google-health-mcp",
       "package": "google-health-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "Google OAuth 2.0, user-provided Google Cloud OAuth client for local connector",
       "local_storage": "~/.google-health-mcp/",
-      "signals": ["identity", "profile", "settings", "steps", "heart_rate", "sleep", "activity", "weight", "nutrition", "data_points", "reconcile", "rollup", "daily_summary", "weekly_summary"],
+      "signals": [
+        "identity",
+        "profile",
+        "settings",
+        "steps",
+        "heart_rate",
+        "sleep",
+        "activity",
+        "weight",
+        "nutrition",
+        "data_points",
+        "reconcile",
+        "rollup",
+        "daily_summary",
+        "weekly_summary"
+      ],
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
@@ -135,13 +216,31 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/garminmcp",
       "package": "garmin-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "Unofficial local Garmin Connect personal token mode",
       "local_storage": "~/.garmin-mcp/",
-      "signals": ["profile", "devices", "daily_movement", "sleep", "heart_rate", "hrv", "stress", "body_battery", "training_readiness", "activities", "body_logs", "daily_summary", "weekly_summary"],
+      "signals": [
+        "profile",
+        "devices",
+        "daily_movement",
+        "sleep",
+        "heart_rate",
+        "hrv",
+        "stress",
+        "body_battery",
+        "training_readiness",
+        "activities",
+        "body_logs",
+        "daily_summary",
+        "weekly_summary",
+        "wellness_context"
+      ],
       "privacy_default": "structured",
       "quality": {
-        "tier": "agent_ready",
+        "tier": "context_ready",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -149,7 +248,7 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "Registry metadata aligned with package/runtime version 0.1.4."
+        "notes": "Registry metadata aligned with package/runtime version and normalized wellness_context handoff for Exercise Catalog."
       },
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible."
     },
@@ -159,10 +258,23 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/ouramcp",
       "package": "oura-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "OAuth 2.0, user-provided Oura app credentials for local connector",
       "local_storage": "~/.oura-mcp/",
-      "signals": ["personal_info", "readiness", "sleep", "activity", "heart_rate", "spo2", "workouts", "daily_summary", "weekly_summary"],
+      "signals": [
+        "personal_info",
+        "readiness",
+        "sleep",
+        "activity",
+        "heart_rate",
+        "spo2",
+        "workouts",
+        "daily_summary",
+        "weekly_summary"
+      ],
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
@@ -183,10 +295,21 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/withingsmcp",
       "package": "withings-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "OAuth 2.0 with Withings signed token requests, user-provided app credentials for local connector",
       "local_storage": "~/.withings-mcp/",
-      "signals": ["body_measures", "daily_activity", "workouts", "sleep", "heart_records", "daily_summary", "weekly_summary"],
+      "signals": [
+        "body_measures",
+        "daily_activity",
+        "workouts",
+        "sleep",
+        "heart_records",
+        "daily_summary",
+        "weekly_summary"
+      ],
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
@@ -207,10 +330,25 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/apple-health-mcp",
       "package": "apple-health-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "Local Apple Health export file path; native HealthKit bridge planned separately",
       "local_storage": "~/.apple-health-mcp/",
-      "signals": ["activity", "sleep", "heart_rate", "hrv", "respiratory_rate", "oxygen_saturation", "body_mass", "workouts", "data_inventory", "daily_summary", "weekly_summary"],
+      "signals": [
+        "activity",
+        "sleep",
+        "heart_rate",
+        "hrv",
+        "respiratory_rate",
+        "oxygen_saturation",
+        "body_mass",
+        "workouts",
+        "data_inventory",
+        "daily_summary",
+        "weekly_summary"
+      ],
       "privacy_default": "summary",
       "quality": {
         "tier": "agent_ready",
@@ -231,10 +369,28 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/samsung-health-mcp",
       "package": "samsung-health-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "Local Samsung Health personal-data CSV/ZIP export path; Android Health Connect or Samsung Health Data SDK bridge planned separately",
       "local_storage": "~/.samsung-health-mcp/",
-      "signals": ["activity", "steps", "sleep", "heart_rate", "resting_heart_rate", "hrv", "respiratory_rate", "oxygen_saturation", "body_weight", "body_fat", "workouts", "data_inventory", "daily_summary", "weekly_summary"],
+      "signals": [
+        "activity",
+        "steps",
+        "sleep",
+        "heart_rate",
+        "resting_heart_rate",
+        "hrv",
+        "respiratory_rate",
+        "oxygen_saturation",
+        "body_weight",
+        "body_fat",
+        "workouts",
+        "data_inventory",
+        "daily_summary",
+        "weekly_summary"
+      ],
       "privacy_default": "summary",
       "quality": {
         "tier": "agent_ready",
@@ -255,10 +411,34 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/polarmcp",
       "package": "polar-mcp-unofficial",
-      "transport": ["stdio", "streamable_http"],
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
       "auth_model": "OAuth 2.0, user-provided Polar AccessLink client credentials for local connector",
       "local_storage": "~/.polar-mcp/",
-      "signals": ["account", "devices", "activity", "calendar", "sleep", "sleep_wake_vectors", "nightly_recharge", "continuous_samples", "ppi_samples", "temperature_measurements", "skin_contacts", "training_sessions", "training_targets", "tests", "sports", "sport_profiles", "subscriptions", "routes", "daily_summary", "weekly_summary"],
+      "signals": [
+        "account",
+        "devices",
+        "activity",
+        "calendar",
+        "sleep",
+        "sleep_wake_vectors",
+        "nightly_recharge",
+        "continuous_samples",
+        "ppi_samples",
+        "temperature_measurements",
+        "skin_contacts",
+        "training_sessions",
+        "training_targets",
+        "tests",
+        "sports",
+        "sport_profiles",
+        "subscriptions",
+        "routes",
+        "daily_summary",
+        "weekly_summary"
+      ],
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
@@ -274,18 +454,30 @@
       "notes": "Uses official Polar AccessLink Dynamic API v4. Data availability depends on user device, granted scopes (16 fine-grained read scopes), and Polar account features."
     },
     {
-      "id": "nourish",
-      "name": "Nourish MCP",
+      "id": "exercise-catalog",
+      "name": "Exercise Catalog MCP",
       "status": "active",
-      "repository": "https://github.com/davidmosiah/wellness-nourish",
-      "package": "wellness-nourish",
-      "transport": ["stdio", "streamable_http"],
-      "auth_model": "Optional USDA FoodData Central API key; Open Food Facts read-only public data; local intake logs stored under ~/.wellness-nourish/",
-      "local_storage": "~/.wellness-nourish/",
-      "signals": ["food_search", "br_local_food_search", "taco_food_search", "open_food_facts_name_search", "pt_br_meal_estimate", "barcode_lookup", "barcode_image_decode", "barcode_photo_lookup", "meal_estimate", "meal_photo_estimate", "mixed_food_image_routing", "nutrition_label_ocr", "personal_meal_memory", "coach_loop", "next_meal_suggestion", "pre_workout_nutrition", "evening_checkin", "intake_log", "bulk_intake_log", "undo_last", "compare_days", "hydration", "nutrition_goals", "daily_summary", "weekly_summary", "carbon_summary", "csv_export", "calories", "macros", "kg_co2e"],
-      "privacy_default": "local_summary",
+      "repository": "https://github.com/davidmosiah/exercise-catalog-mcp",
+      "package": "exercise-catalog-mcp-private",
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
+      "auth_model": "Private authorized provider adapter; public/open providers must be added through CatalogOrchestrator with source metadata and license boundaries",
+      "local_storage": null,
+      "signals": [
+        "exercise_search",
+        "exercise_details",
+        "workout_templates",
+        "wellness_context_intake",
+        "exercise_context",
+        "source_metadata",
+        "provider_orchestrator",
+        "url_only_media_policy"
+      ],
+      "privacy_default": "private_provider_metadata_only",
       "quality": {
-        "tier": "agent_ready",
+        "tier": "context_ready",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -293,7 +485,66 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
-        "notes": "Agent-ready nutrition MCP published as wellness-nourish@0.2.10 with 38 tools: USDA-first data, TACO/BR local search, carbon-aware summaries, Open Food Facts barcode and product-name lookup, local barcode image decoding, mixed food-image routing, nutrition label OCR parsing, meal-photo estimates, honest pt-BR unresolved/confidence handling, Brazilian meal aliases and kitchen units, provider food_ref auto-resolution, bulk logging, undo_last, compare_days, summary trends, quantity update rescaling, coach-loop tools with mode-specific focus defaults, personal meal memory, USER_ACTION_REQUIRED guards, Open Food Facts cached fallback, local-first intake/hydration/goals, CSV export, usage guide resource, multi-client examples, and Hermes Telegram personal setup."
+        "notes": "Private active catalog MCP with CatalogOrchestrator runtime boundary, per-exercise source metadata, URL-only media policy and context-ready workout recommendation handoff."
+      },
+      "notes": "Private Befit data remains under private_authorized_personal_use. Public/open exercise sources must stay separated by provider metadata, license/attribution policy and fail-closed orchestration."
+    },
+    {
+      "id": "nourish",
+      "name": "Nourish MCP",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/wellness-nourish",
+      "package": "wellness-nourish",
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
+      "auth_model": "Optional USDA FoodData Central API key; Open Food Facts read-only public data; local intake logs stored under ~/.wellness-nourish/",
+      "local_storage": "~/.wellness-nourish/",
+      "signals": [
+        "food_search",
+        "br_local_food_search",
+        "taco_food_search",
+        "open_food_facts_name_search",
+        "pt_br_meal_estimate",
+        "barcode_lookup",
+        "barcode_image_decode",
+        "barcode_photo_lookup",
+        "meal_estimate",
+        "meal_photo_estimate",
+        "mixed_food_image_routing",
+        "nutrition_label_ocr",
+        "personal_meal_memory",
+        "coach_loop",
+        "next_meal_suggestion",
+        "pre_workout_nutrition",
+        "evening_checkin",
+        "intake_log",
+        "bulk_intake_log",
+        "undo_last",
+        "compare_days",
+        "hydration",
+        "nutrition_goals",
+        "daily_summary",
+        "weekly_summary",
+        "carbon_summary",
+        "csv_export",
+        "calories",
+        "macros",
+        "kg_co2e",
+        "nutrition_context"
+      ],
+      "privacy_default": "local_summary",
+      "quality": {
+        "tier": "context_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Agent-ready nutrition MCP with explicit-intent writes, local undo/delete/export, privacy audit, Hermes Telegram setup, and nutrition_context-compatible daily/coach summaries."
       },
       "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. TACO/UNICAMP values ship as an attributed curated subset while redistribution-license confirmation remains a 1.0 gate. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied."
     }
