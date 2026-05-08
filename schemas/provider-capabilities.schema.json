@@ -68,10 +68,17 @@
               "agent_manifest": { "type": "boolean" },
               "http_smoke_test": { "type": "boolean" },
               "registry_backlink": { "type": "boolean" },
+              "context_contract_version": { "type": "string" },
               "notes": { "type": "string" }
             },
             "additionalProperties": false
           },
+          "entrypoint": { "type": ["string", "null"] },
+          "recommended_handoffs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "recommended_handoff": { "type": "string" },
           "notes": { "type": "string" }
         },
         "additionalProperties": false

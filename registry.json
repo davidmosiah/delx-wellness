@@ -86,8 +86,10 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
+        "context_contract_version": "delx-wellness-context/v1",
         "notes": "Runtime, package, registry metadata, agent manifest, Hermes setup flow and normalized wellness_context handoff are aligned."
       },
+      "recommended_handoffs": ["exercise-catalog", "nourish"],
       "notes": "Uses official WHOOP OAuth API. Raw means upstream API JSON, not continuous sensor streams."
     },
     {
@@ -124,8 +126,10 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
+        "context_contract_version": "delx-wellness-context/v1",
         "notes": "CI runs the full npm test suite including agent readiness, Hermes manifest checks and normalized training_context handoff coverage."
       },
+      "recommended_handoffs": ["exercise-catalog", "nourish"],
       "notes": "GPS/map data is privacy-sensitive and should require explicit user intent."
     },
     {
@@ -248,8 +252,10 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
+        "context_contract_version": "delx-wellness-context/v1",
         "notes": "Registry metadata aligned with package/runtime version and normalized wellness_context handoff for Exercise Catalog."
       },
+      "recommended_handoffs": ["exercise-catalog", "nourish"],
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible."
     },
     {
@@ -485,8 +491,10 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
+        "context_contract_version": "delx-wellness-context/v1",
         "notes": "Private active catalog MCP with CatalogOrchestrator runtime boundary, per-exercise source metadata, URL-only media policy and context-ready workout recommendation handoff."
       },
+      "recommended_handoffs": ["nourish"],
       "notes": "Private Befit data remains under private_authorized_personal_use. Public/open exercise sources must stay separated by provider metadata, license/attribution policy and fail-closed orchestration."
     },
     {
@@ -544,6 +552,7 @@
         "agent_manifest": true,
         "http_smoke_test": true,
         "registry_backlink": true,
+        "context_contract_version": "delx-wellness-context/v1",
         "notes": "Agent-ready nutrition MCP with explicit-intent writes, local undo/delete/export, privacy audit, Hermes Telegram setup, and nutrition_context-compatible daily/coach summaries."
       },
       "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. TACO/UNICAMP values ship as an attributed curated subset while redistribution-license confirmation remains a 1.0 gate. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied."

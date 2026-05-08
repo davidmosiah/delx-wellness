@@ -354,6 +354,7 @@ Tiers and trust levels are defined in [`docs/connector-quality-standard.md`](doc
 ## 📚 Reference docs
 
 - [Connector quality standard](docs/connector-quality-standard.md) &mdash; release and trust checklist
+- [Registry validation](docs/registry-validation.md) &mdash; what the `context_ready` CI validator enforces and how to extend it
 - [Provider status](docs/provider-status.md) &mdash; current matrix and risks
 - [Privacy model](docs/privacy-model.md) &mdash; local-first privacy boundary and hosted-hub considerations
 - [Normalized schema](docs/normalized-schema.md) &mdash; shared cross-provider wellness snapshot shape
