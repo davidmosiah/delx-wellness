@@ -18,6 +18,18 @@
       "signals": ["guided setup", "onboarding", "SOUL.md", "AGENTS.md", "Hermes skills", "mcp_servers presets", "doctor checks", "chat readiness checks", "Telegram-first wellness UX"],
       "privacy_default": "public_safe_profile_pack",
       "notes": "Installs a delx-wellness Hermes profile with one setup command, onboarding, wellness skills, MCP connector presets, Nourish smoke testing, MCP readiness checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, Telegram secrets or private Exercise Catalog data."
+    },
+    {
+      "id": "delx-wellness-openclaw",
+      "name": "Delx Wellness for OpenClaw",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/delx-wellness-openclaw",
+      "package": "delx-wellness-openclaw",
+      "page": "https://wellness.delx.ai/openclaw",
+      "runtime": "OpenClaw",
+      "signals": ["guided setup", "onboarding", "SOUL.md", "AGENTS.md", "OpenClaw skills", "mcp.servers presets", "doctor checks", "chat readiness checks", "local agent workflow"],
+      "privacy_default": "public_safe_profile_pack",
+      "notes": "Installs a delx-wellness OpenClaw profile under ~/.openclaw-delx-wellness with one setup command, onboarding, wellness skills, OpenClaw-native MCP connector presets, config validation, Nourish preset checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, chat-channel secrets or private Exercise Catalog data."
     }
   ],
   "connectors": [

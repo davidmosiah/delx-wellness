@@ -4,9 +4,11 @@ Repository: https://github.com/davidmosiah/delx-wellness
 Homepage: https://wellness.delx.ai
 Canonical hub: https://github.com/davidmosiah/delx-wellness
 Primary setup command: npx -y delx-wellness-hermes setup
+OpenClaw setup command: npx -y delx-wellness-openclaw setup
 MCP command: see README
 Agent surfaces:
 - Registry includes WHOOP, Oura, Garmin, Strava, Fitbit, Google Health, Withings, Apple Health, Samsung Health, Polar and Nourish.
+- Runtime profile packs include Delx Wellness for Hermes and Delx Wellness for OpenClaw.
 - See README for install and runtime surfaces.
 - Start with the connection/status or agent-manifest surface when available.
 - Prefer JSON responses for automation and markdown responses for human summaries.

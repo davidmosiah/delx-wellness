@@ -12,6 +12,7 @@
 <p align="center">
   <a href="https://wellness.delx.ai"><img src="https://img.shields.io/badge/SITE-wellness.delx.ai-0EA5A3?style=for-the-badge&labelColor=0F172A" alt="Site" /></a>
   <a href="https://github.com/davidmosiah/delx-wellness-hermes"><img src="https://img.shields.io/badge/HERMES-one--command_setup-10B981?style=for-the-badge&labelColor=0F172A" alt="Hermes profile" /></a>
+  <a href="https://github.com/davidmosiah/delx-wellness-openclaw"><img src="https://img.shields.io/badge/OPENCLAW-one--command_setup-FF6B35?style=for-the-badge&labelColor=0F172A" alt="OpenClaw profile" /></a>
   <a href="https://modelcontextprotocol.io"><img src="https://img.shields.io/badge/BUILT_FOR-MCP-7C3AED?style=for-the-badge&labelColor=0F172A" alt="Built for MCP" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-22C55E?style=for-the-badge&labelColor=0F172A" alt="License MIT" /></a>
 </p>
@@ -43,12 +44,13 @@
 | Goal | Use this | Command |
 |---|---|---|
 | Install the whole wellness stack for Hermes | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | `npx -y delx-wellness-hermes setup` |
+| Install the whole wellness stack for OpenClaw | [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) | `npx -y delx-wellness-openclaw setup` |
 | Track food, barcode scans, hydration and meal summaries | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | `npx -y wellness-nourish doctor` |
 | Add recovery, strain, sleep and HRV | [`whoop-mcp`](https://github.com/davidmosiah/whoop-mcp) | `npx -y whoop-mcp-unofficial setup` |
 | Add Body Battery, sleep, stress and training readiness | [`garminmcp`](https://github.com/davidmosiah/garminmcp) | `npx -y garmin-mcp-unofficial setup --auth` |
 | Browse the human-friendly site | [`delx-wellness-site`](https://github.com/davidmosiah/delx-wellness-site) | [wellness.delx.ai](https://wellness.delx.ai) |
 
-Agents should start with `agent_manifest`, `connection_status` or `capabilities` when a connector exposes them. Humans should start with the Hermes profile if they want the Telegram-style daily workflow.
+Agents should start with `agent_manifest`, `connection_status` or `capabilities` when a connector exposes them. Humans should start with the Hermes or OpenClaw profile packs when they want the whole stack installed as one local-first wellness agent.
 
 ---
 
@@ -171,20 +173,28 @@ Agents should start with `agent_manifest`, `connection_status` or `capabilities`
 
 ## 🚀 Quick Start &mdash; one command for the whole stack
 
-The fastest path is the **Hermes profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 11 connectors:
+The fastest path is a **profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 11 connectors:
 
 ```bash
 npx -y delx-wellness-hermes setup
 hermes -p delx-wellness
 ```
 
-That's it. The setup wizard walks you through choosing which providers to wire up, runs a smoke test against the local Nourish connector (no OAuth required), and prints the next commands for model setup and per-provider auth.
+For OpenClaw:
 
-> 📦 [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) is the agent profile pack &mdash; it preconfigures everything below in a dedicated Hermes profile so you don't have to glue 11 MCP configs by hand.
+```bash
+npx -y delx-wellness-openclaw setup
+openclaw --profile delx-wellness agent --local --message "Open Delx Wellness onboarding"
+```
+
+That's it. The setup wizard walks you through choosing which providers to wire up, checks the local Nourish preset (no OAuth required), and prints the next commands for model setup and per-provider auth.
+
+> 📦 [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) and [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) are the first runtime-native profile packs &mdash; they preconfigure everything below so you don't have to glue 11 MCP configs by hand.
 
 | Runtime | Profile pack | Repository | Page |
 |---|---|---|---|
 | **Hermes** | Delx Wellness for Hermes | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | [wellness.delx.ai/hermes](https://wellness.delx.ai/hermes) |
+| **OpenClaw** | Delx Wellness for OpenClaw | [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) | [wellness.delx.ai/openclaw](https://wellness.delx.ai/openclaw) |
 
 ---
 
@@ -214,7 +224,8 @@ Then drop one of the [client config examples](examples/) into your AI client:
 | **Cursor** | [`examples/cursor.json`](examples/cursor.json) | Drop into Cursor's MCP settings |
 | **Windsurf** | [`examples/windsurf.json`](examples/windsurf.json) | Same shape as Cursor |
 | **Hermes** | [`examples/hermes.md`](examples/hermes.md) | YAML + skill files (or use the profile pack above) |
-| **Generic / ChatGPT / OpenClaw** | [`examples/generic-mcp.md`](examples/generic-mcp.md) | Standard `mcpServers` shape |
+| **OpenClaw** | [`examples/openclaw.md`](examples/openclaw.md) | OpenClaw `mcp.servers` config (or use the profile pack above) |
+| **Generic / ChatGPT** | [`examples/generic-mcp.md`](examples/generic-mcp.md) | Standard `mcpServers` shape |
 
 ---
 
@@ -227,12 +238,13 @@ flowchart LR
       Claude[Claude]
       Cursor[Cursor]
       Hermes[Hermes]
+      OpenClaw[OpenClaw]
       ChatGPT[ChatGPT Desktop]
     end
 
     subgraph L[" Local on your machine "]
       direction TB
-      MCP[delx-wellness-hermes profile<br/>or standalone MCP configs]
+      MCP[profile pack<br/>or standalone MCP configs]
       W[whoop-mcp]
       O[oura-mcp]
       G[garmin-mcp]
