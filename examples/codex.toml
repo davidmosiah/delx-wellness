@@ -1,0 +1,45 @@
+# Paste into ~/.codex/config.toml or add with `codex mcp add`.
+
+[mcp_servers.whoop]
+command = "npx"
+args = ["-y", "whoop-mcp-unofficial"]
+
+[mcp_servers.garmin]
+command = "npx"
+args = ["-y", "garmin-mcp-unofficial"]
+
+[mcp_servers.oura]
+command = "npx"
+args = ["-y", "oura-mcp-unofficial"]
+
+[mcp_servers.strava]
+command = "npx"
+args = ["-y", "strava-mcp-unofficial"]
+
+[mcp_servers.fitbit]
+command = "npx"
+args = ["-y", "fitbit-mcp-unofficial"]
+
+[mcp_servers.google_health]
+command = "npx"
+args = ["-y", "google-health-mcp-unofficial"]
+
+[mcp_servers.withings]
+command = "npx"
+args = ["-y", "withings-mcp-unofficial"]
+
+[mcp_servers.apple_health]
+command = "npx"
+args = ["-y", "apple-health-mcp-unofficial"]
+
+[mcp_servers.samsung_health]
+command = "npx"
+args = ["-y", "samsung-health-mcp-unofficial"]
+
+[mcp_servers.polar]
+command = "npx"
+args = ["-y", "polar-mcp-unofficial"]
+
+[mcp_servers.nourish]
+command = "npx"
+args = ["-y", "wellness-nourish"]

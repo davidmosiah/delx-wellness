@@ -221,6 +221,8 @@ Then drop one of the [client config examples](examples/) into your AI client:
 | Client | Config | Notes |
 |---|---|---|
 | **Claude Desktop** | [`examples/claude-desktop.json`](examples/claude-desktop.json) | Drop into `claude_desktop_config.json` |
+| **Claude Code** | [`examples/claude-code.md`](examples/claude-code.md) | Add with `claude mcp add-json` |
+| **Codex** | [`examples/codex.toml`](examples/codex.toml) | Paste into `~/.codex/config.toml` or add with `codex mcp add` |
 | **Cursor** | [`examples/cursor.json`](examples/cursor.json) | Drop into Cursor's MCP settings |
 | **Windsurf** | [`examples/windsurf.json`](examples/windsurf.json) | Same shape as Cursor |
 | **Hermes** | [`examples/hermes.md`](examples/hermes.md) | YAML + skill files (or use the profile pack above) |

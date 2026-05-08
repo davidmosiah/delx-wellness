@@ -39,6 +39,10 @@
     "polar": {
       "command": "npx",
       "args": ["-y", "polar-mcp-unofficial"]
+    },
+    "nourish": {
+      "command": "npx",
+      "args": ["-y", "wellness-nourish"]
     }
   }
 }
