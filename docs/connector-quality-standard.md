@@ -54,6 +54,7 @@ Use for connectors that can safely exchange normalized context with other wellne
 - Manifest and capabilities explicitly name the normalized handoff tool and recommended downstream tool sequence.
 - Markdown output is Telegram-friendly: concise bullets, no raw JSON dumps, no pipe tables, no secrets, no raw exports.
 - Write tools require explicit user intent and must expose undo/delete/export paths when personal data can be stored.
+- Registry entry declares `quality.context_contract_version` (recommended `"delx-wellness-context/v1"`), keeps an `entrypoint`/`package`/`repository` set, and lists `recommended_handoffs[]` unless the connector is a documented terminal consumer/producer hybrid. These are enforced in CI by [`scripts/validate-context-ready.mjs`](../scripts/validate-context-ready.mjs); see [`docs/registry-validation.md`](./registry-validation.md).
 
 ## Shared Context Contracts
 

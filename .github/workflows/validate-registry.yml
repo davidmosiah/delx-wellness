@@ -1,0 +1,20 @@
+name: Validate Registry
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  context-ready:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Validate registry JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('registry.json','utf8')); console.log('registry ok')"
+      - name: Enforce context_ready quality tier
+        run: node scripts/validate-context-ready.mjs
