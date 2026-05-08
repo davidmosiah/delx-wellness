@@ -4,18 +4,19 @@ This matrix tracks public connector readiness. It is intentionally conservative:
 
 | Provider | Public connector | Quality | Current role | Main risk |
 | --- | --- | --- | --- | --- |
-| WHOOP | Active | `agent_ready` | Recovery, strain, sleep, workouts | OAuth approval and API scope limits for hosted use. |
-| Strava | Active | `agent_ready` | Activities, streams, routes, training context | App-level rate limits and GPS privacy. |
+| WHOOP | Active | `context_ready` | Recovery, strain, sleep, workouts, normalized wellness_context | OAuth approval and API scope limits for hosted use. |
+| Strava | Active | `context_ready` | Activities, streams, routes, normalized training_context | App-level rate limits and GPS privacy. |
 | Fitbit | Active | `agent_ready` | Activity, sleep, heart rate, HRV, nutrition | Google/Fitbit platform migration and scope changes. |
 | Google Health | Active | `agent_ready` | Google Health API v4 identity, profile, settings, data points, reconcile, rollups and summaries | Beta launch window; Google warns breaking changes may occur until end of May 2026. |
-| Garmin Connect | Active | `agent_ready` | Sleep, HRV, Body Battery, stress, activities | Unofficial personal auth can drift; official Garmin Health is partner-gated. |
+| Garmin Connect | Active | `context_ready` | Sleep, HRV, Body Battery, stress, activities, normalized wellness_context | Unofficial personal auth can drift; official Garmin Health is partner-gated. |
 | Oura Ring | Active | `agent_ready` | Sleep, readiness, activity, heart context | Membership/device/scopes affect data availability. |
 | Withings | Active | `agent_ready` | Weight, activity, workouts, cardiovascular and sleep signals | OAuth signed-token flow, API-plan and device coverage variance. |
 | Apple Health | Active | `agent_ready` | Local export activity, sleep, heart, HRV, respiratory rate, oxygen saturation, body mass, workouts and data inventory | Managed auto-import can find/copy transferred exports locally; live HealthKit bridge remains separate native work. |
 | Samsung Health | Active | `agent_ready` | Local CSV/ZIP export activity, steps, sleep, heart, HRV, respiratory rate, oxygen saturation, body metrics, workouts and data inventory | No desktop OAuth/API; live access requires separate Android work through Samsung Health Data SDK or Health Connect. |
 | Polar | Active | `agent_ready` | Nightly Recharge, activity, sleep, training sessions, PPI/HRV and routes | Fine-grained AccessLink scopes and device/account feature variance. |
 | Eight Sleep | Planned | `experimental` | Sleep environment and recovery context | API availability and account access model. |
-| Nourish MCP | Active | `agent_ready` | Food lookup, TACO/BR local search, pt-BR meal estimates, barcode lookup, barcode photo lookup, mixed food-image routing, label OCR parsing, meal photo estimates, personal meal memory, coach loop, calories, macros, carbon summaries, bulk logging, undo, compare-days, local intake, hydration, goals, CSV export and summaries | USDA FoodData Central is primary; Open Food Facts barcode/name results carry ODbL attribution/share-alike metadata; TACO values are an attributed curated subset while redistribution-license confirmation remains a 1.0 gate; coach outputs are heuristic and missing confirmation returns `USER_ACTION_REQUIRED`, not a server failure. |
+| Exercise Catalog MCP | Private active | `context_ready` | Private exercise/workout catalog adapter, wellness_context intake, URL-only media policy, provider orchestrator/source-metadata gate before public expansion | Private provider data must remain separated from open/public sources. |
+| Nourish MCP | Active | `context_ready` | Food lookup, TACO/BR local search, pt-BR meal estimates, barcode lookup, barcode photo lookup, mixed food-image routing, label OCR parsing, meal photo estimates, personal meal memory, coach loop, nutrition_context-compatible summaries, calories, macros, carbon summaries, bulk logging, undo, compare-days, local intake, hydration, goals, CSV export and summaries | USDA FoodData Central is primary; Open Food Facts barcode/name results carry ODbL attribution/share-alike metadata; TACO values are an attributed curated subset while redistribution-license confirmation remains a 1.0 gate; coach outputs are heuristic and missing confirmation returns `USER_ACTION_REQUIRED`, not a server failure. |
 
 ## Release Principle
 
