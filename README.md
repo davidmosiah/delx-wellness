@@ -163,7 +163,9 @@ Agents should start with `agent_manifest`, `connection_status` or `capabilities`
       <a href="https://github.com/davidmosiah/wellness-nourish"><img src="https://img.shields.io/github/stars/davidmosiah/wellness-nourish?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
       <a href="https://www.npmjs.com/package/wellness-nourish"><img src="https://img.shields.io/npm/dm/wellness-nourish?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
     </td>
-    <td width="33%" align="center" valign="top"></td>
+    <td width="33%" align="center" valign="top">
+      <em>More connectors coming &mdash;<br>follow on <a href="https://x.com/delx369">X</a> for releases.</em>
+    </td>
   </tr>
 </table>
 
