@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <strong>What is this?</strong> A registry of <strong>11 open-source MCP servers</strong> that turn your wearables and nutrition logs into context any AI agent can read &mdash; with zero data ever leaving your machine.
+  <strong>What is this?</strong> A registry of <strong>14 open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, and continuous glucose into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
 
 <p align="center">
@@ -54,7 +54,7 @@ Agents should start with `agent_manifest`, `connection_status` or `capabilities`
 
 ---
 
-## ✨ The 11 connectors
+## ✨ The 14 connectors
 
 <table>
   <tr>
@@ -164,18 +164,47 @@ Agents should start with `agent_manifest`, `connection_status` or `capabilities`
       <a href="https://www.npmjs.com/package/wellness-nourish"><img src="https://img.shields.io/npm/dm/wellness-nourish?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
     </td>
     <td width="33%" align="center" valign="top">
+      <a href="https://github.com/davidmosiah/wellness-air">
+        <img src="https://img.shields.io/badge/Air-0EA5A3?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="Wellness Air" /><br>
+      </a>
+      <code>wellness-air</code><br>
+      <sub>AirGradient · AQI · PM2.5 · CO₂ · Room quality</sub><br><br>
+      <a href="https://github.com/davidmosiah/wellness-air"><img src="https://img.shields.io/github/stars/davidmosiah/wellness-air?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
+      <a href="https://www.npmjs.com/package/wellness-air"><img src="https://img.shields.io/npm/dm/wellness-air?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center" valign="top">
+      <a href="https://github.com/davidmosiah/wellness-cycle-coach">
+        <img src="https://img.shields.io/badge/Cycle_Coach-EC4899?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="Cycle Coach" /><br>
+      </a>
+      <code>wellness-cycle-coach</code><br>
+      <sub>Menstrual phase · Nutrition · Training · Stateless</sub><br><br>
+      <a href="https://github.com/davidmosiah/wellness-cycle-coach"><img src="https://img.shields.io/github/stars/davidmosiah/wellness-cycle-coach?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
+      <a href="https://www.npmjs.com/package/wellness-cycle-coach"><img src="https://img.shields.io/npm/dm/wellness-cycle-coach?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
+    </td>
+    <td width="33%" align="center" valign="top">
+      <a href="https://github.com/davidmosiah/wellness-cgm-mcp">
+        <img src="https://img.shields.io/badge/CGM-DC2626?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="CGM" /><br>
+      </a>
+      <code>wellness-cgm-mcp</code><br>
+      <sub>Dexcom · Glucose · TIR · GMI · Meal response</sub><br><br>
+      <a href="https://github.com/davidmosiah/wellness-cgm-mcp"><img src="https://img.shields.io/github/stars/davidmosiah/wellness-cgm-mcp?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
+      <a href="https://www.npmjs.com/package/wellness-cgm-mcp"><img src="https://img.shields.io/npm/dm/wellness-cgm-mcp?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
+    </td>
+    <td width="33%" align="center" valign="top">
       <em>More connectors coming &mdash;<br>follow on <a href="https://x.com/delx369">X</a> for releases.</em>
     </td>
   </tr>
 </table>
 
-> Each connector is a standalone npm package. Install one or all eleven &mdash; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health, Samsung Health and Google Health all reporting sleep, etc.).
+> Each connector is a standalone npm package. Install one or all fourteen &mdash; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health, Samsung Health and Google Health all reporting sleep, etc.).
 
 ---
 
 ## 🚀 Quick Start &mdash; one command for the whole stack
 
-The fastest path is a **profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 11 connectors:
+The fastest path is a **profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 14 connectors:
 
 ```bash
 npx -y delx-wellness-hermes setup
