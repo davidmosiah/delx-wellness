@@ -586,7 +586,8 @@
         "temperature_program",
         "alarms",
         "sleep_trends",
-        "adjustable_base"
+        "adjustable_base",
+        "wellness_context"
       ],
       "privacy_default": "structured",
       "mutation_gate": "EIGHT_SLEEP_ALLOW_MUTATIONS=true",
@@ -598,7 +599,7 @@
         "dismiss_alarm"
       ],
       "quality": {
-        "tier": "discovered",
+        "tier": "context_ready",
         "full_ci": false,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -607,7 +608,7 @@
         "http_smoke_test": false,
         "registry_backlink": true,
         "context_contract_version": "delx-wellness-context/v1",
-        "notes": "Unofficial mobile-app API; endpoints may change without notice. v0.1.0 ships read tools + gated mutations, with a roadmap toward wellness_context normalization (parity with whoop)."
+        "notes": "Unofficial mobile-app API; endpoints may change without notice. v0.1.0 ships read tools + nightly_summary + wellness_context handoff (delx-wellness-context/v1) + gated mutations."
       },
       "recommended_handoffs": [
         "nourish",
