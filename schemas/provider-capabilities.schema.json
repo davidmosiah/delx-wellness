@@ -3,11 +3,21 @@
   "$id": "https://github.com/davidmosiah/delx-wellness/schemas/provider-capabilities.schema.json",
   "title": "Delx Wellness Connector Registry",
   "type": "object",
-  "required": ["project", "description", "connectors"],
+  "required": [
+    "project",
+    "description",
+    "connectors"
+  ],
   "properties": {
-    "$schema": { "type": "string" },
-    "project": { "type": "string" },
-    "description": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
     "hosted_hub_boundary": {
       "type": "object",
       "additionalProperties": true
@@ -16,21 +26,56 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "status", "repository", "package", "signals", "privacy_default"],
+        "required": [
+          "id",
+          "name",
+          "status",
+          "repository",
+          "package",
+          "signals",
+          "privacy_default"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "status": { "enum": ["active", "planned", "paused", "deprecated"] },
-          "repository": { "type": "string", "format": "uri" },
-          "package": { "type": "string" },
-          "page": { "type": "string", "format": "uri" },
-          "runtime": { "type": "string" },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "active",
+              "planned",
+              "paused",
+              "deprecated"
+            ]
+          },
+          "repository": {
+            "type": "string",
+            "format": "uri"
+          },
+          "package": {
+            "type": "string"
+          },
+          "page": {
+            "type": "string",
+            "format": "uri"
+          },
+          "runtime": {
+            "type": "string"
+          },
           "signals": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
-          "privacy_default": { "type": "string" },
-          "notes": { "type": "string" }
+          "privacy_default": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
         },
         "additionalProperties": false
       }
@@ -39,47 +84,133 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "status", "signals", "privacy_default"],
+        "required": [
+          "id",
+          "name",
+          "status",
+          "signals",
+          "privacy_default"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "status": { "enum": ["active", "planned", "paused", "deprecated"] },
-          "repository": { "type": ["string", "null"], "format": "uri" },
-          "package": { "type": ["string", "null"] },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "active",
+              "planned",
+              "paused",
+              "deprecated"
+            ]
+          },
+          "repository": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "package": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "transport": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
-          "auth_model": { "type": ["string", "null"] },
-          "local_storage": { "type": ["string", "null"] },
+          "auth_model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "local_storage": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "signals": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
-          "privacy_default": { "type": "string" },
+          "privacy_default": {
+            "type": "string"
+          },
           "quality": {
             "type": "object",
             "properties": {
-              "tier": { "type": "string" },
-              "full_ci": { "type": "boolean" },
-              "security_policy": { "type": "boolean" },
-              "privacy_audit_tool": { "type": "boolean" },
-              "connection_status_tool": { "type": "boolean" },
-              "agent_manifest": { "type": "boolean" },
-              "http_smoke_test": { "type": "boolean" },
-              "registry_backlink": { "type": "boolean" },
-              "context_contract_version": { "type": "string" },
-              "notes": { "type": "string" }
+              "tier": {
+                "type": "string"
+              },
+              "full_ci": {
+                "type": "boolean"
+              },
+              "security_policy": {
+                "type": "boolean"
+              },
+              "privacy_audit_tool": {
+                "type": "boolean"
+              },
+              "connection_status_tool": {
+                "type": "boolean"
+              },
+              "agent_manifest": {
+                "type": "boolean"
+              },
+              "http_smoke_test": {
+                "type": "boolean"
+              },
+              "registry_backlink": {
+                "type": "boolean"
+              },
+              "context_contract_version": {
+                "type": "string"
+              },
+              "notes": {
+                "type": "string"
+              }
             },
             "additionalProperties": false
           },
-          "entrypoint": { "type": ["string", "null"] },
+          "entrypoint": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "recommended_handoffs": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
-          "recommended_handoff": { "type": "string" },
-          "notes": { "type": "string" }
+          "recommended_handoff": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "mutation_gate": {
+            "type": "string",
+            "description": "Environment variable or config flag that gates write tools. Empty means read-only by default."
+          },
+          "mutation_signals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of write/mutation tool surfaces exposed when the mutation_gate is on."
+          }
         },
         "additionalProperties": false
       }

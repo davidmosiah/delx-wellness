@@ -19,13 +19,13 @@
 
 <p align="center">
   <a href="https://github.com/davidmosiah/delx-wellness/stargazers"><img src="https://img.shields.io/github/stars/davidmosiah/delx-wellness?style=for-the-badge&labelColor=0F172A&logo=github&color=FBBF24" alt="GitHub stars" /></a>
-  <a href="https://www.npmjs.com/~davidmosiah"><img src="https://img.shields.io/badge/NPM-11_packages-CB3837?style=for-the-badge&labelColor=0F172A&logo=npm&logoColor=white" alt="npm packages" /></a>
+  <a href="https://www.npmjs.com/~davidmosiah"><img src="https://img.shields.io/badge/NPM-15_packages-CB3837?style=for-the-badge&labelColor=0F172A&logo=npm&logoColor=white" alt="npm packages" /></a>
   <a href="https://github.com/davidmosiah/delx-wellness/discussions"><img src="https://img.shields.io/badge/DISCUSS-GitHub_Discussions-181717?style=for-the-badge&labelColor=0F172A&logo=github&logoColor=white" alt="Discussions" /></a>
   <a href="https://x.com/delx369"><img src="https://img.shields.io/badge/X-@delx369-000000?style=for-the-badge&labelColor=0F172A&logo=x&logoColor=white" alt="X / Twitter" /></a>
 </p>
 
 <p align="center">
-  <strong>What is this?</strong> A registry of <strong>14 open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, and continuous glucose into context any AI agent can read &mdash; with zero data ever leaving your machine.
+  <strong>What is this?</strong> A registry of <strong>15 open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, continuous glucose and smart mattress into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
 
 <p align="center">
@@ -54,7 +54,7 @@ Agents should start with `agent_manifest`, `connection_status` or `capabilities`
 
 ---
 
-## ✨ The 14 connectors
+## ✨ The 15 connectors
 
 <table>
   <tr>
@@ -198,13 +198,13 @@ Agents should start with `agent_manifest`, `connection_status` or `capabilities`
   </tr>
 </table>
 
-> Each connector is a standalone npm package. Install one or all fourteen &mdash; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health, Samsung Health and Google Health all reporting sleep, etc.).
+> Each connector is a standalone npm package. Install one or all fifteen &mdash; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health, Samsung Health and Google Health all reporting sleep, etc.).
 
 ---
 
 ## 🚀 Quick Start &mdash; one command for the whole stack
 
-The fastest path is a **profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 14 connectors:
+The fastest path is a **profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 15 connectors:
 
 ```bash
 npx -y delx-wellness-hermes setup
@@ -264,9 +264,9 @@ Then drop one of the [client config examples](examples/) into your AI client:
 
 ---
 
-## 👤 Shared local profile &mdash; one onboarding for all 14 connectors
+## 👤 Shared local profile &mdash; one onboarding for all 15 connectors
 
-As of **v0.4.0** every connector reads and writes the same local profile at **`~/.delx-wellness/profile.json`** (mode `0600`). Onboarding once tells your agent your name, gender, age, height, weight, goals, devices, training level, dietary patterns, language, units and reply style &mdash; and **all 14 connectors instantly use it** for personalized summaries, coaching and unit conversion.
+As of **v0.4.0** every connector reads and writes the same local profile at **`~/.delx-wellness/profile.json`** (mode `0600`). Onboarding once tells your agent your name, gender, age, height, weight, goals, devices, training level, dietary patterns, language, units and reply style &mdash; and **all 15 connectors instantly use it** for personalized summaries, coaching and unit conversion.
 
 Pick any connector and run its onboarding flow:
 
@@ -359,7 +359,7 @@ flowchart LR
     style P2 fill:#0F172A,stroke:#7C3AED,color:#fff
 ```
 
-<p align="center"><em>One agent &rarr; one local profile &rarr; eleven connectors &rarr; your provider data. <strong>Tokens never leave your machine.</strong></em></p>
+<p align="center"><em>One agent &rarr; one local profile &rarr; fifteen connectors &rarr; your provider data. <strong>Tokens never leave your machine.</strong></em></p>
 
 ---
 
