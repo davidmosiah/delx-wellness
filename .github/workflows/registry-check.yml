@@ -1,0 +1,39 @@
+name: registry-sync
+
+on:
+  pull_request:
+    paths:
+      - 'registry.json'
+      - 'STATUS.md'
+      - 'scripts/sync-registry.mjs'
+      - '.github/workflows/registry-check.yml'
+  schedule:
+    # Every Monday 14:00 UTC = 11:00 BRT
+    - cron: '0 14 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check registry vs npm
+        id: drift
+        run: |
+          if node scripts/sync-registry.mjs --check --quiet; then
+            echo "drift=false" >> "$GITHUB_OUTPUT"
+            echo "Registry is in sync with npm."
+          else
+            echo "drift=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::Registry has drifted from npm. Run \`node scripts/sync-registry.mjs\` locally and commit."
+            # Exit 0 — drift on schedule is informational, not a failure
+            # PR runs will see the warning; humans decide whether to update.
+            exit 0
+          fi
