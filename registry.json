@@ -361,7 +361,7 @@
         "notes": "Local package includes Polar AccessLink Dynamic API v4 OAuth, summaries, agent manifest, GPS-aware route handling and Hermes setup checks."
       },
       "notes": "Uses official Polar AccessLink Dynamic API v4. Data availability depends on user device, granted scopes (16 fine-grained read scopes), and Polar account features.",
-      "npm_version": "0.3.3"
+      "npm_version": "0.3.4"
     },
     {
       "id": "samsung-health",
