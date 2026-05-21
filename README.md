@@ -455,6 +455,14 @@ Follow on X: [@delx369](https://x.com/delx369) · Site: [wellness.delx.ai](https
 
 ---
 
+## 📧 Contact & Support
+
+- 📨 **support@delx.ai** — general questions, integration help, partnerships
+- 🐛 **Bug reports / feature requests** — [GitHub Issues](https://github.com/davidmosiah/delx-wellness/issues)
+- 🐦 **Updates** — [@delx369](https://x.com/delx369) on X
+- 🌐 **Site** — [wellness.delx.ai](https://wellness.delx.ai)
+
+
 ## 📜 License
 
 MIT &mdash; see [LICENSE](LICENSE).
