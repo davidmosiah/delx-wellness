@@ -1,6 +1,6 @@
 # Delx Wellness — Ecosystem Status
 
-_Auto-generated from `registry.json` on 2026-05-20 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
+_Auto-generated from `registry.json` on 2026-05-22 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
 
 ## Agent profiles
 
@@ -29,12 +29,13 @@ _Auto-generated from `registry.json` on 2026-05-20 by `scripts/sync-registry.mjs
 | [WHOOP](https://github.com/davidmosiah/whoop-mcp) | `whoop-mcp-unofficial` | `0.4.3` | [object Object] | profile, body, recovery, cycles… |
 | [Withings](https://github.com/davidmosiah/withingsmcp) | `withings-mcp-unofficial` | `0.4.4` | [object Object] | body_measures, daily_activity, workouts, sleep… |
 | [Exercise Catalog MCP](https://github.com/davidmosiah/exercise-catalog-mcp) | `exercise-catalog-mcp-private` | `—` | [object Object] | exercise_search, exercise_details, workout_templates, wellness_context_intake… |
+| [Google Ads MCP](https://github.com/davidmosiah/google-ads-mcp-unofficial) | `google-ads-mcp-unofficial` | `0.1.0` | [object Object] | non_wellness, agent_tool, advertising_operations, list_accounts… |
 
 ## Snapshot
 
-- **Total public connectors**: 15
+- **Total public connectors**: 16
 - **Private lab connectors**: 1
 - **Profile packs**: 2
-- **Last registry update**: 2026-05-20
+- **Last registry update**: 2026-05-22
 
 See [registry.json](registry.json) for the canonical machine-readable manifest.

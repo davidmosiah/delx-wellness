@@ -720,7 +720,52 @@
         "nourish"
       ],
       "notes": "Private Befit data remains under private_authorized_personal_use. Public/open exercise sources must stay separated by provider metadata, license/attribution policy and fail-closed orchestration."
+    },
+    {
+      "id": "google-ads",
+      "name": "Google Ads MCP",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/google-ads-mcp-unofficial",
+      "package": "google-ads-mcp-unofficial",
+      "transport": [
+        "stdio"
+      ],
+      "auth_model": "Google OAuth 2.0 + Google Ads developer token; ~/.google-ads-mcp/tokens.json (0600)",
+      "local_storage": "~/.google-ads-mcp/",
+      "signals": [
+        "non_wellness",
+        "agent_tool",
+        "advertising_operations",
+        "list_accounts",
+        "list_campaigns",
+        "list_ad_groups",
+        "list_keywords",
+        "account_performance",
+        "campaign_performance",
+        "keyword_performance",
+        "daily_report",
+        "find_waste",
+        "gated_mutations",
+        "pause_keyword",
+        "set_bid",
+        "set_budget"
+      ],
+      "privacy_default": "structured",
+      "quality": {
+        "tier": "agent_ready",
+        "full_ci": true,
+        "security_policy": true,
+        "privacy_audit_tool": true,
+        "connection_status_tool": true,
+        "agent_manifest": true,
+        "http_smoke_test": true,
+        "registry_backlink": true,
+        "notes": "Unofficial Google Ads MCP — NOT a wellness connector; included here as an agent tool for the Delx marketing/reach surface. 27 tools across reads (default) and gated mutations (GOOGLE_ADS_ALLOW_MUTATIONS=true + explicit_user_intent per call). Speaks Google Ads REST API v17 directly (no heavy npm SDK). Includes HTTP retry middleware, partial-redacted customer ids in structured mode, and stderr audit log for every mutation."
+      },
+      "recommended_handoffs": [],
+      "notes": "Cataloged here for ecosystem discoverability. NOT a wellness connector — does not participate in delx-wellness-hermes / delx-wellness-openclaw presets or the delx-wellness-site CONNECTORS array. Pairs with google-ads-intent-mcp for the reach surface.",
+      "npm_version": "0.1.0"
     }
   ],
-  "last_updated": "2026-05-20"
+  "last_updated": "2026-05-22"
 }
