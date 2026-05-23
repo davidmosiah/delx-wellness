@@ -54,6 +54,42 @@
       "npm_version": "0.1.2"
     }
   ],
+  "meta_connectors": [
+    {
+      "id": "delx-living-body",
+      "name": "Delx Living Body",
+      "status": "active",
+      "repository": "https://github.com/davidmosiah/delx-living-body",
+      "package": "delx-living-body",
+      "transport": [
+        "stdio",
+        "streamable_http"
+      ],
+      "auth_model": "None at the meta layer — each child connector handles its own credentials independently. delx-living-body never reads child token files and strips secret-shaped env vars before spawning children.",
+      "local_storage": "~/.delx-living-body/cache.sqlite (chmod 600, 5 min TTL, disable with DELX_LIVING_BODY_NO_CACHE=true)",
+      "signals": [
+        "auto_detection",
+        "parallel_composition",
+        "rule_based_synthesis",
+        "no_llm_calls",
+        "delx_wellness_context_v1",
+        "subprocess_isolation",
+        "explicit_user_intent_required"
+      ],
+      "privacy_default": "structured",
+      "composes_all_15_connectors": true,
+      "tools": [
+        "living_body_status",
+        "living_body_ask",
+        "living_body_daily_brief",
+        "living_body_compose_context",
+        "living_body_health_check",
+        "living_body_capabilities"
+      ],
+      "notes": "Meta-MCP that auto-detects locally installed Delx Wellness connectors and composes them into one unified delx-wellness-context/v1 surface. Synthesis is rule-based and offline (14 heuristic rules). Spawns child MCPs via npx -y over StdioClientTransport with a 30s per-call timeout. Stripping rule: any env var matching /(CLIENT_SECRET|REFRESH_TOKEN|ACCESS_TOKEN|API_KEY|PRIVATE_KEY|PASSWORD)$/i is removed before spawning children.",
+      "npm_version": "0.1.0"
+    }
+  ],
   "connectors": [
     {
       "id": "apple-health",
