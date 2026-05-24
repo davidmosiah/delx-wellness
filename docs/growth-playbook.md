@@ -37,6 +37,19 @@ Outputs are local only:
 4. Post one useful update on X, Reddit, or a targeted builder community.
 5. Ask clearly for stars only after showing practical value.
 
+## Public Authority Flywheel
+
+The GitHub profile should route visitors into one clear path:
+
+1. Profile README explains the thesis and says where to start.
+2. `delx-wellness` acts as the flagship registry and source of truth.
+3. `delx-agent-workbench` turns the ecosystem into runnable templates.
+4. Individual connector repos prove the stack with install commands, demos, privacy notes and readiness checks.
+5. Field notes explain the decisions in public and link back to the repos.
+6. Public roadmap issues show momentum and invite contribution.
+
+This is the pattern to copy from high-signal builders: one flagship narrative, installable projects, visible proof, and repeated writing around the same technical point of view.
+
 ## Weekly Loop
 
 1. Compare `.growth-metrics/latest.md` with the previous snapshot.

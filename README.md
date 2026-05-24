@@ -48,9 +48,12 @@
 | Track food, barcode scans, hydration and meal summaries | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | `npx -y wellness-nourish doctor` |
 | Add recovery, strain, sleep and HRV | [`whoop-mcp`](https://github.com/davidmosiah/whoop-mcp) | `npx -y whoop-mcp-unofficial setup` |
 | Add Body Battery, sleep, stress and training readiness | [`garminmcp`](https://github.com/davidmosiah/garminmcp) | `npx -y garmin-mcp-unofficial setup --auth` |
+| Copy runnable agent templates | [`delx-agent-workbench`](https://github.com/davidmosiah/delx-agent-workbench) | Use the Hermes, OpenClaw, Claude Desktop or Codex examples |
 | Browse the human-friendly site | [`delx-wellness-site`](https://github.com/davidmosiah/delx-wellness-site) | [wellness.delx.ai](https://wellness.delx.ai) |
 
 Agents should start with `agent_manifest`, `connection_status` or `capabilities` when a connector exposes them. Humans should start with the Hermes or OpenClaw profile packs when they want the whole stack installed as one local-first wellness agent.
+
+For the public thesis behind this stack, read [Why local-first wellness agents need MCP](https://github.com/davidmosiah/davidmosiah/blob/main/docs/local-first-wellness-agents.md).
 
 ---
 
