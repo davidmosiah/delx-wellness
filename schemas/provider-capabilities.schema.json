@@ -18,6 +18,10 @@
     "description": {
       "type": "string"
     },
+    "last_updated": {
+      "type": "string",
+      "description": "ISO date (YYYY-MM-DD) of the last sync, maintained by scripts/sync-registry.mjs."
+    },
     "hosted_hub_boundary": {
       "type": "object",
       "additionalProperties": true
@@ -72,6 +76,13 @@
           },
           "privacy_default": {
             "type": "string"
+          },
+          "npm_version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Latest npm version, synced by scripts/sync-registry.mjs. Null for unpublished/private packages."
           },
           "notes": {
             "type": "string"
@@ -210,6 +221,105 @@
               "type": "string"
             },
             "description": "List of write/mutation tool surfaces exposed when the mutation_gate is on."
+          },
+          "npm_version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Latest npm version, synced by scripts/sync-registry.mjs. Null for unpublished/private packages."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "meta_connectors": {
+      "type": "array",
+      "description": "Meta-MCPs that compose multiple connectors into one surface. Same shape as connectors plus composition metadata.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "status",
+          "signals",
+          "privacy_default"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "active",
+              "planned",
+              "paused",
+              "deprecated"
+            ]
+          },
+          "repository": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "package": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "transport": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "auth_model": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "local_storage": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "signals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "privacy_default": {
+            "type": "string"
+          },
+          "composes_all_15_connectors": {
+            "type": "boolean",
+            "description": "True when the meta-connector auto-detects and composes every public Delx Wellness connector."
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tool surfaces the meta-connector exposes."
+          },
+          "notes": {
+            "type": "string"
+          },
+          "npm_version": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Latest npm version, synced by scripts/sync-registry.mjs. Null for unpublished/private packages."
           }
         },
         "additionalProperties": false

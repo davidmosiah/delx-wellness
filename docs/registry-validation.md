@@ -9,12 +9,23 @@ to extend it.
 
 ## What runs
 
-- Script: [`scripts/validate-context-ready.mjs`](../scripts/validate-context-ready.mjs)
-- Workflow: [`.github/workflows/validate-registry.yml`](../.github/workflows/validate-registry.yml)
-- Triggers: every push and pull request targeting `main`
+Two checks run on every push and pull request targeting `main`
+([`.github/workflows/validate-registry.yml`](../.github/workflows/validate-registry.yml)):
 
-The script has zero npm dependencies. It uses Node 22+ built-ins (`node:fs`,
+1. **Schema validation** — [`scripts/validate-schema.mjs`](../scripts/validate-schema.mjs)
+   checks `registry.json` against
+   [`schemas/provider-capabilities.schema.json`](../schemas/provider-capabilities.schema.json):
+   required fields, `status` enum, `quality` object shape, and
+   `additionalProperties: false`. This catches the kind of drift that used to
+   slip through silently (e.g. the `npm_version` field that
+   `scripts/sync-registry.mjs` writes, or a quality tier landing in `status`).
+2. **Quality-tier enforcement** — [`scripts/validate-context-ready.mjs`](../scripts/validate-context-ready.mjs)
+   turns the `context_ready` tier into a machine check (rules below).
+
+Both scripts have zero npm dependencies. They use Node 22+ built-ins (`node:fs`,
 `JSON.parse`, `node:path`, `node:url`) so the registry stays a docs/JSON-only repo.
+The schema validator is schema-driven — it reads the schema file, so extending
+the schema automatically extends the check.
 
 ## Rules
 
@@ -45,12 +56,24 @@ that constant and document why in this file.
 ## Running locally
 
 ```bash
-node scripts/validate-context-ready.mjs            # human report, exit 0/1
+node scripts/validate-schema.mjs                   # schema check, exit 0/1
+node scripts/validate-context-ready.mjs            # tier check, exit 0/1
 node scripts/validate-context-ready.mjs --json     # machine-readable report
 node scripts/validate-context-ready.mjs --registry path/to/registry.json
 ```
 
-Sample passing output:
+Sample passing schema-validation output:
+
+```
+# registry schema validation
+
+Schema:   schemas/provider-capabilities.schema.json
+Registry: registry.json
+
+PASS — registry.json satisfies the schema.
+```
+
+Sample passing tier output:
 
 ```
 # context_ready validator report
@@ -80,7 +103,9 @@ The validator is intentionally small and dependency-free. To add a new rule:
 3. Update the rules table above.
 4. If the new field needs to live in `registry.json`, also extend
    [`schemas/provider-capabilities.schema.json`](../schemas/provider-capabilities.schema.json)
-   so schema-level validation accepts it.
+   so schema-level validation accepts it — `scripts/validate-schema.mjs`
+   enforces `additionalProperties: false`, so an unrecognized field fails CI
+   until the schema is updated.
 
 If a future connector type shouldn't be subject to a particular rule, prefer
 explicit allowlists (like `TERMINAL_CONNECTORS`) over inference; that keeps the

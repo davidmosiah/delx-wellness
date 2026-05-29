@@ -489,7 +489,7 @@
     {
       "id": "wellness-air",
       "name": "Wellness Air",
-      "status": "context_ready",
+      "status": "active",
       "repository": "https://github.com/davidmosiah/wellness-air",
       "package": "wellness-air",
       "transport": [
@@ -508,7 +508,9 @@
         "AQI"
       ],
       "privacy_default": "structured",
-      "quality": "agent_ready",
+      "quality": {
+        "tier": "agent_ready"
+      },
       "recommended_handoffs": [
         "nourish",
         "whoop",
@@ -521,7 +523,7 @@
     {
       "id": "wellness-cgm-mcp",
       "name": "Wellness CGM",
-      "status": "context_ready",
+      "status": "active",
       "repository": "https://github.com/davidmosiah/wellness-cgm-mcp",
       "package": "wellness-cgm-mcp",
       "transport": [
@@ -538,7 +540,9 @@
         "Time Below/Above Range"
       ],
       "privacy_default": "structured",
-      "quality": "agent_ready",
+      "quality": {
+        "tier": "agent_ready"
+      },
       "recommended_handoffs": [
         "nourish",
         "whoop",
@@ -550,7 +554,7 @@
     {
       "id": "wellness-cycle-coach",
       "name": "Wellness Cycle Coach",
-      "status": "agent_ready",
+      "status": "active",
       "repository": "https://github.com/davidmosiah/wellness-cycle-coach",
       "package": "wellness-cycle-coach",
       "transport": [
@@ -567,7 +571,9 @@
         "Hydration"
       ],
       "privacy_default": "structured",
-      "quality": "agent_ready",
+      "quality": {
+        "tier": "agent_ready"
+      },
       "recommended_handoffs": [
         "nourish",
         "whoop",
