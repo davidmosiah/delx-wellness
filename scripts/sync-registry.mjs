@@ -89,7 +89,7 @@ function buildStatusMarkdown(reg) {
     const previewSignals = (c.signals ?? []).slice(0, 4).join(', ');
     const sigs = signalsCount > 4 ? `${previewSignals}…` : previewSignals;
     lines.push(
-      `| [${c.name}](${c.repository ?? '#'}) | \`${c.package}\` | \`${c.npm_version ?? '—'}\` | ${c.quality ?? '—'} | ${sigs} |`,
+      `| [${c.name}](${c.repository ?? '#'}) | \`${c.package}\` | \`${c.npm_version ?? '—'}\` | ${c.quality?.tier ?? c.quality ?? '—'} | ${sigs} |`,
     );
   }
 

@@ -178,7 +178,7 @@
         "exercise-catalog"
       ],
       "notes": "Eight Sleep does not publish a public API. This connector tracks lukas-clarke/eight_sleep, mezz64/pyEight and steipete/eightctl for endpoint stability.",
-      "npm_version": "0.2.2"
+      "npm_version": "0.2.5"
     },
     {
       "id": "fitbit",
@@ -219,7 +219,7 @@
         "notes": "CI runs the full npm test suite including agent readiness and Hermes manifest checks."
       },
       "notes": "Fitbit platform migration risk should be tracked before hosted production launch.",
-      "npm_version": "0.4.3"
+      "npm_version": "0.4.5"
     },
     {
       "id": "garmin",
@@ -267,7 +267,7 @@
         "nourish"
       ],
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible.",
-      "npm_version": "0.4.3"
+      "npm_version": "0.4.5"
     },
     {
       "id": "google-health",
@@ -310,7 +310,7 @@
         "notes": "Local package targets Google Health API v4 beta with Google OAuth, identity/profile/settings, data point list/reconcile/rollup tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses Google Health API v4. Google recommends waiting until the end of May 2026 for official stable launches because breaking changes may occur during the launch window.",
-      "npm_version": "0.4.5"
+      "npm_version": "0.4.7"
     },
     {
       "id": "oura",
@@ -348,7 +348,7 @@
         "notes": "Local package includes Oura OAuth, v2 usercollection tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses official Oura Cloud API v2. Heart-rate and SpO2 availability depends on ring generation, membership and granted scopes.",
-      "npm_version": "0.4.3"
+      "npm_version": "0.4.5"
     },
     {
       "id": "polar",
@@ -397,7 +397,7 @@
         "notes": "Local package includes Polar AccessLink Dynamic API v4 OAuth, summaries, agent manifest, GPS-aware route handling and Hermes setup checks."
       },
       "notes": "Uses official Polar AccessLink Dynamic API v4. Data availability depends on user device, granted scopes (16 fine-grained read scopes), and Polar account features.",
-      "npm_version": "0.3.4"
+      "npm_version": "0.3.5"
     },
     {
       "id": "samsung-health",
@@ -484,7 +484,7 @@
         "nourish"
       ],
       "notes": "GPS/map data is privacy-sensitive and should require explicit user intent.",
-      "npm_version": "0.4.3"
+      "npm_version": "0.4.5"
     },
     {
       "id": "wellness-air",
@@ -516,7 +516,7 @@
         "oura"
       ],
       "notes": "Indoor air-quality MCP. Pair with sleep/recovery data to correlate poor sleep with high CO2 or PM2.5.",
-      "npm_version": "0.5.4"
+      "npm_version": "0.5.5"
     },
     {
       "id": "wellness-cgm-mcp",
@@ -545,7 +545,7 @@
         "garmin"
       ],
       "notes": "Dexcom CGM connector. NOT medical advice. Sandbox mode for testing without real credentials. Pair with nourish to analyze meal-glucose response.",
-      "npm_version": "0.3.3"
+      "npm_version": "0.3.4"
     },
     {
       "id": "wellness-cycle-coach",
@@ -575,7 +575,7 @@
         "oura"
       ],
       "notes": "Stateless menstrual-cycle coach. Not medical advice. PCOS/perimenopause edge cases roadmapped.",
-      "npm_version": "0.3.3"
+      "npm_version": "0.3.4"
     },
     {
       "id": "nourish",
@@ -636,7 +636,7 @@
         "notes": "Agent-ready nutrition MCP with explicit-intent writes, local undo/delete/export, privacy audit, Hermes Telegram setup, and nutrition_context-compatible daily/coach summaries."
       },
       "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. TACO/UNICAMP values ship as an attributed curated subset while redistribution-license confirmation remains a 1.0 gate. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied.",
-      "npm_version": "0.6.3"
+      "npm_version": "0.6.4"
     },
     {
       "id": "whoop",
@@ -679,7 +679,7 @@
         "nourish"
       ],
       "notes": "Uses official WHOOP OAuth API. Raw means upstream API JSON, not continuous sensor streams.",
-      "npm_version": "0.4.3"
+      "npm_version": "0.4.4"
     },
     {
       "id": "withings",
@@ -715,7 +715,7 @@
         "notes": "Local package includes signed Withings OAuth token flow, Public API tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses Withings Public API. Device coverage and available fields vary by user devices, scopes and API-plan access.",
-      "npm_version": "0.4.4"
+      "npm_version": "0.4.6"
     },
     {
       "id": "exercise-catalog",
@@ -800,8 +800,8 @@
       },
       "recommended_handoffs": [],
       "notes": "Cataloged here for ecosystem discoverability. NOT a wellness connector — does not participate in delx-wellness-hermes / delx-wellness-openclaw presets or the delx-wellness-site CONNECTORS array. Pairs with google-ads-intent-mcp for the reach surface.",
-      "npm_version": "0.1.0"
+      "npm_version": "0.1.3"
     }
   ],
-  "last_updated": "2026-05-22"
+  "last_updated": "2026-05-29"
 }
