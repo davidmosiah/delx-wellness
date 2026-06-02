@@ -263,6 +263,7 @@ Then drop one of the [client config examples](examples/) into your AI client:
 | **Windsurf** | [`examples/windsurf.json`](examples/windsurf.json) | Same shape as Cursor |
 | **Hermes** | [`examples/hermes.md`](examples/hermes.md) | YAML + skill files (or use the profile pack above) |
 | **OpenClaw** | [`examples/openclaw.md`](examples/openclaw.md) | OpenClaw `mcp.servers` config (or use the profile pack above) |
+| **Goose** | [`USING_WITH_GOOSE.md`](USING_WITH_GOOSE.md) | Block's MCP-native agent — `goose configure` or paste into `config.yaml` |
 | **Generic / ChatGPT** | [`examples/generic-mcp.md`](examples/generic-mcp.md) | Standard `mcpServers` shape |
 
 ---
