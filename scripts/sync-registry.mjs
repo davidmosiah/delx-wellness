@@ -16,6 +16,11 @@
  *   - mutates STATUS.md (regenerates from registry.json)
  *   - bumps last_updated timestamp
  *
+ * Also runs a README coverage guard (read-only): every wellness connector
+ * and the meta-MCP in registry.json must be referenced in README.md. The
+ * README card grid / decision-tree stay hand-styled, so this reports gaps
+ * for a human to fill rather than rewriting that prose.
+ *
  * Network: fetches npm registry via `npm view <pkg> version` per
  * package. Reads only — does not publish or auth.
  */
@@ -29,6 +34,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const REGISTRY_PATH = path.join(ROOT, 'registry.json');
 const STATUS_PATH = path.join(ROOT, 'STATUS.md');
+const README_PATH = path.join(ROOT, 'README.md');
 
 const checkOnly = process.argv.includes('--check');
 const quiet = process.argv.includes('--quiet');
@@ -113,6 +119,50 @@ function buildStatusMarkdown(reg) {
   return lines.join('\n');
 }
 
+/**
+ * Drift guard for the human-facing README. The README card grid and the
+ * "Which connector should I install first?" decision-tree are hand-styled
+ * (brand colors, logo flags, repo short-names, tuned copy) so this script
+ * does NOT rewrite that prose. But the most common drift is forgetting to
+ * surface a brand-new registry entry in the README at all (e.g. Eight Sleep
+ * shipped to registry.json long before it had a card). This check catches
+ * exactly that: every wellness connector (and the meta-MCP) in registry.json
+ * must be mentioned somewhere in README.md by package name or repo slug.
+ *
+ * Returns an array of human-readable problem strings (empty = all covered).
+ */
+function checkReadmeCoverage(reg) {
+  let readme;
+  try {
+    readme = fs.readFileSync(README_PATH, 'utf8');
+  } catch {
+    return ['README.md not found — skipping coverage check.'];
+  }
+
+  const problems = [];
+  const isWellness = (c) =>
+    !(c.signals ?? []).includes('non_wellness') && !String(c.package ?? '').endsWith('-private');
+
+  const checkEntry = (entry, label) => {
+    const pkg = entry.package;
+    const slug = entry.repository ? entry.repository.replace(/^https?:\/\/github\.com\//, '') : null;
+    const mentioned =
+      (pkg && readme.includes(pkg)) || (slug && readme.includes(slug));
+    if (!mentioned) {
+      problems.push(`${label} "${entry.name}" (${pkg}) is in registry.json but not referenced in README.md`);
+    }
+  };
+
+  for (const c of reg.connectors ?? []) {
+    if (isWellness(c)) checkEntry(c, 'connector');
+  }
+  for (const m of reg.meta_connectors ?? []) {
+    checkEntry(m, 'meta-connector');
+  }
+
+  return problems;
+}
+
 function main() {
   const reg = loadRegistry();
   const changes = [];
@@ -140,7 +190,14 @@ function main() {
     reg.last_updated = today;
   }
 
+  const readmeGaps = checkReadmeCoverage(reg);
+
   if (checkOnly) {
+    if (readmeGaps.length > 0) {
+      console.error('README.md is missing registry entries:');
+      for (const g of readmeGaps) console.error(`  - ${g}`);
+      console.error('Add a card + decision-tree line in README.md (hand-styled — not auto-generated).');
+    }
     if (changes.length > 0) {
       console.error('Registry is out of date with npm:');
       for (const c of changes) {
@@ -150,7 +207,13 @@ function main() {
       process.exit(1);
     }
     log('Registry is in sync with npm.');
+    if (readmeGaps.length === 0) log('README references every registry connector.');
     process.exit(0);
+  }
+
+  if (readmeGaps.length > 0) {
+    log('! README coverage gaps (add cards/decision-tree lines by hand):');
+    for (const g of readmeGaps) log(`    - ${g}`);
   }
 
   if (changes.length === 0 && previousDate === today) {

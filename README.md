@@ -19,13 +19,13 @@
 
 <p align="center">
   <a href="https://github.com/davidmosiah/delx-wellness/stargazers"><img src="https://img.shields.io/github/stars/davidmosiah/delx-wellness?style=for-the-badge&labelColor=0F172A&logo=github&color=FBBF24" alt="GitHub stars" /></a>
-  <a href="https://www.npmjs.com/~davidmosiah"><img src="https://img.shields.io/badge/NPM-15_packages-CB3837?style=for-the-badge&labelColor=0F172A&logo=npm&logoColor=white" alt="npm packages" /></a>
+  <a href="https://www.npmjs.com/~davidmosiah"><img src="https://img.shields.io/badge/NPM-published_packages-CB3837?style=for-the-badge&labelColor=0F172A&logo=npm&logoColor=white" alt="npm packages" /></a>
   <a href="https://github.com/davidmosiah/delx-wellness/discussions"><img src="https://img.shields.io/badge/DISCUSS-GitHub_Discussions-181717?style=for-the-badge&labelColor=0F172A&logo=github&logoColor=white" alt="Discussions" /></a>
   <a href="https://x.com/delx369"><img src="https://img.shields.io/badge/X-@delx369-000000?style=for-the-badge&labelColor=0F172A&logo=x&logoColor=white" alt="X / Twitter" /></a>
 </p>
 
 <p align="center">
-  <strong>What is this?</strong> A registry of <strong>15 open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, continuous glucose and smart mattress into context any AI agent can read &mdash; with zero data ever leaving your machine.
+  <strong>What is this?</strong> A registry of <strong>open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, continuous glucose and smart mattress into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
 
 <p align="center">
@@ -43,6 +43,7 @@
 
 | Goal | Use this | Command |
 |---|---|---|
+| **One MCP that pulls in all the others** (Claude Desktop, Cursor, Goose, any generic client) | [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) | `npx -y delx-living-body` |
 | Install the whole wellness stack for Hermes | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | `npx -y delx-wellness-hermes setup` |
 | Install the whole wellness stack for OpenClaw | [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) | `npx -y delx-wellness-openclaw setup` |
 | Track food, barcode scans, hydration and meal summaries | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | `npx -y wellness-nourish doctor` |
@@ -51,13 +52,71 @@
 | Copy runnable agent templates | [`delx-agent-workbench`](https://github.com/davidmosiah/delx-agent-workbench) | Use the Hermes, OpenClaw, Claude Desktop or Codex examples |
 | Browse the human-friendly site | [`delx-wellness-site`](https://github.com/davidmosiah/delx-wellness-site) | [wellness.delx.ai](https://wellness.delx.ai) |
 
-Agents should start with `agent_manifest`, `connection_status` or `capabilities` when a connector exposes them. Humans should start with the Hermes or OpenClaw profile packs when they want the whole stack installed as one local-first wellness agent.
+**Generic MCP clients (Claude Desktop, Cursor, Goose, ChatGPT Desktop):** the lowest-friction option is [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) — a single meta-MCP that **auto-detects whichever connectors you already have installed** and composes them into one unified surface (`living_body_status`, `living_body_daily_brief`, `living_body_ask`, `living_body_health_check`). One server entry instead of a dozen; synthesis is rule-based and offline.
+
+Agents should start with `agent_manifest`, `connection_status` or `capabilities` when a connector exposes them (or `living_body_status` when running the meta-MCP). Humans should start with the Hermes or OpenClaw profile packs when they want the whole stack installed as one local-first wellness agent.
 
 For the public thesis behind this stack, read [Why local-first wellness agents need MCP](https://github.com/davidmosiah/davidmosiah/blob/main/docs/local-first-wellness-agents.md).
 
 ---
 
-## ✨ The 15 connectors
+## 🔑 Auth & what runs offline
+
+Each connector handles its own credentials locally — nothing is shared with the MCP client and no token ever leaves your machine. Use this to pick the connectors you can stand up fastest.
+
+> ⚡ **Zero-credential quick start:** **Nourish** and **Cycle Coach** run with no login at all — install one and you have a working tool in ~30 seconds. Start there to feel the workflow before wiring up OAuth providers.
+
+| Provider | Auth type | What to have on hand | Runs offline? |
+|---|---|---|---|
+| **Nourish** | None (optional USDA API key) | Nothing — public food data + local intake logs | ✅ Yes |
+| **Cycle Coach** | None (stateless) | Nothing — pass cycle history per call | ✅ Yes |
+| **Apple Health** | Local export file | `export.zip` / `export.xml` from the Health app | ✅ Yes (offline file) |
+| **Samsung Health** | Local export file | Samsung Health CSV/ZIP export folder | ✅ Yes (offline file) |
+| **Air** | API key *or* local IP | AirGradient API key, or the device's LAN IP | ✅ Yes (local-only mode) |
+| **WHOOP** | OAuth 2.0 | Your own WHOOP app `client_id` / `secret` | ☁️ Provider API |
+| **Oura** | OAuth 2.0 | Your own Oura app credentials | ☁️ Provider API |
+| **Fitbit** | OAuth 2.0 | Your own Fitbit app credentials | ☁️ Provider API |
+| **Strava** | OAuth 2.0 | Your own Strava app credentials | ☁️ Provider API |
+| **Withings** | OAuth 2.0 (signed) | Your own Withings app credentials | ☁️ Provider API |
+| **Polar** | OAuth 2.0 | Your own Polar AccessLink client credentials | ☁️ Provider API |
+| **Google Health** | Google OAuth 2.0 | Your own Google Cloud OAuth client | ☁️ Provider API |
+| **Garmin** | Local personal-token mode | Garmin Connect login (local helper) | ☁️ Provider API (unofficial) |
+| **Eight Sleep** | Mobile-app password grant | Your Eight Sleep email + password | ☁️ Provider API (unofficial) |
+| **CGM (Dexcom)** | OAuth 2.0 *or* sandbox | Dexcom credentials, or use sandbox mode | ☁️ Provider API (sandbox offline) |
+
+<sub>OAuth completes locally and refresh tokens live in your OS keychain or a `~/.config` file you own. The MCP client never sees a secret; tools never return one. Full auth detail per connector: [`registry.json`](registry.json).</sub>
+
+---
+
+## 🧭 Which connector should I install first?
+
+```text
+Have a WHOOP?               → start with whoop-mcp         (recovery, HRV, sleep, strain)
+Have a Garmin?              → start with garminmcp         (Body Battery, training readiness, HRV)
+Have an Oura?              → start with ouramcp          (readiness, sleep, activity, HRV)
+Have an Eight Sleep?       → start with eight-sleep-mcp   (sleep trends, bed temperature, alarms)
+Have Withings devices?     → start with withingsmcp      (body measures, sleep, activity, heart)
+Have an Apple Health export?→ add apple-health-mcp       (local export activity, sleep, HRV, workouts)
+Have a Galaxy Watch export? → add samsung-health-mcp     (local CSV activity, sleep, HRV, workouts)
+Have a Polar device?       → start with polarmcp         (Nightly Recharge, training load, PPI/HRV)
+Run/ride/swim a lot?       → add strava-mcp              (activities, streams, routes)
+Just bought a Fitbit?      → add fitbitmcp               (activity, sleep, heart, HRV)
+Migrating Fitbit to Google?→ add google-health-mcp       (Google Health API v4, rollups, reconciled streams)
+Tracking food?             → add wellness-nourish        (food search, barcode lookup, intake, hydration)
+Tracking glucose?          → add wellness-cgm-mcp        (Dexcom glucose, time-in-range, meal response)
+Tracking a menstrual cycle?→ add wellness-cycle-coach    (phase detection, phase nutrition & training)
+Care about room air?       → add wellness-air            (AQI, PM2.5, CO₂ — pair with sleep data)
+Multiple devices?          → install several. Each is independent and read-only.
+Want one entry for all?    → add delx-living-body        (auto-detects the above; one unified surface)
+```
+
+The connectors are designed to coexist. When two providers cover the same signal (e.g. WHOOP and Garmin both report sleep), each tool returns provider-tagged data and your agent reconciles them.
+
+> Don't want to choose? Run [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) — it auto-detects whichever of the connectors below you've installed and exposes a single `living_body_daily_brief` over all of them.
+
+---
+
+## ✨ The connectors
 
 <table>
   <tr>
@@ -158,6 +217,15 @@ For the public thesis behind this stack, read [Why local-first wellness agents n
       <a href="https://www.npmjs.com/package/google-health-mcp-unofficial"><img src="https://img.shields.io/npm/dm/google-health-mcp-unofficial?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
     </td>
     <td width="33%" align="center" valign="top">
+      <a href="https://github.com/davidmosiah/eight-sleep-mcp">
+        <img src="https://img.shields.io/badge/Eight_Sleep-1D1D1F?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="Eight Sleep" /><br>
+      </a>
+      <code>eight-sleep-mcp-unofficial</code><br>
+      <sub>Sleep trends · Bed temperature · Alarms</sub><br><br>
+      <a href="https://github.com/davidmosiah/eight-sleep-mcp"><img src="https://img.shields.io/github/stars/davidmosiah/eight-sleep-mcp?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
+      <a href="https://www.npmjs.com/package/eight-sleep-mcp-unofficial"><img src="https://img.shields.io/npm/dm/eight-sleep-mcp-unofficial?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
+    </td>
+    <td width="33%" align="center" valign="top">
       <a href="https://github.com/davidmosiah/wellness-nourish">
         <img src="https://img.shields.io/badge/Nourish-10B981?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="Nourish" /><br>
       </a>
@@ -166,6 +234,8 @@ For the public thesis behind this stack, read [Why local-first wellness agents n
       <a href="https://github.com/davidmosiah/wellness-nourish"><img src="https://img.shields.io/github/stars/davidmosiah/wellness-nourish?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
       <a href="https://www.npmjs.com/package/wellness-nourish"><img src="https://img.shields.io/npm/dm/wellness-nourish?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
     </td>
+  </tr>
+  <tr>
     <td width="33%" align="center" valign="top">
       <a href="https://github.com/davidmosiah/wellness-air">
         <img src="https://img.shields.io/badge/Air-0EA5A3?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="Wellness Air" /><br>
@@ -175,8 +245,6 @@ For the public thesis behind this stack, read [Why local-first wellness agents n
       <a href="https://github.com/davidmosiah/wellness-air"><img src="https://img.shields.io/github/stars/davidmosiah/wellness-air?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
       <a href="https://www.npmjs.com/package/wellness-air"><img src="https://img.shields.io/npm/dm/wellness-air?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
     </td>
-  </tr>
-  <tr>
     <td width="33%" align="center" valign="top">
       <a href="https://github.com/davidmosiah/wellness-cycle-coach">
         <img src="https://img.shields.io/badge/Cycle_Coach-EC4899?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="Cycle Coach" /><br>
@@ -195,47 +263,61 @@ For the public thesis behind this stack, read [Why local-first wellness agents n
       <a href="https://github.com/davidmosiah/wellness-cgm-mcp"><img src="https://img.shields.io/github/stars/davidmosiah/wellness-cgm-mcp?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
       <a href="https://www.npmjs.com/package/wellness-cgm-mcp"><img src="https://img.shields.io/npm/dm/wellness-cgm-mcp?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
     </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center" valign="top">
+      <a href="https://github.com/davidmosiah/delx-living-body">
+        <img src="https://img.shields.io/badge/Living_Body-7C3AED?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="Delx Living Body" /><br>
+      </a>
+      <code>delx-living-body</code><br>
+      <sub>Meta-MCP · Auto-detect · One unified surface</sub><br><br>
+      <a href="https://github.com/davidmosiah/delx-living-body"><img src="https://img.shields.io/github/stars/davidmosiah/delx-living-body?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
+      <a href="https://www.npmjs.com/package/delx-living-body"><img src="https://img.shields.io/npm/dm/delx-living-body?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
+    </td>
     <td width="33%" align="center" valign="top">
       <em>More connectors coming &mdash;<br>follow on <a href="https://x.com/delx369">X</a> for releases.</em>
+    </td>
+    <td width="33%" align="center" valign="top">
     </td>
   </tr>
 </table>
 
-> Each connector is a standalone npm package. Install one or all fifteen &mdash; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health, Samsung Health and Google Health all reporting sleep, etc.).
+> Each connector is a standalone npm package. Install one or all of them &mdash; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health, Samsung Health and Google Health all reporting sleep, etc.). Don't want to install them one by one? [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) auto-detects whichever you have and exposes them as a single surface. (A non-wellness [`google-ads-mcp-unofficial`](https://github.com/davidmosiah/google-ads-mcp-unofficial) is also cataloged in [`registry.json`](registry.json) as an agent tool for the Delx reach surface.)
 
 ---
 
-## 🎯 Agent-readiness
+## 💬 What it looks like in practice
 
-Every connector is independently audited by [`mcp-scorecard`](https://github.com/davidmosiah/mcp-scorecard) across 10 agent-readiness checks (tool descriptions, input schemas, error handling, manifest, transport hygiene and more). Higher is better &mdash; the score tells an AI builder how cleanly an agent can discover and drive the connector without human glue.
+A short look at how an agent actually uses these connectors. The agent checks readiness, calls the relevant summary tools, separates observed data from suggestions, and stays non-medical — exactly the behavior in [`examples/from-workbench/`](examples/from-workbench/).
 
-| Connector | Agent-readiness |
-|---|---|
-| `garmin-mcp-unofficial` | 🥇 97/100 |
-| `eight-sleep-mcp-unofficial` | 🥇 94/100 |
-| `apple-health-mcp-unofficial` | 🥇 91/100 |
-| `samsung-health-mcp-unofficial` | 🥇 91/100 |
-| `whoop-mcp-unofficial` | 🥇 90/100 |
-| `oura-mcp-unofficial` | 🥇 90/100 |
-| `strava-mcp-unofficial` | 🥇 90/100 |
-| `fitbit-mcp-unofficial` | 🥇 90/100 |
-| `withings-mcp-unofficial` | 🥇 90/100 |
-| `polar-mcp-unofficial` | 🥇 90/100 |
-| `google-health-mcp-unofficial` | 🥇 90/100 |
-| `wellness-nourish` | 🥈 85/100 |
-| `google-ads-mcp-unofficial` | 🥈 80/100 |
-| `wellness-air` | 🥉 65/100 |
-| `wellness-cycle-coach` | 🥉 64/100 |
-| `wellness-cgm-mcp` | 🥉 63/100 |
-| `exercise-catalog-mcp` | &mdash; (private, not on public npm) |
+**You:** *"How's my recovery looking today?"*
 
-<sub>🥇 90+ &nbsp;·&nbsp; 🥈 75&ndash;89 &nbsp;·&nbsp; 🥉 60&ndash;74. Scores from `npx mcp-scorecard <package>`. Re-run any row yourself to verify.</sub>
+> **Agent** *(calls `whoop_daily_summary` + `nourish_daily_summary`)*
+>
+> Pulling from WHOOP and Nourish (both connected):
+> - **Recovery 41%** (yellow) — HRV 48 ms, down from your 58 ms baseline. RHR 60 bpm, a touch elevated.
+> - **Sleep 6 h 12 m** vs your 7 h 30 m need — about 78% of need met.
+> - **Yesterday's intake:** 1,980 kcal, but only 41 g protein logged and hydration light (1.1 L).
+>
+> Lowest-confidence link, but worth flagging: short sleep + low protein + light hydration line up with the dip. **One conservative move today:** keep strain easy, get protein toward ~1.6 g/kg, and front-load water. Want me to suggest a high-protein lunch from Nourish?
+
+**You:** *"Just give me my brief."* — with the meta-MCP installed, that's a single tool call:
+
+> **Agent** *(calls `living_body_daily_brief`)*
+>
+> **Connected:** WHOOP, Garmin, Nourish, Air *(Oura, Strava not detected)*
+> 1. **Highest-confidence signals:** Garmin Body Battery started at 62; WHOOP recovery 41%; bedroom CO₂ peaked at 1,180 ppm overnight.
+> 2. **Main bottleneck:** sleep quality — and elevated CO₂ is a plausible contributor.
+> 3. **One action today:** crack a window or run ventilation tonight; keep training Zone 2.
+> 4. **To connect next:** Oura or Eight Sleep would add a second independent sleep read.
+
+<sub>Numbers above are illustrative. `living_body_daily_brief` composes whatever connectors it detects locally with rule-based (offline) synthesis — it makes no extra LLM calls and no data leaves your machine. Drop the [`agent-rules.md`](examples/from-workbench/agent-rules.md) block into your agent to get this readiness-first, non-medical behavior.</sub>
 
 ---
 
 ## 🚀 Quick Start &mdash; one command for the whole stack
 
-The fastest path is a **profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 15 connectors:
+The fastest path is a **profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for every connector:
 
 ```bash
 npx -y delx-wellness-hermes setup
@@ -251,7 +333,7 @@ openclaw --profile delx-wellness agent --local --message "Open Delx Wellness onb
 
 That's it. The setup wizard walks you through choosing which providers to wire up, checks the local Nourish preset (no OAuth required), and prints the next commands for model setup and per-provider auth.
 
-> 📦 [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) and [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) are the first runtime-native profile packs &mdash; they preconfigure everything below so you don't have to glue 11 MCP configs by hand.
+> 📦 [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) and [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) are the first runtime-native profile packs &mdash; they preconfigure every connector below so you don't have to glue a stack of MCP configs by hand. For generic clients, [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) plays the same "one entry, many connectors" role.
 
 | Runtime | Profile pack | Repository | Page |
 |---|---|---|---|
@@ -292,13 +374,13 @@ Then drop one of the [client config examples](examples/) into your AI client:
 | **Hermes** | [`examples/hermes.md`](examples/hermes.md) | YAML + skill files (or use the profile pack above) |
 | **OpenClaw** | [`examples/openclaw.md`](examples/openclaw.md) | OpenClaw `mcp.servers` config (or use the profile pack above) |
 | **Goose** | [`USING_WITH_GOOSE.md`](USING_WITH_GOOSE.md) | Block's MCP-native agent — `goose configure` or paste into `config.yaml` |
-| **Generic / ChatGPT** | [`examples/generic-mcp.md`](examples/generic-mcp.md) | Standard `mcpServers` shape |
+| **Generic / ChatGPT** | [`examples/generic-mcp.md`](examples/generic-mcp.md) | Standard `mcpServers` shape — includes the one-entry `delx-living-body` option |
 
 ---
 
-## 👤 Shared local profile &mdash; one onboarding for all 15 connectors
+## 👤 Shared local profile &mdash; one onboarding for every connector
 
-As of **v0.4.0** every connector reads and writes the same local profile at **`~/.delx-wellness/profile.json`** (mode `0600`). Onboarding once tells your agent your name, gender, age, height, weight, goals, devices, training level, dietary patterns, language, units and reply style &mdash; and **all 15 connectors instantly use it** for personalized summaries, coaching and unit conversion.
+As of **v0.4.0** every connector reads and writes the same local profile at **`~/.delx-wellness/profile.json`** (mode `0600`). Onboarding once tells your agent your name, gender, age, height, weight, goals, devices, training level, dietary patterns, language, units and reply style &mdash; and **every connector instantly uses it** for personalized summaries, coaching and unit conversion.
 
 Pick any connector and run its onboarding flow:
 
@@ -343,7 +425,7 @@ flowchart LR
 
     subgraph L[" Local on your machine "]
       direction TB
-      MCP[profile pack<br/>or standalone MCP configs]
+      MCP[profile pack · delx-living-body<br/>or standalone MCP configs]
       W[whoop-mcp]
       O[oura-mcp]
       G[garmin-mcp]
@@ -391,28 +473,35 @@ flowchart LR
     style P2 fill:#0F172A,stroke:#7C3AED,color:#fff
 ```
 
-<p align="center"><em>One agent &rarr; one local profile &rarr; fifteen connectors &rarr; your provider data. <strong>Tokens never leave your machine.</strong></em></p>
+<p align="center"><em>One agent &rarr; one local profile &rarr; many connectors &rarr; your provider data. <strong>Tokens never leave your machine.</strong></em></p>
 
 ---
 
-## 🧭 Which connector should I install first?
+## 🎯 Agent-readiness
 
-```text
-Have a WHOOP?              → start with whoop-mcp        (recovery, HRV, sleep, strain)
-Have a Garmin?             → start with garminmcp        (Body Battery, training readiness, HRV)
-Have an Oura?              → start with ouramcp          (readiness, sleep, activity, HRV)
-Have Withings devices?     → start with withingsmcp      (body measures, sleep, activity, heart)
-Have an Apple Health export?→ add apple-health-mcp       (local export activity, sleep, HRV, workouts)
-Have a Galaxy Watch export? → add samsung-health-mcp     (local CSV activity, sleep, HRV, workouts)
-Have a Polar device?       → start with polarmcp         (Nightly Recharge, training load, PPI/HRV)
-Run/ride/swim a lot?       → add strava-mcp              (activities, streams, routes)
-Just bought a Fitbit?      → add fitbitmcp               (activity, sleep, heart, HRV)
-Migrating Fitbit to Google?→ add google-health-mcp       (Google Health API v4, rollups, reconciled streams)
-Tracking food?             → add wellness-nourish        (food search, barcode lookup, intake, hydration)
-Multiple devices?          → install several. Each is independent and read-only.
-```
+Every connector is independently audited by [`mcp-scorecard`](https://github.com/davidmosiah/mcp-scorecard) across 10 agent-readiness checks (tool descriptions, input schemas, error handling, manifest, transport hygiene and more). Higher is better &mdash; the score tells an AI builder how cleanly an agent can discover and drive the connector without human glue.
 
-The connectors are designed to coexist. When two providers cover the same signal (e.g. WHOOP and Garmin both report sleep), each tool returns provider-tagged data and your agent reconciles them.
+| Connector | Agent-readiness |
+|---|---|
+| `garmin-mcp-unofficial` | 🥇 97/100 |
+| `eight-sleep-mcp-unofficial` | 🥇 94/100 |
+| `apple-health-mcp-unofficial` | 🥇 91/100 |
+| `samsung-health-mcp-unofficial` | 🥇 91/100 |
+| `whoop-mcp-unofficial` | 🥇 90/100 |
+| `oura-mcp-unofficial` | 🥇 90/100 |
+| `strava-mcp-unofficial` | 🥇 90/100 |
+| `fitbit-mcp-unofficial` | 🥇 90/100 |
+| `withings-mcp-unofficial` | 🥇 90/100 |
+| `polar-mcp-unofficial` | 🥇 90/100 |
+| `google-health-mcp-unofficial` | 🥇 90/100 |
+| `wellness-nourish` | 🥈 85/100 |
+| `google-ads-mcp-unofficial` | 🥈 80/100 |
+| `wellness-air` | 🥉 65/100 |
+| `wellness-cycle-coach` | 🥉 64/100 |
+| `wellness-cgm-mcp` | 🥉 63/100 |
+| `exercise-catalog-mcp` | &mdash; (private, not on public npm) |
+
+<sub>🥇 90+ &nbsp;·&nbsp; 🥈 75&ndash;89 &nbsp;·&nbsp; 🥉 60&ndash;74. Scores from `npx mcp-scorecard <package>`. Re-run any row yourself to verify.</sub>
 
 ---
 
@@ -424,7 +513,7 @@ Delx Wellness flips it:
 
 - **🔒 Tokens stay on your machine.** OAuth completes locally; refresh tokens live in your OS keychain or a `~/.config` file you own.
 - **📖 Read-only by design.** Every connector is read-only. There is no "write to your Apple Health" tool, no surprise side effects.
-- **🧱 Standalone packages.** Each connector is a separate npm package with a clear scope. Audit one without auditing nine.
+- **🧱 Standalone packages.** Each connector is a separate npm package with a clear scope. Audit one without auditing the rest.
 - **🤝 Vendor-neutral.** You can mix providers, swap one out, or remove all of them without anything breaking on a hosted side.
 - **🌐 No phone-home.** No analytics, no telemetry, no usage reporting baked into the connectors themselves.
 
@@ -436,7 +525,8 @@ The hosted commercial layer (token vault, billing, rate limits) **may stay priva
 
 | Layer | Public | Notes |
 |---|:---:|---|
-| Local provider connectors | ✅ | 11 individual MCP servers (WHOOP · Strava · Fitbit · Google Health · Garmin · Oura · Withings · Apple Health · Samsung Health · Polar · Nourish) |
+| Local provider connectors | ✅ | Individual MCP servers (WHOOP · Oura · Garmin · Strava · Fitbit · Google Health · Withings · Apple Health · Samsung Health · Polar · Eight Sleep · Nourish · Air · Cycle Coach · CGM) |
+| Meta-MCP (install-all) | ✅ | [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) &mdash; auto-detects and composes the connectors above |
 | Hermes profile pack | ✅ | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) &mdash; one-command setup |
 | Connector registry & docs | ✅ | This repository |
 | Normalized schemas | ✅ | Stable shared shapes for cross-provider tools &mdash; [`schemas/`](schemas/) |
@@ -444,7 +534,7 @@ The hosted commercial layer (token vault, billing, rate limits) **may stay priva
 | Token vault, billing, rate limits | ⏳ | Sensitive commercial and security surface |
 | Real user health data | ❌ | Never committed to GitHub |
 
-Tiers and trust levels are defined in [`docs/connector-quality-standard.md`](docs/connector-quality-standard.md). Machine-readable catalog: [`registry.json`](registry.json).
+Tiers and trust levels are defined in [`docs/connector-quality-standard.md`](docs/connector-quality-standard.md). Machine-readable catalog: [`registry.json`](registry.json) · current snapshot: [`STATUS.md`](STATUS.md).
 
 ---
 
@@ -499,4 +589,4 @@ Follow on X: [@delx369](https://x.com/delx369) · Site: [wellness.delx.ai](https
 
 MIT &mdash; see [LICENSE](LICENSE).
 
-<sub>Delx Wellness is an open-source project. WHOOP, Oura, Garmin, Strava, Fitbit, Google Health, Withings, Apple Health, Samsung Health and Polar are trademarks of their respective owners. None of the connectors in this registry are affiliated with, endorsed by, or supported by those companies.</sub>
+<sub>Delx Wellness is an open-source project. WHOOP, Oura, Garmin, Strava, Fitbit, Google Health, Withings, Apple Health, Samsung Health, Polar and Eight Sleep are trademarks of their respective owners. None of the connectors in this registry are affiliated with, endorsed by, or supported by those companies.</sub>

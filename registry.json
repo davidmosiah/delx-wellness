@@ -28,7 +28,7 @@
       ],
       "privacy_default": "public_safe_profile_pack",
       "notes": "Installs a delx-wellness Hermes profile with one setup command, onboarding, wellness skills, MCP connector presets, Nourish smoke testing, MCP readiness checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, Telegram secrets or private Exercise Catalog data.",
-      "npm_version": "0.2.8"
+      "npm_version": "0.2.9"
     },
     {
       "id": "delx-wellness-openclaw",
@@ -130,7 +130,7 @@
         "notes": "Local package reads Apple Health export.xml/export.zip, includes data inventory, summary-mode privacy enforcement, timezone-aware summaries, managed auto-import, agent manifest, CLI setup and Hermes setup checks."
       },
       "notes": "Reads user-provided Apple Health exports only. Managed auto-import can find/copy local exports after transfer, but this does not provide live HealthKit or iCloud Health access.",
-      "npm_version": "0.4.3"
+      "npm_version": "0.5.0"
     },
     {
       "id": "eight-sleep",
@@ -271,7 +271,7 @@
         "nourish"
       ],
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible.",
-      "npm_version": "0.4.5"
+      "npm_version": "0.5.1"
     },
     {
       "id": "google-health",
@@ -354,7 +354,7 @@
         "notes": "Local package includes Oura OAuth, v2 usercollection tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses official Oura Cloud API v2. Heart-rate and SpO2 availability depends on ring generation, membership and granted scopes.",
-      "npm_version": "0.4.5"
+      "npm_version": "0.4.6"
     },
     {
       "id": "polar",
@@ -448,7 +448,7 @@
         "notes": "Local package reads Samsung Health personal-data CSV folders, single CSV files, or ZIP files; includes data inventory, summary-mode privacy enforcement, timezone-aware summaries, managed auto-import, agent manifest, CLI setup and Hermes setup checks."
       },
       "notes": "Reads user-provided Samsung Health exports only. Samsung Health Data SDK and Health Connect are Android/app bridge paths, not live OAuth access for this Node connector.",
-      "npm_version": "0.4.3"
+      "npm_version": "0.5.0"
     },
     {
       "id": "strava",
@@ -493,7 +493,7 @@
         "nourish"
       ],
       "notes": "GPS/map data is privacy-sensitive and should require explicit user intent.",
-      "npm_version": "0.4.5"
+      "npm_version": "0.4.6"
     },
     {
       "id": "wellness-air",
@@ -528,7 +528,7 @@
         "oura"
       ],
       "notes": "Indoor air-quality MCP. Pair with sleep/recovery data to correlate poor sleep with high CO2 or PM2.5.",
-      "npm_version": "0.5.5"
+      "npm_version": "0.5.6"
     },
     {
       "id": "wellness-cgm-mcp",
@@ -560,7 +560,7 @@
         "garmin"
       ],
       "notes": "Dexcom CGM connector. NOT medical advice. Sandbox mode for testing without real credentials. Pair with nourish to analyze meal-glucose response.",
-      "npm_version": "0.3.4"
+      "npm_version": "0.4.0"
     },
     {
       "id": "wellness-cycle-coach",
@@ -593,7 +593,7 @@
         "oura"
       ],
       "notes": "Stateless menstrual-cycle coach. Not medical advice. PCOS/perimenopause edge cases roadmapped.",
-      "npm_version": "0.3.4"
+      "npm_version": "0.3.5"
     },
     {
       "id": "nourish",
@@ -699,7 +699,7 @@
         "nourish"
       ],
       "notes": "Uses official WHOOP OAuth API. Raw means upstream API JSON, not continuous sensor streams.",
-      "npm_version": "0.4.4"
+      "npm_version": "0.5.0"
     },
     {
       "id": "withings",
@@ -825,5 +825,5 @@
       "npm_version": "0.1.3"
     }
   ],
-  "last_updated": "2026-05-29"
+  "last_updated": "2026-06-16"
 }

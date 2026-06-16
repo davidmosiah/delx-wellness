@@ -1,6 +1,27 @@
 # Generic MCP Client
 
-Most MCP clients (ChatGPT Desktop with MCP enabled, OpenClaw, custom MCP hosts, etc.) accept the standard `mcpServers` shape. Use the same JSON snippet that works for Claude Desktop and Cursor:
+Most MCP clients (ChatGPT Desktop with MCP enabled, OpenClaw, custom MCP hosts, etc.) accept the standard `mcpServers` shape.
+
+## Fastest path — one MCP that pulls in all the others
+
+If you want a single entry instead of wiring up a dozen servers, use [`delx-living-body`](https://github.com/davidmosiah/delx-living-body). It auto-detects whichever Delx Wellness connectors you already have installed locally and composes them into one unified surface (`living_body_status`, `living_body_daily_brief`, `living_body_ask`, `living_body_health_check`). Synthesis is rule-based and offline — no extra LLM calls, no tokens leave your machine.
+
+```json
+{
+  "mcpServers": {
+    "living_body": {
+      "command": "npx",
+      "args": ["-y", "delx-living-body"]
+    }
+  }
+}
+```
+
+You still install and authenticate the individual connectors below (each handles its own credentials); `delx-living-body` just discovers them and gives the agent one place to ask "how am I doing today?".
+
+## Or wire each connector individually
+
+Use the standard `mcpServers` shape — the same JSON that works for Claude Desktop and Cursor:
 
 ```json
 {
@@ -70,7 +91,15 @@ The MCP client never sees your client secrets, OAuth tokens or Garmin credential
 
 ## Recommended first calls
 
-After installing, ask your agent to verify each connector:
+If you installed `delx-living-body`, start there — one call tells you which connectors it found and whether they're healthy:
+
+```text
+living_body_status
+living_body_health_check
+living_body_daily_brief
+```
+
+Otherwise, ask your agent to verify each connector:
 
 ```text
 whoop_connection_status

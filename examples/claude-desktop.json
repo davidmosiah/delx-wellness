@@ -1,5 +1,9 @@
 {
   "mcpServers": {
+    "living_body": {
+      "command": "npx",
+      "args": ["-y", "delx-living-body"]
+    },
     "whoop": {
       "command": "npx",
       "args": ["-y", "whoop-mcp-unofficial"]
