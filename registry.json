@@ -97,6 +97,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/apple-health-mcp",
       "package": "apple-health-mcp-unofficial",
+      "agentReadiness": 91,
       "transport": [
         "stdio",
         "streamable_http"
@@ -137,6 +138,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/eight-sleep-mcp",
       "package": "eight-sleep-mcp-unofficial",
+      "agentReadiness": 94,
       "transport": [
         "stdio",
         "streamable_http"
@@ -186,6 +188,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/fitbitmcp",
       "package": "fitbit-mcp-unofficial",
+      "agentReadiness": 90,
       "transport": [
         "stdio",
         "streamable_http"
@@ -227,6 +230,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/garminmcp",
       "package": "garmin-mcp-unofficial",
+      "agentReadiness": 97,
       "transport": [
         "stdio",
         "streamable_http"
@@ -275,6 +279,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/google-health-mcp",
       "package": "google-health-mcp-unofficial",
+      "agentReadiness": 90,
       "transport": [
         "stdio",
         "streamable_http"
@@ -318,6 +323,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/ouramcp",
       "package": "oura-mcp-unofficial",
+      "agentReadiness": 90,
       "transport": [
         "stdio",
         "streamable_http"
@@ -356,6 +362,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/polarmcp",
       "package": "polar-mcp-unofficial",
+      "agentReadiness": 90,
       "transport": [
         "stdio",
         "streamable_http"
@@ -405,6 +412,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/samsung-health-mcp",
       "package": "samsung-health-mcp-unofficial",
+      "agentReadiness": 91,
       "transport": [
         "stdio",
         "streamable_http"
@@ -448,6 +456,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/strava-mcp",
       "package": "strava-mcp-unofficial",
+      "agentReadiness": 90,
       "transport": [
         "stdio",
         "streamable_http"
@@ -492,6 +501,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/wellness-air",
       "package": "wellness-air",
+      "agentReadiness": 65,
       "transport": [
         "stdio",
         "http-local"
@@ -526,6 +536,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/wellness-cgm-mcp",
       "package": "wellness-cgm-mcp",
+      "agentReadiness": 63,
       "transport": [
         "stdio",
         "http-local"
@@ -557,6 +568,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/wellness-cycle-coach",
       "package": "wellness-cycle-coach",
+      "agentReadiness": 64,
       "transport": [
         "stdio",
         "http-local"
@@ -589,6 +601,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/wellness-nourish",
       "package": "wellness-nourish",
+      "agentReadiness": 85,
       "transport": [
         "stdio",
         "streamable_http"
@@ -650,6 +663,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/whoop-mcp",
       "package": "whoop-mcp-unofficial",
+      "agentReadiness": 90,
       "transport": [
         "stdio",
         "streamable_http"
@@ -693,6 +707,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/withingsmcp",
       "package": "withings-mcp-unofficial",
+      "agentReadiness": 90,
       "transport": [
         "stdio",
         "streamable_http"
@@ -769,6 +784,7 @@
       "status": "active",
       "repository": "https://github.com/davidmosiah/google-ads-mcp-unofficial",
       "package": "google-ads-mcp-unofficial",
+      "agentReadiness": 80,
       "transport": [
         "stdio"
       ],

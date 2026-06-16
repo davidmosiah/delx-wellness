@@ -205,6 +205,34 @@ For the public thesis behind this stack, read [Why local-first wellness agents n
 
 ---
 
+## 🎯 Agent-readiness
+
+Every connector is independently audited by [`mcp-scorecard`](https://github.com/davidmosiah/mcp-scorecard) across 10 agent-readiness checks (tool descriptions, input schemas, error handling, manifest, transport hygiene and more). Higher is better &mdash; the score tells an AI builder how cleanly an agent can discover and drive the connector without human glue.
+
+| Connector | Agent-readiness |
+|---|---|
+| `garmin-mcp-unofficial` | 🥇 97/100 |
+| `eight-sleep-mcp-unofficial` | 🥇 94/100 |
+| `apple-health-mcp-unofficial` | 🥇 91/100 |
+| `samsung-health-mcp-unofficial` | 🥇 91/100 |
+| `whoop-mcp-unofficial` | 🥇 90/100 |
+| `oura-mcp-unofficial` | 🥇 90/100 |
+| `strava-mcp-unofficial` | 🥇 90/100 |
+| `fitbit-mcp-unofficial` | 🥇 90/100 |
+| `withings-mcp-unofficial` | 🥇 90/100 |
+| `polar-mcp-unofficial` | 🥇 90/100 |
+| `google-health-mcp-unofficial` | 🥇 90/100 |
+| `wellness-nourish` | 🥈 85/100 |
+| `google-ads-mcp-unofficial` | 🥈 80/100 |
+| `wellness-air` | 🥉 65/100 |
+| `wellness-cycle-coach` | 🥉 64/100 |
+| `wellness-cgm-mcp` | 🥉 63/100 |
+| `exercise-catalog-mcp` | &mdash; (private, not on public npm) |
+
+<sub>🥇 90+ &nbsp;·&nbsp; 🥈 75&ndash;89 &nbsp;·&nbsp; 🥉 60&ndash;74. Scores from `npx mcp-scorecard <package>`. Re-run any row yourself to verify.</sub>
+
+---
+
 ## 🚀 Quick Start &mdash; one command for the whole stack
 
 The fastest path is a **profile pack**. One command creates a local-first wellness profile with onboarding, skills, MCP presets and setup checks for all 15 connectors:
