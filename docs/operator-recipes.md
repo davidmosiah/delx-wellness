@@ -10,6 +10,7 @@ Use these when you want a concrete outcome instead of a connector list.
 
 | Outcome | Runtime | Recipe | Command |
 |---|---|---|---|
+| Daily recovery, nutrition and missing-setup plan | Hermes | [Hermes Daily Operator](hermes-daily-operator.md) | `hermes -p delx-wellness -z "$(npx -y delx-wellness-hermes operator --prompt-only)"` |
 | Daily recovery, nutrition and missing-setup plan | OpenClaw | [OpenClaw Daily Operator](openclaw-daily-operator.md) | `openclaw --profile delx-wellness agent --local --message "$(npx -y delx-wellness-openclaw operator --prompt-only)"` |
 | One unified wellness brief across installed connectors | Any MCP client | `delx-living-body` daily brief | Ask your client to call `living_body_daily_brief` after starting `npx -y delx-living-body` |
 | No-OAuth nutrition first run | Any MCP client | Nourish local estimate | Start `npx -y wellness-nourish`, then ask for a meal estimate without logging unless you explicitly confirm |
@@ -43,8 +44,6 @@ When adding a new recipe, include:
 
 ## Next Recipes To Ship
 
-- Hermes Daily Operator: the same daily loop, packaged as a Hermes-native
-  command and prompt.
 - Living Body One-Entry Brief: a generic MCP recipe for Claude Desktop, Cursor,
   Goose and Codex that calls only the meta-MCP surface.
 - Recovery-to-Meal Loop: combines wearable readiness with Nourish suggestions

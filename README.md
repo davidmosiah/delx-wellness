@@ -59,6 +59,7 @@ Runnable agent loops live in [Operator Recipes](docs/operator-recipes.md).
 | **One MCP that pulls in all the others** (Claude Desktop, Cursor, Goose, any generic client) | [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) | `npx -y delx-living-body` |
 | Install the whole wellness stack for Hermes | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | `npx -y delx-wellness-hermes setup` |
 | Install the whole wellness stack for OpenClaw | [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) | `npx -y delx-wellness-openclaw setup` |
+| Run the Hermes Daily Operator | [Hermes Daily Operator](docs/hermes-daily-operator.md) | `hermes -p delx-wellness -z "$(npx -y delx-wellness-hermes operator --prompt-only)"` |
 | Run the OpenClaw Daily Operator | [OpenClaw Daily Operator](docs/openclaw-daily-operator.md) | `openclaw --profile delx-wellness agent --local --message "$(npx -y delx-wellness-openclaw operator --prompt-only)"` |
 | Browse runnable agent loops | [Operator Recipes](docs/operator-recipes.md) | Pick a runtime recipe with a command and safety contract |
 | Track food, barcode scans, hydration and meal summaries | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | `npx -y wellness-nourish doctor` |
@@ -335,7 +336,7 @@ The fastest path is a **profile pack**. One command creates a local-first wellne
 
 ```bash
 npx -y delx-wellness-hermes setup
-hermes -p delx-wellness
+hermes -p delx-wellness -z "$(npx -y delx-wellness-hermes operator --prompt-only)"
 ```
 
 For OpenClaw:
@@ -345,7 +346,7 @@ npx -y delx-wellness-openclaw setup
 openclaw --profile delx-wellness agent --local --message "$(npx -y delx-wellness-openclaw operator --prompt-only)"
 ```
 
-That's it. The setup wizard walks you through choosing which providers to wire up, checks the local Nourish preset (no OAuth required), and prints the next commands for model setup and per-provider auth. The [OpenClaw Daily Operator](docs/openclaw-daily-operator.md) then turns available context into one daily read, evidence bullets, one training/recovery action, one nutrition action, and a missing-setup checklist. More runnable loops live in [Operator Recipes](docs/operator-recipes.md).
+That's it. The setup wizard walks you through choosing which providers to wire up, checks the local Nourish preset (no OAuth required), and prints the next commands for model setup and per-provider auth. The [Hermes Daily Operator](docs/hermes-daily-operator.md) and [OpenClaw Daily Operator](docs/openclaw-daily-operator.md) then turn available context into one daily read, evidence bullets, one training/recovery action, one nutrition action, and a missing-setup checklist. More runnable loops live in [Operator Recipes](docs/operator-recipes.md).
 
 > 📦 [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) and [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) are the first runtime-native profile packs &mdash; they preconfigure every connector below so you don't have to glue a stack of MCP configs by hand. For generic clients, [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) plays the same "one entry, many connectors" role.
 

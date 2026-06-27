@@ -6,7 +6,7 @@ _Auto-generated from `registry.json` on 2026-06-27 by `scripts/sync-registry.mjs
 
 | Profile | npm version | Status |
 |---|---|---|
-| [Delx Wellness for Hermes](https://github.com/davidmosiah/delx-wellness-hermes) | `0.2.9` | active |
+| [Delx Wellness for Hermes](https://github.com/davidmosiah/delx-wellness-hermes) | `0.3.0` | active |
 | [Delx Wellness for OpenClaw](https://github.com/davidmosiah/delx-wellness-openclaw) | `0.2.0` | active |
 
 ## Meta-connectors
