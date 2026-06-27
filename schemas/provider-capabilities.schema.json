@@ -130,6 +130,12 @@
               "null"
             ]
           },
+          "agentReadiness": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Public 0-100 agent-readiness score for prioritization and discovery surfaces."
+          },
           "transport": {
             "type": "array",
             "items": {

@@ -15,7 +15,7 @@ Two checks run on every push and pull request targeting `main`
 1. **Schema validation** — [`scripts/validate-schema.mjs`](../scripts/validate-schema.mjs)
    checks `registry.json` against
    [`schemas/provider-capabilities.schema.json`](../schemas/provider-capabilities.schema.json):
-   required fields, `status` enum, `quality` object shape, and
+   required fields, `status` enum, `agentReadiness` score range, `quality` object shape, and
    `additionalProperties: false`. This catches the kind of drift that used to
    slip through silently (e.g. the `npm_version` field that
    `scripts/sync-registry.mjs` writes, or a quality tier landing in `status`).

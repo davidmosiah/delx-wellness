@@ -39,6 +39,16 @@
 
 ---
 
+## Support the open-source layer
+
+The connectors stay MIT, local-first and useful without a hosted account. Paid
+work belongs above the public core: setup concierge, MCP audits, private
+deployments and custom connector work. See
+[Open Source Support](docs/open-source-support.md) for the boundary and support
+paths.
+
+---
+
 ## Start here
 
 | Goal | Use this | Command |
