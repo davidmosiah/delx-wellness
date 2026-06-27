@@ -58,10 +58,10 @@ priorities live in the [Open Source Growth Snapshot](docs/open-source-growth-sna
 | **One MCP that pulls in all the others** (Claude Desktop, Cursor, Goose, any generic client) | [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) | `npx -y delx-living-body` |
 | Install the whole wellness stack for Hermes | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | `npx -y delx-wellness-hermes setup` |
 | Install the whole wellness stack for OpenClaw | [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) | `npx -y delx-wellness-openclaw setup` |
+| Run the OpenClaw Daily Operator | [OpenClaw Daily Operator](docs/openclaw-daily-operator.md) | `openclaw --profile delx-wellness agent --local --message "$(npx -y delx-wellness-openclaw operator --prompt-only)"` |
 | Track food, barcode scans, hydration and meal summaries | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | `npx -y wellness-nourish doctor` |
 | Add recovery, strain, sleep and HRV | [`whoop-mcp`](https://github.com/davidmosiah/whoop-mcp) | `npx -y whoop-mcp-unofficial setup` |
 | Add Body Battery, sleep, stress and training readiness | [`garmin-mcp`](https://github.com/davidmosiah/garmin-mcp) | `npx -y garmin-mcp-unofficial setup --auth` |
-| Copy runnable agent templates | [`delx-agent-workbench`](https://github.com/davidmosiah/delx-agent-workbench) | Use the Hermes, OpenClaw, Claude Desktop or Codex examples |
 | Browse the human-friendly site | [`delx-wellness-site`](https://github.com/davidmosiah/delx-wellness-site) | [wellness.delx.ai](https://wellness.delx.ai) |
 
 **Generic MCP clients (Claude Desktop, Cursor, Goose, ChatGPT Desktop):** the lowest-friction option is [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) — a single meta-MCP that **auto-detects whichever connectors you already have installed** and composes them into one unified surface (`living_body_status`, `living_body_daily_brief`, `living_body_ask`, `living_body_health_check`). One server entry instead of a dozen; synthesis is rule-based and offline.
@@ -340,10 +340,10 @@ For OpenClaw:
 
 ```bash
 npx -y delx-wellness-openclaw setup
-openclaw --profile delx-wellness agent --local --message "Open Delx Wellness onboarding"
+openclaw --profile delx-wellness agent --local --message "$(npx -y delx-wellness-openclaw operator --prompt-only)"
 ```
 
-That's it. The setup wizard walks you through choosing which providers to wire up, checks the local Nourish preset (no OAuth required), and prints the next commands for model setup and per-provider auth.
+That's it. The setup wizard walks you through choosing which providers to wire up, checks the local Nourish preset (no OAuth required), and prints the next commands for model setup and per-provider auth. The [OpenClaw Daily Operator](docs/openclaw-daily-operator.md) then turns available context into one daily read, evidence bullets, one training/recovery action, one nutrition action, and a missing-setup checklist.
 
 > 📦 [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) and [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) are the first runtime-native profile packs &mdash; they preconfigure every connector below so you don't have to glue a stack of MCP configs by hand. For generic clients, [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) plays the same "one entry, many connectors" role.
 
