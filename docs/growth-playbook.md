@@ -29,6 +29,14 @@ Outputs are local only:
 - `.growth-metrics/snapshots/YYYY-MM-DD.json`
 - `.growth-metrics/latest.md`
 
+The collector also writes a public, commit-safe snapshot:
+
+- `docs/open-source-growth-snapshot.md`
+
+That public document uses only GitHub repository metadata and public npm
+download counts. GitHub traffic, referrers and path analytics stay local under
+`.growth-metrics/`.
+
 ## Daily Loop
 
 1. Run the growth collector.

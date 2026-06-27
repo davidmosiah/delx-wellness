@@ -24,3 +24,4 @@ jobs:
       - run: node -e "JSON.parse(require('fs').readFileSync('registry.json','utf8')); console.log('registry ok')"
       - run: test -f llms.txt
       - run: test -f SECURITY.md
+      - run: test -f docs/open-source-growth-snapshot.md

@@ -46,7 +46,8 @@ work belongs above the public core: setup concierge, MCP audits, private
 deployments and custom connector work. See
 [Open Source Support](docs/open-source-support.md) for the boundary and support
 paths. The current verified npm/GitHub release set lives in the
-[Release Index](docs/release-index.md).
+[Release Index](docs/release-index.md). Public traction and next-action
+priorities live in the [Open Source Growth Snapshot](docs/open-source-growth-snapshot.md).
 
 ---
 

@@ -10,10 +10,15 @@ const snapshotRoot = path.join(process.cwd(), ".growth-metrics");
 const snapshotDir = path.join(snapshotRoot, "snapshots");
 
 const repos = [
-  { name: "delx-wellness", vertical: "body", role: "registry" },
+  { name: "delx-wellness", vertical: "body", role: "registry", strategic: true },
   { name: "delx-wellness-site", vertical: "body", role: "site" },
+  { name: "delx-living-body", vertical: "body", role: "meta-connector", npm: "delx-living-body", strategic: true },
+  { name: "delx-mcp-server", vertical: "coordination", role: "bridge", npm: "delx-mcp-server", strategic: true },
+  { name: "delx-memory", vertical: "coordination", role: "agent-memory", npm: "delx-memory", strategic: true },
+  { name: "mcp-scorecard", vertical: "coordination", role: "quality", npm: "mcp-scorecard", strategic: true },
   { name: "whoop-mcp", vertical: "body", role: "connector", npm: "whoop-mcp-unofficial" },
   { name: "garmin-mcp", vertical: "body", role: "connector", npm: "garmin-mcp-unofficial" },
+  { name: "google-health-mcp", vertical: "body", role: "connector", npm: "google-health-mcp-unofficial", strategic: true },
   { name: "strava-mcp", vertical: "body", role: "connector", npm: "strava-mcp-unofficial" },
   { name: "fitbitmcp", vertical: "body", role: "connector", npm: "fitbit-mcp-unofficial" },
   { name: "ouramcp", vertical: "body", role: "connector", npm: "oura-mcp-unofficial" },
@@ -52,6 +57,10 @@ function formatNumber(value) {
   return number(value).toLocaleString("en-US");
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function sanitizeError(error) {
   const text = String(error?.stderr || error?.message || error || "unknown error");
   return text.replace(/gho_[A-Za-z0-9_]+/g, "gho_***").trim().slice(0, 800);
@@ -69,26 +78,37 @@ function ghJson(endpoint) {
   }
 }
 
-async function fetchJson(url) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15_000);
+async function fetchJson(url, attempts = 4) {
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15_000);
 
-  try {
-    const response = await fetch(url, {
-      headers: { "user-agent": "delx-growth-metrics/1.0" },
-      signal: controller.signal
-    });
+    try {
+      const response = await fetch(url, {
+        headers: { "user-agent": "delx-growth-metrics/1.0" },
+        signal: controller.signal
+      });
 
-    if (!response.ok) {
-      return { error: `${response.status} ${response.statusText}` };
+      if (response.ok) {
+        return await response.json();
+      }
+
+      const retryable = response.status === 429 || response.status >= 500;
+      if (!retryable || attempt === attempts) {
+        return { error: `${response.status} ${response.statusText}` };
+      }
+    } catch (error) {
+      if (attempt === attempts) {
+        return { error: sanitizeError(error) };
+      }
+    } finally {
+      clearTimeout(timeout);
     }
 
-    return await response.json();
-  } catch (error) {
-    return { error: sanitizeError(error) };
-  } finally {
-    clearTimeout(timeout);
+    await sleep(1_000 * attempt);
   }
+
+  return { error: "exhausted retries" };
 }
 
 function topItems(items, key, limit = 6) {
@@ -118,27 +138,38 @@ function deltaLabel(current, previous) {
   return "0";
 }
 
+function sumDownloads(days) {
+  return days.reduce((sum, day) => sum + number(day.downloads), 0);
+}
+
 async function collectGitHub() {
   return repos.map((repo) => {
     const fullName = `${owner}/${repo.name}`;
     const repository = ghJson(`/repos/${fullName}`);
+    const canonicalFullName = repository.full_name ?? fullName;
     const views = ghJson(`/repos/${fullName}/traffic/views`);
     const clones = ghJson(`/repos/${fullName}/traffic/clones`);
     const referrers = ghJson(`/repos/${fullName}/traffic/popular/referrers`);
     const paths = ghJson(`/repos/${fullName}/traffic/popular/paths`);
+    const openIssuesSearch = ghJson(
+      `/search/issues?q=${encodeURIComponent(`repo:${canonicalFullName} is:issue is:open`)}&per_page=1`
+    );
 
     return {
       owner,
-      name: repo.name,
-      fullName,
+      name: repository.name ?? repo.name,
+      requestedName: repo.name,
+      fullName: canonicalFullName,
       vertical: repo.vertical,
       role: repo.role,
+      npm: repo.npm ?? null,
+      strategic: Boolean(repo.strategic),
       url: repository.html_url ?? `https://github.com/${fullName}`,
       description: repository.description ?? null,
       stars: repository.stargazers_count ?? null,
       forks: repository.forks_count ?? null,
       subscribers: repository.subscribers_count ?? null,
-      openIssues: repository.open_issues_count ?? null,
+      openIssues: openIssuesSearch.total_count ?? null,
       pushedAt: repository.pushed_at ?? null,
       traffic: {
         views: views.count ?? null,
@@ -153,7 +184,8 @@ async function collectGitHub() {
         views: views.error ?? null,
         clones: clones.error ?? null,
         referrers: referrers.error ?? null,
-        paths: paths.error ?? null
+        paths: paths.error ?? null,
+        openIssues: openIssuesSearch.error ?? null
       }
     };
   });
@@ -164,22 +196,18 @@ async function collectNpm() {
 
   for (const packageName of npmPackages) {
     const encoded = encodeURIComponent(packageName);
-    const [lastDay, lastWeek, lastMonth] = await Promise.all([
-      fetchJson(`https://api.npmjs.org/downloads/point/last-day/${encoded}`),
-      fetchJson(`https://api.npmjs.org/downloads/point/last-week/${encoded}`),
-      fetchJson(`https://api.npmjs.org/downloads/point/last-month/${encoded}`)
-    ]);
+    const range = await fetchJson(`https://api.npmjs.org/downloads/range/last-month/${encoded}`);
+    await sleep(500);
+    const days = Array.isArray(range.downloads) ? range.downloads : [];
 
     packages.push({
       name: packageName,
       url: `https://www.npmjs.com/package/${packageName}`,
-      downloadsLastDay: lastDay.downloads ?? null,
-      downloads7d: lastWeek.downloads ?? null,
-      downloads30d: lastMonth.downloads ?? null,
+      downloadsLastDay: days.at(-1)?.downloads ?? null,
+      downloads7d: sumDownloads(days.slice(-7)),
+      downloads30d: sumDownloads(days),
       errors: {
-        lastDay: lastDay.error ?? null,
-        lastWeek: lastWeek.error ?? null,
-        lastMonth: lastMonth.error ?? null
+        range: range.error ?? null
       }
     });
   }
@@ -262,6 +290,119 @@ ${topNpmPackages.map(packageRow).join("\n") || "| n/a | 0 | 0 | 0 |"}
 `;
 }
 
+function packageByName(snapshot) {
+  return new Map(snapshot.npm.packages.map((pkg) => [pkg.name, pkg]));
+}
+
+function repoDownloads7d(repo, packages) {
+  return repo.npm ? number(packages.get(repo.npm)?.downloads7d) : 0;
+}
+
+function repoDownloads30d(repo, packages) {
+  return repo.npm ? number(packages.get(repo.npm)?.downloads30d) : 0;
+}
+
+function tractionScore(repo, packages) {
+  return number(repo.stars) * 10 + number(repo.forks) * 20 + repoDownloads7d(repo, packages);
+}
+
+function nextActionFor(repo, packages) {
+  const downloads7d = repoDownloads7d(repo, packages);
+
+  if (repo.role === "registry") {
+    return "Keep the hub as the canonical map: release index, growth snapshot, directory links and first-install paths.";
+  }
+
+  if (repo.role === "meta-connector") {
+    return "Promote as the default install path; add demos that show one question composed across multiple connectors.";
+  }
+
+  if (repo.role === "quality") {
+    return "Use as the trust layer for every MCP repo; publish score examples and make bad scores actionable.";
+  }
+
+  if (repo.role === "agent-memory") {
+    return "Package as reusable agent infrastructure; show privacy-safe memory examples for Claude, Cursor and Codex.";
+  }
+
+  if (downloads7d >= 100 && number(repo.stars) < 10) {
+    return "High install intent but low public proof: improve above-the-fold CTA, examples and star ask.";
+  }
+
+  if (number(repo.stars) >= 10 && downloads7d < 100) {
+    return "Discovery is working; improve install conversion with a shorter quickstart and troubleshooting path.";
+  }
+
+  if (number(repo.openIssues) > 0) {
+    return "Triage open issues and convert recurring support questions into docs.";
+  }
+
+  return "Keep release hygiene strong and add one concrete agent workflow example.";
+}
+
+function publicStrategyMarkdown(snapshot) {
+  const packages = packageByName(snapshot);
+  const reposWithPublicSignals = snapshot.github.repos
+    .filter((repo) => repo.strategic || number(repo.stars) > 0 || repoDownloads7d(repo, packages) > 0)
+    .sort((a, b) => tractionScore(b, packages) - tractionScore(a, packages));
+
+  const publicTotals = {
+    stars: reposWithPublicSignals.reduce((sum, repo) => sum + number(repo.stars), 0),
+    forks: reposWithPublicSignals.reduce((sum, repo) => sum + number(repo.forks), 0),
+    openIssues: reposWithPublicSignals.reduce((sum, repo) => sum + number(repo.openIssues), 0),
+    downloads7d: snapshot.npm.packages.reduce((sum, pkg) => sum + number(pkg.downloads7d), 0),
+    downloads30d: snapshot.npm.packages.reduce((sum, pkg) => sum + number(pkg.downloads30d), 0)
+  };
+
+  const row = (repo) => {
+    const pkg = repo.npm ? packages.get(repo.npm) : null;
+    const packageCell = pkg ? `[${pkg.name}](${pkg.url})` : "—";
+
+    return `| [${repo.name}](${repo.url}) | ${repo.role} | ${formatNumber(repo.stars)} | ${formatNumber(repo.forks)} | ${formatNumber(repo.openIssues)} | ${packageCell} | ${formatNumber(repoDownloads7d(repo, packages))} | ${formatNumber(repoDownloads30d(repo, packages))} | ${nextActionFor(repo, packages)} |`;
+  };
+
+  const topPackages = topItems(snapshot.npm.packages, (pkg) => pkg.downloads7d, 10);
+  const packageRow = (pkg) =>
+    `| [${pkg.name}](${pkg.url}) | ${formatNumber(pkg.downloadsLastDay)} | ${formatNumber(pkg.downloads7d)} | ${formatNumber(pkg.downloads30d)} |`;
+
+  return `# Open Source Growth Snapshot
+
+Generated: ${snapshot.generatedAt}
+
+This public snapshot uses GitHub repository metadata and the public npm downloads API. Private GitHub traffic data stays local in \`.growth-metrics/latest.md\` and is not committed.
+
+## Public Totals
+
+| Metric | Value |
+|---|---:|
+| Tracked repos with public signals | ${formatNumber(reposWithPublicSignals.length)} |
+| GitHub stars | ${formatNumber(publicTotals.stars)} |
+| GitHub forks | ${formatNumber(publicTotals.forks)} |
+| Open GitHub issues | ${formatNumber(publicTotals.openIssues)} |
+| npm downloads, 7d | ${formatNumber(publicTotals.downloads7d)} |
+| npm downloads, 30d | ${formatNumber(publicTotals.downloads30d)} |
+
+## Focus Queue
+
+| Repo | Role | Stars | Forks | Issues | npm package | 7d downloads | 30d downloads | Next action |
+|---|---|---:|---:|---:|---|---:|---:|---|
+${reposWithPublicSignals.map(row).join("\n") || "| n/a | n/a | 0 | 0 | 0 | — | 0 | 0 | Collect a fresh snapshot. |"}
+
+## Top npm Packages
+
+| Package | Last day | 7d | 30d |
+|---|---:|---:|---:|
+${topPackages.map(packageRow).join("\n") || "| n/a | 0 | 0 | 0 |"}
+
+## Expansion Rules
+
+- Treat stars as discovery proof, npm downloads as install intent and forks as builder intent.
+- Promote repos with high downloads and low stars because they already solve a real install need but need clearer public proof.
+- Improve repos with high stars and lower downloads by shortening setup, adding screenshots or publishing a runnable agent recipe.
+- Keep the hub, release index and scorecard connected so a new visitor can evaluate trust without opening every repository.
+`;
+}
+
 mkdirSync(snapshotDir, { recursive: true });
 
 const date = localDate();
@@ -285,9 +426,11 @@ const snapshot = {
 
 writeFileSync(snapshotPath, `${JSON.stringify(snapshot, null, 2)}\n`);
 writeFileSync(path.join(snapshotRoot, "latest.md"), markdown(snapshot, previous));
+writeFileSync(path.join(process.cwd(), "docs", "open-source-growth-snapshot.md"), publicStrategyMarkdown(snapshot));
 
 console.log(`Wrote ${path.relative(process.cwd(), snapshotPath)}`);
 console.log(`Wrote ${path.relative(process.cwd(), path.join(snapshotRoot, "latest.md"))}`);
+console.log("Wrote docs/open-source-growth-snapshot.md");
 console.log(`GitHub stars: ${formatNumber(snapshot.totals.github.stars)}`);
 console.log(`GitHub unique views 14d: ${formatNumber(snapshot.totals.github.uniqueViews14d)}`);
 console.log(`GitHub unique cloners 14d: ${formatNumber(snapshot.totals.github.uniqueCloners14d)}`);
