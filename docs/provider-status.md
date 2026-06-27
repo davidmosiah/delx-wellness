@@ -7,7 +7,7 @@ This matrix tracks public connector readiness. It is intentionally conservative:
 | WHOOP | Active | `context_ready` | Recovery, strain, sleep, workouts, normalized wellness_context | OAuth approval and API scope limits for hosted use. |
 | Strava | Active | `context_ready` | Activities, streams, routes, normalized training_context | App-level rate limits and GPS privacy. |
 | Fitbit | Active | `agent_ready` | Activity, sleep, heart rate, HRV, nutrition | Google/Fitbit platform migration and scope changes. |
-| Google Health | Active | `agent_ready` | Google Health API v4 identity, profile, settings, data points, reconcile, rollups and summaries | Beta launch window; Google warns breaking changes may occur until end of May 2026. |
+| Google Health | Active | `agent_ready` | Google Health API v4 identity, profile, settings, data points, reconcile, rollups and summaries | API is live for builders but still evolving; check Google's release notes for scope and data-type changes before production launch decisions. |
 | Garmin Connect | Active | `context_ready` | Sleep, HRV, Body Battery, stress, activities, normalized wellness_context | Unofficial personal auth can drift; official Garmin Health is partner-gated. |
 | Oura Ring | Active | `agent_ready` | Sleep, readiness, activity, heart context | Membership/device/scopes affect data availability. |
 | Withings | Active | `agent_ready` | Weight, activity, workouts, cardiovascular and sleep signals | OAuth signed-token flow, API-plan and device coverage variance. |
