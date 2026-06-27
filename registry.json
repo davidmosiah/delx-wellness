@@ -701,7 +701,7 @@
         "nourish"
       ],
       "notes": "Uses official WHOOP OAuth API. Raw means upstream API JSON, not continuous sensor streams.",
-      "npm_version": "0.5.2"
+      "npm_version": "0.5.3"
     },
     {
       "id": "withings",

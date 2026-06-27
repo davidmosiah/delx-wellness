@@ -12,7 +12,7 @@ both npm and GitHub on 2026-06-27. Use it as the human-readable companion to
 | Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.4.9) | `0.4.9` | [`v0.4.9`](https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.4.9) | `npm test`, prod audit, pack dry-run |
 | Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.5.3) | `0.5.3` | [`v0.5.3`](https://github.com/davidmosiah/garmin-mcp/releases/tag/v0.5.3) | `npm test`, prod audit, pack dry-run |
 | Wellness Nourish | [`wellness-nourish`](https://www.npmjs.com/package/wellness-nourish/v/0.6.11) | `0.6.11` | [`v0.6.11`](https://github.com/davidmosiah/wellness-nourish/releases/tag/v0.6.11) | `npm test`, prod audit, pack dry-run |
-| WHOOP MCP | [`whoop-mcp-unofficial`](https://www.npmjs.com/package/whoop-mcp-unofficial/v/0.5.2) | `0.5.2` | [`v0.5.2`](https://github.com/davidmosiah/whoop-mcp/releases/tag/v0.5.2) | `npm test`, prod audit, pack dry-run |
+| WHOOP MCP | [`whoop-mcp-unofficial`](https://www.npmjs.com/package/whoop-mcp-unofficial/v/0.5.3) | `0.5.3` | [`v0.5.3`](https://github.com/davidmosiah/whoop-mcp/releases/tag/v0.5.3) | `npm test`, prod audit, pack dry-run |
 | Withings MCP | [`withings-mcp-unofficial`](https://www.npmjs.com/package/withings-mcp-unofficial/v/0.4.7) | `0.4.7` | [`v0.4.7`](https://github.com/davidmosiah/withings-mcp/releases/tag/v0.4.7) | `npm test`, prod audit, pack dry-run |
 
 ## Infrastructure
