@@ -5,7 +5,8 @@
  *
  * This intentionally uses Node built-ins only. The release index is the public
  * "what we verified" surface, so CI should fail if a row drifts from npm or
- * GitHub after a release.
+ * GitHub after a release, or if a promoted repo stops linking back to the
+ * verified release surface.
  */
 
 import fs from 'node:fs';
@@ -113,6 +114,28 @@ async function verifyGitHubRelease(row) {
   }
 }
 
+async function verifyGitHubReadme(row) {
+  const headers = {};
+  if (process.env.GITHUB_TOKEN) headers.authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  const url = `https://api.github.com/repos/${row.owner}/${row.repo}/contents/README.md`;
+  const data = await fetchJson(url, headers);
+  if (data.encoding !== 'base64' || typeof data.content !== 'string') {
+    fail(`${row.pkg}: README.md response was not base64 content`);
+  }
+
+  const readme = Buffer.from(data.content, 'base64').toString('utf8');
+  const markers = [
+    `https://github.com/${row.owner}/${row.repo}/releases/latest`,
+    `github/v/release/${row.owner}/${row.repo}`,
+    'https://github.com/davidmosiah/delx-wellness/blob/main/docs/release-index.md',
+  ];
+  for (const marker of markers) {
+    if (!readme.includes(marker)) {
+      fail(`${row.pkg}: README.md is missing promoted-release marker: ${marker}`);
+    }
+  }
+}
+
 function verifyStatic(row) {
   if (row.tag !== `v${row.version}`) {
     fail(`${row.pkg}: tag ${row.tag} does not match version ${row.version}`);
@@ -144,6 +167,7 @@ async function main() {
     for (const row of rows) {
       await verifyNpm(row);
       await verifyGitHubRelease(row);
+      await verifyGitHubReadme(row);
     }
   }
 
@@ -151,7 +175,11 @@ async function main() {
   for (const row of rows) {
     log(`- PASS ${row.pkg}@${row.version} (${row.owner}/${row.repo} ${row.tag})`);
   }
-  log(offline ? '\nStatic checks passed (offline mode).' : '\nAll release-index rows resolve on npm and GitHub.');
+  log(
+    offline
+      ? '\nStatic checks passed (offline mode).'
+      : '\nAll release-index rows resolve on npm/GitHub and promoted READMEs link back.',
+  );
 }
 
 main().catch((error) => {

@@ -31,4 +31,4 @@ After publishing a package:
 3. Create a GitHub Release for the tag with npm and verification links.
 4. Run `node scripts/sync-registry.mjs` in this repo.
 5. Update this index when the release is strategic enough to promote from the hub.
-6. Run `node scripts/validate-release-index.mjs` to prove npm and GitHub agree.
+6. Run `node scripts/validate-release-index.mjs` to prove npm, GitHub Releases and promoted README backlinks agree.
