@@ -23,7 +23,7 @@ _Auto-generated from `registry.json` on 2026-06-27 by `scripts/sync-registry.mjs
 | [Eight Sleep](https://github.com/davidmosiah/eight-sleep-mcp) | `eight-sleep-mcp-unofficial` | `0.2.5` | context_ready | profile, device, temperature_program, alarms… |
 | [Fitbit](https://github.com/davidmosiah/fitbitmcp) | `fitbit-mcp-unofficial` | `0.4.5` | agent_ready | profile, devices, activity, sleep… |
 | [Garmin Connect](https://github.com/davidmosiah/garmin-mcp) | `garmin-mcp-unofficial` | `0.5.3` | context_ready | profile, devices, daily_movement, sleep… |
-| [Google Health](https://github.com/davidmosiah/google-health-mcp) | `google-health-mcp-unofficial` | `0.5.0` | agent_ready | identity, profile, settings, steps… |
+| [Google Health](https://github.com/davidmosiah/google-health-mcp) | `google-health-mcp-unofficial` | `0.5.1` | agent_ready | identity, profile, settings, steps… |
 | [Oura Ring](https://github.com/davidmosiah/ouramcp) | `oura-mcp-unofficial` | `0.4.6` | agent_ready | personal_info, readiness, sleep, activity… |
 | [Polar](https://github.com/davidmosiah/polarmcp) | `polar-mcp-unofficial` | `0.3.5` | agent_ready | account, devices, activity, calendar… |
 | [Samsung Health](https://github.com/davidmosiah/samsung-health-mcp) | `samsung-health-mcp-unofficial` | `0.5.0` | agent_ready | activity, steps, sleep, heart_rate… |
