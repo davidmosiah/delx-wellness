@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="372" viewBox="0 0 760 372" font-family="ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" role="img" aria-label="Terminal demo: npx -y delx-living-body demo answering 'Should I train hard today?' with a green light, confidence high, zero LLM calls.">
+  <!-- terminal window -->
+  <rect x="1" y="1" width="758" height="370" rx="11" fill="#0d1117" stroke="#222a35" stroke-width="1.5"/>
+  <!-- title bar -->
+  <path d="M1 12 A11 11 0 0 1 12 1 H748 A11 11 0 0 1 759 12 V40 H1 Z" fill="#161b22"/>
+  <line x1="1" y1="40" x2="759" y2="40" stroke="#222a35" stroke-width="1"/>
+  <circle cx="24" cy="20.5" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="20.5" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="20.5" r="6" fill="#27c93f"/>
+  <text x="380" y="25" text-anchor="middle" font-size="12.5" fill="#7d8590">delx-living-body — local-first wellness, zero LLM calls</text>
+
+  <!-- body -->
+  <text font-size="15" xml:space="preserve">
+    <tspan x="26" y="78" fill="#3fb950">$</tspan><tspan fill="#c9d1d9"> npx -y delx-living-body demo</tspan>
+  </text>
+
+  <text x="26" y="112" font-size="13.5" fill="#7d8590" xml:space="preserve">Snapshot:  recovery 74  ·  sleep 83  ·  body battery 68</text>
+
+  <text x="26" y="150" font-size="15" fill="#d2a8ff" font-weight="600" xml:space="preserve">›  Should I train hard today?</text>
+
+  <text x="44" y="180" font-size="15" fill="#3fb950" font-weight="600" xml:space="preserve">✓  Green light for a hard session.</text>
+  <text x="62" y="203" font-size="13" fill="#8b949e" xml:space="preserve">Recovery and sleep both support high intensity.</text>
+
+  <text x="26" y="240" font-size="13.5" xml:space="preserve"><tspan fill="#58a6ff">Confidence:</tspan><tspan fill="#c9d1d9"> high</tspan><tspan fill="#58a6ff">    Sources:</tspan><tspan fill="#c9d1d9"> whoop · oura · garmin</tspan></text>
+  <text x="26" y="263" font-size="12.5" fill="#6e7681" xml:space="preserve">reasoning (rule-based, no LLM):  rec_high, sleep_good</text>
+
+  <line x1="26" y1="295" x2="734" y2="295" stroke="#222a35" stroke-width="1"/>
+
+  <!-- footer pill -->
+  <rect x="26" y="312" width="330" height="34" rx="17" fill="#10231a" stroke="#1f6f3f" stroke-width="1"/>
+  <circle cx="46" cy="329" r="4.5" fill="#3fb950"/>
+  <text x="60" y="333.5" font-size="13" fill="#56d364" xml:space="preserve">3 connectors composed · zero LLM calls</text>
+
+  <text x="734" y="333.5" text-anchor="end" font-size="12.5" fill="#7d8590" xml:space="preserve">no API keys · no network · synthetic data</text>
+</svg>
