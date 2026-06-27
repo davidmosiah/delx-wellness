@@ -27,3 +27,5 @@ jobs:
         run: node scripts/validate-schema.mjs
       - name: Enforce context_ready quality tier
         run: node scripts/validate-context-ready.mjs
+      - name: Verify release index
+        run: node scripts/validate-release-index.mjs

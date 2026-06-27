@@ -5,7 +5,9 @@ on:
     paths:
       - 'registry.json'
       - 'STATUS.md'
+      - 'docs/release-index.md'
       - 'scripts/sync-registry.mjs'
+      - 'scripts/validate-release-index.mjs'
       - '.github/workflows/registry-check.yml'
   schedule:
     # Every Monday 14:00 UTC = 11:00 BRT
