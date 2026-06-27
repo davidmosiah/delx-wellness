@@ -8,6 +8,7 @@ Use this checklist to keep public MCP discovery consistent across directories, p
 |---|---|---|---|
 | WHOOP MCP | `whoop-mcp-unofficial` | `https://wellness.delx.ai/connectors/whoop` | `io.github.davidmosiah/whoop-mcp` |
 | Garmin MCP | `garmin-mcp-unofficial` | `https://wellness.delx.ai/connectors/garmin` | `io.github.davidmosiah/garminmcp` |
+| Google Health MCP | `google-health-mcp-unofficial` | `https://wellness.delx.ai/connectors/google-health` | `io.github.davidmosiah/google-health-mcp` |
 | Strava MCP | `strava-mcp-unofficial` | `https://wellness.delx.ai/connectors/strava` | `io.github.davidmosiah/strava-mcp` |
 | Apple Health MCP | `apple-health-mcp-unofficial` | `https://wellness.delx.ai/connectors/apple-health` | `io.github.davidmosiah/apple-health-mcp` |
 | Samsung Health MCP | `samsung-health-mcp-unofficial` | `https://wellness.delx.ai/connectors/samsung-health` | `io.github.davidmosiah/samsung-health-mcp` |

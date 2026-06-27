@@ -45,6 +45,10 @@ download counts. GitHub traffic, referrers and path analytics stay local under
 4. Post one useful update on X, Reddit, or a targeted builder community.
 5. Ask clearly for stars only after showing practical value.
 
+Current sprint: [Google Health MCP 0.5.1 distribution](distribution-google-health-0.5.1.md)
+focuses on real-account coverage reports from Fitbit, Pixel Watch, Android and
+Google Health API v4 testers.
+
 ## Public Authority Flywheel
 
 The GitHub profile should route visitors into one clear path:
