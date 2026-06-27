@@ -13,6 +13,7 @@ both npm and GitHub on 2026-06-27. Use it as the human-readable companion to
 | Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.5.3) | `0.5.3` | [`v0.5.3`](https://github.com/davidmosiah/garmin-mcp/releases/tag/v0.5.3) | `npm test`, prod audit, pack dry-run |
 | Wellness Nourish | [`wellness-nourish`](https://www.npmjs.com/package/wellness-nourish/v/0.6.8) | `0.6.8` | [`v0.6.8`](https://github.com/davidmosiah/wellness-nourish/releases/tag/v0.6.8) | `npm test`, prod audit, pack dry-run |
 | WHOOP MCP | [`whoop-mcp-unofficial`](https://www.npmjs.com/package/whoop-mcp-unofficial/v/0.5.1) | `0.5.1` | [`v0.5.1`](https://github.com/davidmosiah/whoop-mcp/releases/tag/v0.5.1) | `npm test`, prod audit, pack dry-run |
+| Withings MCP | [`withings-mcp-unofficial`](https://www.npmjs.com/package/withings-mcp-unofficial/v/0.4.7) | `0.4.7` | [`v0.4.7`](https://github.com/davidmosiah/withings-mcp/releases/tag/v0.4.7) | `npm test`, prod audit, pack dry-run |
 
 ## Infrastructure
 
