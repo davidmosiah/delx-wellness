@@ -89,7 +89,7 @@
         "living_body_capabilities"
       ],
       "notes": "Meta-MCP that auto-detects locally installed Delx Wellness connectors and composes them into one unified delx-wellness-context/v1 surface. Synthesis is rule-based and offline (14 heuristic rules). Spawns child MCPs via npx -y over StdioClientTransport with a 30s per-call timeout. Stripping rule: any env var matching /(CLIENT_SECRET|REFRESH_TOKEN|ACCESS_TOKEN|API_KEY|PRIVATE_KEY|PASSWORD)$/i is removed before spawning children.",
-      "npm_version": "0.2.1"
+      "npm_version": "0.3.0"
     }
   ],
   "connectors": [
