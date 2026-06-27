@@ -657,7 +657,7 @@
         "notes": "Agent-ready nutrition MCP with explicit-intent writes, local undo/delete/export, privacy audit, Hermes Telegram setup, and nutrition_context-compatible daily/coach summaries."
       },
       "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. TACO/UNICAMP values ship as an attributed curated subset while redistribution-license confirmation remains a 1.0 gate. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied.",
-      "npm_version": "0.6.9"
+      "npm_version": "0.6.10"
     },
     {
       "id": "whoop",
