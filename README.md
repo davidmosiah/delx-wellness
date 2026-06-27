@@ -45,7 +45,8 @@ The connectors stay MIT, local-first and useful without a hosted account. Paid
 work belongs above the public core: setup concierge, MCP audits, private
 deployments and custom connector work. See
 [Open Source Support](docs/open-source-support.md) for the boundary and support
-paths.
+paths. The current verified npm/GitHub release set lives in the
+[Release Index](docs/release-index.md).
 
 ---
 
@@ -58,7 +59,7 @@ paths.
 | Install the whole wellness stack for OpenClaw | [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) | `npx -y delx-wellness-openclaw setup` |
 | Track food, barcode scans, hydration and meal summaries | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | `npx -y wellness-nourish doctor` |
 | Add recovery, strain, sleep and HRV | [`whoop-mcp`](https://github.com/davidmosiah/whoop-mcp) | `npx -y whoop-mcp-unofficial setup` |
-| Add Body Battery, sleep, stress and training readiness | [`garminmcp`](https://github.com/davidmosiah/garminmcp) | `npx -y garmin-mcp-unofficial setup --auth` |
+| Add Body Battery, sleep, stress and training readiness | [`garmin-mcp`](https://github.com/davidmosiah/garmin-mcp) | `npx -y garmin-mcp-unofficial setup --auth` |
 | Copy runnable agent templates | [`delx-agent-workbench`](https://github.com/davidmosiah/delx-agent-workbench) | Use the Hermes, OpenClaw, Claude Desktop or Codex examples |
 | Browse the human-friendly site | [`delx-wellness-site`](https://github.com/davidmosiah/delx-wellness-site) | [wellness.delx.ai](https://wellness.delx.ai) |
 
@@ -102,7 +103,7 @@ Each connector handles its own credentials locally — nothing is shared with th
 
 ```text
 Have a WHOOP?               → start with whoop-mcp         (recovery, HRV, sleep, strain)
-Have a Garmin?              → start with garminmcp         (Body Battery, training readiness, HRV)
+Have a Garmin?              → start with garmin-mcp       (Body Battery, training readiness, HRV)
 Have an Oura?              → start with ouramcp          (readiness, sleep, activity, HRV)
 Have an Eight Sleep?       → start with eight-sleep-mcp   (sleep trends, bed temperature, alarms)
 Have Withings devices?     → start with withingsmcp      (body measures, sleep, activity, heart)
@@ -149,12 +150,12 @@ The connectors are designed to coexist. When two providers cover the same signal
       <a href="https://www.npmjs.com/package/oura-mcp-unofficial"><img src="https://img.shields.io/npm/dm/oura-mcp-unofficial?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
     </td>
     <td width="33%" align="center" valign="top">
-      <a href="https://github.com/davidmosiah/garminmcp">
+      <a href="https://github.com/davidmosiah/garmin-mcp">
         <img src="https://img.shields.io/badge/Garmin-007CC3?style=for-the-badge&labelColor=0F172A&logoColor=white" alt="Garmin" /><br>
       </a>
       <code>garmin-mcp-unofficial</code><br>
       <sub>Body Battery · Training Readiness · HRV</sub><br><br>
-      <a href="https://github.com/davidmosiah/garminmcp"><img src="https://img.shields.io/github/stars/davidmosiah/garminmcp?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
+      <a href="https://github.com/davidmosiah/garmin-mcp"><img src="https://img.shields.io/github/stars/davidmosiah/garmin-mcp?style=flat-square&labelColor=0F172A&color=FBBF24&logo=github" alt="stars" /></a>
       <a href="https://www.npmjs.com/package/garmin-mcp-unofficial"><img src="https://img.shields.io/npm/dm/garmin-mcp-unofficial?style=flat-square&labelColor=0F172A&color=0EA5A3&logo=npm&logoColor=white" alt="npm downloads" /></a>
     </td>
   </tr>

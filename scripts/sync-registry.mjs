@@ -87,6 +87,15 @@ function buildStatusMarkdown(reg) {
     );
   }
 
+  lines.push('', '## Meta-connectors', '');
+  lines.push('| Meta-connector | Package | npm version | Composes |');
+  lines.push('|---|---|---|---|');
+  for (const m of reg.meta_connectors ?? []) {
+    lines.push(
+      `| [${m.name}](${m.repository ?? '#'}) | \`${m.package}\` | \`${m.npm_version ?? '—'}\` | ${(m.tools ?? []).length} tools |`,
+    );
+  }
+
   lines.push('', '## Connectors', '');
   lines.push('| Connector | Package | npm version | Quality | Signals |');
   lines.push('|---|---|---|---|---|');
@@ -102,6 +111,7 @@ function buildStatusMarkdown(reg) {
   const publicCount = (reg.connectors ?? []).filter((c) => !c.package.endsWith('-private')).length;
   const privateCount = (reg.connectors ?? []).filter((c) => c.package.endsWith('-private')).length;
   const profileCount = (reg.agent_profiles ?? []).length;
+  const metaCount = (reg.meta_connectors ?? []).length;
 
   lines.push(
     '',
@@ -109,6 +119,7 @@ function buildStatusMarkdown(reg) {
     '',
     `- **Total public connectors**: ${publicCount}`,
     `- **Private lab connectors**: ${privateCount}`,
+    `- **Meta-connectors**: ${metaCount}`,
     `- **Profile packs**: ${profileCount}`,
     `- **Last registry update**: ${reg.last_updated}`,
     '',
@@ -167,7 +178,7 @@ function main() {
   const reg = loadRegistry();
   const changes = [];
 
-  for (const list of ['agent_profiles', 'connectors']) {
+  for (const list of ['agent_profiles', 'meta_connectors', 'connectors']) {
     for (const entry of reg[list] ?? []) {
       const pkg = entry.package;
       if (!pkg || pkg.endsWith('-private')) continue;
@@ -191,12 +202,19 @@ function main() {
   }
 
   const readmeGaps = checkReadmeCoverage(reg);
+  const nextStatus = buildStatusMarkdown(reg);
+  const currentStatus = fs.existsSync(STATUS_PATH) ? fs.readFileSync(STATUS_PATH, 'utf8') : null;
+  const statusDrift = currentStatus !== nextStatus;
 
   if (checkOnly) {
     if (readmeGaps.length > 0) {
       console.error('README.md is missing registry entries:');
       for (const g of readmeGaps) console.error(`  - ${g}`);
       console.error('Add a card + decision-tree line in README.md (hand-styled — not auto-generated).');
+    }
+    if (statusDrift) {
+      console.error('STATUS.md is out of date with registry.json.');
+      console.error('Run `node scripts/sync-registry.mjs` to regenerate it.');
     }
     if (changes.length > 0) {
       console.error('Registry is out of date with npm:');
@@ -206,8 +224,10 @@ function main() {
       console.error('\nRun `node scripts/sync-registry.mjs` to update.');
       process.exit(1);
     }
+    if (statusDrift) process.exit(1);
     log('Registry is in sync with npm.');
     if (readmeGaps.length === 0) log('README references every registry connector.');
+    log('STATUS.md is in sync with registry.json.');
     process.exit(0);
   }
 
@@ -216,16 +236,18 @@ function main() {
     for (const g of readmeGaps) log(`    - ${g}`);
   }
 
-  if (changes.length === 0 && previousDate === today) {
+  if (changes.length === 0 && previousDate === today && !statusDrift) {
     log('No changes — registry is already in sync.');
     return;
   }
 
   writeJsonAtomically(REGISTRY_PATH, reg);
-  writeFileAtomically(STATUS_PATH, buildStatusMarkdown(reg));
+  writeFileAtomically(STATUS_PATH, nextStatus);
 
-  if (changes.length === 0) {
+  if (changes.length === 0 && previousDate !== today) {
     log(`Bumped last_updated to ${today}. No npm-version drift detected.`);
+  } else if (changes.length === 0) {
+    log('Regenerated STATUS.md. No npm-version drift detected.');
   } else {
     log(`Synced ${changes.length} version change(s):`);
     for (const c of changes) {

@@ -13,7 +13,7 @@ const repos = [
   { name: "delx-wellness", vertical: "body", role: "registry" },
   { name: "delx-wellness-site", vertical: "body", role: "site" },
   { name: "whoop-mcp", vertical: "body", role: "connector", npm: "whoop-mcp-unofficial" },
-  { name: "garminmcp", vertical: "body", role: "connector", npm: "garmin-mcp-unofficial" },
+  { name: "garmin-mcp", vertical: "body", role: "connector", npm: "garmin-mcp-unofficial" },
   { name: "strava-mcp", vertical: "body", role: "connector", npm: "strava-mcp-unofficial" },
   { name: "fitbitmcp", vertical: "body", role: "connector", npm: "fitbit-mcp-unofficial" },
   { name: "ouramcp", vertical: "body", role: "connector", npm: "oura-mcp-unofficial" },

@@ -87,7 +87,7 @@
         "living_body_capabilities"
       ],
       "notes": "Meta-MCP that auto-detects locally installed Delx Wellness connectors and composes them into one unified delx-wellness-context/v1 surface. Synthesis is rule-based and offline (14 heuristic rules). Spawns child MCPs via npx -y over StdioClientTransport with a 30s per-call timeout. Stripping rule: any env var matching /(CLIENT_SECRET|REFRESH_TOKEN|ACCESS_TOKEN|API_KEY|PRIVATE_KEY|PASSWORD)$/i is removed before spawning children.",
-      "npm_version": "0.1.0"
+      "npm_version": "0.2.1"
     }
   ],
   "connectors": [
@@ -228,7 +228,7 @@
       "id": "garmin",
       "name": "Garmin Connect",
       "status": "active",
-      "repository": "https://github.com/davidmosiah/garminmcp",
+      "repository": "https://github.com/davidmosiah/garmin-mcp",
       "package": "garmin-mcp-unofficial",
       "agentReadiness": 97,
       "transport": [
@@ -271,7 +271,7 @@
         "nourish"
       ],
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible.",
-      "npm_version": "0.5.1"
+      "npm_version": "0.5.2"
     },
     {
       "id": "google-health",
@@ -315,7 +315,7 @@
         "notes": "Local package targets Google Health API v4 beta with Google OAuth, identity/profile/settings, data point list/reconcile/rollup tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses Google Health API v4. Google recommends waiting until the end of May 2026 for official stable launches because breaking changes may occur during the launch window.",
-      "npm_version": "0.4.7"
+      "npm_version": "0.4.8"
     },
     {
       "id": "oura",
@@ -655,7 +655,7 @@
         "notes": "Agent-ready nutrition MCP with explicit-intent writes, local undo/delete/export, privacy audit, Hermes Telegram setup, and nutrition_context-compatible daily/coach summaries."
       },
       "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. TACO/UNICAMP values ship as an attributed curated subset while redistribution-license confirmation remains a 1.0 gate. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied.",
-      "npm_version": "0.6.4"
+      "npm_version": "0.6.7"
     },
     {
       "id": "whoop",
@@ -699,7 +699,7 @@
         "nourish"
       ],
       "notes": "Uses official WHOOP OAuth API. Raw means upstream API JSON, not continuous sensor streams.",
-      "npm_version": "0.5.0"
+      "npm_version": "0.5.1"
     },
     {
       "id": "withings",
@@ -825,5 +825,5 @@
       "npm_version": "0.1.3"
     }
   ],
-  "last_updated": "2026-06-16"
+  "last_updated": "2026-06-27"
 }
