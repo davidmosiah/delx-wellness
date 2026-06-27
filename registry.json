@@ -273,7 +273,7 @@
         "nourish"
       ],
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible.",
-      "npm_version": "0.5.2"
+      "npm_version": "0.5.3"
     },
     {
       "id": "google-health",
