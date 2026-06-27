@@ -51,7 +51,8 @@ The GitHub profile should route visitors into one clear path:
 
 1. Profile README explains the thesis and says where to start.
 2. `delx-wellness` acts as the flagship registry and source of truth.
-3. `delx-agent-workbench` turns the ecosystem into runnable templates.
+3. Runtime profile packs and Operator Recipes turn the ecosystem into runnable
+   daily loops.
 4. Individual connector repos prove the stack with install commands, demos, privacy notes and readiness checks.
 5. Field notes explain the decisions in public and link back to the repos.
 6. Public roadmap issues show momentum and invite contribution.
@@ -63,7 +64,7 @@ This is the pattern to copy from high-signal builders: one flagship narrative, i
 1. Compare `.growth-metrics/latest.md` with the previous snapshot.
 2. Promote the top two repos by install intent.
 3. Submit or refresh packages in MCP directories.
-4. Add one real-world agent example per vertical: Body, Reach, Coordination.
+4. Add one real-world agent recipe per vertical: Body, Reach, Coordination.
 5. Review profile README, pinned repos, repo descriptions, topics and homepage URLs.
 
 ## Repo Conversion Checklist

@@ -48,6 +48,7 @@ deployments and custom connector work. See
 paths. The current verified npm/GitHub release set lives in the
 [Release Index](docs/release-index.md). Public traction and next-action
 priorities live in the [Open Source Growth Snapshot](docs/open-source-growth-snapshot.md).
+Runnable agent loops live in [Operator Recipes](docs/operator-recipes.md).
 
 ---
 
@@ -59,6 +60,7 @@ priorities live in the [Open Source Growth Snapshot](docs/open-source-growth-sna
 | Install the whole wellness stack for Hermes | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | `npx -y delx-wellness-hermes setup` |
 | Install the whole wellness stack for OpenClaw | [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) | `npx -y delx-wellness-openclaw setup` |
 | Run the OpenClaw Daily Operator | [OpenClaw Daily Operator](docs/openclaw-daily-operator.md) | `openclaw --profile delx-wellness agent --local --message "$(npx -y delx-wellness-openclaw operator --prompt-only)"` |
+| Browse runnable agent loops | [Operator Recipes](docs/operator-recipes.md) | Pick a runtime recipe with a command and safety contract |
 | Track food, barcode scans, hydration and meal summaries | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | `npx -y wellness-nourish doctor` |
 | Add recovery, strain, sleep and HRV | [`whoop-mcp`](https://github.com/davidmosiah/whoop-mcp) | `npx -y whoop-mcp-unofficial setup` |
 | Add Body Battery, sleep, stress and training readiness | [`garmin-mcp`](https://github.com/davidmosiah/garmin-mcp) | `npx -y garmin-mcp-unofficial setup --auth` |
@@ -343,7 +345,7 @@ npx -y delx-wellness-openclaw setup
 openclaw --profile delx-wellness agent --local --message "$(npx -y delx-wellness-openclaw operator --prompt-only)"
 ```
 
-That's it. The setup wizard walks you through choosing which providers to wire up, checks the local Nourish preset (no OAuth required), and prints the next commands for model setup and per-provider auth. The [OpenClaw Daily Operator](docs/openclaw-daily-operator.md) then turns available context into one daily read, evidence bullets, one training/recovery action, one nutrition action, and a missing-setup checklist.
+That's it. The setup wizard walks you through choosing which providers to wire up, checks the local Nourish preset (no OAuth required), and prints the next commands for model setup and per-provider auth. The [OpenClaw Daily Operator](docs/openclaw-daily-operator.md) then turns available context into one daily read, evidence bullets, one training/recovery action, one nutrition action, and a missing-setup checklist. More runnable loops live in [Operator Recipes](docs/operator-recipes.md).
 
 > 📦 [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) and [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) are the first runtime-native profile packs &mdash; they preconfigure every connector below so you don't have to glue a stack of MCP configs by hand. For generic clients, [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) plays the same "one entry, many connectors" role.
 

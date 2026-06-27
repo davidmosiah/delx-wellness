@@ -2,7 +2,8 @@
 
 This is the fastest path from "I installed the stack" to "my agent did
 something useful today." It uses `delx-wellness-openclaw@0.2.0` and the Daily
-Operator prompt shipped in that package.
+Operator prompt shipped in that package. It is part of the
+[Operator Recipes](operator-recipes.md) catalog.
 
 ## Install
 
