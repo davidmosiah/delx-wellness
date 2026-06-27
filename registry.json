@@ -51,7 +51,7 @@
       ],
       "privacy_default": "public_safe_profile_pack",
       "notes": "Installs a delx-wellness OpenClaw profile under ~/.openclaw-delx-wellness with one setup command, onboarding, wellness skills, OpenClaw-native MCP connector presets, config validation, Nourish preset checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, chat-channel secrets or private Exercise Catalog data.",
-      "npm_version": "0.1.2"
+      "npm_version": "0.2.0"
     }
   ],
   "meta_connectors": [
