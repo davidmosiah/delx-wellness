@@ -49,6 +49,9 @@ Current sprint: [Google Health MCP 0.5.1 distribution](distribution-google-healt
 focuses on real-account coverage reports from Fitbit, Pixel Watch, Android and
 Google Health API v4 testers.
 
+Broad launch copy for X, LinkedIn, Reddit and Hacker News lives in
+[Delx Wellness Launch Assets](launch-assets.md).
+
 ## Public Authority Flywheel
 
 The GitHub profile should route visitors into one clear path:
