@@ -95,7 +95,9 @@ Completed:
   - `withings-mcp`
   - `polar-mcp`
 - Public-repo expansion started from live GitHub inventory:
-  - `42` public repos on `davidmosiah`.
+  - `43` public repos on `davidmosiah`.
+  - `7` public forks excluded from owned-server submission scope.
+  - `1` archived owned repo excluded from active submission scope: `delx-agent-workbench`.
   - `35` active, non-fork repos classified as MCP/public-distribution candidates.
   - `29` active, non-fork repos have `server.json`.
   - `26` npm-backed MCP server repos now have `smithery.yaml` on the default branch.
@@ -174,6 +176,15 @@ Completed:
   - Direct Glama pages currently resolve `200` for `9/29`: `apple-health-mcp`, `fitbit-mcp`, `garmin-mcp`, `google-health-mcp`, `oura-mcp`, `polar-mcp`, `samsung-health-mcp`, `wellness-nourish`, `withings-mcp`.
   - The Glama Add Server form posts to `/api/mcp/servers/submit`; unauthenticated POST redirects to `/sign-up?returnPath=%2Fapi%2Fmcp%2Fservers%2Fsubmit`.
   - Authenticated Chrome submission completed for the remaining `20/29` direct-page gaps. Glama showed `Your server has been submitted for review` for accepted submissions; duplicate checks on `strava-mcp` and `whoop-mcp` showed `A submission for this repository is already pending review`.
+- Live coverage refresh after expanding the community-list PRs:
+  - GitHub inventory: `43` public repos = `7` forks, `1` archived owned repo, and `35` active owned repos.
+  - Active owned repos with `server.json`: `29/35`; these are the MCP directory submission targets.
+  - Active owned repos without `server.json`: `davidmosiah` (profile repo), `delx-wellness` (connector registry/docs hub), `delx-wellness-hermes` (Hermes profile pack), `delx-wellness-openclaw` (OpenClaw profile pack), `mcp-leaderboard` (benchmark/leaderboard site), `openclaw-delx-plugin` (OpenClaw plugin). These are public distribution/support repos, not standalone MCP servers for server directories.
+  - Official MCP Registry rechecked from GitHub `server.json` files against `GET /v0.1/servers/{serverName}/versions/{version}`: `29/29`.
+  - Smithery public server pages rechecked at `https://smithery.ai/server/delx/{repo}` with title and install command present: `29/29`.
+  - Glama direct pages rechecked: still `9/29` public and `20/29` pending review/crawl after submission.
+  - `awesome-mcp-servers` PRs #9155 and #9159 rechecked: both open, non-draft, mergeable, and passing `check-submission`.
+  - MCPFind PR #91 rechecked: open, non-draft and mergeable.
 
 Still needs follow-up:
 
