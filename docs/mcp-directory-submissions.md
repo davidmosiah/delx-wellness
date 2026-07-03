@@ -185,11 +185,15 @@ Completed:
   - Glama direct pages rechecked: still `9/29` public and `20/29` pending review/crawl after submission.
   - `awesome-mcp-servers` PRs #9155 and #9159 rechecked: both open, non-draft, mergeable, and passing `check-submission`.
   - MCPFind PR #91 rechecked: open, non-draft and mergeable.
+- External PR follow-up comments posted:
+  - `awesome-mcp-servers` PR #9159 now has a maintainer-facing note explaining that the non-wellness entries were submitted to Glama, that direct Glama pages are still pending review/crawl, and that badges will be added only once the pages are live to avoid broken badge links.
+  - MCPFind PR #91 now has a validation note explaining that the submission set was locally verified and that the Vercel preview requires MCPFind team authorization.
 
 Still needs follow-up:
 
 - Glama review/crawl needs to finish for the `20/29` slugs submitted but not yet directly visible: `agent-seo-engine`, `astral-mcp`, `delx-agent-utilities`, `delx-living-body`, `delx-mcp-server`, `delx-memory`, `eight-sleep-mcp`, `google-ads-intent-mcp`, `google-ads-mcp-unofficial`, `mcp-scorecard`, `short-video-agent-kit`, `strava-mcp`, `tiktok-agent-publisher`, `timeline-pulse`, `uap-pulse`, `wellness-air`, `wellness-cgm-mcp`, `wellness-cycle-coach`, `whoop-mcp`, `youtube-shorts-agent`.
-- `awesome-mcp-servers` PRs #9155 and #9159 are ready, mergeable, and passing `check-submission`; they still need upstream maintainer merge.
+- `awesome-mcp-servers` PR #9155 is ready, mergeable, passing `check-submission`, and labeled `has-glama`; it still needs upstream maintainer merge.
+- `awesome-mcp-servers` PR #9159 is ready, mergeable, and passing `check-submission`, but still carries the upstream `missing-glama` label until Glama publishes at least one of the non-wellness entries and the PR can add a real score badge.
 - MCPFind PR #91 is open and validated locally; it still needs upstream maintainer merge before the 8 missing entries become public API results.
 - Official MCP Registry is current for all npm/PyPI package-backed public MCP servers classified in this sweep. Future package releases still need a matching `server.json` publish.
 - Local checkouts for `withings-mcp` and `polar-mcp` still need repair for future local work, but fresh temporary clones were used for the public metadata work above.
