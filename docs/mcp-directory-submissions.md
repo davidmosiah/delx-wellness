@@ -132,11 +132,21 @@ Completed:
 - MCPFind PR opened for the 8 missing API slugs and locally validated with `scripts/verify-submission-liveness.mjs --all`:
   - PR: `https://github.com/MCPFind/mcp-find/pull/91`
   - Entries: `timeline-pulse`, `wellness-cycle-coach`, `wellness-air`, `google-ads-mcp-unofficial`, `uap-pulse`, `delx-agent-utilities`, `google-ads-intent-mcp`, `agent-seo-engine`.
+- Smithery publication completed for all `29/29` public package-backed MCP repos:
+  - `26/26` npm-backed repos published as stdio MCPB bundles.
+  - `3/3` PyPI-backed repos published as Python stdio MCPB bundles via `uvx --from "<package>[mcp]==<version>" <entrypoint>`.
+  - Final Smithery release sweep verified `29/29` through `GET /servers/delx%2F{slug}/releases`: latest release `SUCCESS`, type `stdio`.
+  - Workaround used: Smithery CLI/API bundle publishing requires each `serverCard.tools[*]` to include `inputSchema` when tools are supplied; the batch publication omitted synthetic tool lists except for `mcp-scorecard`.
+- Glama submission follow-up completed:
+  - Glama FAQ confirms server submissions are made through the Servers page by providing a GitHub repo URL, display name and short description, and that `glama.json` controls indexing metadata.
+  - All `29/29` public package-backed MCP repos already have `glama.json` with maintainer `davidmosiah`.
+  - Direct Glama pages currently resolve `200` for `9/29`: `apple-health-mcp`, `fitbit-mcp`, `garmin-mcp`, `google-health-mcp`, `oura-mcp`, `polar-mcp`, `samsung-health-mcp`, `wellness-nourish`, `withings-mcp`.
+  - The Glama Add Server form posts to `/api/mcp/servers/submit`; unauthenticated POST redirects to `/sign-up?returnPath=%2Fapi%2Fmcp%2Fservers%2Fsubmit`.
+  - Authenticated Chrome submission completed for the remaining `20/29` direct-page gaps. Glama showed `Your server has been submitted for review` for accepted submissions; duplicate checks on `strava-mcp` and `whoop-mcp` showed `A submission for this repository is already pending review`.
 
 Still needs follow-up:
 
-- Smithery publication is not complete. The npm-backed MCP repositories now have `smithery.yaml`, but the current `smithery mcp publish` CLI accepts a remote MCP URL or `.mcpb` bundle; these connectors are local-first stdio/npm packages. Next step is either build MCPB bundles or complete the authenticated web publish flow after browser automation is unblocked.
-- Glama direct pages are public for `garmin-mcp`, `google-health-mcp`, `apple-health-mcp`, `samsung-health-mcp`, `wellness-nourish`, `fitbit-mcp`, `oura-mcp`, `withings-mcp`, and `polar-mcp`. `whoop-mcp`, `strava-mcp`, and the non-wellness package-backed repos need manual Glama add/claim/refresh or the next automatic Glama crawl because their expected direct slugs currently redirect to unrelated Delx pages or return 404.
+- Glama review/crawl needs to finish for the `20/29` slugs submitted but not yet directly visible: `agent-seo-engine`, `astral-mcp`, `delx-agent-utilities`, `delx-living-body`, `delx-mcp-server`, `delx-memory`, `eight-sleep-mcp`, `google-ads-intent-mcp`, `google-ads-mcp-unofficial`, `mcp-scorecard`, `short-video-agent-kit`, `strava-mcp`, `tiktok-agent-publisher`, `timeline-pulse`, `uap-pulse`, `wellness-air`, `wellness-cgm-mcp`, `wellness-cycle-coach`, `whoop-mcp`, `youtube-shorts-agent`.
 - Official MCP Registry is current for all npm/PyPI package-backed public MCP servers classified in this sweep. Future package releases still need a matching `server.json` publish.
 - Local checkouts for `withings-mcp` and `polar-mcp` still need repair for future local work, but fresh temporary clones were used for the public metadata work above.
 
