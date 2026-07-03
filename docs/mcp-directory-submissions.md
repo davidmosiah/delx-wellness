@@ -188,6 +188,10 @@ Completed:
 - External PR follow-up comments posted:
   - `awesome-mcp-servers` PR #9159 now has a maintainer-facing note explaining that the non-wellness entries were submitted to Glama, that direct Glama pages are still pending review/crawl, and that badges will be added only once the pages are live to avoid broken badge links.
   - MCPFind PR #91 now has a validation note explaining that the submission set was locally verified and that the Vercel preview requires MCPFind team authorization.
+- Glama recheck after #9159 follow-up:
+  - `GET /api/mcp/v1/servers/davidmosiah/{slug}` still returns `404` for all `20/29` direct-page gaps.
+  - Public Glama search did not return alternate matching server URLs for the non-wellness PR #9159 entries (`mcp-scorecard`, `delx-memory`, `agent-seo-engine`, `google-ads-intent-mcp`, `delx-agent-utilities`, `delx-mcp-server`, `google-ads-mcp-unofficial`, `short-video-agent-kit`, `tiktok-agent-publisher`, `youtube-shorts-agent`, `timeline-pulse`, `uap-pulse`, `astral-mcp`).
+  - No real Glama score badge is available for PR #9159 yet; adding one now would create a broken or misleading badge link.
 
 Still needs follow-up:
 
