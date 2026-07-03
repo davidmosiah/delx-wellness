@@ -77,13 +77,40 @@ Completed:
   - `oura-mcp`
   - `withings-mcp`
   - `polar-mcp`
+- Public-repo expansion started from live GitHub inventory:
+  - `42` public repos on `davidmosiah`.
+  - `35` active, non-fork repos classified as MCP/public-distribution candidates.
+  - `29` active, non-fork repos have `server.json`.
+  - `26` npm-backed MCP server repos now have `smithery.yaml` on the default branch.
+- Additional `smithery.yaml` metadata committed and pushed to all remaining npm-backed MCP server repos:
+  - `timeline-pulse`
+  - `delx-memory`
+  - `mcp-scorecard`
+  - `wellness-cycle-coach`
+  - `wellness-cgm-mcp`
+  - `wellness-air`
+  - `google-ads-mcp-unofficial`
+  - `eight-sleep-mcp`
+  - `uap-pulse`
+  - `astral-mcp`
+  - `delx-living-body`
+  - `tiktok-agent-publisher`
+  - `youtube-shorts-agent`
+  - `short-video-agent-kit`
+- Registry metadata fixes committed and pushed where the official validator rejected long descriptions or stale schema/version metadata:
+  - `timeline-pulse`
+  - `wellness-cycle-coach`
+  - `google-ads-mcp-unofficial`
+  - `uap-pulse`
+  - `delx-agent-utilities`
 
 Still needs follow-up:
 
-- Smithery publication is not complete. The repositories now have `smithery.yaml`, but the current `smithery mcp publish` CLI accepts a remote MCP URL or `.mcpb` bundle; these connectors are local-first stdio/npm packages. Next step is either build MCPB bundles or complete the authenticated web publish flow after browser automation is unblocked.
+- Smithery publication is not complete. The npm-backed MCP repositories now have `smithery.yaml`, but the current `smithery mcp publish` CLI accepts a remote MCP URL or `.mcpb` bundle; these connectors are local-first stdio/npm packages. Next step is either build MCPB bundles or complete the authenticated web publish flow after browser automation is unblocked.
 - Glama is already public for `garmin-mcp`, `google-health-mcp`, `apple-health-mcp`, `samsung-health-mcp`, `wellness-nourish`, `fitbit-mcp`, `oura-mcp`, `withings-mcp`, and `polar-mcp`. `whoop-mcp` and `strava-mcp` need manual Glama add/claim/refresh because their expected direct slugs redirected to `oura-mcp` during verification.
-- Withings needs a clean checkout refresh before publishing new registry metadata: npm has `withings-mcp-unofficial@0.4.7`, while the local `withings-mcp` checkout has `server.json` at `0.4.6` and `git status` currently fails with a bad `HEAD`.
-- The local `polar-mcp` checkout also needs repair before future metadata work because `git status` fails reading its tree, although its Registry and npm versions are currently aligned at `0.3.5`.
+- Official MCP Registry publish still needs a fresh `mcp-publisher login github` device-code authorization before pushing the newly validated entries for `withings-mcp`, `timeline-pulse`, `delx-memory`, `mcp-scorecard`, `wellness-cycle-coach`, `wellness-air`, `google-ads-mcp-unofficial`, `uap-pulse`, `delx-living-body`, `delx-mcp-server`, `delx-agent-utilities`, and `google-ads-intent-mcp`.
+- `agent-seo-engine` needs a package-version decision before Registry publish: `server.json` points to `0.1.1`, but PyPI currently reports `agent-seo-engine==0.1.0`.
+- Local checkouts for `withings-mcp` and `polar-mcp` still need repair for future local work, but fresh temporary clones were used for the public metadata work above.
 
 ## Submission Copy Template
 
