@@ -103,13 +103,32 @@ Completed:
   - `google-ads-mcp-unofficial`
   - `uap-pulse`
   - `delx-agent-utilities`
+- Official MCP Registry follow-up completed and verified through `GET /v0.1/servers/{serverName}/versions/{version}`:
+  - `io.github.davidmosiah/withingsmcp` `0.4.7`
+  - `io.github.davidmosiah/timeline-pulse` `0.1.1`
+  - `io.github.davidmosiah/delx-memory` `0.2.3`
+  - `io.github.davidmosiah/mcp-scorecard` `0.5.1`
+  - `io.github.davidmosiah/wellness-cycle-coach` `0.3.5`
+  - `io.github.davidmosiah/wellness-air` `0.5.6`
+  - `io.github.davidmosiah/google-ads-mcp` `0.1.3`
+  - `io.github.davidmosiah/uap-pulse` `0.3.2`
+  - `io.github.davidmosiah/delx-living-body` `0.3.0`
+  - `io.github.davidmosiah/delx-mcp-server` `0.2.8`
+  - `io.github.davidmosiah/delx-agent-utilities` `0.1.2`
+  - `io.github.davidmosiah/google-ads-intent-mcp` `0.1.1`
+  - `io.github.davidmosiah/agent-seo-engine` `0.1.1`
+- Package ownership metadata releases shipped for Registry validation:
+  - `timeline-pulse@0.1.1` on npm with `mcpName`.
+  - `uap-pulse@0.3.2` on npm with `mcpName` and `hono` lockfile updated to `4.12.27`.
+  - `delx-agent-utilities==0.1.2` on PyPI with `mcp-name`.
+  - `google-ads-intent-mcp==0.1.1` on PyPI with `mcp-name`.
+  - `agent-seo-engine==0.1.1` on PyPI with `mcp-name`.
 
 Still needs follow-up:
 
 - Smithery publication is not complete. The npm-backed MCP repositories now have `smithery.yaml`, but the current `smithery mcp publish` CLI accepts a remote MCP URL or `.mcpb` bundle; these connectors are local-first stdio/npm packages. Next step is either build MCPB bundles or complete the authenticated web publish flow after browser automation is unblocked.
 - Glama is already public for `garmin-mcp`, `google-health-mcp`, `apple-health-mcp`, `samsung-health-mcp`, `wellness-nourish`, `fitbit-mcp`, `oura-mcp`, `withings-mcp`, and `polar-mcp`. `whoop-mcp` and `strava-mcp` need manual Glama add/claim/refresh because their expected direct slugs redirected to `oura-mcp` during verification.
-- Official MCP Registry publish still needs a fresh `mcp-publisher login github` device-code authorization before pushing the newly validated entries for `withings-mcp`, `timeline-pulse`, `delx-memory`, `mcp-scorecard`, `wellness-cycle-coach`, `wellness-air`, `google-ads-mcp-unofficial`, `uap-pulse`, `delx-living-body`, `delx-mcp-server`, `delx-agent-utilities`, and `google-ads-intent-mcp`.
-- `agent-seo-engine` needs a package-version decision before Registry publish: `server.json` points to `0.1.1`, but PyPI currently reports `agent-seo-engine==0.1.0`.
+- Official MCP Registry is current for all npm/PyPI package-backed public MCP servers classified in this sweep. Future package releases still need a matching `server.json` publish.
 - Local checkouts for `withings-mcp` and `polar-mcp` still need repair for future local work, but fresh temporary clones were used for the public metadata work above.
 
 ## Submission Copy Template
