@@ -21,13 +21,13 @@ Delx is the agent-first protocol layer for real-world context. The public repos 
 Run the local collector:
 
 ```bash
-node scripts/collect-growth-metrics.mjs
+node scripts/collect-account-growth-metrics.mjs
 ```
 
 Outputs are local only:
 
-- `.growth-metrics/snapshots/YYYY-MM-DD.json`
-- `.growth-metrics/latest.md`
+- `.growth-metrics/account-snapshots/YYYY-MM-DD.json`
+- `.growth-metrics/account-latest.md`
 
 The collector also writes a public, commit-safe snapshot:
 
