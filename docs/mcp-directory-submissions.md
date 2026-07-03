@@ -63,8 +63,25 @@ Completed:
 - Official MCP Registry already had current versions for `strava-mcp`, `apple-health-mcp`, `samsung-health-mcp`, `fitbitmcp`, `ouramcp`, and `polarmcp`.
 - MCPFind public pages verified for all 11 wellness registry names in this tracker.
 - PulseMCP submission flow verified: PulseMCP ingests from the Official MCP Registry daily and asks maintainers to email `hello@pulsemcp.com` only if an entry is still missing after a week.
-- `awesome-mcp-servers` draft PR opened for the strongest three public entries: Garmin MCP, Google Health MCP, and Wellness Nourish.
+- `awesome-mcp-servers` PR opened for the public wellness/health entries and later marked ready for maintainer review.
   - PR: `https://github.com/punkpeye/awesome-mcp-servers/pull/9155`
+- `awesome-mcp-servers` PR #9155 expanded from 3 to 16 entries and verified with `check-submission` success:
+  - `apple-health-mcp`
+  - `delx-living-body`
+  - `eight-sleep-mcp`
+  - `fitbit-mcp`
+  - `garmin-mcp`
+  - `google-health-mcp`
+  - `oura-mcp`
+  - `polar-mcp`
+  - `samsung-health-mcp`
+  - `strava-mcp`
+  - `wellness-air`
+  - `wellness-cgm-mcp`
+  - `wellness-cycle-coach`
+  - `wellness-nourish`
+  - `whoop-mcp`
+  - `withings-mcp`
 - `smithery.yaml` metadata committed and pushed to all 11 wellness connector repositories:
   - `whoop-mcp`
   - `garmin-mcp`
@@ -125,9 +142,23 @@ Completed:
   - `agent-seo-engine==0.1.1` on PyPI with `mcp-name`.
 - Full public package-backed Registry sweep verified `29/29` active, non-fork public repos with `server.json` by checking each package's latest npm/PyPI version against the official versioned endpoint.
 - `uap-pulse@0.3.3` shipped on npm and the Official MCP Registry after fixing GitHub MIT license detection and npm repository/homepage metadata.
-- Second `awesome-mcp-servers` draft PR opened for non-wellness anchor servers:
+- Second `awesome-mcp-servers` PR opened for non-wellness public MCP servers and marked ready for maintainer review:
   - PR: `https://github.com/punkpeye/awesome-mcp-servers/pull/9159`
-  - Entries: `mcp-scorecard`, `delx-memory`, `agent-seo-engine`, `google-ads-intent-mcp`.
+  - Initial entries: `mcp-scorecard`, `delx-memory`, `agent-seo-engine`, `google-ads-intent-mcp`.
+- `awesome-mcp-servers` PR #9159 expanded to 13 total entries and verified with `check-submission` success:
+  - `mcp-scorecard`
+  - `delx-memory`
+  - `agent-seo-engine`
+  - `google-ads-intent-mcp`
+  - `delx-agent-utilities`
+  - `delx-mcp-server`
+  - `google-ads-mcp-unofficial`
+  - `short-video-agent-kit`
+  - `tiktok-agent-publisher`
+  - `youtube-shorts-agent`
+  - `timeline-pulse`
+  - `uap-pulse`
+  - `astral-mcp`
 - MCPFind public API currently resolves `21/29` public package-backed Registry entries.
 - MCPFind PR opened for the 8 missing API slugs and locally validated with `scripts/verify-submission-liveness.mjs --all`:
   - PR: `https://github.com/MCPFind/mcp-find/pull/91`
@@ -147,6 +178,8 @@ Completed:
 Still needs follow-up:
 
 - Glama review/crawl needs to finish for the `20/29` slugs submitted but not yet directly visible: `agent-seo-engine`, `astral-mcp`, `delx-agent-utilities`, `delx-living-body`, `delx-mcp-server`, `delx-memory`, `eight-sleep-mcp`, `google-ads-intent-mcp`, `google-ads-mcp-unofficial`, `mcp-scorecard`, `short-video-agent-kit`, `strava-mcp`, `tiktok-agent-publisher`, `timeline-pulse`, `uap-pulse`, `wellness-air`, `wellness-cgm-mcp`, `wellness-cycle-coach`, `whoop-mcp`, `youtube-shorts-agent`.
+- `awesome-mcp-servers` PRs #9155 and #9159 are ready, mergeable, and passing `check-submission`; they still need upstream maintainer merge.
+- MCPFind PR #91 is open and validated locally; it still needs upstream maintainer merge before the 8 missing entries become public API results.
 - Official MCP Registry is current for all npm/PyPI package-backed public MCP servers classified in this sweep. Future package releases still need a matching `server.json` publish.
 - Local checkouts for `withings-mcp` and `polar-mcp` still need repair for future local work, but fresh temporary clones were used for the public metadata work above.
 
