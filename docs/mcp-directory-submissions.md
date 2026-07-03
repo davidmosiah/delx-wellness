@@ -65,7 +65,7 @@ Completed:
 - PulseMCP submission flow verified: PulseMCP ingests from the Official MCP Registry daily and asks maintainers to email `hello@pulsemcp.com` only if an entry is still missing after a week.
 - `awesome-mcp-servers` draft PR opened for the strongest three public entries: Garmin MCP, Google Health MCP, and Wellness Nourish.
   - PR: `https://github.com/punkpeye/awesome-mcp-servers/pull/9155`
-- `smithery.yaml` local metadata prepared in clean connector checkouts for:
+- `smithery.yaml` metadata committed and pushed to all 11 wellness connector repositories:
   - `whoop-mcp`
   - `garmin-mcp`
   - `google-health-mcp`
@@ -75,10 +75,12 @@ Completed:
   - `wellness-nourish`
   - `fitbit-mcp`
   - `oura-mcp`
+  - `withings-mcp`
+  - `polar-mcp`
 
 Still needs follow-up:
 
-- Smithery publication is not complete. The current `smithery mcp publish` CLI accepts a remote MCP URL or `.mcpb` bundle; these connectors are local-first stdio/npm packages. Next step is either build MCPB bundles or complete the authenticated web publish flow after browser automation is unblocked.
+- Smithery publication is not complete. The repositories now have `smithery.yaml`, but the current `smithery mcp publish` CLI accepts a remote MCP URL or `.mcpb` bundle; these connectors are local-first stdio/npm packages. Next step is either build MCPB bundles or complete the authenticated web publish flow after browser automation is unblocked.
 - Glama is already public for `garmin-mcp`, `google-health-mcp`, `apple-health-mcp`, `samsung-health-mcp`, `wellness-nourish`, `fitbit-mcp`, `oura-mcp`, `withings-mcp`, and `polar-mcp`. `whoop-mcp` and `strava-mcp` need manual Glama add/claim/refresh because their expected direct slugs redirected to `oura-mcp` during verification.
 - Withings needs a clean checkout refresh before publishing new registry metadata: npm has `withings-mcp-unofficial@0.4.7`, while the local `withings-mcp` checkout has `server.json` at `0.4.6` and `git status` currently fails with a bad `HEAD`.
 - The local `polar-mcp` checkout also needs repair before future metadata work because `git status` fails reading its tree, although its Registry and npm versions are currently aligned at `0.3.5`.
