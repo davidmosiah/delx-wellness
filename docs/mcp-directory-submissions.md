@@ -51,6 +51,47 @@ Use this checklist to keep public MCP discovery consistent across directories, p
 
 ## Submission Log
 
+### 2026-07-04
+
+Completed:
+
+- `awesome-mcp-servers` maintainer closed the multi-server PRs without merge and requested one server per PR:
+  - #9155: `Add Delx Wellness MCP servers`
+  - #9159: `Add Delx agent MCP servers`
+- Split #9155 into one ready PR per wellness/server entry. All are open, non-draft, include Glama score badges, and pass `check-submission`:
+  - #9228 `apple-health-mcp`
+  - #9229 `delx-living-body`
+  - #9230 `eight-sleep-mcp`
+  - #9231 `fitbit-mcp`
+  - #9232 `garmin-mcp`
+  - #9233 `google-health-mcp`
+  - #9234 `oura-mcp`
+  - #9235 `polar-mcp`
+  - #9236 `samsung-health-mcp`
+  - #9237 `strava-mcp`
+  - #9238 `wellness-air`
+  - #9239 `wellness-cgm-mcp`
+  - #9240 `wellness-cycle-coach`
+  - #9241 `wellness-nourish`
+  - #9242 `whoop-mcp`
+  - #9243 `withings-mcp`
+- Split #9159 into one ready PR per non-wellness/server entry. All are open, non-draft, include Glama score badges, and pass `check-submission`:
+  - #9244 `delx-agent-utilities`
+  - #9245 `delx-mcp-server`
+  - #9246 `mcp-scorecard`
+  - #9247 `delx-memory`
+  - #9248 `agent-seo-engine`
+  - #9249 `google-ads-intent-mcp`
+  - #9250 `google-ads-mcp-unofficial`
+  - #9251 `short-video-agent-kit`
+  - #9252 `timeline-pulse`
+  - #9253 `uap-pulse`
+  - #9254 `tiktok-agent-publisher`
+  - #9255 `youtube-shorts-agent`
+  - #9256 `astral-mcp`
+- Posted maintainer-facing follow-up comments on closed PRs #9155 and #9159 with the split PR maps.
+- Glama direct pages and score badges were rechecked for all 29 split entries and returned HTTP 200 before opening the replacement PRs.
+
 ### 2026-07-03
 
 Completed:
@@ -195,9 +236,7 @@ Completed:
 
 Still needs follow-up:
 
-- Glama review/crawl needs to finish for the `20/29` slugs submitted but not yet directly visible: `agent-seo-engine`, `astral-mcp`, `delx-agent-utilities`, `delx-living-body`, `delx-mcp-server`, `delx-memory`, `eight-sleep-mcp`, `google-ads-intent-mcp`, `google-ads-mcp-unofficial`, `mcp-scorecard`, `short-video-agent-kit`, `strava-mcp`, `tiktok-agent-publisher`, `timeline-pulse`, `uap-pulse`, `wellness-air`, `wellness-cgm-mcp`, `wellness-cycle-coach`, `whoop-mcp`, `youtube-shorts-agent`.
-- `awesome-mcp-servers` PR #9155 is ready, mergeable, passing `check-submission`, and labeled `has-glama`; it still needs upstream maintainer merge.
-- `awesome-mcp-servers` PR #9159 is ready, mergeable, and passing `check-submission`, but still carries the upstream `missing-glama` label until Glama publishes at least one of the non-wellness entries and the PR can add a real score badge.
+- `awesome-mcp-servers` split PRs #9228-#9256 are open, non-draft, include Glama score badges, and pass `check-submission`; they still need upstream maintainer merge.
 - MCPFind PR #91 is open and validated locally; it still needs upstream maintainer merge before the 8 missing entries become public API results.
 - Official MCP Registry is current for all npm/PyPI package-backed public MCP servers classified in this sweep. Future package releases still need a matching `server.json` publish.
 - Local checkouts for `withings-mcp` and `polar-mcp` still need repair for future local work, but fresh temporary clones were used for the public metadata work above.

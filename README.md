@@ -11,6 +11,8 @@
 
 <p align="center">
   <a href="https://wellness.delx.ai"><img src="https://img.shields.io/badge/SITE-wellness.delx.ai-0EA5A3?style=for-the-badge&labelColor=0F172A" alt="Site" /></a>
+  <a href="https://github.com/davidmosiah/delx-wellness/stargazers"><img src="https://img.shields.io/github/stars/davidmosiah/delx-wellness?style=for-the-badge&labelColor=0F172A&color=FBBF24&logo=github" alt="GitHub stars" /></a>
+  <a href="https://github.com/davidmosiah/delx-wellness/actions"><img src="https://img.shields.io/github/actions/workflow/status/davidmosiah/delx-wellness/ci.yml?branch=main&style=for-the-badge&labelColor=0F172A&label=CI" alt="CI" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-22C55E?style=for-the-badge&labelColor=0F172A" alt="License MIT" /></a>
   <a href="https://www.npmjs.com/~davidmosiah"><img src="https://img.shields.io/badge/NPM-published_packages-CB3837?style=for-the-badge&labelColor=0F172A&logo=npm&logoColor=white" alt="npm packages" /></a>
   <a href="https://modelcontextprotocol.io"><img src="https://img.shields.io/badge/BUILT_FOR-MCP-7C3AED?style=for-the-badge&labelColor=0F172A" alt="Built for MCP" /></a>
@@ -19,6 +21,8 @@
 <p align="center">
   <strong>What is this?</strong> A registry of <strong>open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, continuous glucose and smart mattress into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
+
+> **What's new (2026-07-12):** registry synced to live npm — Nourish **0.7.0** (TACO 4 pt-BR) + Polar **0.3.6**. Client examples now include Eight Sleep, Air, CGM and Cycle Coach. See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
 
 ---
 
@@ -106,6 +110,10 @@ npx -y withings-mcp-unofficial      setup && npx -y withings-mcp-unofficial     
 npx -y polar-mcp-unofficial         setup && npx -y polar-mcp-unofficial         auth
 npx -y apple-health-mcp-unofficial  setup --export-path /path/to/export.zip
 npx -y samsung-health-mcp-unofficial setup --export-path /path/to/SamsungHealth
+npx -y eight-sleep-mcp-unofficial   setup && npx -y eight-sleep-mcp-unofficial   auth
+npx -y wellness-air                 doctor
+npx -y wellness-cgm-mcp             doctor
+npx -y wellness-cycle-coach         doctor
 ```
 
 After `setup`, run **`npx -y <package> onboarding`** on any connector once &mdash; the answers persist to `~/.delx-wellness/profile.json` and every other connector reads them automatically ([Shared local profile](docs/privacy-model.md)).

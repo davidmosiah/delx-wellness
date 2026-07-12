@@ -7,8 +7,10 @@ Primary setup command: npx -y delx-wellness-hermes setup
 OpenClaw setup command: npx -y delx-wellness-openclaw setup
 MCP command: see README
 Agent surfaces:
-- Registry includes WHOOP, Oura, Garmin, Strava, Fitbit, Google Health, Withings, Apple Health, Samsung Health, Polar and Nourish.
+- Registry includes WHOOP, Oura, Garmin, Strava, Fitbit, Google Health, Withings, Apple Health, Samsung Health, Polar, Eight Sleep, Wellness Air, CGM, Cycle Coach and Nourish (TACO 4 pt-BR from 0.7.0).
+- Meta connector: delx-living-body composes installed wellness connectors into one ask/daily-brief surface.
 - Runtime profile packs include Delx Wellness for Hermes and Delx Wellness for OpenClaw.
+- Machine-readable catalog: registry.json · human snapshot: STATUS.md · changelog: CHANGELOG.md
 - See README for install and runtime surfaces.
 - Start with the connection/status or agent-manifest surface when available.
 - Prefer JSON responses for automation and markdown responses for human summaries.

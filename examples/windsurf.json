@@ -1,5 +1,9 @@
 {
   "mcpServers": {
+    "living_body": {
+      "command": "npx",
+      "args": ["-y", "delx-living-body"]
+    },
     "whoop": {
       "command": "npx",
       "args": ["-y", "whoop-mcp-unofficial"]
@@ -39,6 +43,22 @@
     "polar": {
       "command": "npx",
       "args": ["-y", "polar-mcp-unofficial"]
+    },
+    "eight_sleep": {
+      "command": "npx",
+      "args": ["-y", "eight-sleep-mcp-unofficial"]
+    },
+    "wellness_air": {
+      "command": "npx",
+      "args": ["-y", "wellness-air"]
+    },
+    "wellness_cgm": {
+      "command": "npx",
+      "args": ["-y", "wellness-cgm-mcp"]
+    },
+    "wellness_cycle_coach": {
+      "command": "npx",
+      "args": ["-y", "wellness-cycle-coach"]
     },
     "nourish": {
       "command": "npx",

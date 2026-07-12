@@ -406,7 +406,7 @@
         "notes": "Local package includes Polar AccessLink Dynamic API v4 OAuth, summaries, agent manifest, GPS-aware route handling and Hermes setup checks."
       },
       "notes": "Uses official Polar AccessLink Dynamic API v4. Data availability depends on user device, granted scopes (16 fine-grained read scopes), and Polar account features.",
-      "npm_version": "0.3.5"
+      "npm_version": "0.3.6"
     },
     {
       "id": "samsung-health",
@@ -657,7 +657,7 @@
         "notes": "Agent-ready nutrition MCP with explicit-intent writes, local undo/delete/export, privacy audit, Hermes Telegram setup, and nutrition_context-compatible daily/coach summaries."
       },
       "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. TACO/UNICAMP values ship as an attributed curated subset while redistribution-license confirmation remains a 1.0 gate. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied.",
-      "npm_version": "0.6.11"
+      "npm_version": "0.7.0"
     },
     {
       "id": "whoop",
@@ -827,5 +827,5 @@
       "npm_version": "0.1.3"
     }
   ],
-  "last_updated": "2026-06-27"
+  "last_updated": "2026-07-12"
 }
