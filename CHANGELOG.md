@@ -11,6 +11,7 @@ canonical catalog, docs and install examples.
 - Synced `registry.json` + `STATUS.md` to live npm versions:
   - `wellness-nourish` `0.6.11` → `0.7.0` (TACO 4 pt-BR meal estimator)
   - `polar-mcp-unofficial` `0.3.5` → `0.3.6`
+  - `google-health-mcp-unofficial` `0.5.1` → `0.5.2` (scorecard fixes + Smithery)
 - Expanded agent discovery (`llms.txt`) and client examples to cover Eight
   Sleep, Wellness Air, CGM, and Cycle Coach.
 - Added dynamic GitHub stars / CI badges on the README front door.
