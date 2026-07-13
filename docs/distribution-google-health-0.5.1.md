@@ -1,18 +1,34 @@
-# Distribution Sprint: Google Health MCP 0.5.1
+# Google Health OSS Proof Loop (0.5.2)
 
-Goal: turn the `google-health-mcp-unofficial@0.5.1` release into real-account
-validation, stars and useful community feedback.
+Goal: turn the existing Google Health discovery signal into real-account
+validation and repeat participation around `google-health-mcp-unofficial@0.5.2`.
 
-This sprint should send people to one simple action:
+The filename is retained so existing links to the original 0.5.1 distribution
+asset do not break.
 
-```bash
-npx -y google-health-mcp-unofficial coverage --json
-```
+## Experiment Contract
 
-After OAuth setup:
+- **Window:** 2026-07-13 through 2026-08-12.
+- **Baseline:** 23 stars, 198 unique visitors, 84 unique cloners and 142 unique
+  Google referrals in the preceding 14-day GitHub traffic window; issue #3 had
+  zero external comments.
+- **Success:** two independent external users post redacted real-account
+  coverage reports and at least one returns for a second interaction.
+- **Stop:** if the success condition is not met by 2026-08-12, close the loop
+  without extension and leave the portfolio slot empty.
+- **Negative scope:** no new repo, connector feature, directory target,
+  leaderboard work, billing work or evidence-free redesign.
+
+This proof loop sends people to one simple action after OAuth setup:
 
 ```bash
 npx -y google-health-mcp-unofficial coverage --live --json
+```
+
+Before OAuth, the static preflight remains available:
+
+```bash
+npx -y google-health-mcp-unofficial coverage --json
 ```
 
 The strongest public ask is not "try my repo". It is:
@@ -23,8 +39,8 @@ The strongest public ask is not "try my repo". It is:
 
 ## Proof Points
 
-- npm: `google-health-mcp-unofficial@0.5.1`
-- Release: https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.1
+- npm: `google-health-mcp-unofficial@0.5.2`
+- Release: https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.2
 - Coverage doc: https://github.com/davidmosiah/google-health-mcp/blob/main/docs/data-coverage.md
 - Beta feedback guide: https://github.com/davidmosiah/google-health-mcp/blob/main/docs/beta-feedback.md
 - Issue for live reports: https://github.com/davidmosiah/google-health-mcp/issues/3
@@ -49,7 +65,7 @@ through safe tools while OAuth tokens stay on the user's machine.
 ## Short Post
 
 ```text
-Shipped google-health-mcp-unofficial@0.5.1.
+Shipped google-health-mcp-unofficial@0.5.2.
 
 It adds a read-only Google Health API v4 data-type coverage harness for agents:
 
@@ -71,7 +87,7 @@ https://github.com/davidmosiah/google-health-mcp/issues/3
 ```text
 I am looking for Google Health API v4 testers for an open-source MCP server.
 
-The new 0.5.1 release added:
+The 0.5.2 line includes:
 - a 39-type Google Health data-type catalog
 - a MCP tool: google_health_data_type_coverage
 - a CLI: google-health-mcp-server coverage --live --json
@@ -110,16 +126,16 @@ Package:
 https://www.npmjs.com/package/google-health-mcp-unofficial
 ```
 
-## Seven-Day Checklist
+## 30-Day Proof Loop
 
-- Day 1: open and pin the distribution sprint issue in `delx-wellness`.
-- Day 1: submit Google Health MCP to the highest-fit MCP directories that accept npm-based MCP servers.
-- Day 2: publish the short post and ask explicitly for Fitbit / Pixel Watch / Android testers.
-- Day 3: publish the technical post for MCP builders and link the redaction/security proof.
-- Day 4: comment on any related Google Health/Fitbit migration discussions only when the answer is directly useful.
-- Day 5: add the best real-account finding to the Google Health README and release notes.
-- Day 6: refresh `docs/open-source-growth-snapshot.md` and compare stars/downloads/issues.
-- Day 7: close the sprint only if at least one outside tester has reported a live coverage result or a concrete setup blocker.
+- Day 1: align the Google Health README, GitHub profile and profile pins to issue #3.
+- Day 1: record the live baseline and stop new directory expansion.
+- Weekly: recheck issue #3 for external reports and answer actionable setup blockers.
+- First external report: verify redaction, reproduce the result when possible,
+  and turn the finding into a field note or release proof without exposing health data.
+- Second interaction: record the return event in the portfolio source of truth.
+- 2026-08-12: execute the verdict exactly as written; do not substitute stars,
+  npm spikes or automated clones for human validation.
 
 ## Guardrails
 

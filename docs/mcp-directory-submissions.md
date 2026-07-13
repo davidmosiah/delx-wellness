@@ -2,6 +2,17 @@
 
 Use this checklist to keep public MCP discovery consistent across directories, package registries and community lists.
 
+## Current Distribution State — 2026-07-13
+
+- `awesome-mcp-servers`: **7 merged, 22 open** from the 29 one-server PRs.
+- Official MCP Registry and Smithery coverage were already complete for the 29
+  package-backed public MCP repos in the prior sweep.
+- Directory presence is no longer the active bottleneck. Through 2026-08-12,
+  open no new directory targets; the active OSS experiment is the
+  [Google Health OSS Proof Loop](distribution-google-health-0.5.1.md).
+- Existing open PRs may be answered when a maintainer requests a concrete fix,
+  but their merge count does not substitute for external real-account usage.
+
 ## Submit First
 
 | Project | Package | Canonical page | Registry name |

@@ -37,6 +37,30 @@ That public document uses only GitHub repository metadata and public npm
 download counts. GitHub traffic, referrers and path analytics stay local under
 `.growth-metrics/`.
 
+## Current Experiment — Google Health OSS Proof Loop
+
+**Window:** 2026-07-13 through 2026-08-12.
+
+The current OSS job is not to add more repositories or directory targets. It is
+to convert the strongest existing discovery signal into human proof through one
+privacy-safe action:
+
+```bash
+npx -y google-health-mcp-unofficial coverage --live --json
+```
+
+After reviewing the redacted output, external testers post it to
+[`google-health-mcp` issue #3](https://github.com/davidmosiah/google-health-mcp/issues/3).
+
+Success requires **two independent external real-account reports and at least
+one repeat interaction** from either tester (a follow-up comment, issue, PR or
+integration). If that does not happen by 2026-08-12, close the experiment
+without extending it and leave the portfolio slot empty.
+
+During this window this section overrides the broad daily and weekly expansion
+loops below: no new repos, no new directory targets, no leaderboard revival,
+and no redesign without user or traffic evidence.
+
 ## Daily Loop
 
 1. Run the growth collector.
@@ -45,9 +69,10 @@ download counts. GitHub traffic, referrers and path analytics stay local under
 4. Post one useful update on X, Reddit, or a targeted builder community.
 5. Ask clearly for stars only after showing practical value.
 
-Current sprint: [Google Health MCP 0.5.1 distribution](distribution-google-health-0.5.1.md)
+Current experiment: [Google Health MCP OSS Proof Loop](distribution-google-health-0.5.1.md)
 focuses on real-account coverage reports from Fitbit, Pixel Watch, Android and
-Google Health API v4 testers.
+Google Health API v4 testers. The filename is retained because the original
+distribution asset began with the 0.5.1 release; the live package is 0.5.2.
 
 Broad launch copy for X, LinkedIn, Reddit and Hacker News lives in
 [Delx Wellness Launch Assets](launch-assets.md).
