@@ -169,6 +169,15 @@
               "tier": {
                 "type": "string"
               },
+              "boundary_contract": {
+                "enum": [
+                  "remote_api",
+                  "multi_provider_api",
+                  "local_export",
+                  "computational"
+                ],
+                "description": "Executable boundary family used to select the required request, parser, payload-preservation and failure-observability tests."
+              },
               "full_ci": {
                 "type": "boolean"
               },

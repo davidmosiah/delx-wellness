@@ -57,6 +57,7 @@ that constant and document why in this file.
 
 ```bash
 node scripts/validate-schema.mjs                   # schema check, exit 0/1
+node scripts/validate-boundary-contracts.mjs       # all 16 wellness boundary families
 node scripts/validate-context-ready.mjs            # tier check, exit 0/1
 node scripts/validate-context-ready.mjs --json     # machine-readable report
 node scripts/validate-context-ready.mjs --registry path/to/registry.json

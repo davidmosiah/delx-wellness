@@ -291,6 +291,7 @@ Runnable agent loops live in [Operator Recipes](docs/operator-recipes.md).
 ## 📚 Reference docs
 
 - [Connector quality standard](docs/connector-quality-standard.md) &mdash; release and trust checklist
+- [Connector boundary contracts](docs/connector-contract-standard.md) &mdash; executable request, parser, payload-preservation and failure-observability rules
 - [Registry validation](docs/registry-validation.md) &mdash; what the `context_ready` CI validator enforces and how to extend it
 - [Provider status](docs/provider-status.md) &mdash; current matrix and risks
 - [Privacy model](docs/privacy-model.md) &mdash; local-first privacy boundary and hosted-hub considerations

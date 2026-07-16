@@ -122,6 +122,7 @@
       "privacy_default": "summary",
       "quality": {
         "tier": "agent_ready",
+        "boundary_contract": "local_export",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -167,6 +168,7 @@
       ],
       "quality": {
         "tier": "context_ready",
+        "boundary_contract": "remote_api",
         "full_ci": false,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -214,6 +216,7 @@
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
+        "boundary_contract": "remote_api",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -258,6 +261,7 @@
       "privacy_default": "structured",
       "quality": {
         "tier": "context_ready",
+        "boundary_contract": "remote_api",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -307,6 +311,7 @@
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
+        "boundary_contract": "remote_api",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -346,6 +351,7 @@
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
+        "boundary_contract": "remote_api",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -396,6 +402,7 @@
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
+        "boundary_contract": "remote_api",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -440,6 +447,7 @@
       "privacy_default": "summary",
       "quality": {
         "tier": "agent_ready",
+        "boundary_contract": "local_export",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -480,6 +488,7 @@
       "privacy_default": "structured",
       "quality": {
         "tier": "context_ready",
+        "boundary_contract": "remote_api",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -521,7 +530,8 @@
       ],
       "privacy_default": "structured",
       "quality": {
-        "tier": "agent_ready"
+        "tier": "agent_ready",
+        "boundary_contract": "multi_provider_api"
       },
       "recommended_handoffs": [
         "nourish",
@@ -554,7 +564,8 @@
       ],
       "privacy_default": "structured",
       "quality": {
-        "tier": "agent_ready"
+        "tier": "agent_ready",
+        "boundary_contract": "multi_provider_api"
       },
       "recommended_handoffs": [
         "nourish",
@@ -586,7 +597,8 @@
       ],
       "privacy_default": "structured",
       "quality": {
-        "tier": "agent_ready"
+        "tier": "agent_ready",
+        "boundary_contract": "computational"
       },
       "recommended_handoffs": [
         "nourish",
@@ -646,6 +658,7 @@
       "privacy_default": "local_summary",
       "quality": {
         "tier": "context_ready",
+        "boundary_contract": "computational",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -686,6 +699,7 @@
       "privacy_default": "structured",
       "quality": {
         "tier": "context_ready",
+        "boundary_contract": "remote_api",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -728,6 +742,7 @@
       "privacy_default": "structured",
       "quality": {
         "tier": "agent_ready",
+        "boundary_contract": "remote_api",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,
@@ -765,6 +780,7 @@
       "privacy_default": "private_provider_metadata_only",
       "quality": {
         "tier": "context_ready",
+        "boundary_contract": "computational",
         "full_ci": true,
         "security_policy": true,
         "privacy_audit_tool": true,

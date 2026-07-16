@@ -103,6 +103,8 @@ The family uses these stable cross-MCP handoff names. Individual connectors may 
 - For user data mutation, the tool name/description and schema must make explicit intent obvious (`explicit_user_intent`, `delete`, `clear`, `undo`, `revoke`).
 - Every connector must keep fixture mode or mocked clients available for local CI.
 - Every connector must have at least one regression test that proves secrets/tokens are redacted from status/audit/manifest surfaces.
+- Every catalog connector declares `quality.boundary_contract` and follows the executable request/parser, payload-preservation and failure-observability requirements in [`connector-contract-standard.md`](./connector-contract-standard.md).
+- Structured normalization is additive: upstream nested objects and fields survive after secret/GPS redaction, while summary mode may return a flattened-only projection.
 
 
 ## Current Connector Status
@@ -133,6 +135,7 @@ Before publishing or linking a connector:
 - [ ] Confirm README links to the Delx Wellness registry.
 - [ ] Confirm docs do not overstate provider support or medical claims.
 - [ ] Confirm context tools use the shared field names above or document any intentional omission.
+- [ ] Run the boundary-contract validator and the provider-local endpoint/parser contract tests required by the connector's declared family.
 - [ ] Confirm Telegram examples avoid raw JSON dumps, tables, secrets and private exports.
 - [ ] Confirm every write/delete/revoke/log action has explicit user intent and recovery/undo guidance when applicable.
 
