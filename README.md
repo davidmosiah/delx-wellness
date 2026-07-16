@@ -22,7 +22,7 @@
   <strong>What is this?</strong> A registry of <strong>open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, continuous glucose and smart mattress into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
 
-> **What's new (2026-07-12):** registry synced to live npm — Nourish **0.7.0** (TACO 4 pt-BR) + Polar **0.3.6**. Client examples now include Eight Sleep, Air, CGM and Cycle Coach. See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
+> **What's new (2026-07-16):** all 16 wellness connectors now declare executable boundary contracts. Twelve API/provider connectors received endpoint-specific date, payload, error-propagation, or security releases; local-import and computational connectors passed their class-specific gates. See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
 
 ---
 

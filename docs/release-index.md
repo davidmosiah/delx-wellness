@@ -1,7 +1,7 @@
 # Verified Release Index
 
 This page tracks the latest Delx open-source releases that were verified from
-both npm and GitHub on 2026-06-27. Use it as the human-readable companion to
+both npm and GitHub on 2026-07-16. Use it as the human-readable companion to
 [`registry.json`](../registry.json) and [`STATUS.md`](../STATUS.md).
 
 ## Wellness Stack
@@ -9,11 +9,11 @@ both npm and GitHub on 2026-06-27. Use it as the human-readable companion to
 | Project | npm package | npm version | GitHub release | Verification |
 |---|---|---:|---|---|
 | Delx Living Body | [`delx-living-body`](https://www.npmjs.com/package/delx-living-body/v/0.3.0) | `0.3.0` | [`v0.3.0`](https://github.com/davidmosiah/delx-living-body/releases/tag/v0.3.0) | `npm test`, prod audit, pack dry-run |
-| Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.5.1) | `0.5.1` | [`v0.5.1`](https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.1) | `npm test`, prod audit, pack dry-run, CodeQL 0 alerts |
-| Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.5.3) | `0.5.3` | [`v0.5.3`](https://github.com/davidmosiah/garmin-mcp/releases/tag/v0.5.3) | `npm test`, prod audit, pack dry-run |
-| Wellness Nourish | [`wellness-nourish`](https://www.npmjs.com/package/wellness-nourish/v/0.6.11) | `0.6.11` | [`v0.6.11`](https://github.com/davidmosiah/wellness-nourish/releases/tag/v0.6.11) | `npm test`, prod audit, pack dry-run |
-| WHOOP MCP | [`whoop-mcp-unofficial`](https://www.npmjs.com/package/whoop-mcp-unofficial/v/0.5.3) | `0.5.3` | [`v0.5.3`](https://github.com/davidmosiah/whoop-mcp/releases/tag/v0.5.3) | `npm test`, prod audit, pack dry-run |
-| Withings MCP | [`withings-mcp-unofficial`](https://www.npmjs.com/package/withings-mcp-unofficial/v/0.4.7) | `0.4.7` | [`v0.4.7`](https://github.com/davidmosiah/withings-mcp/releases/tag/v0.4.7) | `npm test`, prod audit, pack dry-run |
+| Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.5.3) | `0.5.3` | [`v0.5.3`](https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.3) | `npm test`, prod audit, pack dry-run |
+| Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.5.4) | `0.5.4` | [`v0.5.4`](https://github.com/davidmosiah/garmin-mcp/releases/tag/v0.5.4) | `npm test`, prod audit, pack dry-run |
+| Wellness Nourish | [`wellness-nourish`](https://www.npmjs.com/package/wellness-nourish/v/0.7.0) | `0.7.0` | [`v0.7.0`](https://github.com/davidmosiah/wellness-nourish/releases/tag/v0.7.0) | `npm test`, prod audit, pack dry-run |
+| WHOOP MCP | [`whoop-mcp-unofficial`](https://www.npmjs.com/package/whoop-mcp-unofficial/v/0.5.4) | `0.5.4` | [`v0.5.4`](https://github.com/davidmosiah/whoop-mcp/releases/tag/v0.5.4) | `npm test`, prod audit, pack dry-run |
+| Withings MCP | [`withings-mcp-unofficial`](https://www.npmjs.com/package/withings-mcp-unofficial/v/0.4.8) | `0.4.8` | [`v0.4.8`](https://github.com/davidmosiah/withings-mcp/releases/tag/v0.4.8) | `npm test`, prod audit, pack dry-run |
 
 ## Infrastructure
 

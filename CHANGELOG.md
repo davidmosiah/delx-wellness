@@ -4,6 +4,15 @@ All notable changes to the Delx Wellness registry hub are documented here.
 Connector runtime code lives in sibling repositories; this repo tracks the
 canonical catalog, docs and install examples.
 
+## [2026-07-16]
+
+### Changed
+
+- Classified all 16 wellness connectors by executable boundary contract: remote API, multi-provider API, local export, or computational engine.
+- Added CI validation for boundary declarations and the required class-specific test evidence.
+- Synchronized the registry and status table to the live npm releases for Polar, Garmin, Oura, Fitbit, Withings, WHOOP, Strava, Google Health, Eight Sleep, Wellness Air, Wellness CGM, and Cycle Coach.
+- Hardened endpoint-specific date/time handling, structured payload preservation, summary error propagation, and dependency security across the affected connector repositories.
+
 ## [2026-07-12]
 
 ### Changed
