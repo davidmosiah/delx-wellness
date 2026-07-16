@@ -25,7 +25,7 @@ _Auto-generated from `registry.json` on 2026-07-12 by `scripts/sync-registry.mjs
 | [Garmin Connect](https://github.com/davidmosiah/garmin-mcp) | `garmin-mcp-unofficial` | `0.5.4` | context_ready | profile, devices, daily_movement, sleep… |
 | [Google Health](https://github.com/davidmosiah/google-health-mcp) | `google-health-mcp-unofficial` | `0.5.3` | agent_ready | identity, profile, settings, steps… |
 | [Oura Ring](https://github.com/davidmosiah/ouramcp) | `oura-mcp-unofficial` | `0.4.7` | agent_ready | personal_info, readiness, sleep, activity… |
-| [Polar](https://github.com/davidmosiah/polarmcp) | `polar-mcp-unofficial` | `0.3.8` | agent_ready | account, devices, activity, calendar… |
+| [Polar](https://github.com/davidmosiah/polarmcp) | `polar-mcp-unofficial` | `0.3.9` | agent_ready | account, devices, activity, calendar… |
 | [Samsung Health](https://github.com/davidmosiah/samsung-health-mcp) | `samsung-health-mcp-unofficial` | `0.5.0` | agent_ready | activity, steps, sleep, heart_rate… |
 | [Strava](https://github.com/davidmosiah/strava-mcp) | `strava-mcp-unofficial` | `0.4.7` | context_ready | athlete, activities, activity_details, activity_streams… |
 | [Wellness Air](https://github.com/davidmosiah/wellness-air) | `wellness-air` | `0.5.7` | agent_ready | PM2.5, PM10, CO2, VOC… |
