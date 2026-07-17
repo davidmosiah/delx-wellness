@@ -13,6 +13,7 @@ canonical catalog, docs and install examples.
 - Synchronized the registry and status table to the live npm releases for Polar, Garmin, Oura, Fitbit, Withings, WHOOP, Strava, Google Health, Eight Sleep, Wellness Air, Wellness CGM, and Cycle Coach.
 - Hardened endpoint-specific date/time handling, structured payload preservation, summary error propagation, and dependency security across the affected connector repositories.
 - Updated Polar to `0.3.9` after correcting the training-session endpoint's local ISO date-time serialization.
+- Updated Polar to `0.3.10` after aligning Markdown previews with the confirmed v4 training and sleep payloads.
 
 ## [2026-07-12]
 
