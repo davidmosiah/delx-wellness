@@ -1,7 +1,7 @@
 # Verified Release Index
 
 This page tracks the latest Delx open-source releases that were verified from
-both npm and GitHub. Last full row audit: 2026-07-30 (security + agent-ready residual close).
+both npm and GitHub. Last full row audit: 2026-07-30 (SOTA wave — fleet 100 + kit + pin republish).
 Hub [`registry.json`](../registry.json) is reconciled via `node scripts/sync-registry.mjs`.
 Full scorecard × pin matrix: [`scorecard-compare.md`](./scorecard-compare.md).
 
@@ -9,19 +9,19 @@ Full scorecard × pin matrix: [`scorecard-compare.md`](./scorecard-compare.md).
 
 | Project | npm package | npm version | GitHub release | Verification |
 |---|---|---:|---|---|
-| Delx Living Body | [`delx-living-body`](https://www.npmjs.com/package/delx-living-body/v/0.3.2) | `0.3.2` | [`v0.3.2`](https://github.com/davidmosiah/delx-living-body/releases/tag/v0.3.2) | `npm test`, prod audit, pack dry-run |
-| Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.5.6) | `0.5.6` | [`v0.5.6`](https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.6) | `npm test`, prod audit, pack dry-run |
+| Delx Living Body | [`delx-living-body`](https://www.npmjs.com/package/delx-living-body/v/0.3.3) | `0.3.3` | [`v0.3.3`](https://github.com/davidmosiah/delx-living-body/releases/tag/v0.3.3) | `npm test`, prod audit, pack dry-run |
+| Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.5.7) | `0.5.7` | [`v0.5.7`](https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.7) | `npm test`, prod audit, pack dry-run |
 | Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.5.8) | `0.5.8` | [`v0.5.8`](https://github.com/davidmosiah/garmin-mcp/releases/tag/v0.5.8) | `npm test`, prod audit, pack dry-run |
 | Wellness Nourish | [`wellness-nourish`](https://www.npmjs.com/package/wellness-nourish/v/0.7.3) | `0.7.3` | [`v0.7.3`](https://github.com/davidmosiah/wellness-nourish/releases/tag/v0.7.3) | `npm test`, prod audit, pack dry-run |
-| WHOOP MCP | [`whoop-mcp-unofficial`](https://www.npmjs.com/package/whoop-mcp-unofficial/v/0.5.6) | `0.5.6` | [`v0.5.6`](https://github.com/davidmosiah/whoop-mcp/releases/tag/v0.5.6) | `npm test`, prod audit, pack dry-run |
-| Withings MCP | [`withings-mcp-unofficial`](https://www.npmjs.com/package/withings-mcp-unofficial/v/0.4.10) | `0.4.10` | [`v0.4.10`](https://github.com/davidmosiah/withings-mcp/releases/tag/v0.4.10) | `npm test`, prod audit, pack dry-run |
+| WHOOP MCP | [`whoop-mcp-unofficial`](https://www.npmjs.com/package/whoop-mcp-unofficial/v/0.5.7) | `0.5.7` | [`v0.5.7`](https://github.com/davidmosiah/whoop-mcp/releases/tag/v0.5.7) | `npm test`, prod audit, pack dry-run |
+| Withings MCP | [`withings-mcp-unofficial`](https://www.npmjs.com/package/withings-mcp-unofficial/v/0.4.11) | `0.4.11` | [`v0.4.11`](https://github.com/davidmosiah/withings-mcp/releases/tag/v0.4.11) | `npm test`, prod audit, pack dry-run |
 
 ## Infrastructure
 
 | Project | npm package | npm version | GitHub release | Verification |
 |---|---|---:|---|---|
-| MCP Scorecard | [`mcp-scorecard`](https://www.npmjs.com/package/mcp-scorecard/v/0.5.3) | `0.5.3` | [`v0.5.3`](https://github.com/davidmosiah/mcp-scorecard/releases/tag/v0.5.3) | `npm test`, self-score 100/100, prod audit, pack dry-run |
-| Delx Memory | [`delx-memory`](https://www.npmjs.com/package/delx-memory/v/0.2.4) | `0.2.4` | [`v0.2.4`](https://github.com/davidmosiah/delx-memory/releases/tag/v0.2.4) | `npm test`, prod audit, pack dry-run |
+| MCP Scorecard | [`mcp-scorecard`](https://www.npmjs.com/package/mcp-scorecard/v/0.5.4) | `0.5.4` | [`v0.5.4`](https://github.com/davidmosiah/mcp-scorecard/releases/tag/v0.5.4) | `npm test`, prod audit, pack dry-run |
+| Delx Memory | [`delx-memory`](https://www.npmjs.com/package/delx-memory/v/0.2.5) | `0.2.5` | [`v0.2.5`](https://github.com/davidmosiah/delx-memory/releases/tag/v0.2.5) | `npm test`, prod audit, pack dry-run |
 | Delx MCP Server | [`delx-mcp-server`](https://www.npmjs.com/package/delx-mcp-server/v/0.2.9) | `0.2.9` | [`v0.2.9`](https://github.com/davidmosiah/delx-mcp-server/releases/tag/v0.2.9) | `npm test`, `npm run health`, prod audit, pack dry-run |
 
 ## Maintainer Rule
