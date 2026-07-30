@@ -13,7 +13,7 @@ _Auto-generated from `registry.json` on 2026-07-30 by `scripts/sync-registry.mjs
 
 | Meta-connector | Package | npm version | Composes |
 |---|---|---|---|
-| [Delx Living Body](https://github.com/davidmosiah/delx-living-body) | `delx-living-body` | `0.3.0` | 6 tools |
+| [Delx Living Body](https://github.com/davidmosiah/delx-living-body) | `delx-living-body` | `0.3.1` | 6 tools |
 
 ## Connectors
 
