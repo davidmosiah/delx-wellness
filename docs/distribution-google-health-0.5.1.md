@@ -1,17 +1,25 @@
-# Google Health OSS Proof Loop (0.5.2)
+# Google Health OSS Proof Loop (0.5.4)
 
 Goal: turn the existing Google Health discovery signal into real-account
-validation and repeat participation around `google-health-mcp-unofficial@0.5.2`.
+validation and repeat participation around
+`google-health-mcp-unofficial@0.5.4`.
 
 The filename is retained so existing links to the original 0.5.1 distribution
-asset do not break.
+asset do not break. Live npm: **0.5.4** (2026-07-30). Last fully verified
+GitHub Release on the hub index: **v0.5.3** (cut GH `v0.5.4` when ready).
 
 ## Experiment Contract
 
 - **Window:** 2026-07-13 through 2026-08-12.
-- **Baseline:** 23 stars, 198 unique visitors, 84 unique cloners and 142 unique
-  Google referrals in the preceding 14-day GitHub traffic window; issue #3 had
-  zero external comments.
+- **Baseline (loop start):** 23 stars, 198 unique visitors, 84 unique cloners and
+  142 unique Google referrals in the preceding 14-day GitHub traffic window;
+  coverage issue #3 had zero external comments.
+- **Live snapshot 2026-07-30:** **33★** on `google-health-mcp` (portfolio magnet);
+  npm `0.5.4` shipped; external issue
+  [#15](https://github.com/davidmosiah/google-health-mcp/issues/15)
+  (`nutrition-log` daily_rollup default `page_size`) fixed and closed.
+  Coverage issue [#3](https://github.com/davidmosiah/google-health-mcp/issues/3)
+  still has **no** external redacted `coverage --live --json` report.
 - **Success:** two independent external users post redacted real-account
   coverage reports and at least one returns for a second interaction.
 - **Stop:** if the success condition is not met by 2026-08-12, close the loop
@@ -39,11 +47,12 @@ The strongest public ask is not "try my repo". It is:
 
 ## Proof Points
 
-- npm: `google-health-mcp-unofficial@0.5.2`
-- Release: https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.2
+- npm: `google-health-mcp-unofficial@0.5.4` (shipped 2026-07-30; commit `ae76359`)
+- Prior verified GitHub Release: https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.3
 - Coverage doc: https://github.com/davidmosiah/google-health-mcp/blob/main/docs/data-coverage.md
 - Beta feedback guide: https://github.com/davidmosiah/google-health-mcp/blob/main/docs/beta-feedback.md
 - Issue for live reports: https://github.com/davidmosiah/google-health-mcp/issues/3
+- Recent external bug fixed: https://github.com/davidmosiah/google-health-mcp/issues/15
 - Hub release index: https://github.com/davidmosiah/delx-wellness/blob/main/docs/release-index.md
 
 ## Target Audiences
@@ -65,15 +74,17 @@ through safe tools while OAuth tokens stay on the user's machine.
 ## Short Post
 
 ```text
-Shipped google-health-mcp-unofficial@0.5.2.
+Shipped google-health-mcp-unofficial@0.5.4.
 
-It adds a read-only Google Health API v4 data-type coverage harness for agents:
+It keeps the read-only Google Health API v4 coverage harness for agents and
+fixes daily_rollup for nutrition-log (default page_size now respects Google's
+90-day cap):
 
-  npx -y google-health-mcp-unofficial coverage --json
+  npx -y google-health-mcp-unofficial@0.5.4 coverage --json
 
 After OAuth, testers can run:
 
-  npx -y google-health-mcp-unofficial coverage --live --json
+  npx -y google-health-mcp-unofficial@0.5.4 coverage --live --json
 
 The report is designed for public issue comments: no raw health payloads, no
 OAuth secrets, no local paths, only operation status and point-count buckets.
@@ -87,10 +98,11 @@ https://github.com/davidmosiah/google-health-mcp/issues/3
 ```text
 I am looking for Google Health API v4 testers for an open-source MCP server.
 
-The 0.5.2 line includes:
+The 0.5.4 line includes:
 - a 39-type Google Health data-type catalog
-- a MCP tool: google_health_data_type_coverage
-- a CLI: google-health-mcp-server coverage --live --json
+- MCP tool: google_health_data_type_coverage
+- CLI: google-health-mcp-unofficial coverage --live --json
+- nutrition-log daily_rollup defaults clamped to Google's per-type duration caps
 - redaction tests that prevent OAuth secrets, local paths and example health
   values from leaking into public reports
 
@@ -114,10 +126,10 @@ rollups and daily/weekly summaries while OAuth tokens stay on the user's
 machine.
 
 Install:
-npx -y google-health-mcp-unofficial setup
+npx -y google-health-mcp-unofficial@0.5.4 setup
 
 Coverage validation:
-npx -y google-health-mcp-unofficial coverage --json
+npx -y google-health-mcp-unofficial@0.5.4 coverage --json
 
 Docs:
 https://github.com/davidmosiah/google-health-mcp

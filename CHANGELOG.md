@@ -4,6 +4,24 @@ All notable changes to the Delx Wellness registry hub are documented here.
 Connector runtime code lives in sibling repositories; this repo tracks the
 canonical catalog, docs and install examples.
 
+## [2026-07-30]
+
+### Changed
+
+- Synced `registry.json` + `STATUS.md` to live npm:
+  - `google-health-mcp-unofficial` `0.5.3` → `0.5.4` (nutrition-log
+    `daily_rollup` page_size clamp; fixes external issue google-health-mcp#15)
+  - `oura-mcp-unofficial` `0.4.7` → `0.4.8`
+  - `polar-mcp-unofficial` `0.3.10` → `0.3.11`
+- README flagship order: Google Health first as discovery magnet (33★), Garmin
+  kept as highest agent-readiness scorecard entry.
+- Refreshed MCP directory tracker: Glama **29/29** live; awesome-mcp-servers
+  still 7 merged / 22 open; MCPFind PR #91 closed unmerged — no new spam.
+- Google Health OSS proof-loop doc + growth playbook pointed at npm **0.5.4**;
+  experiment window still ends 2026-08-12 (external `coverage --live` reports).
+- Release index note: dual-verified GitHub tag lags npm when a GH Release is
+  not cut yet (0.5.4 case).
+
 ## [2026-07-16]
 
 ### Changed

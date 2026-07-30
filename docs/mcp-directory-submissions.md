@@ -2,16 +2,24 @@
 
 Use this checklist to keep public MCP discovery consistent across directories, package registries and community lists.
 
-## Current Distribution State — 2026-07-13
+## Current Distribution State — 2026-07-30
 
-- `awesome-mcp-servers`: **7 merged, 22 open** from the 29 one-server PRs.
-- Official MCP Registry and Smithery coverage were already complete for the 29
-  package-backed public MCP repos in the prior sweep.
-- Directory presence is no longer the active bottleneck. Through 2026-08-12,
-  open no new directory targets; the active OSS experiment is the
-  [Google Health OSS Proof Loop](distribution-google-health-0.5.1.md).
-- Existing open PRs may be answered when a maintainer requests a concrete fix,
-  but their merge count does not substitute for external real-account usage.
+Live recheck (no new submissions opened — avoid spam while the proof loop runs):
+
+| Surface | Status 2026-07-30 | Notes |
+|---|---|---|
+| Official MCP Registry | **Complete** (prior 29/29 sweep) | Future package bumps still need matching `server.json` publish. |
+| Smithery | **Complete** 29/29 (prior) | stdio MCPB bundles. |
+| Glama direct pages | **29/29 HTTP 200** | Was 9/29 live + 20 pending on 2026-07-13; crawl/review finished. |
+| `awesome-mcp-servers` | **7 merged · 22 open** (unchanged counts) | Split one-server PRs #9228–#9256. Merged: #9239, #9245, #9248, #9251, #9253, #9254, #9256. Open wellness magnet **#9233** (`google-health-mcp`) still waiting on maintainer. |
+| MCPFind PR #91 | **Closed without merge** (2026-07-24, by `gusmar2017`) | Do **not** re-open or re-spam. PulseMCP continues to ingest from Official Registry. |
+
+- Directory presence is no longer the active bottleneck. Through **2026-08-12**,
+  open **no new** directory targets; the active OSS experiment is the
+  [Google Health OSS Proof Loop](distribution-google-health-0.5.1.md)
+  (`google-health-mcp-unofficial@0.5.4` on npm).
+- Answer existing open PRs only if a maintainer requests a concrete fix.
+- Do not treat merge count as a substitute for external real-account usage.
 
 ## Submit First
 
@@ -247,9 +255,9 @@ Completed:
 
 Still needs follow-up:
 
-- `awesome-mcp-servers` split PRs #9228-#9256 are open, non-draft, include Glama score badges, and pass `check-submission`; they still need upstream maintainer merge.
-- MCPFind PR #91 is open and validated locally; it still needs upstream maintainer merge before the 8 missing entries become public API results.
-- Official MCP Registry is current for all npm/PyPI package-backed public MCP servers classified in this sweep. Future package releases still need a matching `server.json` publish.
+- `awesome-mcp-servers` 22 open split PRs still need upstream maintainer merge (highest-leverage wellness open: #9233 google-health, #9232 garmin, #9242 whoop, #9241 nourish). No pings unless a maintainer asks.
+- MCPFind PR #91 was closed unmerged — stop that channel; rely on Official Registry → PulseMCP.
+- Official MCP Registry: re-publish `server.json` when a package version bumps (e.g. `google-health-mcp` 0.5.4 on npm; GitHub Release tag may lag).
 - Local checkouts for `withings-mcp` and `polar-mcp` still need repair for future local work, but fresh temporary clones were used for the public metadata work above.
 
 ## Submission Copy Template

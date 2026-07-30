@@ -1,8 +1,12 @@
 # Verified Release Index
 
 This page tracks the latest Delx open-source releases that were verified from
-both npm and GitHub on 2026-07-16. Use it as the human-readable companion to
-[`registry.json`](../registry.json) and [`STATUS.md`](../STATUS.md).
+both npm and GitHub. Last full row audit: 2026-07-16. Hub `registry.json` may
+list a newer npm version before a matching GitHub Release exists (example:
+`google-health-mcp-unofficial@0.5.4` on npm 2026-07-30; last dual-verified
+GitHub tag remains `v0.5.3` until a `v0.5.4` release is cut). Use it as the
+human-readable companion to [`registry.json`](../registry.json) and
+[`STATUS.md`](../STATUS.md).
 
 ## Wellness Stack
 

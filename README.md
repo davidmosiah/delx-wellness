@@ -22,7 +22,7 @@
   <strong>What is this?</strong> A registry of <strong>open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, continuous glucose and smart mattress into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
 
-> **What's new (2026-07-16):** all 16 wellness connectors now declare executable boundary contracts. Twelve API/provider connectors received endpoint-specific date, payload, error-propagation, or security releases; local-import and computational connectors passed their class-specific gates. See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
+> **What's new (2026-07-30):** hub registry tracks `google-health-mcp-unofficial@0.5.4` (nutrition-log rollup fix from external issue #15). Flagship front door leads with Google Health as the discovery magnet (33★). Directory tracker: Glama 29/29 live; no new list spam during the [OSS proof loop](docs/distribution-google-health-0.5.1.md) (ends 2026-08-12). See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
 
 ---
 
@@ -41,10 +41,10 @@
 
 Three connectors carry most of the value. Start with the one that matches your stack:
 
+- **[`google-health-mcp`](https://github.com/davidmosiah/google-health-mcp)** &mdash; Google Health API v4, Fitbit migration, rollups and reconciled streams. Strongest public discovery signal in the portfolio (**33★** · `google-health-mcp-unofficial@0.5.4`).
+  `npx -y google-health-mcp-unofficial setup`
 - **[`garmin-mcp`](https://github.com/davidmosiah/garmin-mcp)** &mdash; Body Battery, sleep, stress and training readiness from Garmin Connect. Highest agent-readiness score in the registry.
   `npx -y garmin-mcp-unofficial setup --auth`
-- **[`google-health-mcp`](https://github.com/davidmosiah/google-health-mcp)** &mdash; Google Health API v4, Fitbit migration, rollups and reconciled streams.
-  `npx -y google-health-mcp-unofficial setup`
 - **[`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish)** &mdash; food search, barcode lookup, intake and hydration. Zero-credential, runs offline in ~30 seconds.
   `npx -y wellness-nourish doctor`
 
@@ -99,8 +99,8 @@ Every connector is a standalone npm package with a guided setup CLI. Install the
 **Install (pick the connectors you want):**
 
 ```bash
-npx -y garmin-mcp-unofficial        setup --auth          # flagship — Body Battery, readiness
-npx -y google-health-mcp-unofficial setup && npx -y google-health-mcp-unofficial auth
+npx -y google-health-mcp-unofficial setup && npx -y google-health-mcp-unofficial auth  # discovery magnet — GH API v4
+npx -y garmin-mcp-unofficial        setup --auth          # highest scorecard — Body Battery, readiness
 npx -y wellness-nourish             manifest              # zero-credential, ~30s
 npx -y whoop-mcp-unofficial         setup && npx -y whoop-mcp-unofficial         auth
 npx -y oura-mcp-unofficial          setup && npx -y oura-mcp-unofficial          auth

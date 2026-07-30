@@ -61,3 +61,15 @@ Before promoting a repo publicly, verify:
 - `SECURITY.md`, `CONTRIBUTING.md`, issue templates and funding metadata exist.
 - `npm test` or the repo-specific CI gate passes.
 - The README asks for a star only after showing practical value.
+
+## Discovery hygiene (hub)
+
+- Directory/list status lives in
+  [`docs/mcp-directory-submissions.md`](mcp-directory-submissions.md) — recheck
+  before opening anything new; do not re-spam closed or stalled targets.
+- Active portfolio experiment (through 2026-08-12): Google Health real-account
+  coverage, not more directory PRs —
+  [`docs/distribution-google-health-0.5.1.md`](distribution-google-health-0.5.1.md).
+- After an npm publish: `node scripts/sync-registry.mjs` in this repo, then cut a
+  matching GitHub Release before promoting the row in
+  [`docs/release-index.md`](release-index.md) (validator requires both).

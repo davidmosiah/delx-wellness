@@ -72,7 +72,8 @@ and no redesign without user or traffic evidence.
 Current experiment: [Google Health MCP OSS Proof Loop](distribution-google-health-0.5.1.md)
 focuses on real-account coverage reports from Fitbit, Pixel Watch, Android and
 Google Health API v4 testers. The filename is retained because the original
-distribution asset began with the 0.5.1 release; the live package is 0.5.2.
+distribution asset began with the 0.5.1 release; the live package is **0.5.4**
+(2026-07-30; 33★ magnet). Directory expansion stays frozen through 2026-08-12.
 
 Broad launch copy for X, LinkedIn, Reddit and Hacker News lives in
 [Delx Wellness Launch Assets](launch-assets.md).
