@@ -13,14 +13,18 @@ canonical catalog, docs and install examples.
     `daily_rollup` page_size clamp; fixes external issue google-health-mcp#15)
   - `oura-mcp-unofficial` `0.4.7` → `0.4.8`
   - `polar-mcp-unofficial` `0.3.10` → `0.3.11`
+  - `withings-mcp-unofficial` `0.4.8` → `0.4.9` (npm live; GH Release tag still
+    `v0.4.8` until cut)
 - README flagship order: Google Health first as discovery magnet (33★), Garmin
   kept as highest agent-readiness scorecard entry.
 - Refreshed MCP directory tracker: Glama **29/29** live; awesome-mcp-servers
   still 7 merged / 22 open; MCPFind PR #91 closed unmerged — no new spam.
 - Google Health OSS proof-loop doc + growth playbook pointed at npm **0.5.4**;
   experiment window still ends 2026-08-12 (external `coverage --live` reports).
-- Release index note: dual-verified GitHub tag lags npm when a GH Release is
-  not cut yet (0.5.4 case).
+- Release index: Google Health dual-verified at npm `0.5.4` / GH `v0.5.4`
+  (GH Release now exists). npm-ahead lag examples moved to Withings `0.4.9`
+  and `mcp-scorecard@0.5.2` (no matching GH Releases yet).
+- `wellness-nourish@0.7.1` not on npm — hub stays at dual-verified `0.7.0`.
 
 ## [2026-07-16]
 

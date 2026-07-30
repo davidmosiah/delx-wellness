@@ -5,8 +5,8 @@ validation and repeat participation around
 `google-health-mcp-unofficial@0.5.4`.
 
 The filename is retained so existing links to the original 0.5.1 distribution
-asset do not break. Live npm: **0.5.4** (2026-07-30). Last fully verified
-GitHub Release on the hub index: **v0.5.3** (cut GH `v0.5.4` when ready).
+asset do not break. Live npm: **0.5.4** (2026-07-30). Dual-verified GitHub
+Release on the hub index: **v0.5.4** (cut 2026-07-30).
 
 ## Experiment Contract
 
@@ -48,7 +48,7 @@ The strongest public ask is not "try my repo". It is:
 ## Proof Points
 
 - npm: `google-health-mcp-unofficial@0.5.4` (shipped 2026-07-30; commit `ae76359`)
-- Prior verified GitHub Release: https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.3
+- Dual-verified GitHub Release: https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.5.4
 - Coverage doc: https://github.com/davidmosiah/google-health-mcp/blob/main/docs/data-coverage.md
 - Beta feedback guide: https://github.com/davidmosiah/google-health-mcp/blob/main/docs/beta-feedback.md
 - Issue for live reports: https://github.com/davidmosiah/google-health-mcp/issues/3
