@@ -225,7 +225,7 @@ The hosted commercial layer (token vault, billing, rate limits) **may stay priva
 
 ## 🎯 Agent-readiness
 
-Every connector is independently audited by [`mcp-scorecard`](https://github.com/davidmosiah/mcp-scorecard) across 10 agent-readiness checks (tool descriptions, input schemas, error handling, manifest, transport hygiene and more). The leaders are `garmin-mcp-unofficial` (🥇 97/100), `eight-sleep-mcp-unofficial` (🥇 94/100) and the Apple/Samsung Health pair (🥇 91/100); most providers sit at 90+. Re-run any package yourself with `npx mcp-scorecard <package>`.
+Every connector is independently audited by [`mcp-scorecard`](https://github.com/davidmosiah/mcp-scorecard) across 10 agent-readiness checks. **Living matrix (local versions × npm × Hermes pin × score):** [docs/scorecard-compare.md](docs/scorecard-compare.md). All public wellness connectors currently score **≥90/A**; heroes and air/cgm/cycle are **100**. Re-run any package with `npx mcp-scorecard <package>`.
 
 <details>
 <summary><strong>Full agent-readiness scorecard</strong></summary>
