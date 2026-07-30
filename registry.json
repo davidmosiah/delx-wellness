@@ -227,7 +227,7 @@
         "notes": "CI runs the full npm test suite including agent readiness and Hermes manifest checks."
       },
       "notes": "Fitbit platform migration risk should be tracked before hosted production launch.",
-      "npm_version": "0.4.6"
+      "npm_version": "0.4.7"
     },
     {
       "id": "garmin",
@@ -277,7 +277,7 @@
         "nourish"
       ],
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible.",
-      "npm_version": "0.5.4"
+      "npm_version": "0.5.5"
     },
     {
       "id": "google-health",
@@ -504,7 +504,7 @@
         "nourish"
       ],
       "notes": "GPS/map data is privacy-sensitive and should require explicit user intent.",
-      "npm_version": "0.4.7"
+      "npm_version": "0.4.8"
     },
     {
       "id": "wellness-air",
@@ -670,7 +670,7 @@
         "notes": "Agent-ready nutrition MCP with explicit-intent writes, local undo/delete/export, privacy audit, Hermes Telegram setup, and nutrition_context-compatible daily/coach summaries."
       },
       "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. TACO/UNICAMP values ship as an attributed curated subset while redistribution-license confirmation remains a 1.0 gate. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied.",
-      "npm_version": "0.7.0"
+      "npm_version": "0.7.1"
     },
     {
       "id": "whoop",
