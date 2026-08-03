@@ -22,7 +22,7 @@
   <strong>What is this?</strong> A registry of <strong>open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, continuous glucose and smart mattress into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
 
-> **What's new (2026-07-30):** hub registry tracks `google-health-mcp-unofficial@0.5.4` (dual-verified GH `v0.5.4`; nutrition-log rollup fix from external issue #15) and `withings-mcp-unofficial@0.4.9`. Flagship front door leads with Google Health as the discovery magnet (33★). Directory tracker: Glama 29/29 live; no new list spam during the [OSS proof loop](docs/distribution-google-health-0.5.1.md) (ends 2026-08-12). See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
+> **What's new (2026-08-03):** hub registry tracks `google-health-mcp-unofficial@0.7.3` (dual-verified GH `v0.7.3`; real-account fixes + headless OAuth). Proof loop **1/2** external coverage reports ([@maxgow](https://github.com/maxgow)); second report → [issue #21](https://github.com/davidmosiah/google-health-mcp/issues/21) by 2026-08-12. Flagship magnet ~36★. See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
 
 ---
 
@@ -41,7 +41,7 @@
 
 Three connectors carry most of the value. Start with the one that matches your stack:
 
-- **[`google-health-mcp`](https://github.com/davidmosiah/google-health-mcp)** &mdash; Google Health API v4, Fitbit migration, rollups and reconciled streams. Strongest public discovery signal in the portfolio (**33★** · `google-health-mcp-unofficial@0.5.4`).
+- **[`google-health-mcp`](https://github.com/davidmosiah/google-health-mcp)** &mdash; Google Health API v4, Fitbit migration, rollups and reconciled streams. Strongest public discovery signal in the portfolio (**36★** · `google-health-mcp-unofficial@0.7.3`).
   `npx -y google-health-mcp-unofficial setup`
 - **[`garmin-mcp`](https://github.com/davidmosiah/garmin-mcp)** &mdash; Body Battery, sleep, stress and training readiness from Garmin Connect. Highest agent-readiness score in the registry.
   `npx -y garmin-mcp-unofficial setup --auth`
