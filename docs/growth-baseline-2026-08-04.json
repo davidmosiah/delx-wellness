@@ -1,0 +1,54 @@
+{
+  "captured_at": "2026-08-04T17:47:31.423911+00:00",
+  "repos": [
+    {
+      "forks": 7,
+      "name": "google-health-mcp",
+      "open_issues": 3,
+      "stars": null
+    },
+    {
+      "forks": 3,
+      "name": "wellness-nourish",
+      "open_issues": 1,
+      "stars": null
+    },
+    {
+      "forks": 1,
+      "name": "delx-wellness",
+      "open_issues": 3,
+      "stars": null
+    },
+    {
+      "forks": 0,
+      "name": "delx-living-body",
+      "open_issues": 2,
+      "stars": null
+    },
+    {
+      "forks": 2,
+      "name": "delx-wellness-hermes",
+      "open_issues": 1,
+      "stars": null
+    },
+    {
+      "forks": 2,
+      "name": "garmin-mcp",
+      "open_issues": 2,
+      "stars": null
+    },
+    {
+      "forks": 2,
+      "name": "whoop-mcp",
+      "open_issues": 1,
+      "stars": null
+    },
+    {
+      "forks": 0,
+      "name": "mcp-scorecard",
+      "open_issues": 1,
+      "stars": null
+    }
+  ],
+  "note": "Baseline after honest DIY growth wave 2026-08-04"
+}
