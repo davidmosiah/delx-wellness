@@ -22,7 +22,7 @@
   <strong>What is this?</strong> A registry of <strong>open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, continuous glucose and smart mattress into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
 
-> **What's new (2026-08-03):** hub registry tracks `google-health-mcp-unofficial@0.7.3` (dual-verified GH `v0.7.3`; real-account fixes + headless OAuth). Proof loop **1/2** external coverage reports ([@maxgow](https://github.com/maxgow)); second report → [issue #21](https://github.com/davidmosiah/google-health-mcp/issues/21) by 2026-08-12. Flagship magnet ~36★. See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
+> **What's new (2026-08-04):** hub registry tracks `google-health-mcp-unofficial@0.7.3` · Hermes/living-body pins refresh (`delx-wellness-hermes@0.3.4`, `delx-living-body@0.3.4`) · proof loop **1/2** external coverage reports ([@maxgow](https://github.com/maxgow)); second → [issue #21](https://github.com/davidmosiah/google-health-mcp/issues/21) by 2026-08-12. Honest DIY growth (no bots): [`docs/honest-growth-playbook.md`](docs/honest-growth-playbook.md) · ready posts: [`docs/launch-assets.md`](docs/launch-assets.md). See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
 
 ---
 

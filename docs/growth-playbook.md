@@ -37,6 +37,8 @@ That public document uses only GitHub repository metadata and public npm
 download counts. GitHub traffic, referrers and path analytics stay local under
 `.growth-metrics/`.
 
+DIY growth without paid vanity: see [`honest-growth-playbook.md`](./honest-growth-playbook.md) and ready posts in [`launch-assets.md`](./launch-assets.md).
+
 ## Current Experiment — Google Health OSS Proof Loop
 
 **Window:** 2026-07-13 through 2026-08-12.

@@ -1,103 +1,154 @@
 # Delx Wellness Launch Assets
 
-Use these assets when the hub needs a broad public launch post instead of a
-connector-specific sprint. The current primary CTA is to star the canonical hub:
-https://github.com/davidmosiah/delx-wellness
+**Updated:** 2026-08-04
 
-Secondary CTA for nutrition-focused audiences: try Nourish through
-`wellness-nourish` after reading the hub.
+Use these when you want a **public post**. Prefer **one channel per day**, one
+primary CTA. Full DIY growth rules: [`honest-growth-playbook.md`](./honest-growth-playbook.md).
 
-## One-Minute Demo Script
+## Primary CTA stack (pick one per post)
 
-1. Open the Delx Wellness hub and show the registry as the source of truth for
-   local-first wellness MCP connectors.
-2. Pick one connector path: Google Health for Fitbit or Pixel Watch context, or
-   Nourish for local nutrition workflows.
-3. Run a read-only setup or coverage command, for example:
+| Audience | Primary CTA | Secondary |
+| --- | --- | --- |
+| MCP / agent builders | Star hub [`delx-wellness`](https://github.com/davidmosiah/delx-wellness) | Try Google Health |
+| Wearable / Fitbit / Pixel | Install GH + coverage report on [#21](https://github.com/davidmosiah/google-health-mcp/issues/21) | Hub registry |
+| Nutrition / no-OAuth | `npx -y wellness-nourish@0.8.0` | Hub |
+| Hermes users | `npx -y delx-wellness-hermes@0.3.4 setup` | living-body |
+
+## One-minute demo script
+
+1. Open the hub: https://github.com/davidmosiah/delx-wellness  
+2. Hero path (wearables):
 
 ```bash
-npx -y google-health-mcp-unofficial coverage --json
+npx -y google-health-mcp-unofficial@0.7.3 setup
+npx -y google-health-mcp-unofficial@0.7.3 auth          # or: auth --manual on SSH
+npx -y google-health-mcp-unofficial@0.7.3 coverage --live --json
 ```
 
-4. Show the agent-facing surfaces: connection status, privacy audit, and daily
-   summary or coverage output.
-5. End with the privacy boundary: tokens and raw health data stay local, and
-   public reports should only include redacted setup feedback.
+3. No-OAuth path (nutrition):
 
-## X Post
+```bash
+npx -y wellness-nourish@0.8.0
+```
 
-Local-first wellness MCPs should be boring in the right places:
+4. Show privacy boundary: tokens stay local; public reports are redacted only.  
+5. End with **one** CTA (star hub **or** post redacted coverage on #21 — not both).
+
+---
+
+## X / Twitter (ready to paste)
+
+### A — hub discovery
+
+Local-first wellness MCPs for agents:
 
 - no hosted token vault
 - no hidden health data copy
-- readable privacy audits
 - installable agent contracts
+- mcp-scorecard 100/A fleet
 
-Delx Wellness is the public hub for the connector stack.
+Hub: https://github.com/davidmosiah/delx-wellness  
+Hero: Google Health API v4 MCP (36★) · `npx -y google-health-mcp-unofficial@0.7.3`
 
-CTA: star the hub so more MCP builders can find it:
+If this is useful, a star on the hub helps more builders find it.
+
+### B — proof loop (highest leverage through 2026-08-12)
+
+Need 1 more redacted real-account `coverage --live --json` for Google Health MCP
+(Fitbit / Pixel / Android). Different person from the first report.
+
+```bash
+npx -y google-health-mcp-unofficial@0.7.3 coverage --live --json
+```
+
+Template → https://github.com/davidmosiah/google-health-mcp/issues/21
+
+### C — nourish (no OAuth)
+
+Nutrition MCP for agents — USDA + barcode + local meal log. No cloud account for search.
+
+```bash
+npx -y wellness-nourish@0.8.0
+```
+
+https://github.com/davidmosiah/wellness-nourish
+
+---
+
+## LinkedIn (ready to paste)
+
+AI agents need real-world body context, but wellness data should not require a
+hosted token vault.
+
+I maintain **Delx Wellness** — an open-source registry of local-first MCP
+connectors (wearables, recovery, nutrition, health exports). Credentials and raw
+personal data stay on the user’s machine.
+
+Current discovery hero: **Google Health API v4 MCP** (Fitbit / Pixel Watch path),
+with headless OAuth for servers and redacted coverage tooling for safe public
+feedback.
+
+- Hub: https://github.com/davidmosiah/delx-wellness  
+- Google Health: https://github.com/davidmosiah/google-health-mcp  
+- Nutrition (no OAuth): https://github.com/davidmosiah/wellness-nourish  
+
+If you build with Claude / Cursor / Hermes and care about local-first agent data,
+a star on the hub is the highest-signal help.
+
+---
+
+## Reddit (ready to paste)
+
+**Title:** Local-first wellness MCP connectors for AI agents (Google Health, WHOOP, Garmin, nutrition)
+
+I maintain an open-source hub for wellness MCP servers aimed at agent builders.
+Goal: recovery / sleep / activity / nutrition context for Claude, Cursor, Hermes
+without sending OAuth tokens or raw health data to a hosted middleware.
+
+Hub (registry + privacy notes + install paths):  
 https://github.com/davidmosiah/delx-wellness
 
-## LinkedIn Post
+Most useful feedback right now:
 
-AI agents need better real-world context, but wellness data should not require a
-hosted token vault or a new data silo.
+1. Redacted Google Health coverage report  
+   https://github.com/davidmosiah/google-health-mcp/issues/21  
+2. Or try nutrition with no OAuth: `npx -y wellness-nourish@0.8.0`
 
-Delx Wellness is an open-source registry for local-first MCP connectors across
-wearables, recovery, nutrition, training, air quality and health exports. The
-goal is simple: make useful agent workflows possible while keeping credentials
-and raw personal data under the user's control.
+Not medical advice. Unofficial connectors — not affiliated with device vendors.
 
-The public hub includes connector metadata, privacy notes, release docs, and
-setup paths for builders who want to test MCP-based wellness workflows.
+---
 
-CTA: star the hub if local-first agent infrastructure is useful to your work:
-https://github.com/davidmosiah/delx-wellness
+## Hacker News — Show HN (ready to paste)
 
-## Reddit Post
+**Title:** Show HN: Local-first Google Health MCP for AI agents (Fitbit / Pixel)
 
-Title: I am building local-first wellness MCP connectors for AI agents
+**Post:**
 
-I have been working on an open-source hub for wellness MCP connectors. The main
-idea is that an AI agent should be able to use recovery, activity, sleep,
-nutrition or health-export context without sending OAuth tokens or raw personal
-health data to a hosted middleware service.
+I built a local-first MCP server for Google Health API v4 so agents can use
+user-authorized Fitbit / Pixel Watch / Android health data without a hosted
+token vault.
 
-The hub collects the connector registry, setup notes, privacy boundaries and
-release docs:
-https://github.com/davidmosiah/delx-wellness
+```bash
+npx -y google-health-mcp-unofficial@0.7.3 setup
+npx -y google-health-mcp-unofficial@0.7.3 auth --manual   # works on SSH/headless
+npx -y google-health-mcp-unofficial@0.7.3 coverage --live --json
+```
 
-The most useful feedback right now is from people who have tried MCP clients and
-care about local-first data handling.
+Recent: external real-account coverage reports, headless OAuth from a community
+PR, privacy limits enforced with tests (not just docs).
 
-CTA: star the hub if you want to follow the project, or try Nourish if you want a
-nutrition-focused starting point.
+Looking for one more redacted live coverage report (different account):  
+https://github.com/davidmosiah/google-health-mcp/issues/21
 
-## Hacker News Submission
+Full wellness hub: https://github.com/davidmosiah/delx-wellness
 
-Title: Show HN: Local-first wellness MCP connectors for AI agents
+Not affiliated with Google/Fitbit. Not medical advice.
 
-Post:
+---
 
-I built a public hub for local-first wellness MCP connectors. The stack is meant
-for AI agents that need wearable, recovery, training, nutrition or health-export
-context without relying on a hosted token vault.
+## Safe visual assets
 
-The hub includes a connector registry, privacy model, release index, setup docs
-and distribution notes. The current practical focus is read-only validation and
-safe setup feedback rather than medical advice or hidden cloud sync.
-
-CTA: star the hub if the local-first MCP approach is useful, and share setup
-feedback if you try one connector:
-https://github.com/davidmosiah/delx-wellness
-
-## Safe Visual Assets
-
-- Use generated diagrams of the architecture or terminal screenshots with
-  synthetic data.
-- Use screenshots of docs, registry metadata, install commands and redacted
-  coverage reports.
-- Do not show OAuth tokens, client secrets, token paths, real health metrics,
-  GPS traces, sleep details or account identifiers.
-- Do not imply affiliation with Google, Fitbit, WHOOP, Garmin, Withings, Apple,
-  Oura, Samsung or any other provider.
+- Architecture diagrams, terminal screenshots with **synthetic** data  
+- Docs, registry, install commands, redacted coverage JSON  
+- **Never:** tokens, secrets, real measurements, GPS, emails, account IDs  
+- **Never** imply affiliation with device vendors
