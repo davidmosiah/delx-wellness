@@ -25,7 +25,7 @@ Campaign: 2026-08-05
 | 19 | DONE-shipped | docs/oss-registry-single-source.md bafd022 |
 | 20 | BLOCKED-EXTERNAL | directory-submission-checklist.md — user OK gate |
 | 21 | DONE-shipped | registry/STATUS sync + growth process docs bafd022 |
-| 22 | DONE-shipped | docs/release-index.md series fleet bafd022 |
+| 22 | DONE-shipped | docs/release-index.md fa55ff9 — Wellness+Infra tables match npm (garmin 0.7.1, strava/fitbit 0.6.0, gh 0.7.3, scorecard 0.5.5) |
 | 23 | DONE-shipped | docs/open-source-growth-snapshot.md |
 | 24 | DONE-shipped | docs/honest-growth-playbook.md bafd022 |
 | 25 | DONE-shipped | STATUS/registry first-call surfaces |
@@ -83,15 +83,15 @@ Campaign: 2026-08-05
 | 77 | DONE-shipped | polar_heart_series 0.5.0 npm dd8b0a9 |
 | 78 | DONE-already | polar summary quality |
 | 79 | DONE-shipped | oura docs/heartrate-caps.md |
-| 80 | DONE-shipped | withings docs/empty-export-warn.md |
+| 80 | DONE-shipped | withings 0.5.1 aac4f66 buildCollectionOutput empty+warning; scripts/empty-export-warn-test.mjs; npm test EXIT 0 |
 | 81 | DONE-shipped | apple-health docs/samples-honesty.md |
 | 82 | DONE-shipped | samsung-health docs/samples-honesty.md |
 | 83 | DONE-shipped | eight-sleep docs/mutation-gate.md |
 | 84 | DONE-shipped | cgm docs/glucose-series-policy.md |
-| 85 | DONE-shipped | kit AgentSafeSeries + clampMaxPoints 0.1.1 |
-| 86 | DONE-shipped | scorecard dense_series_caps 0.5.5 f914391 |
+| 85 | DONE-shipped | delx-mcp-kit 0.1.1 e094252+5b96479 series-types in npm test; tests-delx-mcp-kit.log EXIT 0 |
+| 86 | DONE-shipped | mcp-scorecard 0.5.5 dense_series_caps + test:dense-series in npm test 3162c73; tests-mcp-scorecard.log EXIT 0 |
 | 87 | DONE-already | checks catalog/badge path |
-| 88 | DONE-shipped | living-body series preference 02cd10f |
+| 88 | DONE-shipped | living-body c72f2af series_tool on connectors + resolveConnectorTool; scripts/series-tool-preference-test.mjs EXIT 0 |
 | 89 | DONE-already | living-body tests green |
 | 90 | DONE-shipped | delx-memory docs/secret-blocking.md |
 | 91 | DONE-shipped | creative-forge docs/demo-5-minutes.md |
@@ -103,7 +103,7 @@ Campaign: 2026-08-05
 | 97 | DONE-shipped | delx-agent-utilities discovery-receipts.md |
 | 98 | DONE-shipped | short-video dry-run-default.md |
 | 99 | DONE-shipped | uap/timeline/astral not-proof banners |
-| 100 | DONE-shipped | community-response-sla.md + top issue comments |
+| 100 | DONE-shipped | docs/community-response-sla.md + comments: https://github.com/davidmosiah/google-health-mcp/issues/21#issuecomment-5195092399 https://github.com/davidmosiah/google-health-mcp/issues/22#issuecomment-5195092607 https://github.com/davidmosiah/garmin-mcp/issues/15#issuecomment-5195092830 https://github.com/davidmosiah/whoop-mcp/issues/16#issuecomment-5195093024 https://github.com/davidmosiah/wellness-nourish/issues/25#issuecomment-5195093248 https://github.com/davidmosiah/delx-wellness/issues/3#issuecomment-5195093449 |
 
 ## Summary
 - DONE-shipped: 64
@@ -123,3 +123,16 @@ Campaign: 2026-08-05
 - #76: DONE-shipped — hermes pins 0.6.0 130f405
 - #77: DONE-shipped — polar_heart_series 0.5.0 npm dd8b0a9
 - #100: DONE-shipped — community-response-sla.md + top issue comments
+
+## Verification captures (skeptic re-run)
+Package npm test EXIT 0 logs under implementer scratch:
+- tests-delx-wellness-hermes.log EXIT:0
+- tests-google-health-mcp.log EXIT:0
+- tests-wellness-nourish.log EXIT:0
+- tests-whoop-mcp.log EXIT:0
+- tests-polar-mcp.log EXIT:0
+- tests-delx-mcp-kit.log EXIT:0 (includes series-types)
+- tests-mcp-scorecard.log EXIT:0 (includes dense-series-caps)
+- tests-withings-mcp.log EXIT:0 (empty-export-warn)
+- tests-delx-living-body.log EXIT:0 (series-tool-preference)
+- tests-garmin-mcp.log EXIT:0
