@@ -91,7 +91,7 @@ Campaign: 2026-08-05
 | 85 | DONE-shipped | delx-mcp-kit 0.1.1 e094252+5b96479 series-types in npm test; tests-delx-mcp-kit.log EXIT 0 |
 | 86 | DONE-shipped | mcp-scorecard 0.5.5 dense_series_caps + test:dense-series in npm test 3162c73; tests-mcp-scorecard.log EXIT 0 |
 | 87 | DONE-already | checks catalog/badge path |
-| 88 | DONE-shipped | living-body c72f2af series_tool on connectors + resolveConnectorTool; scripts/series-tool-preference-test.mjs EXIT 0 |
+| 88 | DONE-shipped | living-body: living_body_ask→selectComposeToolForQuestion→tool:series; compose_context child_tool=series; resolveConnectorTool selects garmin_activity_series/polar_heart_series (scripts/series-tool-preference-test.mjs + npm test EXIT 0) |
 | 89 | DONE-already | living-body tests green |
 | 90 | DONE-shipped | delx-memory docs/secret-blocking.md |
 | 91 | DONE-shipped | creative-forge docs/demo-5-minutes.md |
