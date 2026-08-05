@@ -753,7 +753,7 @@
         "notes": "Local package includes signed Withings OAuth token flow, Public API tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses Withings Public API. Device coverage and available fields vary by user devices, scopes and API-plan access.",
-      "npm_version": "0.5.0"
+      "npm_version": "0.5.1"
     },
     {
       "id": "exercise-catalog",
