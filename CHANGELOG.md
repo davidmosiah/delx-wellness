@@ -1,3 +1,10 @@
+## 2026-08-05 — OSS-100 campaign
+
+### Changed
+- Registry sync to live npm (fitbit/strava/garmin series releases, hermes 0.3.5).
+- Release index series fleet table; registry single-source + growth/SLA docs.
+
+
 # Changelog
 
 All notable changes to the Delx Wellness registry hub are documented here.

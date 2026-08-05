@@ -1,19 +1,19 @@
 # Delx Wellness — Ecosystem Status
 
-_Auto-generated from `registry.json` on 2026-08-03 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
+_Auto-generated from `registry.json` on 2026-08-05 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
 
 ## Agent profiles
 
 | Profile | npm version | Status |
 |---|---|---|
-| [Delx Wellness for Hermes](https://github.com/davidmosiah/delx-wellness-hermes) | `0.3.3` | active |
-| [Delx Wellness for OpenClaw](https://github.com/davidmosiah/delx-wellness-openclaw) | `0.2.2` | active |
+| [Delx Wellness for Hermes](https://github.com/davidmosiah/delx-wellness-hermes) | `0.3.5` | active |
+| [Delx Wellness for OpenClaw](https://github.com/davidmosiah/delx-wellness-openclaw) | `0.2.3` | active |
 
 ## Meta-connectors
 
 | Meta-connector | Package | npm version | Composes |
 |---|---|---|---|
-| [Delx Living Body](https://github.com/davidmosiah/delx-living-body) | `delx-living-body` | `0.3.3` | 6 tools |
+| [Delx Living Body](https://github.com/davidmosiah/delx-living-body) | `delx-living-body` | `0.3.4` | 6 tools |
 
 ## Connectors
 
@@ -21,13 +21,13 @@ _Auto-generated from `registry.json` on 2026-08-03 by `scripts/sync-registry.mjs
 |---|---|---|---|---|
 | [Apple Health](https://github.com/davidmosiah/apple-health-mcp) | `apple-health-mcp-unofficial` | `0.7.1` | agent_ready | activity, sleep, heart_rate, hrv… |
 | [Eight Sleep](https://github.com/davidmosiah/eight-sleep-mcp) | `eight-sleep-mcp-unofficial` | `0.2.8` | context_ready | profile, device, temperature_program, alarms… |
-| [Fitbit](https://github.com/davidmosiah/fitbitmcp) | `fitbit-mcp-unofficial` | `0.5.0` | agent_ready | profile, devices, activity, sleep… |
-| [Garmin Connect](https://github.com/davidmosiah/garmin-mcp) | `garmin-mcp-unofficial` | `0.7.0` | context_ready | profile, devices, daily_movement, sleep… |
+| [Fitbit](https://github.com/davidmosiah/fitbitmcp) | `fitbit-mcp-unofficial` | `0.6.0` | agent_ready | profile, devices, activity, sleep… |
+| [Garmin Connect](https://github.com/davidmosiah/garmin-mcp) | `garmin-mcp-unofficial` | `0.7.1` | context_ready | profile, devices, daily_movement, sleep… |
 | [Google Health](https://github.com/davidmosiah/google-health-mcp) | `google-health-mcp-unofficial` | `0.7.3` | agent_ready | identity, profile, settings, steps… |
 | [Oura Ring](https://github.com/davidmosiah/ouramcp) | `oura-mcp-unofficial` | `0.6.1` | agent_ready | personal_info, readiness, sleep, activity… |
-| [Polar](https://github.com/davidmosiah/polarmcp) | `polar-mcp-unofficial` | `0.4.0` | agent_ready | account, devices, activity, calendar… |
+| [Polar](https://github.com/davidmosiah/polarmcp) | `polar-mcp-unofficial` | `0.5.0` | agent_ready | account, devices, activity, calendar… |
 | [Samsung Health](https://github.com/davidmosiah/samsung-health-mcp) | `samsung-health-mcp-unofficial` | `0.7.1` | agent_ready | activity, steps, sleep, heart_rate… |
-| [Strava](https://github.com/davidmosiah/strava-mcp) | `strava-mcp-unofficial` | `0.5.0` | context_ready | athlete, activities, activity_details, activity_streams… |
+| [Strava](https://github.com/davidmosiah/strava-mcp) | `strava-mcp-unofficial` | `0.6.0` | context_ready | athlete, activities, activity_details, activity_streams… |
 | [Wellness Air](https://github.com/davidmosiah/wellness-air) | `wellness-air` | `0.7.0` | agent_ready | PM2.5, PM10, CO2, VOC… |
 | [Wellness CGM](https://github.com/davidmosiah/wellness-cgm-mcp) | `wellness-cgm-mcp` | `0.6.1` | agent_ready | Glucose, TIR, GMI, Meal Response… |
 | [Wellness Cycle Coach](https://github.com/davidmosiah/wellness-cycle-coach) | `wellness-cycle-coach` | `0.4.0` | agent_ready | Phase Detection, Cycle Length, Phase Nutrition, Phase Training… |
@@ -43,6 +43,6 @@ _Auto-generated from `registry.json` on 2026-08-03 by `scripts/sync-registry.mjs
 - **Private lab connectors**: 1
 - **Meta-connectors**: 1
 - **Profile packs**: 2
-- **Last registry update**: 2026-08-03
+- **Last registry update**: 2026-08-05
 
 See [registry.json](registry.json) for the canonical machine-readable manifest.

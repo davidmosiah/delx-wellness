@@ -1,5 +1,23 @@
 # Verified Release Index
 
+Last OSS-100 campaign refresh: **2026-08-05**.
+
+## Series fleet (agent-safe-series/v1)
+
+| Project | npm | version |
+|---|---|---:|
+| Garmin MCP | garmin-mcp-unofficial | 0.7.1 |
+| Strava MCP | strava-mcp-unofficial | 0.6.0 |
+| Fitbit MCP | fitbit-mcp-unofficial | 0.6.0 |
+| Polar MCP | polar-mcp-unofficial | 0.5.0 |
+| Google Health MCP | google-health-mcp-unofficial | 0.7.3 |
+| Delx Wellness Hermes | delx-wellness-hermes | 0.3.5 |
+
+Canonical connector versions also live in [`registry.json`](../registry.json) (single source; regenerate STATUS via `node scripts/sync-registry.mjs`).
+
+---
+
+
 This page tracks the latest Delx open-source releases that were verified from
 both npm and GitHub. Last full row audit: 2026-07-30 (SOTA wave — fleet 100 + kit + pin republish).
 Hub [`registry.json`](../registry.json) is reconciled via `node scripts/sync-registry.mjs`.

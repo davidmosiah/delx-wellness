@@ -29,7 +29,7 @@
       ],
       "privacy_default": "public_safe_profile_pack",
       "notes": "Installs a delx-wellness Hermes profile with one setup command, onboarding, wellness skills, a daily operator prompt, MCP connector presets, Nourish smoke testing, MCP readiness checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, Telegram secrets or private Exercise Catalog data.",
-      "npm_version": "0.3.3"
+      "npm_version": "0.3.5"
     },
     {
       "id": "delx-wellness-openclaw",
@@ -53,7 +53,7 @@
       ],
       "privacy_default": "public_safe_profile_pack",
       "notes": "Installs a delx-wellness OpenClaw profile under ~/.openclaw-delx-wellness with one setup command, onboarding, wellness skills, OpenClaw-native MCP connector presets, config validation, Nourish preset checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, chat-channel secrets or private Exercise Catalog data.",
-      "npm_version": "0.2.2"
+      "npm_version": "0.2.3"
     }
   ],
   "meta_connectors": [
@@ -89,7 +89,7 @@
         "living_body_capabilities"
       ],
       "notes": "Meta-MCP that auto-detects locally installed Delx Wellness connectors and composes them into one unified delx-wellness-context/v1 surface. Synthesis is rule-based and offline (14 heuristic rules). Spawns child MCPs via npx -y over StdioClientTransport with a 30s per-call timeout. Stripping rule: any env var matching /(CLIENT_SECRET|REFRESH_TOKEN|ACCESS_TOKEN|API_KEY|PRIVATE_KEY|PASSWORD)$/i is removed before spawning children.",
-      "npm_version": "0.3.3"
+      "npm_version": "0.3.4"
     }
   ],
   "connectors": [
@@ -227,7 +227,7 @@
         "notes": "CI runs the full npm test suite including agent readiness and Hermes manifest checks."
       },
       "notes": "Fitbit platform migration risk should be tracked before hosted production launch.",
-      "npm_version": "0.5.0"
+      "npm_version": "0.6.0"
     },
     {
       "id": "garmin",
@@ -277,7 +277,7 @@
         "nourish"
       ],
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible.",
-      "npm_version": "0.7.0"
+      "npm_version": "0.7.1"
     },
     {
       "id": "google-health",
@@ -413,7 +413,7 @@
         "notes": "Local package includes Polar AccessLink Dynamic API v4 OAuth, summaries, agent manifest, GPS-aware route handling and Hermes setup checks."
       },
       "notes": "Uses official Polar AccessLink Dynamic API v4. Data availability depends on user device, granted scopes (16 fine-grained read scopes), and Polar account features.",
-      "npm_version": "0.4.0"
+      "npm_version": "0.5.0"
     },
     {
       "id": "samsung-health",
@@ -504,7 +504,7 @@
         "nourish"
       ],
       "notes": "GPS/map data is privacy-sensitive and should require explicit user intent.",
-      "npm_version": "0.5.0"
+      "npm_version": "0.6.0"
     },
     {
       "id": "wellness-air",
@@ -843,5 +843,5 @@
       "npm_version": "0.1.3"
     }
   ],
-  "last_updated": "2026-08-03"
+  "last_updated": "2026-08-05"
 }
