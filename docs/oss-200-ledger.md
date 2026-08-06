@@ -21,8 +21,8 @@ Campaign: 2026-08-06 (complete dispositions)
 | 15 | BLOCKED-EXTERNAL | Kindred README cross-link needs peer OK; local note on #19 |
 | 16 | DONE-shipped | strava/fitbit/polar docs/series-kindred-link.md + garmin #19 |
 | 17 | DONE-already | delx-mcp-kit docs/0.2-story.md |
-| 18 | DONE-shipped | mcp-scorecard@0.5.6 dense_series_caps contract marker |
-| 19 | DONE-shipped | mcp-scorecard@0.5.6 max_points hard-cap preference |
+| 18 | DONE-shipped | mcp-scorecard dense_series_caps: contract marker separate; schema max_points required (post-skeptic) |
+| 19 | DONE-shipped | mcp-scorecard: hard cap = inputSchema.properties.max_points only; contract-desc-only fails tests |
 | 20 | DONE-shipped | oura-mcp/docs/hr-list-envelope.md |
 | 21 | DONE-shipped | wellness-cgm-mcp/docs/glucose-series-policy.md |
 | 22 | DONE-shipped | docs/multi-metric-series-gate.md + garmin series-backlog-gates.md |
