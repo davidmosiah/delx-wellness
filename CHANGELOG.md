@@ -1,3 +1,17 @@
+## 2026-08-06 — OSS-200 strategy hub
+
+- ADR 001 + canonical [agent-safe-series/v1](docs/agent-safe-series.md)
+- [proof/](docs/proof/) hub, scorecard-top5 + fleet-versions scripts
+- Process: directory OK gate, human issues SLA, anti-sprawl policies
+- Inventories: OSS-200 (ship campaign), OSS-300 (frozen list)
+
+## 2026-08-06 — OSS-200 strategy campaign
+
+### Added
+- ADR 001 agent-safe-series/v1, canonical series docs, proof hub, fleet-versions + scorecard-top5 scripts
+- Strategy policies, growth/release/quality process docs, validate-release-index helpers
+
+
 ## 2026-08-05 — OSS-100 campaign
 
 ### Changed

@@ -1,6 +1,6 @@
 # Delx Wellness — Ecosystem Status
 
-_Auto-generated from `registry.json` on 2026-08-05 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
+_Auto-generated from `registry.json` on 2026-08-06 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
 
 ## Agent profiles
 
@@ -43,6 +43,6 @@ _Auto-generated from `registry.json` on 2026-08-05 by `scripts/sync-registry.mjs
 - **Private lab connectors**: 1
 - **Meta-connectors**: 1
 - **Profile packs**: 2
-- **Last registry update**: 2026-08-05
+- **Last registry update**: 2026-08-06
 
 See [registry.json](registry.json) for the canonical machine-readable manifest.

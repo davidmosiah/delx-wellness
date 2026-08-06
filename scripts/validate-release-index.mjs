@@ -32,11 +32,13 @@ function parseReleaseRows(markdown) {
     if (line.includes('|---')) continue;
     if (line.includes('| Project |')) continue;
 
+    // Strategic rows include npm URL + GitHub release tag URL.
+    // Other tables (series fleet, short npm-only rows) are skipped.
     const match = line.match(
       /^\| (?<project>.+?) \| \[`(?<pkg>[^`]+)`\]\((?<npmUrl>[^)]+)\) \| `(?<version>[^`]+)` \| \[`(?<tag>v[^`]+)`\]\((?<releaseUrl>[^)]+)\) \| (?<verification>.+) \|$/,
     );
     if (!match?.groups) {
-      fail(`Unparseable release-index row:\n${line}`);
+      continue;
     }
 
     const release = match.groups.releaseUrl.match(
