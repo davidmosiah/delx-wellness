@@ -1,5 +1,23 @@
 # MCP Directory Submission Tracker
 
+
+## Current Distribution State — 2026-08-08
+
+Owner OK granted to advance directory work (chat). Proof loop GH coverage closed **1/2 honest** ([google-health-mcp#21](https://github.com/davidmosiah/google-health-mcp/issues/21)).
+
+| Surface | Status 2026-08-08 | Notes |
+|---|---|---|
+| Official MCP Registry | **Complete** (mcpName + server.json on top packages) | Keep versions aligned on publish. |
+| Smithery | **Complete** (prior) | — |
+| Glama | **Live** for public connectors | Score badges used on awesome PRs. |
+| `awesome-mcp-servers` | **7 merged · 22 open** historically; **top6 rebased 2026-08-08** | Rebased MERGEABLE: #9233 google-health · #9232 garmin · #9242 whoop · #9241 nourish · #9229 living-body · #9246 scorecard. Remaining open PRs still waiting on list maintainer — **no new spam PRs**. |
+| MCPFind PR #91 | **Closed unmerged** | Do **not** re-open. |
+
+### 2026-08-08 actions
+- Rebased top wellness/agent magnet PRs onto current awesome `main` (force-push to existing branches).
+- Did **not** open new directory targets (quality over acceptance count).
+- Directory gate remains: further *new* submissions still need OK; existing open PRs may be maintained.
+
 Use this checklist to keep public MCP discovery consistent across directories, package registries and community lists.
 
 ## Current Distribution State — 2026-07-30
