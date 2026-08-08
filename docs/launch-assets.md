@@ -1,18 +1,26 @@
 # Delx Wellness Launch Assets
 
-**Updated:** 2026-08-04
+**Updated:** 2026-08-08
 
 Use these when you want a **public post**. Prefer **one channel per day**, one
 primary CTA. Full DIY growth rules: [`honest-growth-playbook.md`](./honest-growth-playbook.md).
+
+## Draft in flight (DO NOT publish without OK)
+
+| Draft | Status | Path |
+| --- | --- | --- |
+| **agent-safe-series/v1 technical post** | DRAFT only | [`drafts/2026-08-agent-safe-series-v1-post.md`](./drafts/2026-08-agent-safe-series-v1-post.md) |
+
+When David OKs a channel: publish from that file, then move a one-line entry to **Published** below with URL + date.
 
 ## Primary CTA stack (pick one per post)
 
 | Audience | Primary CTA | Secondary |
 | --- | --- | --- |
-| MCP / agent builders | Star hub [`delx-wellness`](https://github.com/davidmosiah/delx-wellness) | Try Google Health |
-| Wearable / Fitbit / Pixel | Install GH + coverage report on [#21](https://github.com/davidmosiah/google-health-mcp/issues/21) | Hub registry |
+| MCP / agent builders | Star hub [`delx-wellness`](https://github.com/davidmosiah/delx-wellness) | Try series tools / scorecard |
+| Wearable / Fitbit / Pixel | Install GH + redacted coverage via beta [#2](https://github.com/davidmosiah/google-health-mcp/issues/2) | Hub registry |
 | Nutrition / no-OAuth | `npx -y wellness-nourish@0.8.0` | Hub |
-| Hermes users | `npx -y delx-wellness-hermes@0.3.4 setup` | living-body |
+| Hermes users | `npx -y delx-wellness-hermes@0.3.7 setup` | living-body `0.3.5` |
 
 ## One-minute demo script
 
@@ -52,16 +60,12 @@ Hero: Google Health API v4 MCP (36★) · `npx -y google-health-mcp-unofficial@0
 
 If this is useful, a star on the hub helps more builders find it.
 
-### B — proof loop (highest leverage through 2026-08-12)
+### B — agent-safe-series (builders; use after post is published)
 
-Need 1 more redacted real-account `coverage --live --json` for Google Health MCP
-(Fitbit / Pixel / Android). Different person from the first report.
+Dense health series without blowing the context window: hard `max_points`, full-res stats, peer Kindred interop.
 
-```bash
-npx -y google-health-mcp-unofficial@0.7.3 coverage --live --json
-```
-
-Template → https://github.com/davidmosiah/google-health-mcp/issues/21
+Hub ADR: https://github.com/davidmosiah/delx-wellness/blob/main/docs/agent-safe-series.md  
+Try: `npx -y garmin-mcp-unofficial@0.7.2` · grade: `npx -y mcp-scorecard@0.5.6`
 
 ### C — nourish (no OAuth)
 

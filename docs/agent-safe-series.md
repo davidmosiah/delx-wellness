@@ -12,7 +12,7 @@ Shared dense time-series contract for Delx wellness MCPs and compatible external
 ## Implementations
 | Package | Tool | npm |
 |---|---|---|
-| garmin-mcp-unofficial | `garmin_activity_series` | 0.7.1+ |
+| garmin-mcp-unofficial | `garmin_activity_series` | 0.7.2+ |
 | strava-mcp-unofficial | `strava_activity_series` | 0.6.0+ |
 | fitbit-mcp-unofficial | `fitbit_heart_series` | 0.6.0+ |
 | polar-mcp-unofficial | `polar_heart_series` | 0.5.0+ |
@@ -23,3 +23,6 @@ See [adr/001-agent-safe-series-v1.md](./adr/001-agent-safe-series-v1.md).
 
 ## Compat fields
 See [series-compat-matrix.md](./series-compat-matrix.md).
+
+## Public narrative (draft)
+Long-form builder post (not published until owner OK): [drafts/2026-08-agent-safe-series-v1-post.md](./drafts/2026-08-agent-safe-series-v1-post.md).
