@@ -1,3 +1,8 @@
+## 2026-08-06 — garmin Body Battery #20
+
+- Pins: `garmin-mcp-unofficial@0.7.2`, `delx-wellness-hermes@0.3.6`
+- External PR: Body Battery daily report query-param fix (thanks @oysteinhagenpettersen)
+
 ## 2026-08-06 — OSS-200 strategy hub
 
 - ADR 001 + canonical [agent-safe-series/v1](docs/agent-safe-series.md)

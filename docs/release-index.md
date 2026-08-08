@@ -11,18 +11,18 @@ Rows below are validated by `node scripts/validate-release-index.mjs` (npm URL +
 | Project | npm package | npm version | GitHub Release | Verification |
 |---|---|---|---|---|
 | Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.7.3) | `0.7.3` | [`v0.7.3`](https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.7.3) | `npm test` + prod audit + pack dry-run |
-| Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.7.1) | `0.7.1` | [`v0.7.1`](https://github.com/davidmosiah/garmin-mcp/releases/tag/v0.7.1) | `npm test` + prod audit + pack dry-run |
+| Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.7.2) | `0.7.2` | [`v0.7.2`](https://github.com/davidmosiah/garmin-mcp/releases/tag/v0.7.2) | `npm test` + prod audit + pack dry-run |
 
 ## Series fleet (agent-safe-series/v1) — npm pins
 
 | Project | npm package | npm version |
 |---|---|---:|
-| Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.7.1) | `0.7.1` |
+| Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.7.2) | `0.7.2` |
 | Strava MCP | [`strava-mcp-unofficial`](https://www.npmjs.com/package/strava-mcp-unofficial/v/0.6.0) | `0.6.0` |
 | Fitbit MCP | [`fitbit-mcp-unofficial`](https://www.npmjs.com/package/fitbit-mcp-unofficial/v/0.6.0) | `0.6.0` |
 | Polar MCP | [`polar-mcp-unofficial`](https://www.npmjs.com/package/polar-mcp-unofficial/v/0.5.0) | `0.5.0` |
 | Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.7.3) | `0.7.3` |
-| Delx Wellness Hermes | [`delx-wellness-hermes`](https://www.npmjs.com/package/delx-wellness-hermes/v/0.3.5) | `0.3.5` |
+| Delx Wellness Hermes | [`delx-wellness-hermes`](https://www.npmjs.com/package/delx-wellness-hermes/v/0.3.6) | `0.3.6` |
 
 ## Wellness stack — npm pins (registry-synced)
 
@@ -41,7 +41,7 @@ Rows below are validated by `node scripts/validate-release-index.mjs` (npm URL +
 | Delx MCP Kit | [`delx-mcp-kit`](https://www.npmjs.com/package/delx-mcp-kit/v/0.1.1) | `0.1.1` | `npm view` + registry sync |
 | Delx Memory | [`delx-memory`](https://www.npmjs.com/package/delx-memory/v/0.2.5) | `0.2.5` | `npm view` + registry sync |
 | Delx MCP Server | [`delx-mcp-server`](https://www.npmjs.com/package/delx-mcp-server/v/0.2.9) | `0.2.9` | `npm view` + registry sync |
-| Delx Wellness Hermes | [`delx-wellness-hermes`](https://www.npmjs.com/package/delx-wellness-hermes/v/0.3.5) | `0.3.5` | `npm view` + registry sync |
+| Delx Wellness Hermes | [`delx-wellness-hermes`](https://www.npmjs.com/package/delx-wellness-hermes/v/0.3.6) | `0.3.6` | `npm view` + registry sync |
 
 ## Maintainer rule
 
