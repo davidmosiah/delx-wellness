@@ -6,14 +6,14 @@ _Auto-generated from `registry.json` on 2026-08-08 by `scripts/sync-registry.mjs
 
 | Profile | npm version | Status |
 |---|---|---|
-| [Delx Wellness for Hermes](https://github.com/davidmosiah/delx-wellness-hermes) | `0.3.6` | active |
+| [Delx Wellness for Hermes](https://github.com/davidmosiah/delx-wellness-hermes) | `0.3.7` | active |
 | [Delx Wellness for OpenClaw](https://github.com/davidmosiah/delx-wellness-openclaw) | `0.2.3` | active |
 
 ## Meta-connectors
 
 | Meta-connector | Package | npm version | Composes |
 |---|---|---|---|
-| [Delx Living Body](https://github.com/davidmosiah/delx-living-body) | `delx-living-body` | `0.3.4` | 6 tools |
+| [Delx Living Body](https://github.com/davidmosiah/delx-living-body) | `delx-living-body` | `0.3.5` | 6 tools |
 
 ## Connectors
 
@@ -32,7 +32,7 @@ _Auto-generated from `registry.json` on 2026-08-08 by `scripts/sync-registry.mjs
 | [Wellness CGM](https://github.com/davidmosiah/wellness-cgm-mcp) | `wellness-cgm-mcp` | `0.6.1` | agent_ready | Glucose, TIR, GMI, Meal Response… |
 | [Wellness Cycle Coach](https://github.com/davidmosiah/wellness-cycle-coach) | `wellness-cycle-coach` | `0.4.0` | agent_ready | Phase Detection, Cycle Length, Phase Nutrition, Phase Training… |
 | [Nourish MCP](https://github.com/davidmosiah/wellness-nourish) | `wellness-nourish` | `0.8.0` | context_ready | food_search, br_local_food_search, taco_food_search, open_food_facts_name_search… |
-| [WHOOP](https://github.com/davidmosiah/whoop-mcp) | `whoop-mcp-unofficial` | `0.6.0` | context_ready | profile, body, recovery, cycles… |
+| [WHOOP](https://github.com/davidmosiah/whoop-mcp) | `whoop-mcp-unofficial` | `0.6.1` | context_ready | profile, body, recovery, cycles… |
 | [Withings](https://github.com/davidmosiah/withingsmcp) | `withings-mcp-unofficial` | `0.5.1` | agent_ready | body_measures, daily_activity, workouts, sleep… |
 | [Exercise Catalog MCP](https://github.com/davidmosiah/exercise-catalog-mcp) | `exercise-catalog-mcp-private` | `—` | context_ready | exercise_search, exercise_details, workout_templates, wellness_context_intake… |
 | [Google Ads MCP](https://github.com/davidmosiah/google-ads-mcp-unofficial) | `google-ads-mcp-unofficial` | `0.1.3` | agent_ready | non_wellness, agent_tool, advertising_operations, list_accounts… |

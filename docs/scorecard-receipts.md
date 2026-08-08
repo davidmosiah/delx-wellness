@@ -10,4 +10,4 @@ Maintainers: after a release, paste score + commit:
 | garmin-mcp-unofficial | ≥90 | run locally + link CI |
 | creative-forge | ≥90 if MCP surface | run locally |
 
-Command: `npx -y mcp-scorecard@0.5.5 --path <repo> --min-score 90`
+Command: `npx -y mcp-scorecard@0.5.6 --path <repo> --min-score 90`

@@ -5,7 +5,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 # sibling repos under 02-mcp-servers
 BASE="$(cd "$ROOT/.." && pwd)"
-SCORECARD=(npx -y mcp-scorecard@0.5.5)
+SCORECARD=(npx -y mcp-scorecard@0.5.6)
 MIN=90
 fail=0
 for dir in google-health-mcp wellness-nourish whoop-mcp garmin-mcp; do

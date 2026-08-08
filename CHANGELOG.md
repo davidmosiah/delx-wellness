@@ -1,3 +1,12 @@
+## 2026-08-08 — fleet pin wave (post-garmin #20)
+
+Published / pinned:
+- `garmin-mcp-unofficial@0.7.2` (Body Battery #20)
+- `whoop-mcp-unofficial@0.6.1` (README contract)
+- `mcp-scorecard@0.5.6` (dense_series schema hard cap)
+- `delx-living-body@0.3.5` (series routing + child pins)
+- `delx-wellness-hermes@0.3.7` (whoop/withings/garmin pins)
+
 ## 2026-08-06 — garmin Body Battery #20
 
 - Pins: `garmin-mcp-unofficial@0.7.2`, `delx-wellness-hermes@0.3.6`
