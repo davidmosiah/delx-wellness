@@ -24,5 +24,5 @@ See [adr/001-agent-safe-series-v1.md](./adr/001-agent-safe-series-v1.md).
 ## Compat fields
 See [series-compat-matrix.md](./series-compat-matrix.md).
 
-## Public narrative (draft)
-Long-form builder post (not published until owner OK): [drafts/2026-08-agent-safe-series-v1-post.md](./drafts/2026-08-agent-safe-series-v1-post.md).
+## Public narrative
+Builder post: [Discussion #14](https://github.com/davidmosiah/delx-wellness/discussions/14) · archive [drafts/2026-08-agent-safe-series-v1-post.md](./drafts/2026-08-agent-safe-series-v1-post.md).

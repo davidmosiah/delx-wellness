@@ -1,10 +1,10 @@
-# DRAFT — not published
+# PUBLISHED
 
-**Status:** local draft only. Do **not** post to X, LinkedIn, HN, blog, or Discord without **explicit OK** from David in chat.  
-**Target channel (when OK):** long technical post — GitHub Discussion on `delx-wellness` **or** personal technical blog, then optional X thread pointing at it. Prefer **one** primary surface.  
-**Audience:** MCP / agent builders who already dump wearable streams into context.  
-**Primary CTA:** star hub + try `garmin_activity_series` / read ADR — **not** stars farming, not coverage invent.  
-**Updated:** 2026-08-08
+**Live:** https://github.com/davidmosiah/delx-wellness/discussions/14  
+**Channel:** GitHub Discussion (Show and tell) · 2026-08-08  
+**Do not re-post** without a new OK (one surface is enough for this wave).
+
+Original draft body kept below for edit history.
 
 ---
 

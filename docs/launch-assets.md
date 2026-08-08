@@ -5,13 +5,13 @@
 Use these when you want a **public post**. Prefer **one channel per day**, one
 primary CTA. Full DIY growth rules: [`honest-growth-playbook.md`](./honest-growth-playbook.md).
 
-## Draft in flight (DO NOT publish without OK)
+## Published
 
-| Draft | Status | Path |
-| --- | --- | --- |
-| **agent-safe-series/v1 technical post** | DRAFT only | [`drafts/2026-08-agent-safe-series-v1-post.md`](./drafts/2026-08-agent-safe-series-v1-post.md) |
+| Date | Channel | URL | Notes |
+| --- | --- | --- | --- |
+| 2026-08-08 | GitHub Discussion | https://github.com/davidmosiah/delx-wellness/discussions/14 | agent-safe-series/v1 builder post; one CTA (star hub) |
 
-When David OKs a channel: publish from that file, then move a one-line entry to **Published** below with URL + date.
+Source archive: [`drafts/2026-08-agent-safe-series-v1-post.md`](./drafts/2026-08-agent-safe-series-v1-post.md)
 
 ## Primary CTA stack (pick one per post)
 
@@ -60,7 +60,7 @@ Hero: Google Health API v4 MCP (36★) · `npx -y google-health-mcp-unofficial@0
 
 If this is useful, a star on the hub helps more builders find it.
 
-### B — agent-safe-series (builders; use after post is published)
+### B — agent-safe-series (builders)
 
 Dense health series without blowing the context window: hard `max_points`, full-res stats, peer Kindred interop.
 
