@@ -1,6 +1,6 @@
 # Delx Wellness — Ecosystem Status
 
-_Auto-generated from `registry.json` on 2026-08-08 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
+_Auto-generated from `registry.json` on 2026-08-11 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
 
 ## Agent profiles
 
@@ -22,7 +22,7 @@ _Auto-generated from `registry.json` on 2026-08-08 by `scripts/sync-registry.mjs
 | [Apple Health](https://github.com/davidmosiah/apple-health-mcp) | `apple-health-mcp-unofficial` | `0.7.1` | agent_ready | activity, sleep, heart_rate, hrv… |
 | [Eight Sleep](https://github.com/davidmosiah/eight-sleep-mcp) | `eight-sleep-mcp-unofficial` | `0.2.8` | context_ready | profile, device, temperature_program, alarms… |
 | [Fitbit](https://github.com/davidmosiah/fitbitmcp) | `fitbit-mcp-unofficial` | `0.6.0` | agent_ready | profile, devices, activity, sleep… |
-| [Garmin Connect](https://github.com/davidmosiah/garmin-mcp) | `garmin-mcp-unofficial` | `0.7.2` | context_ready | profile, devices, daily_movement, sleep… |
+| [Garmin Connect](https://github.com/davidmosiah/garmin-mcp) | `garmin-mcp-unofficial` | `0.7.3` | context_ready | profile, devices, daily_movement, sleep… |
 | [Google Health](https://github.com/davidmosiah/google-health-mcp) | `google-health-mcp-unofficial` | `0.7.3` | agent_ready | identity, profile, settings, steps… |
 | [Oura Ring](https://github.com/davidmosiah/ouramcp) | `oura-mcp-unofficial` | `0.6.1` | agent_ready | personal_info, readiness, sleep, activity… |
 | [Polar](https://github.com/davidmosiah/polarmcp) | `polar-mcp-unofficial` | `0.5.0` | agent_ready | account, devices, activity, calendar… |
@@ -32,7 +32,7 @@ _Auto-generated from `registry.json` on 2026-08-08 by `scripts/sync-registry.mjs
 | [Wellness CGM](https://github.com/davidmosiah/wellness-cgm-mcp) | `wellness-cgm-mcp` | `0.6.1` | agent_ready | Glucose, TIR, GMI, Meal Response… |
 | [Wellness Cycle Coach](https://github.com/davidmosiah/wellness-cycle-coach) | `wellness-cycle-coach` | `0.4.0` | agent_ready | Phase Detection, Cycle Length, Phase Nutrition, Phase Training… |
 | [Nourish MCP](https://github.com/davidmosiah/wellness-nourish) | `wellness-nourish` | `0.8.0` | context_ready | food_search, br_local_food_search, taco_food_search, open_food_facts_name_search… |
-| [WHOOP](https://github.com/davidmosiah/whoop-mcp) | `whoop-mcp-unofficial` | `0.6.1` | context_ready | profile, body, recovery, cycles… |
+| [WHOOP](https://github.com/davidmosiah/whoop-mcp) | `whoop-mcp-unofficial` | `0.6.2` | context_ready | profile, body, recovery, cycles… |
 | [Withings](https://github.com/davidmosiah/withingsmcp) | `withings-mcp-unofficial` | `0.5.1` | agent_ready | body_measures, daily_activity, workouts, sleep… |
 | [Exercise Catalog MCP](https://github.com/davidmosiah/exercise-catalog-mcp) | `exercise-catalog-mcp-private` | `—` | context_ready | exercise_search, exercise_details, workout_templates, wellness_context_intake… |
 | [Google Ads MCP](https://github.com/davidmosiah/google-ads-mcp-unofficial) | `google-ads-mcp-unofficial` | `0.1.3` | agent_ready | non_wellness, agent_tool, advertising_operations, list_accounts… |
@@ -43,6 +43,6 @@ _Auto-generated from `registry.json` on 2026-08-08 by `scripts/sync-registry.mjs
 - **Private lab connectors**: 1
 - **Meta-connectors**: 1
 - **Profile packs**: 2
-- **Last registry update**: 2026-08-08
+- **Last registry update**: 2026-08-11
 
 See [registry.json](registry.json) for the canonical machine-readable manifest.
