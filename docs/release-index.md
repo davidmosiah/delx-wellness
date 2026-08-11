@@ -10,7 +10,7 @@ Rows below are validated by `node scripts/validate-release-index.mjs` (npm URL +
 
 | Project | npm package | npm version | GitHub Release | Verification |
 |---|---|---|---|---|
-| Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.7.3) | `0.7.3` | [`v0.7.3`](https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.7.3) | `npm test` + prod audit + pack dry-run |
+| Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.7.4) | `0.7.4` | [`v0.7.4`](https://github.com/davidmosiah/google-health-mcp/releases/tag/v0.7.4) | `npm test` + prod audit + pack dry-run |
 | Garmin MCP | [`garmin-mcp-unofficial`](https://www.npmjs.com/package/garmin-mcp-unofficial/v/0.7.3) | `0.7.3` | [`v0.7.3`](https://github.com/davidmosiah/garmin-mcp/releases/tag/v0.7.3) | `npm test` + prod audit + pack dry-run |
 
 ## Series fleet (agent-safe-series/v1) — npm pins
@@ -21,7 +21,7 @@ Rows below are validated by `node scripts/validate-release-index.mjs` (npm URL +
 | Strava MCP | [`strava-mcp-unofficial`](https://www.npmjs.com/package/strava-mcp-unofficial/v/0.6.0) | `0.6.0` |
 | Fitbit MCP | [`fitbit-mcp-unofficial`](https://www.npmjs.com/package/fitbit-mcp-unofficial/v/0.6.0) | `0.6.0` |
 | Polar MCP | [`polar-mcp-unofficial`](https://www.npmjs.com/package/polar-mcp-unofficial/v/0.5.0) | `0.5.0` |
-| Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.7.3) | `0.7.3` |
+| Google Health MCP | [`google-health-mcp-unofficial`](https://www.npmjs.com/package/google-health-mcp-unofficial/v/0.7.4) | `0.7.3` |
 | Delx Wellness Hermes | [`delx-wellness-hermes`](https://www.npmjs.com/package/delx-wellness-hermes/v/0.3.7) | `0.3.7` |
 
 ## Wellness stack — npm pins (registry-synced)
