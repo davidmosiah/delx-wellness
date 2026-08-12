@@ -1,3 +1,11 @@
+## 2026-08-12 — OSS-300 wave 1 (authority + honesty)
+
+- [Authority probe](docs/authority-probe.md) runway to **2026-09-30** (inbound of weight vs vanity)
+- Monthly [authority scorecard](docs/monthly-authority-scorecard.md) (`scripts/authority-scorecard.mjs`)
+- [Weekly maintainer runbook](docs/maintainer-weekly-runbook.md)
+- [Policies 98–100](docs/oss-strategy-policies.md) re-dated: #21 closed honest 1/2; no new connector without a named requester
+- Contributor Covenant [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+
 ## 2026-08-08 — fleet pin wave (post-garmin #20)
 
 Published / pinned:

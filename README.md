@@ -22,9 +22,9 @@
   <strong>What is this?</strong> A registry of <strong>open-source MCP servers</strong> that turn your wearables, nutrition, room air quality, menstrual cycle, continuous glucose and smart mattress into context any AI agent can read &mdash; with zero data ever leaving your machine.
 </p>
 
-> **OSS strategy (2026-08-06):** [agent-safe-series/v1](docs/agent-safe-series.md) · [proof hub](docs/proof/) · [OSS-200 inventory](docs/oss-200-inventory.md) · [policies](docs/oss-strategy-policies.md)
+> **OSS strategy (2026-08-12):** [authority probe → 2026-09-30](docs/authority-probe.md) · [agent-safe-series/v1](docs/agent-safe-series.md) · [policies](docs/oss-strategy-policies.md) · [OSS-300](docs/oss-300-inventory.md)
 
-> **What's new (2026-08-04):** hub registry tracks `google-health-mcp-unofficial@0.7.3` · Hermes/living-body pins refresh (`delx-wellness-hermes@0.3.4`, `delx-living-body@0.3.4`) · proof loop **1/2** external coverage reports ([@maxgow](https://github.com/maxgow)); second → [issue #21](https://github.com/davidmosiah/google-health-mcp/issues/21) by 2026-08-12. Honest DIY growth (no bots): [`docs/honest-growth-playbook.md`](docs/honest-growth-playbook.md) · ready posts: [`docs/launch-assets.md`](docs/launch-assets.md). See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
+> **What's new (2026-08-12):** Google Health proof loop closed honest **1/2** ([status](https://github.com/davidmosiah/google-health-mcp/blob/main/docs/proof-loop-status.md)). Hermes `0.3.10` · google-ads `0.1.4`. Weekly triage: [runbook](docs/maintainer-weekly-runbook.md). Honest growth: [playbook](docs/honest-growth-playbook.md). See [CHANGELOG.md](CHANGELOG.md) · [STATUS.md](STATUS.md).
 
 ---
 
@@ -328,7 +328,7 @@ Follow on X: [@delx369](https://x.com/delx369) · Site: [wellness.delx.ai](https
 
 ## 📜 License
 
-MIT &mdash; see [LICENSE](LICENSE).
+MIT &mdash; see [LICENSE](LICENSE). Community: [Code of Conduct](CODE_OF_CONDUCT.md).
 
 <sub>Delx Wellness is an unofficial, open-source project. WHOOP, Oura, Garmin, Strava, Fitbit, Google Health, Withings, Apple Health, Samsung Health, Polar and Eight Sleep are trademarks of their respective owners. None of the connectors in this registry are affiliated with, endorsed by, or supported by those companies.</sub>
 

@@ -3,4 +3,4 @@
 1. Run growth collectors under `scripts/` when available.
 2. Prefer **median daily** npm downloads over one-day spikes.
 3. Commit dated JSON under `docs/` only when numbers move meaningfully.
-4. Stars are discovery, not demand — label them as such.
+4. Stars are discovery, not demand — label them as such. A one-day npm spike is not demand; require **median ≥ 7 days** (see [monthly-authority-scorecard.md](./monthly-authority-scorecard.md)).

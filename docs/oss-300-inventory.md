@@ -6,7 +6,7 @@ Exactly **100** items. No boring-apps, ASA, MannaCup, or private-only product wo
 Prior campaigns:
 
 - [oss-100-inventory.md](./oss-100-inventory.md) — closed (package hygiene + series ship)
-- [oss-200-inventory.md](./oss-200-inventory.md) — process/ADR/proof/SLA (in flight)
+- [oss-200-inventory.md](./oss-200-inventory.md) — process/ADR/proof/SLA (**closed** 2026-08-06; 4 BLOCKED-EXTERNAL remain)
 
 This list is **deeper strategy**: authority probe, contract stability, composition,
 ecosystem federation, privacy, discoverability, commercial honesty, anti-sprawl
