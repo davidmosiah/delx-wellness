@@ -1,12 +1,12 @@
 # Delx Wellness — Ecosystem Status
 
-_Auto-generated from `registry.json` on 2026-08-11 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
+_Auto-generated from `registry.json` on 2026-08-12 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
 
 ## Agent profiles
 
 | Profile | npm version | Status |
 |---|---|---|
-| [Delx Wellness for Hermes](https://github.com/davidmosiah/delx-wellness-hermes) | `0.3.9` | active |
+| [Delx Wellness for Hermes](https://github.com/davidmosiah/delx-wellness-hermes) | `0.3.10` | active |
 | [Delx Wellness for OpenClaw](https://github.com/davidmosiah/delx-wellness-openclaw) | `0.2.3` | active |
 
 ## Meta-connectors
@@ -35,7 +35,7 @@ _Auto-generated from `registry.json` on 2026-08-11 by `scripts/sync-registry.mjs
 | [WHOOP](https://github.com/davidmosiah/whoop-mcp) | `whoop-mcp-unofficial` | `0.6.3` | context_ready | profile, body, recovery, cycles… |
 | [Withings](https://github.com/davidmosiah/withingsmcp) | `withings-mcp-unofficial` | `0.5.3` | agent_ready | body_measures, daily_activity, workouts, sleep… |
 | [Exercise Catalog MCP](https://github.com/davidmosiah/exercise-catalog-mcp) | `exercise-catalog-mcp-private` | `—` | context_ready | exercise_search, exercise_details, workout_templates, wellness_context_intake… |
-| [Google Ads MCP](https://github.com/davidmosiah/google-ads-mcp-unofficial) | `google-ads-mcp-unofficial` | `0.1.3` | agent_ready | non_wellness, agent_tool, advertising_operations, list_accounts… |
+| [Google Ads MCP](https://github.com/davidmosiah/google-ads-mcp-unofficial) | `google-ads-mcp-unofficial` | `0.1.4` | agent_ready | non_wellness, agent_tool, advertising_operations, list_accounts… |
 
 ## Snapshot
 
@@ -43,6 +43,6 @@ _Auto-generated from `registry.json` on 2026-08-11 by `scripts/sync-registry.mjs
 - **Private lab connectors**: 1
 - **Meta-connectors**: 1
 - **Profile packs**: 2
-- **Last registry update**: 2026-08-11
+- **Last registry update**: 2026-08-12
 
 See [registry.json](registry.json) for the canonical machine-readable manifest.
