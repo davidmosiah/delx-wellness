@@ -1,3 +1,12 @@
+## 2026-08-12 — OSS-300 wave 2 (close local path)
+
+- Local inventory **PENDING=0** (1 BLOCKED-EXTERNAL: Kindred #19 peer OK)
+- [oss-300-close.md](docs/oss-300-close.md) pointers + [ledger](docs/oss-300-ledger.md)
+- Growth collector: **median daily** npm, ignore one-day spikes
+- `scripts/listed-check.mjs` — HEAD known listing URLs (no submit)
+- Issue templates + CONTRIBUTING series/fixture rule + SECURITY advisory path
+- Scorecard **0.5.8**: `contract_version` schema property required
+
 ## 2026-08-12 — OSS-300 wave 1 (authority + honesty)
 
 - [Authority probe](docs/authority-probe.md) runway to **2026-09-30** (inbound of weight vs vanity)

@@ -142,6 +142,13 @@ function sumDownloads(days) {
   return days.reduce((sum, day) => sum + number(day.downloads), 0);
 }
 
+function medianDownloads(days) {
+  const nums = days.map((day) => number(day.downloads)).sort((a, b) => a - b);
+  if (!nums.length) return null;
+  const mid = Math.floor(nums.length / 2);
+  return nums.length % 2 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+}
+
 async function collectGitHub() {
   return repos.map((repo) => {
     const fullName = `${owner}/${repo.name}`;
@@ -206,6 +213,9 @@ async function collectNpm() {
       downloadsLastDay: days.at(-1)?.downloads ?? null,
       downloads7d: sumDownloads(days.slice(-7)),
       downloads30d: sumDownloads(days),
+      medianDaily7d: medianDownloads(days.slice(-7)),
+      medianDaily30d: medianDownloads(days),
+      ignoreOneDaySpike: true,
       errors: {
         range: range.error ?? null
       }
@@ -249,7 +259,7 @@ function markdown(snapshot, previous) {
 
 Generated: ${snapshot.generatedAt}
 
-GitHub traffic is a rolling 14-day window. npm downloads use the public npm downloads API. Snapshots are written locally under \`.growth-metrics/\`, which is intentionally gitignored.
+GitHub traffic is a rolling 14-day window. npm downloads use the public npm downloads API. **Stars ≠ demand.** Prefer **median daily ≥ 7 days**; ignore one-day spikes (scanners/CI/npx). Snapshots are written locally under \`.growth-metrics/\`, which is intentionally gitignored.
 
 ## Totals
 

@@ -1,0 +1,18 @@
+name: Feature (agent demand)
+description: New behavior — must show a real agent/user need
+title: "feat: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: demand
+    attributes:
+      label: Agent / user demand
+      description: Named requester or a real failed agent transcript (redacted). Maintainer curiosity is not enough.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What to change
+    validations:
+      required: true

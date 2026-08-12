@@ -51,6 +51,17 @@ as **discovery / install proxies**. They never close the probe.
 3. Monthly scorecard. Ignore one-day spikes.
 4. Honest copy: proof loop is **1/2** external Google Health coverage reports.
 
+## When to DM Anthropic / MCP teams
+
+Only **after** an inbound-of-weight row exists. Message is a reply to their
+interest or a factual pointer to a package they already used. Never a cold
+spray, never a “hire me” blast from a star count.
+
+## Show HN / leaderboard re-entry
+
+Archived. Re-open only with written owner OK **and** a logged inbound event.
+A quiet week is not a reason to push.
+
 ## What we will not do
 
 - Cold-spray Anthropic / MCP teams

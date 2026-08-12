@@ -1,0 +1,16 @@
+name: Coverage report
+description: Redacted live coverage (booleans/errors only)
+title: "coverage: "
+labels: ["coverage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use the package `coverage --live --json` (or equivalent). Strip PHI.
+        Google Health: post on [google-health-mcp#2](https://github.com/davidmosiah/google-health-mcp/issues/2), not the closed #21.
+  - type: textarea
+    id: redacted
+    attributes:
+      label: Redacted JSON
+    validations:
+      required: true

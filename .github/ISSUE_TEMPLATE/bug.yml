@@ -1,0 +1,29 @@
+name: Bug (redacted)
+description: Something broken — no tokens, no PHI
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do **not** paste OAuth tokens, refresh tokens, raw health samples, GPS, or names.
+        Booleans, status codes, and redacted JSON only.
+  - type: input
+    id: package
+    attributes:
+      label: Package + version
+      placeholder: google-health-mcp-unofficial@0.7.5
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expect
+    attributes:
+      label: What you expected
+    validations:
+      required: true

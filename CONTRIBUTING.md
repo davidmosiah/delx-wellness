@@ -16,6 +16,8 @@ rg "<provider-or-package>"
 - Keep the open-source boundary explicit.
 - Keep each connector installable and understandable on its own.
 - Preserve the disclaimer: not a medical device and not medical advice.
+- **Series contract (`agent-safe-series/v1`):** a field change needs a golden fixture **and** `mcp-scorecard` still ≥90. See [agent-safe-series.md](docs/agent-safe-series.md).
+- **New connector:** named external requester + use case ([oss-strategy-policies.md](docs/oss-strategy-policies.md) #98).
 
 ## Pull request checklist
 
