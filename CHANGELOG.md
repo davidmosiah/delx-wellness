@@ -1,3 +1,12 @@
+## 2026-08-13 — Live docs no longer point at archived workbench
+
+- Operator prompt templates in `examples/from-workbench/` now send people to
+  this hub's [Run it in your agent](README.md#run-it-in-your-agent),
+  [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes),
+  and [`delx-living-body`](https://github.com/davidmosiah/delx-living-body).
+- Dated plans and directory-submission inventory still mention
+  `delx-agent-workbench` as history only.
+
 ## 2026-08-13 — Canonical GitHub slugs + Dependabot policy wiring
 
 - Catalog GitHub URLs for Fitbit, Oura, Polar and Withings now point at the
