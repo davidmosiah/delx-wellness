@@ -1,0 +1,30 @@
+# Policy: docs/dependabot-high-only.md
+# High/critical security advisories only; monthly batch.
+# Ignore noise minors unless a security advisory.
+#
+# dependabot.yml cannot filter by CVSS. This file encodes the rest of the
+# policy: no version-update PRs, monthly cadence, one grouped security PR
+# per ecosystem. Maintainers still ignore moderate/low alerts.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 0
+    groups:
+      security-monthly:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 0
+    groups:
+      security-monthly:
+        applies-to: security-updates
+        patterns:
+          - "*"

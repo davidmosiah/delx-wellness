@@ -31,7 +31,7 @@ Rows below are validated by `node scripts/validate-release-index.mjs` (npm URL +
 | Delx Living Body | [`delx-living-body`](https://www.npmjs.com/package/delx-living-body/v/0.3.5) | `0.3.5` | [repo](https://github.com/davidmosiah/delx-living-body) | `npm view` + registry sync |
 | Wellness Nourish | [`wellness-nourish`](https://www.npmjs.com/package/wellness-nourish/v/0.8.0) | `0.8.0` | [repo](https://github.com/davidmosiah/wellness-nourish) | `npm view` + registry sync |
 | WHOOP MCP | [`whoop-mcp-unofficial`](https://www.npmjs.com/package/whoop-mcp-unofficial/v/0.6.2) | `0.6.2` | [repo](https://github.com/davidmosiah/whoop-mcp) | `npm view` + registry sync |
-| Withings MCP | [`withings-mcp-unofficial`](https://www.npmjs.com/package/withings-mcp-unofficial/v/0.5.1) | `0.5.1` | [repo](https://github.com/davidmosiah/withingsmcp) | `npm view` + registry sync |
+| Withings MCP | [`withings-mcp-unofficial`](https://www.npmjs.com/package/withings-mcp-unofficial/v/0.5.1) | `0.5.1` | [repo](https://github.com/davidmosiah/withings-mcp) | `npm view` + registry sync |
 
 ## Infrastructure — npm pins
 

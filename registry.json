@@ -190,7 +190,7 @@
       "id": "fitbit",
       "name": "Fitbit",
       "status": "active",
-      "repository": "https://github.com/davidmosiah/fitbitmcp",
+      "repository": "https://github.com/davidmosiah/fitbit-mcp",
       "package": "fitbit-mcp-unofficial",
       "agentReadiness": 90,
       "transport": [
@@ -328,7 +328,7 @@
       "id": "oura",
       "name": "Oura Ring",
       "status": "active",
-      "repository": "https://github.com/davidmosiah/ouramcp",
+      "repository": "https://github.com/davidmosiah/oura-mcp",
       "package": "oura-mcp-unofficial",
       "agentReadiness": 90,
       "transport": [
@@ -368,7 +368,7 @@
       "id": "polar",
       "name": "Polar",
       "status": "active",
-      "repository": "https://github.com/davidmosiah/polarmcp",
+      "repository": "https://github.com/davidmosiah/polar-mcp",
       "package": "polar-mcp-unofficial",
       "agentReadiness": 90,
       "transport": [
@@ -721,7 +721,7 @@
       "id": "withings",
       "name": "Withings",
       "status": "active",
-      "repository": "https://github.com/davidmosiah/withingsmcp",
+      "repository": "https://github.com/davidmosiah/withings-mcp",
       "package": "withings-mcp-unofficial",
       "agentReadiness": 90,
       "transport": [
@@ -843,5 +843,5 @@
       "npm_version": "0.1.4"
     }
   ],
-  "last_updated": "2026-08-12"
+  "last_updated": "2026-08-13"
 }

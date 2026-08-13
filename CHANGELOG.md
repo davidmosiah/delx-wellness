@@ -1,3 +1,12 @@
+## 2026-08-13 — Canonical GitHub slugs + Dependabot policy wiring
+
+- Catalog GitHub URLs for Fitbit, Oura, Polar and Withings now point at the
+  public repos (`fitbit-mcp`, `oura-mcp`, `polar-mcp`, `withings-mcp`).
+  Official MCP registry IDs (`io.github.davidmosiah/fitbitmcp` and siblings)
+  are unchanged.
+- Added `.github/dependabot.yml` matching [docs/dependabot-high-only.md](docs/dependabot-high-only.md)
+  (security-only, grouped, monthly; no version-update noise).
+
 ## 2026-08-12 — OSS-300 wave 2 (close local path)
 
 - Local inventory **PENDING=0** (1 BLOCKED-EXTERNAL: Kindred #19 peer OK)
