@@ -24,7 +24,7 @@ _Auto-generated from `registry.json` on 2026-08-13 by `scripts/sync-registry.mjs
 | [Fitbit](https://github.com/davidmosiah/fitbit-mcp) | `fitbit-mcp-unofficial` | `0.6.2` | agent_ready | profile, devices, activity, sleep… |
 | [Garmin Connect](https://github.com/davidmosiah/garmin-mcp) | `garmin-mcp-unofficial` | `0.7.4` | context_ready | profile, devices, daily_movement, sleep… |
 | [Google Health](https://github.com/davidmosiah/google-health-mcp) | `google-health-mcp-unofficial` | `0.7.5` | agent_ready | identity, profile, settings, steps… |
-| [Oura Ring](https://github.com/davidmosiah/oura-mcp) | `oura-mcp-unofficial` | `0.6.3` | agent_ready | personal_info, readiness, sleep, activity… |
+| [Oura Ring](https://github.com/davidmosiah/oura-mcp) | `oura-mcp-unofficial` | `0.7.0` | agent_ready | personal_info, readiness, sleep, activity… |
 | [Polar](https://github.com/davidmosiah/polar-mcp) | `polar-mcp-unofficial` | `0.5.2` | agent_ready | account, devices, activity, calendar… |
 | [Samsung Health](https://github.com/davidmosiah/samsung-health-mcp) | `samsung-health-mcp-unofficial` | `0.7.3` | agent_ready | activity, steps, sleep, heart_rate… |
 | [Strava](https://github.com/davidmosiah/strava-mcp) | `strava-mcp-unofficial` | `0.6.2` | context_ready | athlete, activities, activity_details, activity_streams… |

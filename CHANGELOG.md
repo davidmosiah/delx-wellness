@@ -1,3 +1,9 @@
+## 2026-08-13 — Publish oura 0.7.0 + kit 0.2.0
+
+- `oura-mcp-unofficial` `0.6.3` → `0.7.0` on npm (honest `next_token` pagination).
+- `delx-mcp-kit` `0.1.1` → `0.2.0` on npm (`buildAgentSafeSeries` + series tests).
+- Registry/STATUS synced from live npm. Release index kit pin updated.
+
 ## 2026-08-13 — Live docs no longer point at archived workbench
 
 - Operator prompt templates in `examples/from-workbench/` now send people to

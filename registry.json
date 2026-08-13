@@ -362,7 +362,7 @@
         "notes": "Local package includes Oura OAuth, v2 usercollection tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses official Oura Cloud API v2. Heart-rate and SpO2 availability depends on ring generation, membership and granted scopes.",
-      "npm_version": "0.6.3"
+      "npm_version": "0.7.0"
     },
     {
       "id": "polar",

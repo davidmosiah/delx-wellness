@@ -38,7 +38,7 @@ Rows below are validated by `node scripts/validate-release-index.mjs` (npm URL +
 | Project | npm package | npm version | Verification |
 |---|---|---:|---|
 | MCP Scorecard | [`mcp-scorecard`](https://www.npmjs.com/package/mcp-scorecard/v/0.5.6) | `0.5.6` | `npm view` + GH Release |
-| Delx MCP Kit | [`delx-mcp-kit`](https://www.npmjs.com/package/delx-mcp-kit/v/0.1.1) | `0.1.1` | `npm view` + registry sync |
+| Delx MCP Kit | [`delx-mcp-kit`](https://www.npmjs.com/package/delx-mcp-kit/v/0.2.0) | `0.2.0` | `npm view` + registry sync |
 | Delx Memory | [`delx-memory`](https://www.npmjs.com/package/delx-memory/v/0.2.5) | `0.2.5` | `npm view` + registry sync |
 | Delx MCP Server | [`delx-mcp-server`](https://www.npmjs.com/package/delx-mcp-server/v/0.2.9) | `0.2.9` | `npm view` + registry sync |
 | Delx Wellness Hermes | [`delx-wellness-hermes`](https://www.npmjs.com/package/delx-wellness-hermes/v/0.3.7) | `0.3.7` | `npm view` + registry sync |
