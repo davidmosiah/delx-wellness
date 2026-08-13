@@ -140,7 +140,7 @@ After `setup`, run **`npx -y <package> onboarding`** on any connector once &mdas
 | **Hermes** | [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes) | [wellness.delx.ai/hermes](https://wellness.delx.ai/hermes) |
 | **OpenClaw** | [`delx-wellness-openclaw`](https://github.com/davidmosiah/delx-wellness-openclaw) | [wellness.delx.ai/openclaw](https://wellness.delx.ai/openclaw) |
 
-> Drop the [`agent-rules.md`](examples/from-workbench/agent-rules.md) block into your agent to get readiness-first, non-medical behavior — the agent checks readiness, calls the relevant summary tools, separates observed data from suggestions, and stays non-medical. See [`examples/from-workbench/`](examples/from-workbench/) for the full operator profile.
+> Drop the [`agent-rules.md`](examples/from-workbench/agent-rules.md) block into your agent to get readiness-first, non-medical behavior — the agent checks readiness, calls the relevant summary tools, separates observed data from suggestions, and stays non-medical. See the [operator prompt templates](examples/from-workbench/) for the full operator profile. Those templates assume servers are already wired via this section, [`delx-wellness-hermes`](https://github.com/davidmosiah/delx-wellness-hermes), or [`delx-living-body`](https://github.com/davidmosiah/delx-living-body).
 
 ---
 
