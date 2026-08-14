@@ -322,7 +322,7 @@
         "notes": "Local package targets Google Health API v4 beta with Google OAuth, identity/profile/settings, data point list/reconcile/rollup tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses Google Health API v4. The API is live for builders but still evolving; check Google's release notes for scope and data-type changes before production launch decisions.",
-      "npm_version": "0.7.5"
+      "npm_version": "0.7.6"
     },
     {
       "id": "oura",
@@ -843,5 +843,5 @@
       "npm_version": "0.1.4"
     }
   ],
-  "last_updated": "2026-08-13"
+  "last_updated": "2026-08-14"
 }

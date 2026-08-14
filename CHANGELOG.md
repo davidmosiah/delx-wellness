@@ -1,3 +1,8 @@
+## 2026-08-14 — Google Health 0.7.6 + Kindred peer note
+
+- Registry/STATUS: `google-health-mcp-unofficial` `0.7.5` → `0.7.6` (Claude Desktop `outputSchema` 2020-12, [#23](https://github.com/davidmosiah/google-health-mcp/issues/23)).
+- README: honest **peer** pointer to Kindred `mi-fitness-data-bridge` ([#17](https://github.com/davidmosiah/delx-wellness/issues/17)). Not a first-party `connectors[]` row.
+
 ## 2026-08-13 — Publish oura 0.7.0 + kit 0.2.0
 
 - `oura-mcp-unofficial` `0.6.3` → `0.7.0` on npm (honest `next_token` pagination).

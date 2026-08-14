@@ -118,6 +118,16 @@ npx -y wellness-cgm-mcp             doctor
 npx -y wellness-cycle-coach         doctor
 ```
 
+### Peer connectors (not Delx-operated)
+
+These are independent local-first servers that share a contract with this fleet. We do **not** publish, pin, or support them. Credentials stay with their maintainer’s local store.
+
+| Peer | Maintainer | Shared contract |
+|---|---|---|
+| [mi-fitness-data-bridge](https://github.com/shkyyy18/mi-fitness-data-bridge) (Xiaomi Mi Fitness, AGPL-3.0-only, unofficial China-region adapter) | [@shkyyy18](https://github.com/shkyyy18) | [`agent-safe-series/v1`](docs/agent-safe-series.md) — design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19), listing request [#17](https://github.com/davidmosiah/delx-wellness/issues/17) |
+
+A first-party `registry.json` row still needs a PR that meets [connector-quality-standard](docs/connector-quality-standard.md) and does not imply Delx operates the package.
+
 After `setup`, run **`npx -y <package> onboarding`** on any connector once &mdash; the answers persist to `~/.delx-wellness/profile.json` and every other connector reads them automatically ([Shared local profile](docs/privacy-model.md)).
 
 **Wire it into your client** — drop the matching example into the listed location:
