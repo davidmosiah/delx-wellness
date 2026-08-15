@@ -120,11 +120,11 @@ npx -y wellness-cycle-coach         doctor
 
 ### Peer connectors (not Delx-operated)
 
-These are independent local-first servers that share a contract with this fleet. They are **not** Delx-operated connectors. We do **not** publish, pin, `npm view`, or support them. They live in [`registry.json`](registry.json) `peers[]`, not `connectors[]`. Credentials stay in the peer maintainer’s local store (for Mi Fitness: OS keyring). This is **not medical advice**. Catalog hop only — no integration promise.
+These are independent local-first servers that share a contract with this fleet. They are **not** Delx-operated connectors. We do **not** publish, pin, `npm view`, or support them. They live in [`registry.json`](registry.json) `peers[]`, not `connectors[]`. Credentials stay in the **user’s** local store (for Mi Fitness: the local OS keyring). This is **not medical advice**. Catalog hop only — no integration promise.
 
 | Peer | Maintainer | Shared contract | Caveats |
 |---|---|---|---|
-| [mi-fitness-data-bridge](https://github.com/shkyyy18/mi-fitness-data-bridge) (Xiaomi Mi Fitness; Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1) | [@shkyyy18](https://github.com/shkyyy18) | [`agent-safe-series/v1`](docs/agent-safe-series.md) — design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19), listing request [#17](https://github.com/davidmosiah/delx-wellness/issues/17) | AGPL-3.0-only. Unofficial experimental China-region cloud adapter. OS keyring. Local-first SQLite + JSON/CSV + stdio. Synthetic fixtures only. Not Delx-operated. Not medical advice. |
+| [mi-fitness-data-bridge](https://github.com/shkyyy18/mi-fitness-data-bridge) (Xiaomi Mi Fitness; Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1) | [@shkyyy18](https://github.com/shkyyy18) | [`agent-safe-series/v1`](docs/agent-safe-series.md) — design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19), listing request [#17](https://github.com/davidmosiah/delx-wellness/issues/17) | AGPL-3.0-only. Unofficial experimental China-region cloud adapter. User OS keyring. Local-first SQLite + JSON/CSV + stdio. Contract alignment is from synthetic fixtures — this registry stores no live Xiaomi tokens. Not Delx-operated. Not medical advice. |
 
 A first-party `connectors[]` row still needs a PR that meets [connector-quality-standard](docs/connector-quality-standard.md) and means Delx publishes and pins the package.
 

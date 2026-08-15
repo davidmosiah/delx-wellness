@@ -38,11 +38,13 @@ const wantJson = args.includes("--json");
 
 function flagValue(name, fallback) {
   const i = args.indexOf(name);
-  if (i !== -1 && args[i + 1]) return path.resolve(process.cwd(), args[i + 1]);
-  return fallback;
+  if (i === -1) return fallback;
+  const value = args[i + 1];
+  if (!value || value.startsWith("--")) {
+    throw new Error(`${name} requires a file path`);
+  }
+  return path.resolve(process.cwd(), value);
 }
-
-const registryPath = flagValue("--registry", DEFAULT_REGISTRY);
 
 function loadRegistry(p) {
   let raw;
@@ -109,6 +111,22 @@ function checkPeer(peer, takenIds) {
   }
 
   return { id, name: peer?.name ?? id, pass: failures.length === 0, failures };
+}
+
+function checkPeerList(peers, takenIds) {
+  const seenPeerIds = new Set();
+  return peers.map((peer) => {
+    const result = checkPeer(peer, takenIds);
+    if (peer?.id && seenPeerIds.has(peer.id)) {
+      result.failures.push({
+        rule: "P2",
+        message: `duplicate peer id "${peer.id}"`,
+      });
+      result.pass = false;
+    }
+    if (peer?.id) seenPeerIds.add(peer.id);
+    return result;
+  });
 }
 
 function selfCheck() {
@@ -178,60 +196,79 @@ function selfCheck() {
       );
     }
   }
+
+  const leanPeer = {
+    id: "dup-peer",
+    name: "Dup",
+    repository: "https://github.com/example/dup",
+    maintainer: "example",
+    license: "MIT",
+    notes: "catalog hop",
+  };
+  const dupResults = checkPeerList([leanPeer, { ...leanPeer }], taken);
+  if (!dupResults[1] || dupResults[1].pass || !dupResults[1].failures.some((f) => f.rule === "P2")) {
+    failures.push('self-check "rejects duplicate peer ids" should fail P2');
+  }
   return failures;
 }
 
 function main() {
-  const registry = loadRegistry(registryPath);
-  const peers = Array.isArray(registry.peers) ? registry.peers : [];
-  const taken = occupiedIds(registry);
-  const results = peers.map((peer) => checkPeer(peer, taken));
-  const selfCheckFailures = selfCheck();
-  const failed = results.some((r) => !r.pass) || selfCheckFailures.length > 0;
+  try {
+    const registryPath = flagValue("--registry", DEFAULT_REGISTRY);
+    const registry = loadRegistry(registryPath);
+    const peers = Array.isArray(registry.peers) ? registry.peers : [];
+    const taken = occupiedIds(registry);
+    const results = checkPeerList(peers, taken);
+    const selfCheckFailures = selfCheck();
+    const failed = results.some((r) => !r.pass) || selfCheckFailures.length > 0;
 
-  if (wantJson) {
-    process.stdout.write(
-      JSON.stringify(
-        {
-          registry: path.relative(process.cwd(), registryPath) || registryPath,
-          checked: results.length,
-          passed: results.filter((r) => r.pass).length,
-          failed: results.filter((r) => !r.pass).length,
-          self_check_failures: selfCheckFailures,
-          results,
-        },
-        null,
-        2,
-      ) + "\n",
-    );
-  } else {
-    const lines = [
-      "# peers[] honesty gate",
-      "",
-      `Registry: ${path.relative(process.cwd(), registryPath) || registryPath}`,
-      `Peers checked: ${results.length}`,
-      "",
-    ];
-    if (results.length === 0) {
-      lines.push("PASS — no peers listed (empty catalog hop list is valid).");
-    }
-    for (const r of results) {
-      lines.push(`- ${r.pass ? "PASS" : "FAIL"} ${r.id} (${r.name})`);
-      for (const f of r.failures) lines.push(`    - ${f.rule}: ${f.message}`);
-    }
-    if (selfCheckFailures.length === 0) {
-      lines.push("", "PASS — boundary self-check (package / id collision / first-party URL).");
+    if (wantJson) {
+      process.stdout.write(
+        JSON.stringify(
+          {
+            registry: path.relative(process.cwd(), registryPath) || registryPath,
+            checked: results.length,
+            passed: results.filter((r) => r.pass).length,
+            failed: results.filter((r) => !r.pass).length,
+            self_check_failures: selfCheckFailures,
+            results,
+          },
+          null,
+          2,
+        ) + "\n",
+      );
     } else {
-      lines.push("", "FAIL — boundary self-check:");
-      for (const s of selfCheckFailures) lines.push(`  - ${s}`);
+      const lines = [
+        "# peers[] honesty gate",
+        "",
+        `Registry: ${path.relative(process.cwd(), registryPath) || registryPath}`,
+        `Peers checked: ${results.length}`,
+        "",
+      ];
+      if (results.length === 0) {
+        lines.push("PASS — no peers listed (empty catalog hop list is valid).");
+      }
+      for (const r of results) {
+        lines.push(`- ${r.pass ? "PASS" : "FAIL"} ${r.id} (${r.name})`);
+        for (const f of r.failures) lines.push(`    - ${f.rule}: ${f.message}`);
+      }
+      if (selfCheckFailures.length === 0) {
+        lines.push("", "PASS — boundary self-check (package / id collision / first-party URL).");
+      } else {
+        lines.push("", "FAIL — boundary self-check:");
+        for (const s of selfCheckFailures) lines.push(`  - ${s}`);
+      }
+      if (!failed) {
+        lines.push("", "Peers are catalog hops, not Delx-operated connectors.");
+      }
+      process.stdout.write(lines.join("\n") + "\n");
     }
-    if (!failed) {
-      lines.push("", "Peers are catalog hops, not Delx-operated connectors.");
-    }
-    process.stdout.write(lines.join("\n") + "\n");
-  }
 
-  process.exit(failed ? 1 : 0);
+    process.exitCode = failed ? 1 : 0;
+  } catch (err) {
+    process.stderr.write(`${err instanceof Error ? err.message : String(err)}\n`);
+    process.exitCode = 1;
+  }
 }
 
 main();

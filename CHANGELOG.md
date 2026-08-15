@@ -1,3 +1,10 @@
+## 2026-08-15 — Peer catalog honesty follow-up (#18 review)
+
+- Credentials: user’s local OS keyring, not the peer maintainer’s store.
+- Contract evidence: synthetic fixtures; this registry stores no live Xiaomi tokens; Delx does not independently validate live Xiaomi data.
+- `sync-registry` snapshot counts tolerate `package: null`.
+- `validate-peers`: `--registry` requires a path; duplicate peer ids fail; `exitCode` instead of `process.exit`.
+
 ## 2026-08-15 — Xiaomi Mi Fitness peer catalog hop (#17)
 
 - Schema: optional `peers[]` on the registry root (`additionalProperties: false`).

@@ -24,7 +24,7 @@ These are independent projects listed in `registry.json` `peers[]`. They are **n
 
 | Project | Maintainer | Shared contract | Main caveats |
 | --- | --- | --- | --- |
-| Xiaomi Mi Fitness (`mi-fitness-data-bridge`) | [@shkyyy18](https://github.com/shkyyy18) | `agent-safe-series/v1` (`workout_series`, peer-reported; design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19)) | Unofficial experimental China-region cloud adapter. Credentials in the OS keyring. Local-first SQLite + JSON/CSV + stdio MCP. Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1 is listed metadata, not an npm pin. AGPL-3.0-only. Synthetic fixtures only. Delx does not publish, pin, or support this repo. |
+| Xiaomi Mi Fitness (`mi-fitness-data-bridge`) | [@shkyyy18](https://github.com/shkyyy18) | `agent-safe-series/v1` (`workout_series`, peer-reported; design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19)) | Unofficial experimental China-region cloud adapter. Credentials stay in the **user’s** local OS keyring. Local-first SQLite + JSON/CSV + stdio MCP. Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1 is listed metadata, not an npm pin. AGPL-3.0-only. Contract alignment is from synthetic fixtures; Delx does not independently validate live Xiaomi data. This registry stores no live Xiaomi tokens. Delx does not publish, pin, or support this repo. |
 
 ## Release Principle
 

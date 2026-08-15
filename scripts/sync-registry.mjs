@@ -124,8 +124,9 @@ function buildStatusMarkdown(reg) {
     }
   }
 
-  const publicCount = (reg.connectors ?? []).filter((c) => !c.package.endsWith('-private')).length;
-  const privateCount = (reg.connectors ?? []).filter((c) => c.package.endsWith('-private')).length;
+  const isPrivatePackage = (c) => String(c.package ?? '').endsWith('-private');
+  const publicCount = (reg.connectors ?? []).filter((c) => !isPrivatePackage(c)).length;
+  const privateCount = (reg.connectors ?? []).filter(isPrivatePackage).length;
   const profileCount = (reg.agent_profiles ?? []).length;
   const metaCount = (reg.meta_connectors ?? []).length;
   const peerCount = peers.length;
