@@ -16,10 +16,11 @@
  *   - mutates STATUS.md (regenerates from registry.json)
  *   - bumps last_updated timestamp
  *
- * Also runs a README coverage guard (read-only): every wellness connector
- * and the meta-MCP in registry.json must be referenced in README.md. The
- * README card grid / decision-tree stay hand-styled, so this reports gaps
- * for a human to fill rather than rewriting that prose.
+ * Also runs a README coverage guard (read-only): every wellness connector,
+ * the meta-MCP, and every peer catalog hop in registry.json must be
+ * referenced in README.md. The README card grid / decision-tree stay
+ * hand-styled, so this reports gaps for a human to fill rather than
+ * rewriting that prose. Peers are never npm-viewed.
  *
  * Network: fetches npm registry via `npm view <pkg> version` per
  * package. Reads only — does not publish or auth.
@@ -108,10 +109,26 @@ function buildStatusMarkdown(reg) {
     );
   }
 
+  const peers = reg.peers ?? [];
+  lines.push('', '## Peer catalog hops (not Delx-operated)', '');
+  lines.push('Independent projects. Delx does not publish, pin, or support them. Not medical advice.', '');
+  if (peers.length === 0) {
+    lines.push('_None listed._', '');
+  } else {
+    lines.push('| Peer | Maintainer | License | Shared contract |');
+    lines.push('|---|---|---|---|');
+    for (const p of peers) {
+      lines.push(
+        `| [${p.name}](${p.repository ?? '#'}) | \`${p.maintainer ?? '—'}\` | ${p.license ?? '—'} | ${p.shared_contract ?? '—'} |`,
+      );
+    }
+  }
+
   const publicCount = (reg.connectors ?? []).filter((c) => !c.package.endsWith('-private')).length;
   const privateCount = (reg.connectors ?? []).filter((c) => c.package.endsWith('-private')).length;
   const profileCount = (reg.agent_profiles ?? []).length;
   const metaCount = (reg.meta_connectors ?? []).length;
+  const peerCount = peers.length;
 
   lines.push(
     '',
@@ -121,6 +138,7 @@ function buildStatusMarkdown(reg) {
     `- **Private lab connectors**: ${privateCount}`,
     `- **Meta-connectors**: ${metaCount}`,
     `- **Profile packs**: ${profileCount}`,
+    `- **Peer catalog hops**: ${peerCount}`,
     `- **Last registry update**: ${reg.last_updated}`,
     '',
     'See [registry.json](registry.json) for the canonical machine-readable manifest.',
@@ -139,6 +157,7 @@ function buildStatusMarkdown(reg) {
  * shipped to registry.json long before it had a card). This check catches
  * exactly that: every wellness connector (and the meta-MCP) in registry.json
  * must be mentioned somewhere in README.md by package name or repo slug.
+ * Peers are checked by id or GitHub slug only — they have no Delx package.
  *
  * Returns an array of human-readable problem strings (empty = all covered).
  */
@@ -170,6 +189,14 @@ function checkReadmeCoverage(reg) {
   for (const m of reg.meta_connectors ?? []) {
     checkEntry(m, 'meta-connector');
   }
+  for (const p of reg.peers ?? []) {
+    const slug = p.repository ? p.repository.replace(/^https?:\/\/github\.com\//, '') : null;
+    const mentioned =
+      (p.id && readme.includes(p.id)) || (slug && readme.includes(slug));
+    if (!mentioned) {
+      problems.push(`peer "${p.name}" (${p.id}) is in registry.json but not referenced in README.md`);
+    }
+  }
 
   return problems;
 }
@@ -178,6 +205,7 @@ function main() {
   const reg = loadRegistry();
   const changes = [];
 
+  // peers[] are catalog hops — never npm view / pin them.
   for (const list of ['agent_profiles', 'meta_connectors', 'connectors']) {
     for (const entry of reg[list] ?? []) {
       const pkg = entry.package;

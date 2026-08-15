@@ -1,3 +1,10 @@
+## 2026-08-15 — Xiaomi Mi Fitness peer catalog hop (#17)
+
+- Schema: optional `peers[]` on the registry root (`additionalProperties: false`).
+- Registry: Kindred `mi-fitness-data-bridge` as a **peer** row (not `connectors[]`). Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1 is listed metadata, not an npm pin.
+- Docs: README decision-tree + provider-status + STATUS name the hop as not Delx-operated and not medical advice (unofficial China-region adapter; OS keyring; synthetic fixtures). No integration promise.
+- Local gate: `scripts/validate-peers.mjs` (no `package` / `npm_version`; no first-party id or `davidmosiah` repo).
+
 ## 2026-08-14 — Google Health 0.7.6 + Kindred peer note
 
 - Registry/STATUS: `google-health-mcp-unofficial` `0.7.5` → `0.7.6` (Claude Desktop `outputSchema` 2020-12, [#23](https://github.com/davidmosiah/google-health-mcp/issues/23)).

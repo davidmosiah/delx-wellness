@@ -339,6 +339,57 @@
         },
         "additionalProperties": false
       }
+    },
+    "peers": {
+      "type": "array",
+      "description": "Independent catalog hops. Not Delx-operated first-party packages. Do not add package or npm_version; this hub does not pin or npm-view peers.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "repository",
+          "maintainer",
+          "license",
+          "notes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "repository": {
+            "type": "string",
+            "format": "uri"
+          },
+          "maintainer": {
+            "type": "string",
+            "description": "GitHub login or public maintainer handle. Not a Delx operator."
+          },
+          "license": {
+            "type": "string",
+            "description": "SPDX license id as published by the peer."
+          },
+          "mcp_registry": {
+            "type": "string",
+            "description": "Official MCP Registry id if the peer published one. Catalog metadata only — not a Delx pin."
+          },
+          "listed_version": {
+            "type": "string",
+            "description": "Version the peer reported on a public registry. Not synced with npm view."
+          },
+          "shared_contract": {
+            "type": "string",
+            "description": "Contract the peer reports aligning with, e.g. agent-safe-series/v1. Not an integration promise."
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
     }
   },
   "additionalProperties": false

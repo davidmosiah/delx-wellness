@@ -2,6 +2,8 @@
 
 This is the public release bar for Delx wellness MCP connectors. It keeps the open-source layer credible while the hosted hub remains optional/private.
 
+Independent **peer** catalog hops in `registry.json` `peers[]` are **not** quality-tiered here. A peer listing is not a `connectors[]` row, not a Delx-operated package, and not medical advice.
+
 ## Quality Tiers
 
 ### `experimental`

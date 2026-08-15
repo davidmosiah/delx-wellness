@@ -5,3 +5,4 @@
 3. Site/connectors must not hardcode version tables.
 4. CI: `node scripts/sync-registry.mjs --check` fails on drift when available.
 5. `docs/release-index.md` strategic tables must match npm after sync.
+6. `peers[]` is catalog metadata only. Never `npm view` or pin a peer.

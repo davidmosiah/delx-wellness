@@ -31,7 +31,7 @@ Do not silently reinterpret `v1` fields.
 | strava-mcp-unofficial | `strava_activity_series` | 0.6.0+ |
 | fitbit-mcp-unofficial | `fitbit_heart_series` | 0.6.0+ |
 | polar-mcp-unofficial | `polar_heart_series` | 0.5.0+ |
-| Kindred mi-fitness-data-bridge | `workout_series` | see garmin-mcp#19 |
+| Kindred mi-fitness-data-bridge (peer; not a Delx npm pin) | `workout_series` | Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1 — see garmin-mcp#19 |
 
 ## ADR
 See [adr/001-agent-safe-series-v1.md](./adr/001-agent-safe-series-v1.md).

@@ -19,13 +19,19 @@ Two checks run on every push and pull request targeting `main`
    `additionalProperties: false`. This catches the kind of drift that used to
    slip through silently (e.g. the `npm_version` field that
    `scripts/sync-registry.mjs` writes, or a quality tier landing in `status`).
+   The root schema now allows an optional `peers[]` array for independent
+   catalog hops. Peers are not first-party packages: no `package`, no
+   `npm_version`, no quality tier. `scripts/sync-registry.mjs` never
+   `npm view`s them.
 2. **Quality-tier enforcement** — [`scripts/validate-context-ready.mjs`](../scripts/validate-context-ready.mjs)
    turns the `context_ready` tier into a machine check (rules below).
+   Peers are out of scope for this check.
 
-Both scripts have zero npm dependencies. They use Node 22+ built-ins (`node:fs`,
+These scripts have zero npm dependencies. They use Node 22+ built-ins (`node:fs`,
 `JSON.parse`, `node:path`, `node:url`) so the registry stays a docs/JSON-only repo.
 The schema validator is schema-driven — it reads the schema file, so extending
-the schema automatically extends the check.
+the schema automatically extends the check. `validate-peers.mjs` is the local
+honesty gate for `peers[]`; it is not a new GitHub Actions workflow.
 
 ## Rules
 
@@ -57,11 +63,16 @@ that constant and document why in this file.
 
 ```bash
 node scripts/validate-schema.mjs                   # schema check, exit 0/1
+node scripts/validate-peers.mjs                    # peers[] honesty gate (not first-party)
 node scripts/validate-boundary-contracts.mjs       # all 16 wellness boundary families
 node scripts/validate-context-ready.mjs            # tier check, exit 0/1
 node scripts/validate-context-ready.mjs --json     # machine-readable report
 node scripts/validate-context-ready.mjs --registry path/to/registry.json
 ```
+
+`npm test` on this repo runs the inventory check, schema validation, the
+peers honesty gate, the release-index check, and `sync-registry.mjs --check`.
+Prove those locally; this hub does not rely on a paid GitHub Actions plan.
 
 Sample passing schema-validation output:
 
