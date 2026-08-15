@@ -18,6 +18,14 @@ This matrix tracks public connector readiness. It is intentionally conservative:
 | Exercise Catalog MCP | Private active | `context_ready` | Private exercise/workout catalog adapter, wellness_context intake, URL-only media policy, provider orchestrator/source-metadata gate before public expansion | Private provider data must remain separated from open/public sources. |
 | Nourish MCP | Active | `context_ready` | Food lookup, TACO/BR local search, pt-BR meal estimates, barcode lookup, barcode photo lookup, mixed food-image routing, label OCR parsing, meal photo estimates, personal meal memory, coach loop, nutrition_context-compatible summaries, calories, macros, carbon summaries, bulk logging, undo, compare-days, local intake, hydration, goals, CSV export and summaries | USDA FoodData Central is primary; Open Food Facts barcode/name results carry ODbL attribution/share-alike metadata; TACO values are an attributed curated subset while redistribution-license confirmation remains a 1.0 gate; coach outputs are heuristic and missing confirmation returns `USER_ACTION_REQUIRED`, not a server failure. |
 
+## Peer catalog hops (not Delx-operated)
+
+These are independent projects listed in `registry.json` `peers[]`. They are **not** first-party connectors, **not** quality-tiered by Delx, and **not** medical advice. Catalog hop only — no integration promise.
+
+| Project | Maintainer | Shared contract | Main caveats |
+| --- | --- | --- | --- |
+| Xiaomi Mi Fitness (`mi-fitness-data-bridge`) | [@shkyyy18](https://github.com/shkyyy18) | `agent-safe-series/v1` (`workout_series`, peer-reported; design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19)) | Unofficial experimental China-region cloud adapter. Credentials in the OS keyring. Local-first SQLite + JSON/CSV + stdio MCP. Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1 is listed metadata, not an npm pin. AGPL-3.0-only. Synthetic fixtures only. Delx does not publish, pin, or support this repo. |
+
 ## Release Principle
 
 Keep each provider connector independently useful. The registry should help users discover and install connectors; it should not force a monorepo migration before there is a concrete maintenance benefit.

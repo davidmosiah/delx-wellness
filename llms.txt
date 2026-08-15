@@ -11,6 +11,7 @@ Agent surfaces:
 - Meta connector: delx-living-body composes installed wellness connectors into one ask/daily-brief surface.
 - Runtime profile packs include Delx Wellness for Hermes and Delx Wellness for OpenClaw.
 - Machine-readable catalog: registry.json · human snapshot: STATUS.md · changelog: CHANGELOG.md
+- Peer catalog hops live in registry.json peers[] (not connectors[]). Xiaomi Mi Fitness (mi-fitness-data-bridge) is an independent unofficial China-region adapter; not Delx-operated; not medical advice; catalog hop only.
 - See README for install and runtime surfaces.
 - Start with the connection/status or agent-manifest surface when available.
 - Prefer JSON responses for automation and markdown responses for human summaries.

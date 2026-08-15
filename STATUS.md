@@ -1,6 +1,6 @@
 # Delx Wellness — Ecosystem Status
 
-_Auto-generated from `registry.json` on 2026-08-14 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
+_Auto-generated from `registry.json` on 2026-08-15 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
 
 ## Agent profiles
 
@@ -37,12 +37,21 @@ _Auto-generated from `registry.json` on 2026-08-14 by `scripts/sync-registry.mjs
 | [Exercise Catalog MCP](https://github.com/davidmosiah/exercise-catalog-mcp) | `exercise-catalog-mcp-private` | `—` | context_ready | exercise_search, exercise_details, workout_templates, wellness_context_intake… |
 | [Google Ads MCP](https://github.com/davidmosiah/google-ads-mcp-unofficial) | `google-ads-mcp-unofficial` | `0.1.4` | agent_ready | non_wellness, agent_tool, advertising_operations, list_accounts… |
 
+## Peer catalog hops (not Delx-operated)
+
+Independent projects. Delx does not publish, pin, or support them. Not medical advice.
+
+| Peer | Maintainer | License | Shared contract |
+|---|---|---|---|
+| [Xiaomi Mi Fitness](https://github.com/shkyyy18/mi-fitness-data-bridge) | `shkyyy18` | AGPL-3.0-only | agent-safe-series/v1 |
+
 ## Snapshot
 
 - **Total public connectors**: 16
 - **Private lab connectors**: 1
 - **Meta-connectors**: 1
 - **Profile packs**: 2
-- **Last registry update**: 2026-08-14
+- **Peer catalog hops**: 1
+- **Last registry update**: 2026-08-15
 
 See [registry.json](registry.json) for the canonical machine-readable manifest.

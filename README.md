@@ -50,7 +50,7 @@ Three connectors carry most of the value. Start with the one that matches your s
 - **[`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish)** &mdash; food search, barcode lookup, intake and hydration. Zero-credential, runs offline in ~30 seconds.
   `npx -y wellness-nourish doctor`
 
-> **Full catalog (16 connectors):** machine-readable in [`registry.json`](registry.json) · human snapshot in [`STATUS.md`](STATUS.md). Includes WHOOP, Oura, Strava, Fitbit, Withings, Apple Health, Samsung Health, Polar, Eight Sleep, CGM, Cycle Coach and Air. Each is a standalone npm package; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health, Samsung Health and Google Health can all report sleep). A non-wellness [`google-ads-mcp-unofficial`](https://github.com/davidmosiah/google-ads-mcp-unofficial) is also cataloged as an agent tool for the Delx reach surface.
+> **Full catalog (16 connectors):** machine-readable in [`registry.json`](registry.json) · human snapshot in [`STATUS.md`](STATUS.md). Includes WHOOP, Oura, Strava, Fitbit, Withings, Apple Health, Samsung Health, Polar, Eight Sleep, CGM, Cycle Coach and Air. Each is a standalone npm package; they coexist and the agent reconciles overlapping signals (WHOOP, Garmin, Apple Health, Samsung Health and Google Health can all report sleep). A non-wellness [`google-ads-mcp-unofficial`](https://github.com/davidmosiah/google-ads-mcp-unofficial) is also cataloged as an agent tool for the Delx reach surface. Independent **peer** hops live in `registry.json` `peers[]` — they are not first-party connectors.
 
 ---
 
@@ -120,13 +120,13 @@ npx -y wellness-cycle-coach         doctor
 
 ### Peer connectors (not Delx-operated)
 
-These are independent local-first servers that share a contract with this fleet. We do **not** publish, pin, or support them. Credentials stay with their maintainer’s local store.
+These are independent local-first servers that share a contract with this fleet. They are **not** Delx-operated connectors. We do **not** publish, pin, `npm view`, or support them. They live in [`registry.json`](registry.json) `peers[]`, not `connectors[]`. Credentials stay in the peer maintainer’s local store (for Mi Fitness: OS keyring). This is **not medical advice**. Catalog hop only — no integration promise.
 
-| Peer | Maintainer | Shared contract |
-|---|---|---|
-| [mi-fitness-data-bridge](https://github.com/shkyyy18/mi-fitness-data-bridge) (Xiaomi Mi Fitness, AGPL-3.0-only, unofficial China-region adapter) | [@shkyyy18](https://github.com/shkyyy18) | [`agent-safe-series/v1`](docs/agent-safe-series.md) — design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19), listing request [#17](https://github.com/davidmosiah/delx-wellness/issues/17) |
+| Peer | Maintainer | Shared contract | Caveats |
+|---|---|---|---|
+| [mi-fitness-data-bridge](https://github.com/shkyyy18/mi-fitness-data-bridge) (Xiaomi Mi Fitness; Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1) | [@shkyyy18](https://github.com/shkyyy18) | [`agent-safe-series/v1`](docs/agent-safe-series.md) — design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19), listing request [#17](https://github.com/davidmosiah/delx-wellness/issues/17) | AGPL-3.0-only. Unofficial experimental China-region cloud adapter. OS keyring. Local-first SQLite + JSON/CSV + stdio. Synthetic fixtures only. Not Delx-operated. Not medical advice. |
 
-A first-party `registry.json` row still needs a PR that meets [connector-quality-standard](docs/connector-quality-standard.md) and does not imply Delx operates the package.
+A first-party `connectors[]` row still needs a PR that meets [connector-quality-standard](docs/connector-quality-standard.md) and means Delx publishes and pins the package.
 
 After `setup`, run **`npx -y <package> onboarding`** on any connector once &mdash; the answers persist to `~/.delx-wellness/profile.json` and every other connector reads them automatically ([Shared local profile](docs/privacy-model.md)).
 
@@ -164,6 +164,7 @@ After `setup`, run **`npx -y <package> onboarding`** on any connector once &mdas
 | **Google Health / migrating Fitbit** | [`google-health-mcp`](https://github.com/davidmosiah/google-health-mcp) | Google Health API v4, rollups, reconciled streams |
 | **To track food (no login)** | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | Food search, barcode lookup, intake, hydration — offline |
 | **One entry for everything** | [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) | Auto-detects installed connectors; one `living_body_daily_brief` |
+| **Xiaomi / Mi Fitness** | [mi-fitness-data-bridge](https://github.com/shkyyy18/mi-fitness-data-bridge) (**peer**, not Delx-operated) | Independent `workout_series` hop on [`agent-safe-series/v1`](docs/agent-safe-series.md). Unofficial China-region adapter; OS keyring; not medical advice. No integration promise. |
 
 The connectors are designed to coexist. When two providers cover the same signal (e.g. WHOOP and Garmin both report sleep), each tool returns provider-tagged data and your agent reconciles them.
 
@@ -173,6 +174,7 @@ The connectors are designed to coexist. When two providers cover the same signal
 ```text
 Have a WHOOP?               → start with whoop-mcp         (recovery, HRV, sleep, strain)
 Have a Garmin?              → start with garmin-mcp        (Body Battery, training readiness, HRV)
+Have a Xiaomi / Mi Fitness? → see peer mi-fitness-data-bridge (not Delx-operated; unofficial China-region; OS keyring; not medical advice)
 Have an Oura?               → start with oura-mcp          (readiness, sleep, activity, HRV)
 Have an Eight Sleep?       → start with eight-sleep-mcp   (sleep trends, bed temperature, alarms)
 Have Withings devices?     → start with withings-mcp      (body measures, sleep, activity, heart)
@@ -318,6 +320,7 @@ Runnable agent loops live in [Operator Recipes](docs/operator-recipes.md).
 - Not medical advice, diagnosis, treatment or emergency support.
 - Not a promise that every future hosted product will be open source.
 - Not a place for real user health exports, OAuth tokens, API secrets or private deployment files.
+- Peer listings in `peers[]` are catalog hops, not Delx-operated connectors and not an integration promise.
 
 The practical near-term direction: keep provider MCPs independently installable; use this repository as the public connector registry and documentation hub; define shared normalized schemas before building cross-provider tools; keep hosted/commercial infrastructure private until the product direction is proven.
 
