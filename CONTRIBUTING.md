@@ -8,6 +8,7 @@ Contributions are welcome around connector metadata, install examples, registry 
 python3 -m json.tool registry.json >/dev/null
 node scripts/validate-schema.mjs
 node scripts/validate-peers.mjs
+node scripts/validate-canonical-github-slugs.mjs
 rg "<provider-or-package>"
 ```
 

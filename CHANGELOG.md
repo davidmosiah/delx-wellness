@@ -1,3 +1,13 @@
+## 2026-08-18 — Canonical GitHub slug guard
+
+- Catalog GitHub URLs for Fitbit, Oura, Polar and Withings stay on the
+  public hyphenated repos (`fitbit-mcp`, `oura-mcp`, `polar-mcp`, `withings-mcp`).
+  Official MCP registry IDs (`io.github.davidmosiah/fitbitmcp` and siblings)
+  remain the published live names.
+- Local gate: `scripts/validate-canonical-github-slugs.mjs` (wired into `npm test`)
+  so `registry.json`, generated `STATUS.md`, README, release-index, and the
+  growth collector cannot rot back to the pre-rename slugs.
+
 ## 2026-08-15 — Peer catalog honesty follow-up (#18 review)
 
 - Credentials: user’s local OS keyring, not the peer maintainer’s store.

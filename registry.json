@@ -856,5 +856,5 @@
       "notes": "Independent peer catalog hop, not a Delx-operated connector and not a first-party package. Unofficial experimental China-region cloud adapter. Credentials stay in the OS keyring. Local-first SQLite + JSON/CSV export + stdio MCP. Official MCP Registry io.github.shkyyy18/mi-fitness-data-bridge v0.3.1 is listed metadata, not an npm pin. workout_series is peer-reported as agent-safe-series/v1-aligned; design log garmin-mcp#19. Synthetic fixtures only. No live Xiaomi tokens in this registry. No integration promise. Not a medical device and not medical advice."
     }
   ],
-  "last_updated": "2026-08-15"
+  "last_updated": "2026-08-18"
 }

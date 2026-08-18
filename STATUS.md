@@ -1,6 +1,6 @@
 # Delx Wellness — Ecosystem Status
 
-_Auto-generated from `registry.json` on 2026-08-15 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
+_Auto-generated from `registry.json` on 2026-08-18 by `scripts/sync-registry.mjs`. Do not hand-edit — re-run the script._
 
 ## Agent profiles
 
@@ -52,6 +52,6 @@ Independent projects. Delx does not publish, pin, or support them. Not medical a
 - **Meta-connectors**: 1
 - **Profile packs**: 2
 - **Peer catalog hops**: 1
-- **Last registry update**: 2026-08-15
+- **Last registry update**: 2026-08-18
 
 See [registry.json](registry.json) for the canonical machine-readable manifest.
