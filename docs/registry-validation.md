@@ -64,6 +64,7 @@ that constant and document why in this file.
 ```bash
 node scripts/validate-schema.mjs                   # schema check, exit 0/1
 node scripts/validate-peers.mjs                    # peers[] honesty gate (not first-party)
+node scripts/validate-canonical-github-slugs.mjs   # Fitbit/Oura/Polar/Withings GitHub slugs
 node scripts/validate-boundary-contracts.mjs       # all 16 wellness boundary families
 node scripts/validate-context-ready.mjs            # tier check, exit 0/1
 node scripts/validate-context-ready.mjs --json     # machine-readable report
@@ -71,8 +72,11 @@ node scripts/validate-context-ready.mjs --registry path/to/registry.json
 ```
 
 `npm test` on this repo runs the inventory check, schema validation, the
-peers honesty gate, the release-index check, and `sync-registry.mjs --check`.
-Prove those locally; this hub does not rely on a paid GitHub Actions plan.
+peers honesty gate, the canonical GitHub slug guard, the release-index check,
+and `sync-registry.mjs --check`. Prove those locally; this hub does not rely
+on a paid GitHub Actions plan. The slug guard only flags GitHub repo URLs
+(`github.com/davidmosiah/fitbitmcp` and siblings). Published Official MCP
+Registry names (`io.github.davidmosiah/fitbitmcp` and siblings) stay as live IDs.
 
 Sample passing schema-validation output:
 

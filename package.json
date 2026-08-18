@@ -5,7 +5,7 @@
   "description": "Delx Wellness hub — registry, docs, growth process (not an MCP binary)",
   "type": "module",
   "scripts": {
-    "test": "node scripts/check-oss-inventory-no-private.mjs && node scripts/validate-schema.mjs && node scripts/validate-peers.mjs && node scripts/validate-release-index.mjs && node scripts/sync-registry.mjs --check",
+    "test": "node scripts/check-oss-inventory-no-private.mjs && node scripts/validate-schema.mjs && node scripts/validate-peers.mjs && node scripts/validate-canonical-github-slugs.mjs && node scripts/validate-release-index.mjs && node scripts/sync-registry.mjs --check",
     "fleet-versions": "bash scripts/fleet-versions.sh",
     "scorecard-top5": "bash scripts/scorecard-top5.sh"
   }
