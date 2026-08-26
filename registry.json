@@ -29,7 +29,7 @@
       ],
       "privacy_default": "public_safe_profile_pack",
       "notes": "Installs a delx-wellness Hermes profile with one setup command, onboarding, wellness skills, a daily operator prompt, MCP connector presets, Nourish smoke testing, MCP readiness checks and optional chat readiness checks. Contains no user tokens, OAuth credentials, hosted hub API keys, Telegram secrets or private Exercise Catalog data.",
-      "npm_version": "0.3.10"
+      "npm_version": "0.3.11"
     },
     {
       "id": "delx-wellness-openclaw",
