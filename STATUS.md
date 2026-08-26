@@ -20,7 +20,7 @@ _Auto-generated from `registry.json` on 2026-08-26 by `scripts/sync-registry.mjs
 | Connector | Package | npm version | Quality | Signals |
 |---|---|---|---|---|
 | [Apple Health](https://github.com/davidmosiah/apple-health-mcp) | `apple-health-mcp-unofficial` | `0.7.3` | agent_ready | activity, sleep, heart_rate, hrv… |
-| [Eight Sleep](https://github.com/davidmosiah/eight-sleep-mcp) | `eight-sleep-mcp-unofficial` | `0.2.11` | context_ready | profile, device, temperature_program, alarms… |
+| [Eight Sleep](https://github.com/davidmosiah/eight-sleep-mcp) | `eight-sleep-mcp-unofficial` | `0.2.12` | context_ready | profile, device, temperature_program, alarms… |
 | [Fitbit](https://github.com/davidmosiah/fitbit-mcp) | `fitbit-mcp-unofficial` | `0.6.2` | agent_ready | profile, devices, activity, sleep… |
 | [Garmin Connect](https://github.com/davidmosiah/garmin-mcp) | `garmin-mcp-unofficial` | `0.7.5` | context_ready | profile, devices, daily_movement, sleep… |
 | [Google Health](https://github.com/davidmosiah/google-health-mcp) | `google-health-mcp-unofficial` | `0.7.7` | agent_ready | identity, profile, settings, steps… |

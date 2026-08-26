@@ -3,6 +3,7 @@
 - Local scan of 39 Node OSS checkouts: 36 `npm audit --omit=dev` clean of high/critical; no git-tracked tokens.
 - Stale `nanoid@3.3.17` override on `delx-wellness-site` (GHSA-2v37-7h3g-55p8) bumped to `3.3.18`. Same class as the 11/08 hono pins.
 - Method and residuals: `docs/oss-security-audit-2026-08-26.md`.
+- Dependabot [#40](https://github.com/davidmosiah/delx-wellness-site/security/dependabot/40) is **fixed**. Eight Sleep default docs no longer ship a copyable mutation assignment; hub pin `eight-sleep-mcp-unofficial@0.2.12`.
 
 ## 2026-08-18 — Canonical GitHub slug guard
 

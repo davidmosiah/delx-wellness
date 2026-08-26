@@ -35,14 +35,14 @@ This is the same class as 11/08: a pin that once fixed an advisory froze below t
 | `files: ["src"]` on the three JS video kits | they publish source as the package; no tokens in those trees |
 | `files: ["fixtures"]` on nourish / exercise-catalog | demo fixtures, not live credentials |
 
-### Residual
+### Residual — closed 2026-08-26 later the same day
 
 | Item | Status |
 | --- | --- |
+| Dependabot alert [#40](https://github.com/davidmosiah/delx-wellness-site/security/dependabot/40) on `delx-wellness-site` | **fixed** at 2026-08-26T18:57:40Z (`nanoid` 3.3.18). Open high alerts on that repo: **0**. |
+| `eight-sleep-mcp` copyable `EIGHT_SLEEP_ALLOW_MUTATIONS=true` in default docs | **removed** in 0.2.12; secret-scan covers README/`llms.txt`/AGENTS/examples |
 | `delx-wellness` hub and `openclaw-delx-plugin` | no `package-lock.json` (docs/plugin; not npm-auditable) |
-| `eight-sleep-mcp` `llms.txt` still has `EIGHT_SLEEP_ALLOW_MUTATIONS=true` as prose | not money; leftover copyable assignment. Do not treat as a publish blocker |
 | Search/home iFood Akamai WAF from datacenter IPs | documented; not a CVE |
-| Dependabot still disabled on several public repos | same residual as 11/08 |
 
 ## Canonical Node override set (updated)
 

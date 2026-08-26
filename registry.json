@@ -184,7 +184,7 @@
         "exercise-catalog"
       ],
       "notes": "Eight Sleep does not publish a public API. This connector tracks lukas-clarke/eight_sleep, mezz64/pyEight and steipete/eightctl for endpoint stability.",
-      "npm_version": "0.2.11"
+      "npm_version": "0.2.12"
     },
     {
       "id": "fitbit",
