@@ -1,3 +1,9 @@
+## 2026-08-26 — OSS security fleet re-audit
+
+- Local scan of 39 Node OSS checkouts: 36 `npm audit --omit=dev` clean of high/critical; no git-tracked tokens.
+- Stale `nanoid@3.3.17` override on `delx-wellness-site` (GHSA-2v37-7h3g-55p8) bumped to `3.3.18`. Same class as the 11/08 hono pins.
+- Method and residuals: `docs/oss-security-audit-2026-08-26.md`.
+
 ## 2026-08-18 — Canonical GitHub slug guard
 
 - Catalog GitHub URLs for Fitbit, Oura, Polar and Withings stay on the

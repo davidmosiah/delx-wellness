@@ -66,6 +66,10 @@ Repos with Dependabot disabled (non-exhaustive): `delx-protocol`, `delx-agent-co
 | Python product monorepos | `delx-protocol` production path fixed via witness PR #7; some product `requirements` use floor pins (`>=`) which is OK |
 | iOS / boring-apps | Out of this OSS npm audit scope |
 
+## Follow-up
+
+Re-audit 2026-08-26: [oss-security-audit-2026-08-26.md](./oss-security-audit-2026-08-26.md). Stale `nanoid@3.3.17` on the public wellness site was the only high.
+
 ## Security policy going forward
 
 1. **Never freeze a “security override” without a ceiling review.** Prefer `>=fixed` only when lockfile enforces; otherwise pin **exact latest fixed** and re-run fleet audit after each MCP SDK bump.
