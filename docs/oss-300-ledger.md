@@ -35,7 +35,7 @@ Status: `PENDING` | `DONE-shipped` | `DONE-already` | `BLOCKED-EXTERNAL`
 | 28 | DONE-already | hermes presets exist; no new packages |
 | 29 | DONE-shipped | compose-matrix whoop summary-only |
 | 30 | DONE-shipped | oss-300-close GH vs brand connector |
-| 31 | BLOCKED-EXTERNAL | Kindred #19 peer OK; local design log already on garmin |
+| 31 | DONE-shipped | Kindred cross-link + v0.3.0 `agent-safe-series/v1` on 2026-08-13; garmin README related-works; #19 stays as peer design log |
 | 32 | DONE-shipped | oss-300-close + agent-safe-series peer interop |
 | 33 | DONE-already | garmin fixture header = shared Kindred ride profile |
 | 34 | DONE-already | builder-series-review-template.md |
@@ -107,3 +107,6 @@ Status: `PENDING` | `DONE-shipped` | `DONE-already` | `BLOCKED-EXTERNAL`
 | 100 | DONE-shipped | freeze re-dated; #21 closed 1/2 |
 
 Summary (2026-08-12 wave 2): DONE-shipped=42 DONE-already=57 BLOCKED-EXTERNAL=1 PENDING=0
+
+Summary (2026-08-28 honesty pass): DONE-shipped=43 DONE-already=57 BLOCKED-EXTERNAL=0 PENDING=0
+Kindred #19 remains open as a peer design log, not a blocker.

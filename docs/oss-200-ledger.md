@@ -4,7 +4,7 @@ Campaign: 2026-08-06 (complete dispositions)
 
 | id | disposition | proof |
 |---:|---|---|
-| 1 | BLOCKED-EXTERNAL | local prep: coverage template+CLI+#21 comment; missing: 2nd live external report by 2026-08-12 |
+| 1 | DONE-shipped | 2nd live coverage never arrived; proof-loop closed honest 1/2 on 2026-08-08 (google-health-mcp/docs/proof-loop-status.md) |
 | 2 | DONE-shipped | google-health-mcp#2 comment OSS-200 0.7.3 reality |
 | 3 | DONE-shipped | docs/headless-auth-walkthrough.md + #22 comment; GIF optional |
 | 4 | DONE-already | garmin-mcp docs/daily-brief-demo.md + README + #15 comment |
@@ -18,7 +18,7 @@ Campaign: 2026-08-06 (complete dispositions)
 | 12 | DONE-shipped | docs/series-token-story.md |
 | 13 | DONE-shipped | docs/series-compat-matrix.md |
 | 14 | DONE-shipped | docs/shared-profile-constants-note.md |
-| 15 | BLOCKED-EXTERNAL | Kindred README cross-link needs peer OK; local note on #19 |
+| 15 | DONE-shipped | Kindred README cross-link + reciprocal link 2026-08-11/13; garmin-mcp#19 design log |
 | 16 | DONE-shipped | strava/fitbit/polar docs/series-kindred-link.md + garmin #19 |
 | 17 | DONE-already | delx-mcp-kit docs/0.2-story.md |
 | 18 | DONE-shipped | mcp-scorecard dense_series_caps: contract marker separate; schema max_points required (post-skeptic) |
@@ -94,8 +94,8 @@ Campaign: 2026-08-06 (complete dispositions)
 | 88 | DONE-shipped | delx-agent-utilities/docs/paid-receipt-path.md |
 | 89 | DONE-shipped | garmin-mcp#19 design log status comment OSS-200 |
 | 90 | DONE-shipped | docs/kindred-curve-diffs.md |
-| 91 | BLOCKED-EXTERNAL | Related link Mi Fitness needs Kindred OK |
-| 92 | BLOCKED-EXTERNAL | Invite Kindred to coverage only if account — no pressure |
+| 91 | DONE-shipped | Related-works → Mi Fitness Data Bridge (Kindred OK 2026-08-11; reciprocal 2026-08-13) |
+| 92 | DONE-already | No-pressure coverage invite: not sent; Kindred is a series peer, not a Google Health tester |
 | 93 | DONE-shipped | docs/builder-series-review-template.md |
 | 94 | DONE-shipped | docs/agent-safe-series.md canonical |
 | 95 | DONE-shipped | docs/oss-strategy-policies.md policy 95 |
@@ -106,3 +106,6 @@ Campaign: 2026-08-06 (complete dispositions)
 | 100 | DONE-shipped | docs/oss-strategy-policies.md policy 100 freeze |
 
 Summary: DONE-shipped=86 DONE-already=10 BLOCKED-EXTERNAL=4 PENDING=0
+
+Summary (2026-08-28 honesty pass): DONE-shipped=89 DONE-already=11 BLOCKED-EXTERNAL=0 PENDING=0
+Proof-loop 1/2 and Kindred cross-link are closed honestly; directory/public-post gates live on OSS-100 #18/#20 and delx-wellness#2.

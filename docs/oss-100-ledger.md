@@ -31,7 +31,7 @@ Campaign: 2026-08-05
 | 25 | DONE-shipped | STATUS/registry first-call surfaces |
 | 26 | DONE-shipped | scorecard links + mcp-scorecard 0.5.5 |
 | 27 | DONE-shipped | STATUS.md npm versions from sync |
-| 28 | BLOCKED-EXTERNAL | Kindred README cross-link needs their OK |
+| 28 | DONE-shipped | Kindred README cross-link (peer OK 2026-08-11; reciprocal 2026-08-13) |
 | 29 | DONE-shipped | STATUS/registry active honesty |
 | 30 | DONE-shipped | growth snapshot no fabricated metrics |
 | 31 | DONE-shipped | delx-wellness-hermes@0.3.5 npm 130f405 |
@@ -106,9 +106,9 @@ Campaign: 2026-08-05
 | 100 | DONE-shipped | docs/community-response-sla.md + comments: https://github.com/davidmosiah/google-health-mcp/issues/21#issuecomment-5195092399 https://github.com/davidmosiah/google-health-mcp/issues/22#issuecomment-5195092607 https://github.com/davidmosiah/garmin-mcp/issues/15#issuecomment-5195092830 https://github.com/davidmosiah/whoop-mcp/issues/16#issuecomment-5195093024 https://github.com/davidmosiah/wellness-nourish/issues/25#issuecomment-5195093248 https://github.com/davidmosiah/delx-wellness/issues/3#issuecomment-5195093449 |
 
 ## Summary
-- DONE-shipped: 64
+- DONE-shipped: 65
 - DONE-already: 33
-- BLOCKED-EXTERNAL: 3
+- BLOCKED-EXTERNAL: 2 (public post #18 and directory submit #20 — owner OK gates, tracked on delx-wellness#2)
 - PENDING: 0
 
 ## P0 rows

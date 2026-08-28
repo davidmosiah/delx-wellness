@@ -63,6 +63,8 @@ Decision + pointer file so remaining inventory rows are checkable without a 100-
 
 ## Still BLOCKED-EXTERNAL
 
-| id | Why |
+None on the OSS-300 local path.
+
+| id | Why it is no longer blocked |
 |---|---|
-| 31 | Kindred #19 remaining questions need **peer OK** — local design log exists; we will not implement their side. |
+| 31 | Kindred cross-link shipped 2026-08-11 after [mi-fitness-data-bridge#8](https://github.com/shkyyy18/mi-fitness-data-bridge/issues/8). Reciprocal README + `v0.3.0` `agent-safe-series/v1` landed 2026-08-13. [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19) stays open as the **peer design log**, not a blocker. |

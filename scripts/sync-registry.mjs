@@ -14,7 +14,8 @@
  * Side effects:
  *   - mutates registry.json (rewrites with current npm_version per entry)
  *   - mutates STATUS.md (regenerates from registry.json)
- *   - bumps last_updated timestamp
+ *   - bumps last_updated timestamp (write mode only — `--check` must not
+ *     fail just because the calendar day changed)
  *
  * Also runs a README coverage guard (read-only): every wellness connector,
  * the meta-MCP, and every peer catalog hop in registry.json must be
@@ -226,7 +227,11 @@ function main() {
 
   const today = new Date().toISOString().slice(0, 10);
   const previousDate = reg.last_updated;
-  if (changes.length > 0 || previousDate !== today) {
+  // Write mode: stamp today when versions moved or the file is a day behind.
+  // Check mode: never bump the date. A calendar rollover is not npm drift;
+  // `--check` used to regenerate STATUS.md with today's date in memory and
+  // fail every morning even when every pin matched the registry.
+  if (!checkOnly && (changes.length > 0 || previousDate !== today)) {
     reg.last_updated = today;
   }
 

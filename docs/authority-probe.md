@@ -43,6 +43,7 @@ as **discovery / install proxies**. They never close the probe.
 | **Success** | ≥1 inbound-of-weight event in the table above, logged with date + evidence class |
 | **Fail** | Zero such events. Probe ends. No extra megaphone (Show HN, cold DMs to Anthropic/MCP teams, leaderboard push). |
 | **Extend** | Only with a written owner decision **and** a new end date. Silence = fail. |
+| **Status 2026-08-28** | **Success criterion met.** Logged: Kindred / Mi Fitness Data Bridge `v0.3.0` on 2026-08-13 ([scorecard](./monthly-authority-scorecard.md)). Runway still ends 2026-09-30. No Show HN, no cold Anthropic DM, no new connector. |
 
 ## What we do until 2026-09-30
 

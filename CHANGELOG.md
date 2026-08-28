@@ -1,3 +1,11 @@
+## 2026-08-28 — Authority probe success + ledger honesty
+
+- Logged Kindred / Mi Fitness Data Bridge `v0.3.0` (2026-08-13) as inbound-of-weight. Probe success criterion met; runway still ends 2026-09-30. No megaphone.
+- OSS-300 #31 and Kindred README rows are no longer `BLOCKED-EXTERNAL`. [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19) stays open as the peer design log.
+- `sync-registry.mjs --check` no longer fails on a calendar rollover when npm pins match.
+- `docs/release-index.md` reconciled to live npm + GitHub Releases (GH `0.7.7`, Garmin `0.7.5`).
+- Receipt: `docs/oss-pendency-status-2026-08-28.md`.
+
 ## 2026-08-26 — OSS security fleet re-audit
 
 - Local scan of 39 Node OSS checkouts: 36 `npm audit --omit=dev` clean of high/critical; no git-tracked tokens.
