@@ -5,6 +5,7 @@
 - `sync-registry.mjs --check` no longer fails on a calendar rollover when npm pins match.
 - `docs/release-index.md` reconciled to live npm + GitHub Releases (GH `0.7.7`, Garmin `0.7.5`).
 - Receipt: `docs/oss-pendency-status-2026-08-28.md`.
+- Backfilled GitHub Releases for npm pins that had no release notes: nourish `0.8.2`, living-body `0.3.6`, scorecard `0.5.10`, eight-sleep `0.2.12`, rappi `0.1.5`, ifood `0.1.1`, memory `0.4.0`.
 
 ## 2026-08-26 — OSS security fleet re-audit
 

@@ -16,6 +16,7 @@ Follow-up to [oss-pendency-status-2026-08-11.md](./oss-pendency-status-2026-08-1
 | `docs/release-index.md` pin lag | Strategic rows now GH `0.7.7` / Garmin `0.7.5`. Other tables match `registry.json`. |
 | Rappi / iFood Dependabot | High-only monthly `dependabot.yml` + vulnerability alerts enabled. |
 | `openclaw-delx-plugin` local git | Remote already had the #2 transcript. Local checkout was corrupt; recloned. |
+| npm published without GitHub Release | Created non-draft releases: nourish `v0.8.2`, living-body `v0.3.6`, scorecard `v0.5.10`, eight-sleep `v0.2.12`, rappi `v0.1.5`, ifood `v0.1.1`, memory `v0.4.0`. |
 
 ## Intentional open (not debt)
 
