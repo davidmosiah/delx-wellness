@@ -89,7 +89,7 @@
         "living_body_capabilities"
       ],
       "notes": "Meta-MCP that auto-detects locally installed Delx Wellness connectors and composes them into one unified delx-wellness-context/v1 surface. Synthesis is rule-based and offline (14 heuristic rules). Spawns child MCPs via npx -y over StdioClientTransport with a 30s per-call timeout. Stripping rule: any env var matching /(CLIENT_SECRET|REFRESH_TOKEN|ACCESS_TOKEN|API_KEY|PRIVATE_KEY|PASSWORD)$/i is removed before spawning children.",
-      "npm_version": "0.3.6"
+      "npm_version": "0.3.7"
     }
   ],
   "connectors": [
@@ -133,7 +133,7 @@
         "notes": "Local package reads Apple Health export.xml/export.zip, includes data inventory, summary-mode privacy enforcement, timezone-aware summaries, managed auto-import, agent manifest, CLI setup and Hermes setup checks."
       },
       "notes": "Reads user-provided Apple Health exports only. Managed auto-import can find/copy local exports after transfer, but this does not provide live HealthKit or iCloud Health access.",
-      "npm_version": "0.7.3"
+      "npm_version": "0.7.4"
     },
     {
       "id": "eight-sleep",
@@ -184,7 +184,7 @@
         "exercise-catalog"
       ],
       "notes": "Eight Sleep does not publish a public API. This connector tracks lukas-clarke/eight_sleep, mezz64/pyEight and steipete/eightctl for endpoint stability.",
-      "npm_version": "0.2.12"
+      "npm_version": "0.2.13"
     },
     {
       "id": "fitbit",
@@ -227,7 +227,7 @@
         "notes": "CI runs the full npm test suite including agent readiness and Hermes manifest checks."
       },
       "notes": "Fitbit platform migration risk should be tracked before hosted production launch.",
-      "npm_version": "0.6.2"
+      "npm_version": "0.6.3"
     },
     {
       "id": "garmin",
@@ -277,7 +277,7 @@
         "nourish"
       ],
       "notes": "Not official Garmin Health API partnership access. Private endpoint drift is possible.",
-      "npm_version": "0.7.5"
+      "npm_version": "0.7.6"
     },
     {
       "id": "google-health",
@@ -322,7 +322,7 @@
         "notes": "Local package targets Google Health API v4 beta with Google OAuth, identity/profile/settings, data point list/reconcile/rollup tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses Google Health API v4. The API is live for builders but still evolving; check Google's release notes for scope and data-type changes before production launch decisions.",
-      "npm_version": "0.7.7"
+      "npm_version": "0.7.8"
     },
     {
       "id": "oura",
@@ -362,7 +362,7 @@
         "notes": "Local package includes Oura OAuth, v2 usercollection tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses official Oura Cloud API v2. Heart-rate and SpO2 availability depends on ring generation, membership and granted scopes.",
-      "npm_version": "0.7.1"
+      "npm_version": "0.7.2"
     },
     {
       "id": "polar",
@@ -413,7 +413,7 @@
         "notes": "Local package includes Polar AccessLink Dynamic API v4 OAuth, summaries, agent manifest, GPS-aware route handling and Hermes setup checks."
       },
       "notes": "Uses official Polar AccessLink Dynamic API v4. Data availability depends on user device, granted scopes (16 fine-grained read scopes), and Polar account features.",
-      "npm_version": "0.5.2"
+      "npm_version": "0.5.3"
     },
     {
       "id": "samsung-health",
@@ -458,7 +458,7 @@
         "notes": "Local package reads Samsung Health personal-data CSV folders, single CSV files, or ZIP files; includes data inventory, summary-mode privacy enforcement, timezone-aware summaries, managed auto-import, agent manifest, CLI setup and Hermes setup checks."
       },
       "notes": "Reads user-provided Samsung Health exports only. Samsung Health Data SDK and Health Connect are Android/app bridge paths, not live OAuth access for this Node connector.",
-      "npm_version": "0.7.3"
+      "npm_version": "0.7.4"
     },
     {
       "id": "strava",
@@ -504,7 +504,7 @@
         "nourish"
       ],
       "notes": "GPS/map data is privacy-sensitive and should require explicit user intent.",
-      "npm_version": "0.6.3"
+      "npm_version": "0.6.4"
     },
     {
       "id": "wellness-air",
@@ -540,7 +540,7 @@
         "oura"
       ],
       "notes": "Indoor air-quality MCP. Pair with sleep/recovery data to correlate poor sleep with high CO2 or PM2.5.",
-      "npm_version": "0.7.2"
+      "npm_version": "0.7.3"
     },
     {
       "id": "wellness-cgm-mcp",
@@ -573,7 +573,7 @@
         "garmin"
       ],
       "notes": "Dexcom CGM connector. NOT medical advice. Sandbox mode for testing without real credentials. Pair with nourish to analyze meal-glucose response.",
-      "npm_version": "0.6.3"
+      "npm_version": "0.6.4"
     },
     {
       "id": "wellness-cycle-coach",
@@ -607,7 +607,7 @@
         "oura"
       ],
       "notes": "Stateless menstrual-cycle coach. Not medical advice. PCOS/perimenopause edge cases roadmapped.",
-      "npm_version": "0.4.2"
+      "npm_version": "0.4.3"
     },
     {
       "id": "nourish",
@@ -670,7 +670,7 @@
         "notes": "Agent-ready nutrition MCP with explicit-intent writes, local undo/delete/export, privacy audit, Hermes Telegram setup, and nutrition_context-compatible daily/coach summaries."
       },
       "notes": "Not medical advice. Coach outputs are heuristic and require user confirmation before logging. Open Food Facts data carries ODbL attribution/share-alike metadata. TACO/UNICAMP values ship as an attributed curated subset while redistribution-license confirmation remains a 1.0 gate. Meal photos require agent-provided visual observations and confirmation before logging; no GPL app code is copied.",
-      "npm_version": "0.8.2"
+      "npm_version": "0.8.3"
     },
     {
       "id": "whoop",
@@ -715,7 +715,7 @@
         "nourish"
       ],
       "notes": "Uses official WHOOP OAuth API. Raw means upstream API JSON, not continuous sensor streams.",
-      "npm_version": "0.6.4"
+      "npm_version": "0.6.5"
     },
     {
       "id": "withings",
@@ -753,7 +753,7 @@
         "notes": "Local package includes signed Withings OAuth token flow, Public API tools, summaries, agent manifest and Hermes setup checks."
       },
       "notes": "Uses Withings Public API. Device coverage and available fields vary by user devices, scopes and API-plan access.",
-      "npm_version": "0.5.3"
+      "npm_version": "0.5.4"
     },
     {
       "id": "exercise-catalog",
@@ -840,7 +840,7 @@
       },
       "recommended_handoffs": [],
       "notes": "Cataloged here for ecosystem discoverability. NOT a wellness connector — does not participate in delx-wellness-hermes / delx-wellness-openclaw presets or the delx-wellness-site CONNECTORS array. Pairs with google-ads-intent-mcp for the reach surface.",
-      "npm_version": "0.1.5"
+      "npm_version": "0.1.7"
     }
   ],
   "peers": [
@@ -856,5 +856,5 @@
       "notes": "Independent peer catalog hop, not a Delx-operated connector and not a first-party package. Unofficial experimental China-region cloud adapter. Credentials stay in the OS keyring. Local-first SQLite + JSON/CSV export + stdio MCP. Official MCP Registry io.github.shkyyy18/mi-fitness-data-bridge v0.3.1 is listed metadata, not an npm pin. workout_series is peer-reported as agent-safe-series/v1-aligned; design log garmin-mcp#19. Synthetic fixtures only. No live Xiaomi tokens in this registry. No integration promise. Not a medical device and not medical advice."
     }
   ],
-  "last_updated": "2026-08-26"
+  "last_updated": "2026-09-01"
 }
