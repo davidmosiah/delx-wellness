@@ -14,10 +14,10 @@ Pins must match [release-index.md](./release-index.md).
 Money MCPs (David Life dogfood, **not** in `registry.json`):
 
 ```bash
-npx -y ifood-mcp-unofficial@0.1.4 doctor --json
+npx -y ifood-mcp-unofficial@0.1.5 doctor --json
 npx -y rappi-mcp-unofficial@0.1.8 doctor --json
 npx -y ninenine-mcp-unofficial@0.1.2 doctor --json
-npx -y ze-mcp-unofficial@0.1.3 doctor --json
+npx -y ze-mcp-unofficial@0.1.4 doctor --json
 npx -y clickbus-mcp-unofficial@0.1.2 doctor --json
 ```
 
