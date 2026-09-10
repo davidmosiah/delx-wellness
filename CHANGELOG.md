@@ -1,3 +1,7 @@
+## 2026-09-10 — Oura pin 0.7.3
+
+- `oura-mcp-unofficial` `0.7.2` → `0.7.3` on npm. Doctor accepts Oura `extapi:` granted scopes (#11); list tools default a 30d window (#13). `registry.json` / `STATUS.md` synced.
+
 ## 2026-08-28 — Authority probe success + ledger honesty
 
 - Logged Kindred / Mi Fitness Data Bridge `v0.3.0` (2026-08-13) as inbound-of-weight. Probe success criterion met; runway still ends 2026-09-30. No megaphone.
