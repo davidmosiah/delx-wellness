@@ -847,7 +847,7 @@
     {
       "id": "mi-fitness-data-bridge",
       "name": "Xiaomi Mi Fitness",
-      "repository": "https://github.com/shkyyy18/mi-fitness-data-bridge",
+      "repository": "https://github.com/shkyyy18/mi_fitness_data_bridge",
       "maintainer": "shkyyy18",
       "license": "AGPL-3.0-only",
       "mcp_registry": "io.github.shkyyy18/mi-fitness-data-bridge",

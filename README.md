@@ -124,7 +124,7 @@ These are independent local-first servers that share a contract with this fleet.
 
 | Peer | Maintainer | Shared contract | Caveats |
 |---|---|---|---|
-| [mi-fitness-data-bridge](https://github.com/shkyyy18/mi-fitness-data-bridge) (Xiaomi Mi Fitness; Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1) | [@shkyyy18](https://github.com/shkyyy18) | [`agent-safe-series/v1`](docs/agent-safe-series.md) — design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19), listing request [#17](https://github.com/davidmosiah/delx-wellness/issues/17) | AGPL-3.0-only. Unofficial experimental China-region cloud adapter. User OS keyring. Local-first SQLite + JSON/CSV + stdio. Contract alignment is from synthetic fixtures — this registry stores no live Xiaomi tokens. Not Delx-operated. Not medical advice. |
+| [mi-fitness-data-bridge](https://github.com/shkyyy18/mi_fitness_data_bridge) (Xiaomi Mi Fitness; Official MCP Registry `io.github.shkyyy18/mi-fitness-data-bridge` v0.3.1) | [@shkyyy18](https://github.com/shkyyy18) | [`agent-safe-series/v1`](docs/agent-safe-series.md) — design log [garmin-mcp#19](https://github.com/davidmosiah/garmin-mcp/issues/19), listing request [#17](https://github.com/davidmosiah/delx-wellness/issues/17) | AGPL-3.0-only. Unofficial experimental China-region cloud adapter. User OS keyring. Local-first SQLite + JSON/CSV + stdio. Contract alignment is from synthetic fixtures — this registry stores no live Xiaomi tokens. Not Delx-operated. Not medical advice. |
 
 A first-party `connectors[]` row still needs a PR that meets [connector-quality-standard](docs/connector-quality-standard.md) and means Delx publishes and pins the package.
 
@@ -164,7 +164,7 @@ After `setup`, run **`npx -y <package> onboarding`** on any connector once &mdas
 | **Google Health / migrating Fitbit** | [`google-health-mcp`](https://github.com/davidmosiah/google-health-mcp) | Google Health API v4, rollups, reconciled streams |
 | **To track food (no login)** | [`wellness-nourish`](https://github.com/davidmosiah/wellness-nourish) | Food search, barcode lookup, intake, hydration — offline |
 | **One entry for everything** | [`delx-living-body`](https://github.com/davidmosiah/delx-living-body) | Auto-detects installed connectors; one `living_body_daily_brief` |
-| **Xiaomi / Mi Fitness** | [mi-fitness-data-bridge](https://github.com/shkyyy18/mi-fitness-data-bridge) (**peer**, not Delx-operated) | Independent `workout_series` hop on [`agent-safe-series/v1`](docs/agent-safe-series.md). Unofficial China-region adapter; OS keyring; not medical advice. No integration promise. |
+| **Xiaomi / Mi Fitness** | [mi-fitness-data-bridge](https://github.com/shkyyy18/mi_fitness_data_bridge) (**peer**, not Delx-operated) | Independent `workout_series` hop on [`agent-safe-series/v1`](docs/agent-safe-series.md). Unofficial China-region adapter; OS keyring; not medical advice. No integration promise. |
 
 The connectors are designed to coexist. When two providers cover the same signal (e.g. WHOOP and Garmin both report sleep), each tool returns provider-tagged data and your agent reconciles them.
 

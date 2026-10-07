@@ -6,6 +6,8 @@
  *
  * Run on demand:  node scripts/sync-registry.mjs
  * Or in CI:        node scripts/sync-registry.mjs --check (exits 1 if drift)
+ * Status only:     node scripts/sync-registry.mjs --status-only
+ *                  (rewrites STATUS.md from registry.json; no npm view)
  *
  * Why this exists: previously the registry was hand-maintained — drift
  * between registry.json and the actual npm-live versions happened
@@ -39,6 +41,7 @@ const STATUS_PATH = path.join(ROOT, 'STATUS.md');
 const README_PATH = path.join(ROOT, 'README.md');
 
 const checkOnly = process.argv.includes('--check');
+const statusOnly = process.argv.includes('--status-only');
 const quiet = process.argv.includes('--quiet');
 const log = (...args) => { if (!quiet) console.log(...args); };
 
@@ -205,6 +208,12 @@ function checkReadmeCoverage(reg) {
 
 function main() {
   const reg = loadRegistry();
+  if (statusOnly) {
+    const nextStatus = buildStatusMarkdown(reg);
+    writeFileAtomically(STATUS_PATH, nextStatus);
+    log('Regenerated STATUS.md from registry.json (no npm view, no last_updated bump).');
+    return;
+  }
   const changes = [];
 
   // peers[] are catalog hops — never npm view / pin them.

@@ -31,3 +31,5 @@ jobs:
         run: node scripts/validate-context-ready.mjs
       - name: Verify release index
         run: node scripts/validate-release-index.mjs
+      - name: Enforce canonical GitHub slugs
+        run: node scripts/validate-canonical-github-slugs.mjs
