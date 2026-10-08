@@ -43,7 +43,7 @@ Independent projects. Delx does not publish, pin, or support them. Not medical a
 
 | Peer | Maintainer | License | Shared contract |
 |---|---|---|---|
-| [Xiaomi Mi Fitness](https://github.com/shkyyy18/mi-fitness-data-bridge) | `shkyyy18` | AGPL-3.0-only | agent-safe-series/v1 |
+| [Xiaomi Mi Fitness](https://github.com/shkyyy18/mi_fitness_data_bridge) | `shkyyy18` | AGPL-3.0-only | agent-safe-series/v1 |
 
 ## Snapshot
 

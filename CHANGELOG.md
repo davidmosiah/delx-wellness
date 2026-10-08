@@ -1,3 +1,11 @@
+## 2026-10-07 — Canonical GitHub slugs re-verified
+
+- Re-verified every first-party `registry.json` GitHub URL against the public GitHub API (`GET /repos/davidmosiah/<name>`).
+- Pre-rename aliases still redirect to hyphenated `full_name`s: `fitbitmcp` → `fitbit-mcp`, `ouramcp` → `oura-mcp`, `polarmcp` → `polar-mcp`, `withingsmcp` → `withings-mcp`, `garminmcp` → `garmin-mcp`.
+- Kindred peer GitHub URL now uses the canonical `shkyyy18/mi_fitness_data_bridge` (the hyphenated path redirects). Official MCP Registry name `io.github.shkyyy18/mi-fitness-data-bridge` is unchanged.
+- `exercise-catalog-mcp` stays listed (unauthenticated API 404; private lab). Archived `delx-agent-workbench` is not a catalog entry.
+- Slug guard now covers every first-party registry repository URL plus `llms.txt`. Local: `node scripts/validate-canonical-github-slugs.mjs`. `sync-registry.mjs --status-only` regenerates `STATUS.md` without an npm view.
+
 ## 2026-09-10 — Oura pin 0.7.3
 
 - `oura-mcp-unofficial` `0.7.2` → `0.7.3` on npm. Doctor accepts Oura `extapi:` granted scopes (#11); list tools default a 30d window (#13). `registry.json` / `STATUS.md` synced.
