@@ -7,6 +7,7 @@ on:
       - 'STATUS.md'
       - 'docs/release-index.md'
       - 'scripts/sync-registry.mjs'
+      - 'scripts/test-sync-registry.mjs'
       - 'scripts/validate-release-index.mjs'
       - '.github/workflows/registry-check.yml'
   schedule:
@@ -26,16 +27,26 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Test registry checker offline
+        run: node --test scripts/test-sync-registry.mjs
       - name: Check registry vs npm
         id: drift
         run: |
-          if node scripts/sync-registry.mjs --check --quiet; then
-            echo "drift=false" >> "$GITHUB_OUTPUT"
-            echo "Registry is in sync with npm."
-          else
-            echo "drift=true" >> "$GITHUB_OUTPUT"
-            echo "::warning::Registry has drifted from npm. Run \`node scripts/sync-registry.mjs\` locally and commit."
-            # Exit 0 — drift on schedule is informational, not a failure
-            # PR runs will see the warning; humans decide whether to update.
-            exit 0
-          fi
+          result=0
+          node scripts/sync-registry.mjs --check --quiet || result=$?
+          case "$result" in
+            0)
+              echo "drift=false" >> "$GITHUB_OUTPUT"
+              echo "Registry is in sync with npm."
+              ;;
+            1)
+              echo "drift=true" >> "$GITHUB_OUTPUT"
+              echo "::warning::Registry has drifted from npm. Run \`node scripts/sync-registry.mjs\` locally and commit."
+              ;;
+            *)
+              echo "drift=unknown" >> "$GITHUB_OUTPUT"
+              echo "::warning::Registry npm status UNKNOWN: incomplete reads or checker failure; drift was not established."
+              ;;
+          esac
+          # Discovery remains informational on schedule and PR runs. Unknown
+          # reads are not a clean result or a request to refresh the catalog.

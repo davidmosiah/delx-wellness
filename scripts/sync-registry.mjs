@@ -5,7 +5,8 @@
  * STATUS.md from the canonical registry.json.
  *
  * Run on demand:  node scripts/sync-registry.mjs
- * Or in CI:        node scripts/sync-registry.mjs --check (exits 1 if drift)
+ * Or in CI:        node scripts/sync-registry.mjs --check
+ *                  (0 = in sync, 1 = known drift, 2 = UNKNOWN/incomplete read)
  * Status only:     node scripts/sync-registry.mjs --status-only
  *                  (rewrites STATUS.md from registry.json; no npm view)
  *
@@ -52,7 +53,8 @@ function fetchNpmVersion(pkg) {
       stdio: ['ignore', 'pipe', 'ignore'],
       timeout: 10_000,
     });
-    return result.trim() || null;
+    const version = result.trim();
+    return /^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/.test(version) ? version : null;
   } catch {
     return null;
   }
@@ -215,6 +217,7 @@ function main() {
     return;
   }
   const changes = [];
+  const unavailable = [];
 
   // peers[] are catalog hops — never npm view / pin them.
   for (const list of ['agent_profiles', 'meta_connectors', 'connectors']) {
@@ -223,7 +226,7 @@ function main() {
       if (!pkg || pkg.endsWith('-private')) continue;
       const fresh = fetchNpmVersion(pkg);
       if (!fresh) {
-        log(`  ! could not fetch version for ${pkg}`);
+        unavailable.push(pkg);
         continue;
       }
       const previous = entry.npm_version;
@@ -232,6 +235,14 @@ function main() {
         entry.npm_version = fresh;
       }
     }
+  }
+
+  // Missing packages, failed commands and empty/invalid replies are not drift
+  // evidence. Never persist a partially refreshed catalog or advance its date.
+  if (unavailable.length > 0) {
+    console.error('Registry npm status is UNKNOWN: incomplete version reads; no catalog files were written.');
+    for (const pkg of unavailable) console.error(`  - ${pkg}`);
+    process.exit(2);
   }
 
   const today = new Date().toISOString().slice(0, 10);
@@ -300,4 +311,9 @@ function main() {
   log(`Wrote ${path.relative(ROOT, REGISTRY_PATH)} and ${path.relative(ROOT, STATUS_PATH)}.`);
 }
 
-main();
+try {
+  main();
+} catch {
+  console.error('Registry status is UNKNOWN: registry input or checker execution failed.');
+  process.exitCode = 2;
+}
